@@ -21,17 +21,32 @@ category: blue
 
 A month and a half later came the **18+ version**: a separate experience only for adults, with its own servers, coins and records. This wiki covers the 18+ version. The differences are on [Game Versions](versions.md).
 
-## The creator
+## Who makes it
+
+<div class="mp-creators" markdown>
 
 <div class="mp-creator" markdown>
-<div class="mp-creator__avatar mp-creator__avatar--nogo" role="img" aria-label="Nogo's profile picture, with the Nogo group icon"></div>
+<div class="mp-creator__avatar mp-creator__avatar--nogo" role="img" aria-label="Nogo's profile picture"></div>
 <div class="mp-creator__body" markdown>
-<div class="mp-creator__name" markdown="span">Nogo <span class="mp-creator__chip">:lucide-badge-check: Verified group</span></div>
+<div class="mp-creator__name" markdown="span">Nogo <span class="mp-creator__chip">:lucide-user-round: Creator</span></div>
 
-Nogo publishes every game through the **Nogo** group on Roblox, which has about **916,000 members** (October 2026). Since June 2024 Nogo has released **10 games**, several of them built around voice chat.
+Nogo is the Roblox developer who made *Meet People Across The World*. Since 2021 Nogo has published more than a dozen games, several of them built around voice chat.
 
-[<span class="mp-face mp-face--nogo"></span> More about Nogo](nogo.md){ .mp-btn .mp-btn--gold } [<span class="mp-face mp-face--group"></span> Nogo on Roblox](https://www.roblox.com/groups/3394697){ .mp-btn target="_blank" rel="noopener" }
+[<span class="mp-face mp-face--nogo"></span> More about Nogo](nogo.md){ .mp-btn .mp-btn--gold } [<span class="mp-face mp-face--nogo"></span> Nogo on Roblox](https://www.roblox.com/users/149639411/profile){ .mp-btn target="_blank" rel="noopener" }
 </div>
+</div>
+
+<div class="mp-creator" markdown>
+<div class="mp-creator__avatar mp-creator__avatar--group" role="img" aria-label="The Nogo group icon"></div>
+<div class="mp-creator__body" markdown>
+<div class="mp-creator__name" markdown="span">Nogo group <span class="mp-creator__chip">:lucide-badge-check: Verified group</span></div>
+
+Both versions of the game are published by the **Nogo** group on Roblox, which has about **916,000 members** (October 2026).
+
+[<span class="mp-face mp-face--group"></span> Nogo group on Roblox](https://www.roblox.com/groups/3394697){ .mp-btn .mp-btn--blue target="_blank" rel="noopener" }
+</div>
+</div>
+
 </div>
 
 ## How it's growing
