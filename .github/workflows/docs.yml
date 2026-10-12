@@ -1,13 +1,18 @@
 name: Publish wiki
 
 on:
+  # Every change to the wiki
   push:
     branches:
       - main
+  # Refresh live game data (stats, badges, gamepasses) every 6 hours
+  schedule:
+    - cron: "17 */6 * * *"
+  # Manual run from the Actions tab
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -30,6 +35,25 @@ jobs:
       # The Zensical version is pinned in requirements.txt so an update
       # can never break the site by surprise. Change it there to upgrade.
       - run: pip install -r requirements.txt
+
+      # Download fresh data from the official Roblox APIs. If Roblox can't be
+      # reached, the script keeps the last saved data and never fails.
+      - name: Update game data
+        id: data
+        run: python scripts/update_data.py
+
+      # Once a day, save the new data point in the repository so the
+      # history chart keeps growing.
+      - name: Save daily data
+        if: steps.data.outputs.new_day == 'true' && github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data includes/generated
+          git commit -m "Update game data ($(date -u +%F))" || exit 0
+          git pull --rebase origin main
+          git push origin HEAD:main
+
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@v5
         with:

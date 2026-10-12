@@ -1,0 +1,582 @@
+{
+ "seed": true,
+ "fetched_at": "2026-10-12T14:40:00Z",
+ "game": {
+  "name": "[🎃] Meet People Across The World 🔊",
+  "playing": 947,
+  "visits": 76524479,
+  "favorites": 1345564,
+  "max_players": 65,
+  "created": "2024-09-01T21:23:04.227Z",
+  "updated": "2026-10-12T08:51:16.725Z",
+  "creator": "Nogo"
+ },
+ "votes": {
+  "up": 222114,
+  "down": 4705
+ },
+ "badges": [
+  {
+   "id": 718534327994333,
+   "name": "Welcome to Meet People Across The World!",
+   "description": "Welcome!",
+   "enabled": true,
+   "created": null,
+   "awarded": 16730099,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Invite a Friend!",
+   "description": "Badge.\nGrants access to the \"Friendly\" Title + \"🤗\" Tag effect + 100 Coins",
+   "enabled": true,
+   "created": null,
+   "awarded": 129960,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Famous",
+   "description": "Badge.\nGrants access to the \"Famous\" Title + \"🤩\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 1008,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Infamous",
+   "description": "Badge.\nGrants access to the \"Infamous\" Title + \"🤐\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 77,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Wayfarer",
+   "description": "Badge.\nGrants access to the \"Wayfarer\" Title + \"🗺️\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 760,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Gifter",
+   "description": "Badge.\nGrants access to the \"Gifter\" Title + \"🎁\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 3981,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Pet The Cat",
+   "description": "Badge.\nGrants access to the \"Cat\" + \"Meow\" Titles + \"🐾\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 46656,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Pet The Dog",
+   "description": "Badge.\nGrants access to the \"Dog\" + \"Woof\" Titles + \"🦴\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 12825,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Win the Lottery",
+   "description": "Badge.\nGrants access to the \"Lucky\" + \"777\" Titles + \"🍀\" Tag Effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 39692,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Coder",
+   "description": "Badge.\nGrants access to the \"Coder\" Title + \"👾\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 4053,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Fabled",
+   "description": "Badge.\nGrants access to the \"Fabled\" Title + \"☄️\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 1732,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Drink Maker",
+   "description": "Badge.\nGrants access to the \"Drink Master\" Title + \"☕\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 2530,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Troller",
+   "description": "Badge.\nGrants access to the \"Troller\" Title + \"😈\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 1610,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Swordmaster",
+   "description": "Badge.\nGrants access to the \"Swordmaster\" Title + \"🔪\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 38249,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Gunsmith",
+   "description": "Badge.\nGrants access to the \"Gunsmith\" Title + \"🔫\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 11980,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Boxer",
+   "description": "Badge.\nGrants access to the \"Boxer\" Title + \"🥊\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 6187,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Sniper",
+   "description": "Badge.\nGrants access to the \"Sniper\" Title + \"🎯\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 3645,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Arsonist",
+   "description": "Badge.\nGrants access to the \"Arsonist\" Title + \"💥\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 492,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Warrior",
+   "description": "Badge.\nGrants access to the \"Warrior\" Title + \"⚔️\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 2889,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Robot",
+   "description": "Badge.\nGrants access to the \"Robot\" Title + \"🤖\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 6216,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Played in VR",
+   "description": "Badge.\nGrants access to the \"VR\" Title + \"🤓\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 61907,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Pianist",
+   "description": "Badge.\nGrants access to the \"Pianist\" Title + \"🎹\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 1385280,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Artist",
+   "description": "Badge.\nGrants access to the \"Artist\" Title + \"🎨\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 357574,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Explorer",
+   "description": "Badge.\nGrants access to the \"Explorer\" Title + \"🌎🌍🌏\" Tag effect!",
+   "enabled": true,
+   "created": null,
+   "awarded": 13,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Grandmaster",
+   "description": "Badge.\nGrants access to the \"Grandmaster\" Title + \"♟️\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 73,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Builder",
+   "description": "Badge.\nGrants access to the \"Builder\" Title + \"🔨\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 10518,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Angel",
+   "description": "Badge.\nGrants access to the \"Angel\" Title + \"🥇\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 51,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Fallen Angel",
+   "description": "Badge.\nGrants access to the \"Fallen Angel\" Title + \"🥀\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 28,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Winner",
+   "description": "Badge.\nGrants access to the \"Winner\" Title + \"🏆\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 2,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "AFK",
+   "description": "Badge.\nGrants access to the \"AFK\" Title + \"💤\" Tag effect!",
+   "enabled": true,
+   "created": null,
+   "awarded": 420,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Honored",
+   "description": "Badge.\nGrants access to the \"Honored\" Title + \"🛡️\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 62,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Sovereign",
+   "description": "Badge.\nUnlocks \"Sovereign\" Title + \"⚜️\" Effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 1,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Rainmaker",
+   "description": "Badge.\nGrants access to the \"Rainmaker\" Title + \"🌧️\" Tag effect!",
+   "enabled": true,
+   "created": null,
+   "awarded": 20,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Loved",
+   "description": "Badge.\nGrants access to the \"Loved\" Title + \"❤️\" Tag effect.",
+   "enabled": true,
+   "created": null,
+   "awarded": 136,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Blessed",
+   "description": "Badge.\nGrants access to the \"Blessed\" + \"7777\" Titles + \"😇\" Tag effect.",
+   "enabled": true,
+   "created": null,
+   "awarded": 82,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Win The Lottery?",
+   "description": "Badge.\nGrants access to the \"Fool\" Title + \"🤡\" Tag effect.",
+   "enabled": true,
+   "created": null,
+   "awarded": 7604,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Easter Collector",
+   "description": "Badge.\nGrants access to the \"Bunny\" Title + \"🥚\" Tag effect",
+   "enabled": true,
+   "created": null,
+   "awarded": 2537,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Trick or Treat!",
+   "description": "Badge.\nGrants access to the \"Trick or Treat?\" Title + \"🎃\" Tag effect.",
+   "enabled": true,
+   "created": null,
+   "awarded": 50372,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Claim The Christmas Gift",
+   "description": "Badge.\nGrants access to the \"Jolly\" Title + \"🎄\" Tag effect.",
+   "enabled": true,
+   "created": null,
+   "awarded": 168523,
+   "awarded_day": null,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] WC2026",
+   "description": "Badge.\nGrants access to the \"WC2026\" Title + \"⚽\" Tag effect!",
+   "enabled": true,
+   "created": null,
+   "awarded": 13506,
+   "awarded_day": null,
+   "icon": null
+  }
+ ],
+ "passes": [
+  {
+   "id": null,
+   "name": "Spectate",
+   "description": "",
+   "price": 499,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Better Customization",
+   "description": "",
+   "price": 149,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Size Changer",
+   "description": "",
+   "price": 399,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Invisibility",
+   "description": "",
+   "price": 399,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Drink Maker",
+   "description": "",
+   "price": 124,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Tip Jar",
+   "description": "",
+   "price": 25,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Triple Coins",
+   "description": "",
+   "price": 599,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Fly",
+   "description": "",
+   "price": 549,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Grab a Friend",
+   "description": "",
+   "price": 449,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": 1699490759,
+   "name": "[Non-Lethal] Weapons Pack",
+   "description": "",
+   "price": 299,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": 1735366681,
+   "name": "Coil Pack",
+   "description": "",
+   "price": 65,
+   "for_sale": true,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "[LIMITED] Valentine's Pack",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Phone",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Non-Lethal Knife",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Non-Lethal Shotgun",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Voice Changers",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Fusion Coil",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Gravity Coil",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Speed Coil",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  },
+  {
+   "id": null,
+   "name": "Custom Country",
+   "description": "",
+   "price": null,
+   "for_sale": false,
+   "icon": null
+  }
+ ]
+}

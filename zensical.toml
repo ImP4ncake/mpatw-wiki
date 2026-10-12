@@ -13,26 +13,39 @@ edit_uri = "edit/main/docs/"
 nav = [
   { "Home" = "index.md" },
   { "Getting started" = "getting-started.md" },
-  { "Features" = [
-    { "Profiles and countries" = "features/profiles-and-countries.md" },
-    { "Reputation and comments" = "features/reputation-and-comments.md" },
+  { "Wiki sections" = [
+    { "Country" = "sections/country.md" },
+    { "Items" = "sections/items.md" },
+    { "Troll" = "sections/troll.md" },
+    { "Titles" = "sections/titles.md" },
+    { "Banners" = "sections/banners.md" },
+    { "Tip Jars" = "sections/tip-jars.md" },
+    { "Locations" = "sections/locations.md" },
+    { "Meet People Legends" = "sections/legends.md" },
+  ] },
+  { "Game guide" = [
+    { "Profiles and reputation" = "features/reputation-and-comments.md" },
     { "Servers" = "features/servers.md" },
     { "Activities" = "features/activities.md" },
     { "Seasonal events" = "features/events.md" },
+    { "Standard vs 18+ version" = "versions.md" },
   ] },
   { "Economy" = [
-    { "Currencies" = "economy/currencies.md" },
+    { "Coins and currencies" = "economy/currencies.md" },
     { "Codes" = "economy/codes.md" },
     { "Gamepasses" = "economy/gamepasses.md" },
   ] },
   { "Badges" = "badges.md" },
-  { "Standard vs 18+ version" = "versions.md" },
-  { "FAQ" = "faq.md" },
-  { "Wiki" = [
+  { "Game stats" = "stats.md" },
+  { "Help" = [
+    { "FAQ" = "faq.md" },
     { "How to contribute" = "contributing.md" },
     { "Wiki updates" = "updates.md" },
   ] },
 ]
+
+extra_css = ["assets/stylesheets/game.css"]
+extra_javascript = ["assets/javascripts/game.js"]
 
 [project.theme]
 language = "en"
@@ -43,8 +56,6 @@ features = [
   "content.tooltips",
   "navigation.footer",
   "navigation.indexes",
-  "navigation.instant",
-  "navigation.instant.prefetch",
   "navigation.path",
   "navigation.sections",
   "navigation.top",
@@ -53,8 +64,14 @@ features = [
   "toc.follow",
 ]
 
+logo = "assets/images/logo.svg"
+favicon = "assets/images/logo.svg"
+
+[project.theme.font]
+text = "Nunito"
+code = "JetBrains Mono"
+
 [project.theme.icon]
-logo = "lucide/globe"
 repo = "fontawesome/brands/github"
 
 [[project.theme.palette]]
@@ -95,6 +112,8 @@ pymdownx.keys = {}
 pymdownx.magiclink = {}
 pymdownx.mark = {}
 pymdownx.smartsymbols = {}
+pymdownx.snippets.base_path = ["includes"]
+pymdownx.snippets.check_paths = true
 pymdownx.superfences = {}
 pymdownx.tabbed.alternate_style = true
 pymdownx.tasklist.custom_checkbox = true

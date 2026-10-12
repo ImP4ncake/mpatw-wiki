@@ -2,7 +2,14 @@
 icon: lucide/star
 ---
 
-# Reputation and comments
+# Profiles and reputation
+
+## Your profile
+
+Every player has a profile that others can open. You can customize it, and it shows your [reputation](#reputation) and the [comments](#comments) other players left you.
+
+- The **Better Customization** gamepass unlocks extra customization options (see [Gamepasses](../economy/gamepasses.md)).
+- Many [badges](../badges.md) unlock a **title** and a **tag effect** (an emoji) that you can show on your profile.
 
 ## Reputation
 
@@ -15,8 +22,6 @@ Two badges are tied to reputation:
 | **Famous** | Reach **10,000** reputation |
 | **Infamous** | Reach **-10,000** reputation |
 
-Both are rare: far fewer players have Infamous than Famous.
-
 !!! question "Needs info"
 
     How do you gain or lose reputation? Can you give reputation to other players, and is there a cooldown? Please [help complete this section](../contributing.md).
@@ -28,7 +33,3 @@ You can leave **comments** on other players' profiles, and they can leave commen
 !!! warning "Be kind"
 
     Comments are public. Don't post personal information about anyone (including yourself), and don't use comments to harass people. Report abuse with Roblox's built-in tools.
-
-!!! question "Needs info"
-
-    Can you delete comments on your own profile? Is there a length limit?

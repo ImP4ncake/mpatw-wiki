@@ -17,11 +17,16 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 | Path | What it is |
 |---|---|
 | `docs/` | The wiki pages, written in Markdown |
+| `docs/assets/stylesheets/game.css` | The game-style look (colors, fonts, buttons, menu tiles) |
+| `docs/assets/javascripts/game.js` | Animated counters and countdowns |
+| `scripts/update_data.py` | Downloads live stats, badges and gamepasses from the Roblox APIs |
+| `data/` | Saved game data and the daily history used for the stats chart |
+| `includes/` | Snippets included in pages (`includes/generated/` is written by the script) |
 | `docs/assets/images/` | Screenshots and images |
 | `zensical.toml` | Site settings and the navigation menu |
 | `templates/page-template.md` | Starting point for new pages |
 | `requirements.txt` | The pinned Zensical version |
-| `.github/workflows/docs.yml` | Builds and publishes the site on every push to `main` |
+| `.github/workflows/docs.yml` | Builds and publishes the site on every push to `main` and every 6 hours |
 
 ### Preview on your computer (optional)
 
@@ -33,6 +38,12 @@ zensical serve
 ```
 
 Then open http://localhost:8000 in your browser. The preview reloads automatically when you save a file.
+
+### Live game data
+
+Every 6 hours GitHub Actions runs `scripts/update_data.py`, which reads the official Roblox APIs (no login needed) and regenerates the stats, badge and gamepass tables, then republishes the site. Once a day it also saves a data point in `data/history.json`, which feeds the "Visits per day" chart.
+
+To run it yourself: `python scripts/update_data.py` (or `--offline` to only regenerate the pages from the saved data).
 
 ### Updating Zensical
 

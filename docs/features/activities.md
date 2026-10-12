@@ -31,7 +31,7 @@ There are several combat arenas, each with its own weapon. Defeating **50 player
 ## Games and challenges
 
 - **Chess**: win **25 games** for the **Grandmaster** badge.
-- **Country Trivia**: reach a **50 streak** for the **Wayfarer** badge. See [Profiles and countries](profiles-and-countries.md#country-trivia).
+- **Country Trivia**: reach a **50 streak** for the **Wayfarer** badge.
 - **Lottery**: rolling **777** gives the **Win the Lottery** badge.
 - **Leaderboards**: being **#1** on a non-timed leaderboard gives the **Angel** badge. There are also **Ranked Seasons** with an ELO rating that resets every month: finishing a season at #1 gives the **Sovereign** badge, which only one player had at the time of writing.
 

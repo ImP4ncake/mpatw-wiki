@@ -18,7 +18,7 @@ New to *Meet People Across The World*? This page covers the basics.
 
 ## Your first minutes
 
-- **Check out other players.** Every player's country is shown, which is the whole idea of the game: meeting people from different parts of the world. See [Profiles and countries](features/profiles-and-countries.md).
+- **Check out other players.** Every player's country is shown, which is the whole idea of the game: meeting people from different parts of the world. See [Country](sections/country.md).
 - **Set up your profile.** You can customize how your profile looks.
 - **Be friendly.** Your [reputation](features/reputation-and-comments.md) is visible to everyone, and people can leave comments on your profile.
 - **Explore the map.** There are lots of [activities](features/activities.md) to try, like the piano, the drawing area and the arenas.
