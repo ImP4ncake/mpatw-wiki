@@ -9,10 +9,12 @@ How the 18+ version has changed since it opened in October 2024. The main milest
 
 ## Badges added over time
 
-When each badge was added to the 18+ version, based on the official badge list.
+When each badge was added to the 18+ version, based on the official badge list. Click a badge to see how to get it.
 
 --8<-- "generated/badge-timeline.md"
 
 ## Game updates
 
-Every update the wiki has recorded is listed in the [Update History](../events/update-history.md).
+Every game update and every official announcement is on the Update History page.
+
+[:lucide-history: Open the Update History](../events/update-history.md){ .mp-btn .mp-btn--blue }

@@ -10,7 +10,6 @@ description: "Differences between the 18+ and the standard version."
 | | 18+ version | Standard version |
 |---|---|---|
 | **Who can play** | Adults (18+) only | Everyone allowed by Roblox |
-| **Released** | 18 Oct 2024 | 1 Sep 2024 |
 | **Average playtime** | about 19 minutes | about 10.5 minutes |
 | **Play** | [Open on Roblox](https://www.roblox.com/games/110570058234582) | [Open on Roblox](https://www.roblox.com/games/78699621133325) |
 
