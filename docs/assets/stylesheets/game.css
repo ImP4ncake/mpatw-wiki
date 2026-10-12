@@ -609,6 +609,12 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
 }
 
+/* key facts in two even columns */
+.mp-stats--pairs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .mp-stat {
   --stat: #6b7280;
   display: grid;
@@ -3065,6 +3071,107 @@ body {
   .mp-totop {
     display: none;
   }
+}
+
+/* ==========================================================================
+   Game Information: the creator card and highlighted timeline items
+   ========================================================================== */
+
+.md-typeset .mp-creator {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: start;
+  margin: 1.2rem 0 1.8rem;
+  padding: 1.1rem 1.2rem 1.15rem;
+  border-radius: 20px;
+  background: var(--mp-panel);
+  color: var(--mp-on-dark);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink), 0 20px 36px -18px rgba(10, 30, 60, 0.55);
+}
+
+.md-typeset .mp-creator__avatar {
+  display: grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  border: 3px solid var(--mp-ink);
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 50%),
+    linear-gradient(180deg, #b48cff, #7c4ddb);
+  box-shadow: 0 4px 0 var(--mp-ink);
+  color: #fff;
+}
+
+.md-typeset .mp-creator__avatar .twemoji,
+.md-typeset .mp-creator__avatar svg {
+  width: 2.1rem;
+  height: 2.1rem;
+  max-height: none;
+  filter: drop-shadow(0 2px 0 var(--mp-ink));
+}
+
+.md-typeset .mp-creator__body > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset .mp-creator__body p {
+  margin: 0.5em 0;
+  color: #e9edf4;
+}
+
+.md-typeset .mp-creator__body strong {
+  color: #fff;
+}
+
+.md-typeset .mp-creator__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.7rem;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.15;
+  color: var(--mp-gold-2);
+  text-shadow: var(--mp-outline-thin);
+}
+
+.md-typeset .mp-creator__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  background: rgba(59, 143, 240, 0.25);
+  font-family: var(--mp-label);
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #8fd0ff;
+  text-shadow: none;
+}
+
+.md-typeset .mp-creator__chip .twemoji,
+.md-typeset .mp-creator__chip svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+@media screen and (max-width: 30em) {
+  .md-typeset .mp-creator {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
+
+.md-typeset .mp-timeline__item--hl {
+  background: linear-gradient(180deg, rgba(255, 214, 72, 0.22), rgba(255, 214, 72, 0.08)), var(--mp-tile);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #0b0b0e, 0 4px 0 #0b0b0e, inset 0 0 0 2px rgba(255, 214, 72, 0.6);
+}
+
+.md-typeset .mp-timeline__item--hl::before {
+  background: #fff3a8;
+  box-shadow: 0 0 0 2px var(--mp-ink), 0 0 10px rgba(255, 214, 72, 0.9);
 }
 
 /* ==========================================================================
