@@ -21,6 +21,10 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 
 Only people with write access to this repository can change what is published. Anyone else can only *suggest* a change with a pull request, and nothing goes live until it is merged into `main`. The publishing workflow never runs for pull requests.
 
+## Changing the look
+
+The look lives in `docs/assets/stylesheets/game.css` and the small animations in `docs/assets/javascripts/game.js`. GitHub Pages lets browsers keep these files for up to 10 minutes, so after editing either one, change the `?v=` number next to it in `zensical.toml` (for example `?v=20261012-2` to `?v=20261013-1`). Browsers then load the new version as soon as the site is published.
+
 ## Preview on your computer (optional)
 
 You need Python 3 installed.
