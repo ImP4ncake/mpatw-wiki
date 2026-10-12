@@ -23,7 +23,8 @@ You don't build reputation on your own: it comes from the **players you interact
 </div>
 
 - **You choose** who gets your reputation, and whether it is positive or negative.
-- **Your coins are the limit.** For example, a player with **1,000 coins** can give other players a total of **+1,000** or **−1,000** reputation.
+- **Your coins are the only limit.** For example, a player with **1,000 coins** can give other players a total of **+1,000** or **−1,000** reputation.
+- **There is no cooldown**: you can give reputation whenever you want, to the same player too.
 - **Reputation can go below zero**, even very far below.
 
 ## Reputation badges
@@ -31,9 +32,5 @@ You don't build reputation on your own: it comes from the **players you interact
 --8<-- "generated/badge/famous.md"
 
 --8<-- "generated/badge/infamous.md"
-
-!!! question "Needs info"
-
-    Is there a limit on how much reputation you can give the same player, or a cooldown between gifts? [Help complete this page](../wiki/contribute.md).
 
 See also: [Reputation Guide](../guides/reputation.md).
