@@ -5,20 +5,20 @@ description: "Every code with its reward, and how to redeem it."
 
 # Codes
 
-Free rewards for everyone. **Click a code to copy it**, then redeem it in the game's settings.
+Free rewards for everyone, in both the **18+** and the **standard** version. **Click a code to copy it**, then redeem it in the game's settings.
 
 <div class="mp-codes" markdown>
 
 <div class="mp-code" markdown>
 <div class="mp-code__reward mp-code__reward--luck" markdown="span">:lucide-clover: 1 Lucky Token</div>
 <button class="mp-code__copy" type="button" data-copy="IMFEELINGLUCKY" title="Copy the code"><span class="mp-code__text">IMFEELINGLUCKY</span><span class="mp-code__btn">Copy</span></button>
-<div class="mp-code__tags"><span class="mp-code__tag mp-code__tag--ok">Works in the standard version · Aug 2026</span><span class="mp-code__tag mp-code__tag--unknown">18+ version: not checked yet</span></div>
+<div class="mp-code__tags"><span class="mp-code__tag mp-code__tag--ok">Works in 18+ and standard</span><span class="mp-code__tag">Reported August 2026</span></div>
 </div>
 
 <div class="mp-code" markdown>
 <div class="mp-code__reward mp-code__reward--coins" markdown="span">:lucide-coins: 50 coins</div>
 <button class="mp-code__copy" type="button" data-copy="VCWORLD" title="Copy the code"><span class="mp-code__text">VCWORLD</span><span class="mp-code__btn">Copy</span></button>
-<div class="mp-code__tags"><span class="mp-code__tag mp-code__tag--ok">Works in the standard version · Aug 2026</span><span class="mp-code__tag mp-code__tag--unknown">18+ version: not checked yet</span></div>
+<div class="mp-code__tags"><span class="mp-code__tag mp-code__tag--ok">Works in 18+ and standard</span><span class="mp-code__tag">Reported August 2026</span></div>
 </div>
 
 </div>
@@ -41,6 +41,6 @@ New codes are usually shared in the game's official **community server**. Redeem
 
 --8<-- "generated/badge/coder.md"
 
-!!! warning "Tried these codes in the 18+ version?"
+!!! question "Found a new code?"
 
-    Both codes were reported for the standard version. If you have tried them in the 18+ version, tell us whether they work: [update this page](../wiki/contribute.md).
+    If you find a new code, or one of these stops working, [update this page](../wiki/contribute.md).
