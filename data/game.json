@@ -1,591 +1,590 @@
 {
- "seed": true,
  "universe_id": 6690355795,
- "fetched_at": "2026-10-12T15:10:00Z",
+ "fetched_at": "2026-10-12T15:28:42Z",
  "game": {
   "name": "[🎃] 18+ Meet People Across The World 🔊",
-  "playing": 1256,
-  "visits": 33072777,
-  "favorites": 420927,
+  "playing": 1232,
+  "visits": 33074127,
+  "favorites": 420932,
   "max_players": 65,
   "created": "2024-10-18T19:07:58.277Z",
   "updated": "2026-10-11T04:19:59.674Z",
   "creator": "Nogo"
  },
  "votes": {
-  "up": 70399,
+  "up": 70401,
   "down": 2083
  },
  "badges": [
   {
-   "id": null,
+   "id": 1499448980254298,
    "name": "Welcome to Meet People Across The World!",
-   "description": "Welcome!",
+   "description": "Hello!\nHola!\nBonjour!\nHallo!\n你好!\nनमस्ते!\n!مرحبا\nЗдравствуйте!\nこんにちは!\nOlá!\nCiao / Salve!\n안녕하세요!",
    "enabled": true,
-   "created": null,
-   "awarded": 4613804,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-02-01T07:02:19.989+00:00",
+   "awarded": 4613891,
+   "awarded_day": 7055,
+   "icon": "https://tr.rbxcdn.com/180DAY-e6785a19a8d35ad48f975e91f3db4816/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3482214868025075,
    "name": "Invite a Friend!",
-   "description": "Badge.\nGrants access to the \"Friendly\" Title + \"🤗\" Tag effect + 100 Coins",
+   "description": "Grants access to the \"Friendly\" Title + \"🤗\" Tag effect + 100 Coins!",
    "enabled": true,
-   "created": null,
-   "awarded": 45263,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-04-23T21:14:49.921+00:00",
+   "awarded": 45267,
+   "awarded_day": 137,
+   "icon": "https://tr.rbxcdn.com/180DAY-d2c4ae76fdf28a745fd331f72b50c392/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 286715104170537,
    "name": "Famous",
-   "description": "Badge.\nGrants access to the \"Famous\" Title + \"🤩\" Tag effect",
+   "description": "Reach 10000 Reputation! Grants access to the \"Famous\" Title + \"🤩\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-11-22T22:22:31.843+00:00",
    "awarded": 2518,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 13,
+   "icon": "https://tr.rbxcdn.com/180DAY-84cd85383252341f567782b0ca831ec6/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1877170112526443,
    "name": "Infamous",
-   "description": "Badge.\nGrants access to the \"Infamous\" Title + \"🤐\" Tag effect",
+   "description": "Reach -10000 Reputation! Grants access to the \"Infamous\" Title + \"🤐\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-11-22T22:24:24.794+00:00",
    "awarded": 219,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 1,
+   "icon": "https://tr.rbxcdn.com/180DAY-eb9db11875639783840e890d9cd10dcf/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 4247990776219925,
    "name": "Wayfarer",
-   "description": "Badge.\nGrants access to the \"Wayfarer\" Title + \"🗺️\" Tag effect",
+   "description": "Get a Streak of 50 at the Country Trivia!\nGrants access to the \"Wayfarer\" Title + \"🗺️\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-04-07T21:18:24.727+00:00",
    "awarded": 427,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-8f330f9b4718712f427f4395850fffa1/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3854157711349968,
    "name": "Gifter",
-   "description": "Badge.\nGrants access to the \"Gifter\" Title + \"🎁\" Tag effect",
+   "description": "Gift anyone to receive this gift!\nGrants access to the \"Gifter\" Title + \"🎁\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-02-03T08:05:43.962+00:00",
    "awarded": 7662,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 23,
+   "icon": "https://tr.rbxcdn.com/180DAY-d8829d2547dbe0727ef31d36582cbbfe/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1042707351899870,
    "name": "Pet The Cat",
-   "description": "Badge.\nGrants access to the \"Cat\" + \"Meow\" Titles + \"🐾\" Tag effect",
+   "description": "Meow!\nGrants access to the \"Cat\"  + \"Meow\" Title + \"🐾\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-03-07T05:41:32.285+00:00",
    "awarded": 33939,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 47,
+   "icon": "https://tr.rbxcdn.com/180DAY-c4cb05c0f51cd17d560baaaf653c660e/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3511447898618588,
    "name": "Pet The Dog",
-   "description": "Badge.\nGrants access to the \"Dog\" + \"Woof\" Titles + \"🦴\" Tag effect",
+   "description": "Woof!\r\nGrants access to the \"Dog\"  + \"Woof\" Title + \"🦴\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-09-11T03:41:16.834+00:00",
    "awarded": 12037,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 22,
+   "icon": "https://tr.rbxcdn.com/180DAY-49521694eb054a22a75fe58610b0fabc/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3056385318521157,
    "name": "Win the Lottery",
-   "description": "Badge.\nGrants access to the \"Lucky\" + \"777\" Titles + \"🍀\" Tag Effect",
+   "description": "Roll 777 on the Lottery to win!\nGrants access to the \"Lucky\" + \"777\" Titles + \"🍀\" Tag Effect.",
    "enabled": true,
-   "created": null,
-   "awarded": 24578,
-   "awarded_day": null,
-   "icon": null
+   "created": "2024-11-01T20:23:04.177+00:00",
+   "awarded": 24580,
+   "awarded_day": 124,
+   "icon": "https://tr.rbxcdn.com/180DAY-1ee682dcb36c15e23762bfb105c2567b/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2298768038794539,
    "name": "Coder",
-   "description": "Badge.\nGrants access to the \"Coder\" Title + \"👾\" Tag effect",
+   "description": "Redeem a Code found in the Community Server!\nGrants access to the \"Coder\" Title + \"👾\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2025-06-10T03:27:44.136+00:00",
    "awarded": 2637,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 4,
+   "icon": "https://tr.rbxcdn.com/180DAY-2c467503bef211aefa6b1ff5af587ec3/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 270986075717743,
    "name": "Fabled",
-   "description": "Badge.\nGrants access to the \"Fabled\" Title + \"☄️\" Tag effect",
+   "description": "You unlocked a Cosmetic with Fabled Rarity!\nGrants access to the \"Fabled\" Title + \"☄️\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-04-24T16:22:26.386+00:00",
    "awarded": 1884,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 1,
+   "icon": "https://tr.rbxcdn.com/180DAY-30d53cfaa934f89966bde6afc7af18a9/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3018114379771061,
    "name": "Drink Maker",
-   "description": "Badge.\nGrants access to the \"Drink Master\" Title + \"☕\" Tag effect",
+   "description": "Serve 50 Drinks at the Drink Area!\nGrants access to the \"Drink Master\" Title + \"☕\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 3271,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-08-04T21:09:01.029+00:00",
+   "awarded": 3272,
+   "awarded_day": 22,
+   "icon": "https://tr.rbxcdn.com/180DAY-a4695c83671927ce2f38ce2a48c978b3/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 252439107021619,
    "name": "Troller",
-   "description": "Badge.\nGrants access to the \"Troller\" Title + \"😈\" Tag effect",
+   "description": "Troll other Players 50 times!\r\nGrants access to the \"Troller\" Title + \"😈\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2025-08-04T21:10:45.487+00:00",
    "awarded": 2319,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 6,
+   "icon": "https://tr.rbxcdn.com/180DAY-938ad30ed029e7450f46c2b1c7495d6d/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1030454556046645,
    "name": "Swordmaster",
-   "description": "Badge.\nGrants access to the \"Swordmaster\" Title + \"🔪\" Tag effect",
+   "description": "Kill 50 Players in the Sword Arena!\nGrants access to the \"Swordmaster\" Title + \"🔪\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 12392,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-08-04T21:11:12.105+00:00",
+   "awarded": 12393,
+   "awarded_day": 13,
+   "icon": "https://tr.rbxcdn.com/180DAY-374ade0d3af9d68cae80e98bb410b844/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1700941772393899,
    "name": "Gunsmith",
-   "description": "Badge.\nGrants access to the \"Gunsmith\" Title + \"🔫\" Tag effect",
+   "description": "Kill 50 Players in the Gun Arena!\r\nGrants access to the \"Gunsmith\" Title + \"🔫\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2025-08-04T21:12:26.599+00:00",
    "awarded": 4147,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 5,
+   "icon": "https://tr.rbxcdn.com/180DAY-910195155066ae9493784e697d13b833/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2190997507135602,
    "name": "Boxer",
-   "description": "Badge.\nGrants access to the \"Boxer\" Title + \"🥊\" Tag effect",
+   "description": "Kill 50 Players in the Boxing Arena!\r\nGrants access to the \"Boxer\" Title + \"🥊\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2025-08-04T21:15:19.611+00:00",
    "awarded": 2728,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 4,
+   "icon": "https://tr.rbxcdn.com/180DAY-b8b86364b77c17e45923d4c18c888901/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2613156967976447,
    "name": "Sniper",
-   "description": "Badge.\nGrants access to the \"Sniper\" Title + \"🎯\" Tag effect",
+   "description": "Kill 50 Players in the Sniper Arena!\r\nGrants access to the \"Sniper\" Title + \"🎯\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-05T07:42:37.03+00:00",
    "awarded": 2888,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 16,
+   "icon": "https://tr.rbxcdn.com/180DAY-773bd7da95d04f26337558158648d2b3/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 4213200393811790,
    "name": "Arsonist",
-   "description": "Badge.\nGrants access to the \"Arsonist\" Title + \"💥\" Tag effect",
+   "description": "Kill 50 Players in the Bomb Arena!\r\nGrants access to the \"Arsonist\" Title + \"💥\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-05T07:42:29.467+00:00",
    "awarded": 564,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 6,
+   "icon": "https://tr.rbxcdn.com/180DAY-e64a568b92af74ee30f88e469ee183ad/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 372069360560009,
    "name": "Warrior",
-   "description": "Badge.\nGrants access to the \"Warrior\" Title + \"⚔️\" Tag effect",
+   "description": "Kill 50 Players in the Greatsword Arena!\r\nGrants access to the \"Warrior\" Title + \"⚔️\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-22T00:47:38.839+00:00",
    "awarded": 2541,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 22,
+   "icon": "https://tr.rbxcdn.com/180DAY-25ea2f5accb14c8d52ad7fc372836bd3/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1302048384026785,
    "name": "Robot",
-   "description": "Badge.\nGrants access to the \"Robot\" Title + \"🤖\" Tag effect",
+   "description": "Talk to the AI Chatbot 50 Times!\r\nGrants access to the \"Robot\" Title + \"🤖\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2025-08-04T21:15:52.24+00:00",
    "awarded": 1976,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 1,
+   "icon": "https://tr.rbxcdn.com/180DAY-79f7bae507aa5055349e174920c5dc7f/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2209191893983256,
    "name": "Played in VR",
-   "description": "Badge.\nGrants access to the \"VR\" Title + \"🤓\" Tag effect",
+   "description": "Join the game while on VR!\nGrants access to the \"VR\" Title + \"🤓\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 18091,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-08-04T21:16:24.545+00:00",
+   "awarded": 18092,
+   "awarded_day": 57,
+   "icon": "https://tr.rbxcdn.com/180DAY-f00291b6442b6aeb548c377bf5ad7039/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 851928721312584,
    "name": "Pianist",
-   "description": "Badge.\nGrants access to the \"Pianist\" Title + \"🎹\" Tag effect",
+   "description": "Play the Piano!\r\nGrants access to the \"Pianist\" Title + \"🎹\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 533159,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-10-09T08:12:35.467+00:00",
+   "awarded": 533182,
+   "awarded_day": 1224,
+   "icon": "https://tr.rbxcdn.com/180DAY-9d3246c6a2d8c77a44209627c22639c9/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3300611266548785,
    "name": "Artist",
-   "description": "Badge.\nGrants access to the \"Artist\" Title + \"🎨\" Tag effect",
+   "description": "Draw 1000 Times in the Draw Area!\nGrants access to the \"Artist\" Title + \"🎨\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 150876,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-10-09T08:23:28.098+00:00",
+   "awarded": 150885,
+   "awarded_day": 546,
+   "icon": "https://tr.rbxcdn.com/180DAY-bf4edce0ed9075630ca0938690c57119/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1412722076094420,
    "name": "Explorer",
-   "description": "Badge.\nGrants access to the \"Explorer\" Title + \"🌎🌍🌏\" Tag effect!",
+   "description": "Discover 100% (250/250) Countries!\r\nGrants access to the \"Explorer\" Title + \"🌎🌍🌏\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2026-01-10T18:24:45.577+00:00",
    "awarded": 11,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-e011e8fc8d67f4bb3f1e99dc42f99b70/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 370719571019555,
    "name": "Grandmaster",
-   "description": "Badge.\nGrants access to the \"Grandmaster\" Title + \"♟️\" Tag effect",
+   "description": "Win 25 Games of Chess! Grants access to the \"Grandmaster\" Title + \"♟️\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2026-02-26T00:58:27.034+00:00",
    "awarded": 85,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-dc9d6829c7a8c5d8e8d8b691b229d1b0/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3171671589882049,
    "name": "Builder",
-   "description": "Badge.\nGrants access to the \"Builder\" Title + \"🔨\" Tag effect",
+   "description": "Build 10 Blocks using the Hammer!\r\nGrants access to the \"Builder\" Title + \"🔨\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 11205,
-   "awarded_day": null,
-   "icon": null
+   "created": "2026-05-04T15:00:28.845+00:00",
+   "awarded": 11206,
+   "awarded_day": 46,
+   "icon": "https://tr.rbxcdn.com/180DAY-dc20f7f201472b0f132d8462aa0f6ce7/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2947403744774128,
    "name": "Angel",
-   "description": "Badge.\nGrants access to the \"Angel\" Title + \"🥇\" Tag effect",
+   "description": "You've been #1 on a non-timed Leaderboard!\nGrants access to the \"Angel\" Title + \"🥇\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-03T15:59:02.234+00:00",
    "awarded": 63,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-956d6c7d1cb99cc28c302829ae8957a1/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1732873122803343,
    "name": "Fallen Angel",
-   "description": "Badge.\nGrants access to the \"Fallen Angel\" Title + \"🥀\" Tag effect",
+   "description": "You've lost #1 on a non-timed Leaderboard while it updated ingame...\nGrants access to the \"Fallen Angel\" Title + \"🥀\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-05T07:42:19.408+00:00",
    "awarded": 35,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-fe650d9edd96385b1528f691bf981010/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3757463106915996,
    "name": "Winner",
-   "description": "Badge.\nGrants access to the \"Winner\" Title + \"🏆\" Tag effect",
+   "description": "You won a Community Server Event! Grants access to the \"Winner\" Title + \"🏆\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-03T16:00:16.707+00:00",
    "awarded": 11,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-81b83802129cb925a51ea263f2d27e0e/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2691491376190711,
    "name": "AFK",
-   "description": "Badge.\nGrants access to the \"AFK\" Title + \"💤\" Tag effect!",
+   "description": "Earn 1000 Coins while in the AFK World!\r\nGrants access to the \"AFK\" Title + \"💤\" Tag effect!",
    "enabled": true,
-   "created": null,
-   "awarded": 893,
-   "awarded_day": null,
-   "icon": null
+   "created": "2026-09-02T19:10:47.731+00:00",
+   "awarded": 894,
+   "awarded_day": 23,
+   "icon": "https://tr.rbxcdn.com/180DAY-bfc8762fa8a731fc648922c5218332c3/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 283272162883924,
    "name": "Honored",
-   "description": "Badge.\nGrants access to the \"Honored\" Title + \"🛡️\" Tag effect",
+   "description": "Become a Mod for the game to unlock. Thanks for keeping the game safe!\nGrants access to the \"Honored\" Title + \"🛡️\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2026-03-05T22:24:23.237+00:00",
    "awarded": 61,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-9162ae172ee6e91cb119b5e0b00d39d3/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 61226515840756,
    "name": "Sovereign",
-   "description": "Badge.\nUnlocks \"Sovereign\" Title + \"⚜️\" Effect",
+   "description": "Above all... Below none... You alone are the Sovereign.\r\nFinish #1 at the end of the Ranked Season (ELO Resets Monthly)\r\nUnlocks \"Sovereign\" Title + \"⚜️\" Effect",
    "enabled": true,
-   "created": null,
+   "created": "2026-05-14T05:19:41.412+00:00",
    "awarded": 4,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-8972bf8aefb06eae836365b3d0c178b4/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2887443477451814,
    "name": "Rainmaker",
-   "description": "Badge.\nGrants access to the \"Rainmaker\" Title + \"🌧️\" Tag effect!",
+   "description": "Make it Rain any Currency!\r\nGrants access to the \"Rainmaker\" Title + \"🌧️\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2026-10-05T17:05:35.934+00:00",
    "awarded": 72,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 6,
+   "icon": "https://tr.rbxcdn.com/180DAY-827a95830c09f22239bc32a347ca088e/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2522768546167271,
    "name": "[LIMITED] Loved",
-   "description": "Badge.\nGrants access to the \"Loved\" Title + \"❤️\" Tag effect.",
+   "description": "You bought or got gifted the Valentines Pack! Only available around Valentine's Day.\nGrants access to the \"Loved\" Title + \"❤️\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2026-01-10T18:23:23.883+00:00",
    "awarded": 402,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 1,
+   "icon": "https://tr.rbxcdn.com/180DAY-9019d08f4c91d85511788d4739814047/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 1578747226982594,
    "name": "[LIMITED] Blessed",
-   "description": "Badge.\nGrants access to the \"Blessed\" + \"7777\" Titles + \"😇\" Tag effect.",
+   "description": "Roll 7777 on the Saint Patrick's Lottery to win!\nGrants access to the \"Blessed\" + \"7777\" Titles + \"😇\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-03-13T06:59:54.179+00:00",
    "awarded": 327,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-b6419ee197820845fb5e8adb13d2e222/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 743022719795544,
    "name": "[LIMITED] Win The Lottery?",
-   "description": "Badge.\nGrants access to the \"Fool\" Title + \"🤡\" Tag effect.",
+   "description": "Might want to check what day it is...\nGrants access to the \"Fool\" Title + \"🤡\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-03-31T07:31:19.869+00:00",
    "awarded": 6158,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-c1d9a56fc03a3e95e8ee88951635d41a/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3473857907422274,
    "name": "[LIMITED] Easter Collector",
-   "description": "Badge.\nGrants access to the \"Bunny\" Title + \"🥚\" Tag effect",
+   "description": "Find all 50 Easter Eggs!\nGrants access to the \"Bunny\" Title + \"🥚\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-04-12T05:20:51.726+00:00",
    "awarded": 4817,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-1b4d4a51a7bf25385bd4a74694825c68/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3088632247512494,
    "name": "[LIMITED] Trick or Treat!",
-   "description": "Badge.\nGrants access to the \"Trick or Treat?\" Title + \"🎃\" Tag effect.",
+   "description": "Win a Special Treat at the Spooky Shed!\r\nGrants access to the \"Trick or Treat?\" Title + \"🎃\" Tag effect.",
    "enabled": true,
-   "created": null,
-   "awarded": 20835,
-   "awarded_day": null,
-   "icon": null
+   "created": "2025-09-30T19:40:44.105+00:00",
+   "awarded": 20851,
+   "awarded_day": 919,
+   "icon": "https://tr.rbxcdn.com/180DAY-3eaccf4511031feb03d8a63b84f46905/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 2764420885691813,
    "name": "[LIMITED] Claim The Christmas Gift",
-   "description": "Badge.\nGrants access to the \"Jolly\" Title + \"🎄\" Tag effect.",
+   "description": "Give a gift during the Christmas event!\nGrants access to the \"Jolly\" Title + \"🎄\" Tag effect.",
    "enabled": true,
-   "created": null,
+   "created": "2025-02-05T02:09:52.402+00:00",
    "awarded": 30233,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-e3d602df4a3f5b1ce0be5872084db8fb/150/150/Image/Png/noFilter"
   },
   {
-   "id": null,
+   "id": 3890236195822416,
    "name": "[LIMITED] WC2026",
-   "description": "Badge.\nGrants access to the \"WC2026\" Title + \"⚽\" Tag effect!",
+   "description": "Guess a winning team during the 2026 World Cup!\r\nGrants access to the \"WC2026\" Title + \"⚽\" Tag effect!",
    "enabled": true,
-   "created": null,
+   "created": "2026-07-09T21:53:21.6+00:00",
    "awarded": 9880,
-   "awarded_day": null,
-   "icon": null
+   "awarded_day": 0,
+   "icon": "https://tr.rbxcdn.com/180DAY-4d2d87b7e71eb583ae1ae74e24ef7d8e/150/150/Image/Png/noFilter"
   }
  ],
  "passes": [
   {
    "id": 1680410538,
    "name": "Grab a Friend",
-   "description": "",
+   "description": "Grab, Lasso, Piggyback, or Carry anyone for free using the Friend Grab Item!\r\nThey must accept your request to be carried.",
    "price": 449,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-d9c44bd983440163a7765a2f697a9bc8/150/150/Image/Png/noFilter"
   },
   {
    "id": 1092539728,
    "name": "Fly",
-   "description": "",
+   "description": "Gain access to Flight! Also available in the Physics menu.",
    "price": 549,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-70e6d28e186ab3e2255f707bac5ec4bc/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050629316,
    "name": "Invisibility",
-   "description": "",
+   "description": "Turn invisible!",
    "price": 399,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-6830f84a85186ff48dc4e44be55bcf3e/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050872435,
    "name": "Size Changer",
-   "description": "",
+   "description": "Change your Player's size!\r\n\r\nRanges from 0.1x - 3.0x.",
    "price": 399,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-eb2c721e64a10c8b1264528c7db120c0/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050623435,
    "name": "Spectate",
-   "description": "",
+   "description": "Allows you to Spectate other Players.",
    "price": 499,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-2d0dc577b796d1ea61eae1c4308d68da/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050796668,
    "name": "Better Customization",
-   "description": "",
+   "description": "Lets you access more Customization options!",
    "price": 149,
    "for_sale": true,
-   "icon": null
-  },
-  {
-   "id": 1696805672,
-   "name": "[Non-Lethal] Weapons Pack",
-   "description": "",
-   "price": 299,
-   "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-4502aafb9752ef432c5c8f221543748d/150/150/Image/Png/noFilter"
   },
   {
    "id": 1080039664,
    "name": "Triple Coins",
-   "description": "",
+   "description": "Receive Triple (3x) the Amount of Coins from all sources (Except Coins Shop).",
    "price": 599,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-e317d2de53e0eac8a8e20eeaf4c9d9cc/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 1696805672,
+   "name": "[Non-Lethal] Weapons Pack",
+   "description": "These Weapons are purely cosmetic. You can't kill players ingame using them, they are non-lethal.\r\n\r\nIncludes:\r\n- Shotgun\r\n- Knife\r\n- Boxing Gloves\r\n- Sniper\r\n- Bomb\r\n- Water Gun\r\n- Greatsword",
+   "price": 299,
+   "for_sale": true,
+   "icon": "https://tr.rbxcdn.com/180DAY-6a678dd7a47125c44fde99f4bf397bb6/150/150/Image/Png/noFilter"
   },
   {
    "id": 1071097441,
    "name": "Drink Maker",
-   "description": "",
+   "description": "Gain access to make drinks!",
    "price": 124,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-392c426df92fa810fe12b90d7cee330f/150/150/Image/Png/noFilter"
   },
   {
    "id": 1074946838,
    "name": "Tip Jar",
-   "description": "",
+   "description": "Receive donations ingame!",
    "price": 25,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-f3743eebfc67253d4decb606b81a91e4/150/150/Image/Png/noFilter"
   },
   {
    "id": 1737645334,
    "name": "Coil Pack",
-   "description": "",
+   "description": "Includes:\r\n- Speed Coil\r\n- Fusion Coil\r\n- Gravity Coil",
    "price": 65,
    "for_sale": true,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-45716210da3e5d29751970501ebf0bc4/150/150/Image/Png/noFilter"
   },
   {
    "id": 1060279578,
    "name": "[LIMITED] Valentine's Pack",
-   "description": "",
+   "description": "Includes:\r\n- Rose 2 Player Emote\r\n- Heart Air Balloon\r\n- \"Loved\" Title\r\n- \"❤️\" Effect\r\n\r\nOnly available around Valentine's Day.",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-9019d08f4c91d85511788d4739814047/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050930358,
    "name": "Phone",
-   "description": "",
+   "description": "Just a Phone",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-14ddce9b755a14d5e3d51995087cc58e/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050497567,
    "name": "Non-Lethal Knife",
-   "description": "",
+   "description": "Wield a non-lethal Knife!",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-3f6447b3fd4667363a564b477fc8662c/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050772595,
    "name": "Non-Lethal Shotgun",
-   "description": "",
+   "description": "Wield a non-lethal Shotgun!",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-ae98f3bf8061e3a9f613b47f9432273e/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050228043,
    "name": "Voice Changers",
-   "description": "",
+   "description": "Gives access to changing your in-game Voice using the following Voice Changers:\r\n- Default\r\n- Alien\r\n- Bass Booted\r\n- Echo\r\n- Goofy\r\n- High Pitched\r\n- Reverb\r\n- Low Pitch",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-7687585833f67f0ea24d0584cdd352b8/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050716857,
    "name": "Fusion Coil",
-   "description": "",
+   "description": "Move much faster + Jump much higher.",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-bf761fdb7c252d24d10045d01ea947ba/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050367866,
    "name": "Gravity Coil",
-   "description": "",
+   "description": "Jump much higher.",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-cfcac57653673ae2e9feaa8d2ba4ed84/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050732759,
    "name": "Speed Coil",
-   "description": "",
+   "description": "Move much faster.",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-8d0f2499bf645756424aeb80dee79560/150/150/Image/Png/noFilter"
   },
   {
    "id": 1050465704,
    "name": "Custom Country",
-   "description": "",
+   "description": "Change the Country you're from to whatever you want!",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-7ac5e59f1e9eea42177c71ab3716629e/150/150/Image/Png/noFilter"
   },
   {
    "id": 1048297497,
    "name": "Gamepass Info [READ DESC]",
-   "description": "",
+   "description": "All Gamepasses are linked from the non-17+ VC World: https://www.roblox.com/games/78699621133325/VC-World#!/store\r\n\r\nMeaning any gamepass bought from there, is transferred here!\r\n\r\n[BUYING THIS DOES LITERALLY NOTHING. THIS IS ONLY ON SALE TO GIVE THE ABOVE INFORMATION]",
    "price": null,
    "for_sale": false,
-   "icon": null
+   "icon": "https://tr.rbxcdn.com/180DAY-a01b8e94ca99ca3101b8fe7a9ef22d87/150/150/Image/Png/noFilter"
   }
  ]
 }
