@@ -1272,6 +1272,48 @@ body {
   background: repeating-linear-gradient(45deg, #3c3e47 0 6px, #30323a 6px 12px);
 }
 
+/* item icons in tables, framed like the game's item slots. Gamepass icons
+   come from includes/generated/pass-icons.md (data-pass="..."), troll items
+   use a Lucide icon inside */
+.md-typeset .mp-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0.1rem 0.6rem 0.1rem 0;
+  border-radius: 9px;
+  background: radial-gradient(circle at 50% 30%, #5a5c66, #2a2b31);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 0 2px #000, 0 3px 0 #000;
+  color: #c9b8ff;
+}
+
+.md-typeset .mp-icon .twemoji,
+.md-typeset .mp-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  max-height: none;
+}
+
+.md-typeset .mp-icon--kill {
+  color: #ff6b5e;
+}
+
+/* icon + name: long names wrap next to the icon, not under it */
+.md-typeset .mp-iconname {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.md-typeset .mp-iconname .mp-icon {
+  margin: 0.1rem 0;
+}
+
 /* rarity labels, outlined like the game's text */
 .mp-rarity {
   display: inline-block;

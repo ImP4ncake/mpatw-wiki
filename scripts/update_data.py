@@ -714,6 +714,18 @@ def gen_passes(snap: dict) -> None:
     write("limited-passes.md", '<div class="mp-passes">' + "".join(pass_card(p, p in on_sale) for p in limited) + "</div>" if limited else "")
 
 
+def gen_pass_icons(snap: dict) -> None:
+    """A style block that shows each gamepass icon in <span class="mp-icon"
+    data-pass="name-in-lowercase-with-dashes">, so hand-written pages (like
+    Items) can show icons that stay up to date."""
+    rules = [
+        f'.md-typeset .mp-icon[data-pass="{slug(p["name"])}"]{{background-image:url("{p["icon"].replace(chr(34), "%22")}")}}'
+        for p in snap.get("passes", [])
+        if p.get("icon")
+    ]
+    write("pass-icons.md", "<style>" + "".join(rules) + "</style>" if rules else "")
+
+
 def stat_pill(icon: str, color: str, value, label: str, compact_value: bool) -> str:
     count = f' data-count="{value}"' if isinstance(value, (int, float)) else ""
     flag = " data-compact" if compact_value else ""
@@ -1405,6 +1417,7 @@ def main() -> int:
     gen_badge_hunting(badges)
     gen_badge_timeline(badges)
     gen_passes(snap)
+    gen_pass_icons(snap)
     gen_update_history(snap, history)
     gen_discord()
     gen_home_news(snap, badges)
