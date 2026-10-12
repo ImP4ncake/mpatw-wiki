@@ -22,14 +22,14 @@ There are **27 troll items**. Items marked <span class="mp-limited mp-limited--s
 
 | Item | What it does | Cost |
 |---|---|---|
-| **Drag** | Drags a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Grab** | Grabs a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Lasso** | Lassoes a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Carry** | Carries a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Piggyback** | Gives a player a piggyback ride | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Forcechoke** | Force-chokes a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Hair Steal** | Steals a player's hair and hats | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Scissors** | Gives someone a fresh haircut | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-footprints:</span>**Drag**</span> | Drags a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-hand-grab:</span>**Grab**</span> | Grabs a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-lasso:</span>**Lasso**</span> | Lassoes a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-biceps-flexed:</span>**Carry**</span> | Carries a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-users:</span>**Piggyback**</span> | Gives a player a piggyback ride | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-hand:</span>**Forcechoke**</span> | Force-chokes a player | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-crown:</span>**Hair Steal**</span> | Steals a player's hair and hats | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-scissors:</span>**Scissors**</span> | Gives someone a fresh haircut | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
 
 !!! tip "Grab a Friend"
 
@@ -39,13 +39,13 @@ There are **27 troll items**. Items marked <span class="mp-limited mp-limited--s
 
 | Item | What it does | Cost |
 |---|---|---|
-| **Troll Laser** | Trolls players with the troll effect you chose | <span class="mp-rarity mp-rarity--common" title="Not shown in the menu">?</span> |
-| **Avatar Item Laser** | Makes a player wear an avatar item | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Emote Laser** | Forces a player to do an emote | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Copy Player Laser** | Makes a player copy an avatar | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Copy Me Laser** | Makes a player copy your current avatar | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
-| **Size Changer Laser** | Turns a player into the size you choose | <span class="mp-rarity mp-rarity--rare" title="Troll Tokens per use">2 tokens</span> |
-| **Voice Changer Laser** | Forces a player to change their voice | <span class="mp-rarity mp-rarity--rare" title="Troll Tokens per use">2 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-laugh:</span>**Troll Laser**</span> | Trolls players with the troll effect you chose | <span class="mp-rarity mp-rarity--common" title="Not shown in the menu">?</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-shirt:</span>**Avatar Item Laser**</span> | Makes a player wear an avatar item | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-party-popper:</span>**Emote Laser**</span> | Forces a player to do an emote | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-copy:</span>**Copy Player Laser**</span> | Makes a player copy an avatar | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-user-round-pen:</span>**Copy Me Laser**</span> | Makes a player copy your current avatar | <span class="mp-rarity mp-rarity--uncommon" title="Troll Tokens per use">1 token</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-scaling:</span>**Size Changer Laser**</span> | Turns a player into the size you choose | <span class="mp-rarity mp-rarity--rare" title="Troll Tokens per use">2 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-mic-vocal:</span>**Voice Changer Laser**</span> | Forces a player to change their voice | <span class="mp-rarity mp-rarity--rare" title="Troll Tokens per use">2 tokens</span> |
 
 ## Items that kill
 
@@ -53,16 +53,16 @@ All of these have the red <span class="mp-limited mp-limited--small">KILLS</span
 
 | Item | What it does | Cost |
 |---|---|---|
-| **Hollow Purple** | "A devastating technique" | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Eat a Player** | Devours a player | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Troll Sniper** | A sniper rifle that appears when you use it | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Troll AK47** | An AK47 that appears when you use it | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Laser Eyes** | Burns a player with laser eyes | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Throw** | Throws a player | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Headcrush** | Grabs a player and crushes their head | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Void** | Sends a player to the Void | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Slam** | Grabs a player and slams their head | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
-| **Lethal Bomb** | Attach it to someone and watch them explode. **One-time use**: its button shows the price instead of Equip? | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens for one use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-orbit:</span>**Hollow Purple**</span> | "A devastating technique" | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-utensils:</span>**Eat a Player**</span> | Devours a player | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-crosshair:</span>**Troll Sniper**</span> | A sniper rifle that appears when you use it | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-target:</span>**Troll AK47**</span> | An AK47 that appears when you use it | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-eye:</span>**Laser Eyes**</span> | Burns a player with laser eyes | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-wind:</span>**Throw**</span> | Throws a player | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-hammer:</span>**Headcrush**</span> | Grabs a player and crushes their head | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-skull:</span>**Void**</span> | Sends a player to the Void | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-hand-fist:</span>**Slam**</span> | Grabs a player and slams their head | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens per use">3 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon mp-icon--kill">:lucide-bomb:</span>**Lethal Bomb**</span> | Attach it to someone and watch them explode. **One-time use**: its button shows the price instead of Equip? | <span class="mp-rarity mp-rarity--epic" title="Troll Tokens for one use">3 tokens</span> |
 
 The game says Troll Sniper and Troll AK47 become **permanent with the Weapons Pack**. The only weapons gamepass is the **[Non-Lethal] Weapons Pack**, whose description lists a Sniper but no AK47.
 
@@ -70,8 +70,8 @@ The game says Troll Sniper and Troll AK47 become **permanent with the Weapons Pa
 
 | Item | What it does | Cost |
 |---|---|---|
-| **Death Note** | Trolls players with the troll effect you chose, after the time you set | <span class="mp-rarity mp-rarity--common" title="Not shown in the menu">?</span> |
-| **Handcuffs** | Sends a player to jail for **20 minutes** | <span class="mp-rarity mp-rarity--legendary" title="Troll Tokens per use">15 tokens</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-notebook-pen:</span>**Death Note**</span> | Trolls players with the troll effect you chose, after the time you set | <span class="mp-rarity mp-rarity--common" title="Not shown in the menu">?</span> |
+| <span class="mp-iconname"><span class="mp-icon">:lucide-lock:</span>**Handcuffs**</span> | Sends a player to jail for **20 minutes** | <span class="mp-rarity mp-rarity--legendary" title="Troll Tokens per use">15 tokens</span> |
 
 !!! tip "Free in custom servers"
 
