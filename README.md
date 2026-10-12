@@ -1,4 +1,4 @@
-# MPATW Wiki
+# MPATW 18+ Wiki
 
 Unofficial fan wiki for the **18+ version** of the Roblox game **Meet People Across The World**.
 

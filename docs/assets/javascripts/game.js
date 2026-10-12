@@ -1,4 +1,4 @@
-/* MPATW Wiki - small dynamic touches: counters, countdowns, "x hours ago". */
+/* MPATW 18+ Wiki - small dynamic touches: counters, countdowns, "x hours ago". */
 (function () {
   "use strict";
 

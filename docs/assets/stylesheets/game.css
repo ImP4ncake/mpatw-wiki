@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MPATW Wiki - in-game look
+   MPATW 18+ Wiki - in-game look
    Everything here copies the UI of Meet People Across The World:
    - dark rounded panels with square tiles, like the in-game menu
    - chunky buttons with a black outline, like Play / Servers / AFK World
@@ -389,7 +389,7 @@ body {
 
 .md-typeset .mp-hero .mp-title {
   margin: 0.25em 0 0.2em;
-  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-size: clamp(1.6rem, 8.6vw, 4rem);
   line-height: 1.02;
   -webkit-text-stroke: 1.6px var(--mp-ink);
   filter: drop-shadow(0 3px 0 var(--mp-ink)) drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
@@ -2673,6 +2673,19 @@ body {
   .md-typeset ol.mp-hunt > li.mp-hunt__row .mp-rarity {
     grid-column: 3;
     justify-self: start;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .md-header__topic:first-child .md-ellipsis {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .md-header__topic:first-child .md-ellipsis {
+    font-size: 0.78rem;
+    padding-right: 0.15em;
   }
 }
 
