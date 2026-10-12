@@ -1,4 +1,4 @@
-# Contributing to the MPATW 18+ Wiki
+# Contributing to the MPATW Wiki
 
 Thanks for helping! The full guide, with step-by-step instructions and a formatting cheat sheet, is on the wiki:
 **https://imp4ncake.github.io/mpatw-wiki/wiki/contribute/**

@@ -11,7 +11,7 @@ hide:
 <div class="mp-hero__inner" markdown>
 <div class="mp-hero__text" markdown>
 <div class="mp-pills"><span class="mp-pill mp-pill--red">18+ VERSION</span><span class="mp-pill">UNOFFICIAL FAN WIKI</span></div>
-<h1 class="mp-title">MPATW 18+ Wiki</h1>
+<h1 class="mp-title">MPATW Wiki</h1>
 <p class="mp-hero__sub">The community encyclopedia for 18+ Meet People Across The World</p>
 <label class="mp-searchbox" for="__search" data-open-search markdown="span">:lucide-search: Search the wiki... <kbd>Ctrl K</kbd></label>
 <div class="mp-hero__buttons" markdown>
