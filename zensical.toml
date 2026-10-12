@@ -113,7 +113,7 @@ nav = [
   ] },
 ]
 
-extra_css = ["assets/stylesheets/game.css"]
+extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css"]
 extra_javascript = ["assets/javascripts/game.js"]
 
 [project.theme]
@@ -135,10 +135,9 @@ features = [
 
 logo = "assets/images/logo.svg"
 favicon = "assets/images/logo.svg"
+# Fonts are bundled in docs/assets/fonts (see assets/stylesheets/fonts.css)
+font = false
 
-[project.theme.font]
-text = "Nunito"
-code = "JetBrains Mono"
 
 [project.theme.icon]
 repo = "fontawesome/brands/github"

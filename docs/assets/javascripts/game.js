@@ -247,27 +247,68 @@
 
   function initBubbles() {
     var sky = document.querySelector(".mp-hero__sky");
-    if (!sky) return;
+    var hero = document.querySelector(".mp-hero");
+    var text = document.querySelector(".mp-hero__text");
+    if (!sky || !hero || !text) return;
     var last = -1;
+    var lanes = [];
+    var busyUntil = [];
+
+    // Bubbles only use the free sky to the right of the text, in separate
+    // lanes, so they never cover the text or each other.
+    function layout() {
+      var heroBox = hero.getBoundingClientRect();
+      var right = 0;
+      Array.prototype.forEach.call(text.children, function (child) {
+        var r = child.getBoundingClientRect();
+        if (r.width) right = Math.max(right, r.right - heroBox.left);
+      });
+      var start = right + 30;
+      var end = heroBox.width - 110;
+      lanes = [];
+      for (var x = start; x <= end; x += 120) lanes.push(x);
+      busyUntil = lanes.map(function () { return 0; });
+    }
+
     function spawn() {
-      if (document.hidden || sky.childElementCount > 14) return;
+      if (document.hidden || !lanes.length) return;
+      var now = Date.now();
+      var free = [];
+      lanes.forEach(function (x, i) { if (busyUntil[i] <= now) free.push(i); });
+      if (!free.length) return;
+      var lane = free[Math.floor(Math.random() * free.length)];
       var i;
       do { i = Math.floor(Math.random() * HELLOS.length); } while (i === last);
       last = i;
+      var duration = 8 + Math.random() * 3;
+      busyUntil[lane] = now + duration * 450;
       var b = document.createElement("span");
       b.className = "mp-bubble";
       b.textContent = HELLOS[i];
-      // Keep the bubbles beside the text, around the globe.
-      var narrow = window.innerWidth < 760;
-      b.style.left = (narrow ? 62 + Math.random() * 22 : 54 + Math.random() * 38) + "%";
-      if (narrow) b.style.fontSize = "0.68rem";
-      b.style.setProperty("--d", (7 + Math.random() * 4).toFixed(1) + "s");
-      b.style.setProperty("--sway", (Math.random() * 60 - 30).toFixed(0) + "px");
+      b.style.left = lanes[lane] + "px";
+      b.style.setProperty("--d", duration.toFixed(1) + "s");
+      b.style.setProperty("--sway", (Math.random() * 30 - 15).toFixed(0) + "px");
       b.addEventListener("animationend", function () { b.remove(); });
       sky.appendChild(b);
     }
-    for (var n = 0; n < 3; n++) setTimeout(spawn, n * 500);
-    setInterval(spawn, 1500);
+
+    layout();
+    window.addEventListener("resize", layout);
+    for (var n = 0; n < 3; n++) setTimeout(spawn, 300 + n * 600);
+    setInterval(spawn, 1300);
+  }
+
+  // Page titles get a black outline layer under a gold layer, like the
+  // game's title, without letters cutting into each other.
+  function initTitles() {
+    document.querySelectorAll(".md-typeset h1").forEach(function (h) {
+      var copy = h.cloneNode(true);
+      copy.querySelectorAll(".headerlink").forEach(function (x) { x.remove(); });
+      var label = copy.textContent.trim();
+      if (!label) return;
+      h.setAttribute("data-text", label);
+      h.classList.add("mp-outlined");
+    });
   }
 
   // A burst of sparks when you press Play.
@@ -303,6 +344,7 @@
   }
 
   function init() {
+    initTitles();
     initAccent();
     initSearchBox();
     initCounters();
