@@ -916,7 +916,10 @@ def gen_stats(snap: dict, history: list[dict]) -> None:
     creator = game.get("creator") or "Nogo"
     developer, publisher = esc(creator), ""
     if creator.lower() == "nogo":
-        developer = f'<a class="mp-who" href="{rel("game-info/overview.md", "game-info/nogo.md")}">{nogo_face("nogo")}Nogo</a>'
+        developer = (
+            f'<a class="mp-who" href="https://www.roblox.com/users/{CREATOR_USER_ID}/profile" '
+            f'target="_blank" rel="noopener">{nogo_face("nogo")}Nogo</a>'
+        )
         publisher = (
             f'| **Published by** | <a class="mp-who" href="https://www.roblox.com/groups/{CREATOR_GROUP_ID}" '
             f'target="_blank" rel="noopener">{nogo_face("group")}Nogo group</a> |'
