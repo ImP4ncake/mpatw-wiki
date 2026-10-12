@@ -26,7 +26,7 @@ A month and a half later came the **18+ version**: a separate experience only fo
 <div class="mp-creators" markdown>
 
 <div class="mp-creator" markdown>
-<div class="mp-creator__avatar mp-creator__avatar--nogo" role="img" aria-label="Nogo's profile picture"></div>
+<a class="mp-creator__avatar mp-creator__avatar--nogo" href="https://www.roblox.com/users/149639411/profile" target="_blank" rel="noopener" aria-label="Nogo's Roblox profile"></a>
 <div class="mp-creator__body" markdown>
 <div class="mp-creator__name" markdown="span">Nogo <span class="mp-creator__chip">:lucide-user-round: Creator</span></div>
 
@@ -37,7 +37,7 @@ Nogo is the Roblox developer who made *Meet People Across The World*. Since 2021
 </div>
 
 <div class="mp-creator" markdown>
-<div class="mp-creator__avatar mp-creator__avatar--group" role="img" aria-label="The Nogo group icon"></div>
+<a class="mp-creator__avatar mp-creator__avatar--group" href="https://www.roblox.com/groups/3394697" target="_blank" rel="noopener" aria-label="The Nogo group on Roblox"></a>
 <div class="mp-creator__body" markdown>
 <div class="mp-creator__name" markdown="span">Nogo group <span class="mp-creator__chip">:lucide-badge-check: Verified group</span></div>
 

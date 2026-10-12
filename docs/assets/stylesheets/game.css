@@ -3120,6 +3120,16 @@ body {
   background: var(--mp-nogo-group) center / 88% no-repeat, var(--mp-face-bg);
 }
 
+/* the pictures open Nogo's profile or the group on Roblox */
+.md-typeset a.mp-creator__avatar {
+  transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.md-typeset a.mp-creator__avatar:hover,
+.md-typeset a.mp-creator__avatar:focus-visible {
+  transform: scale(1.07) rotate(-4deg);
+}
+
 /* the creator card and the group card: side by side when there is room,
    otherwise one under the other */
 .md-typeset .mp-creators {

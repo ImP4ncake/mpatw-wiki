@@ -6,7 +6,7 @@ description: "The creator of the game, and every game by Nogo."
 # Nogo
 
 <div class="mp-creator" markdown>
-<div class="mp-creator__avatar mp-creator__avatar--nogo" role="img" aria-label="Nogo's profile picture"></div>
+<a class="mp-creator__avatar mp-creator__avatar--nogo" href="https://www.roblox.com/users/149639411/profile" target="_blank" rel="noopener" aria-label="Nogo's Roblox profile"></a>
 <div class="mp-creator__body" markdown>
 <div class="mp-creator__name" markdown="span">Nogo <span class="mp-creator__chip">:lucide-user-round: Creator</span></div>
 
