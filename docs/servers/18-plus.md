@@ -15,4 +15,4 @@ The full comparison is on [Game Versions](../game-info/versions.md).
 
 !!! warning "Adults only, still Roblox"
 
-    The 18+ label doesn't change Roblox's rules: the [Roblox Community Standards](https://en.help.roblox.com/hc/en-us/articles/203313410) and the game's own [rules](../community/rules.md) still apply.
+    The 18+ label doesn't change Roblox's rules: the [Roblox Community Standards](https://about.roblox.com/community-standards) and the game's own [rules](../community/rules.md) still apply.

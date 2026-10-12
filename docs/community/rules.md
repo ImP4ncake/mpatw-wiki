@@ -5,7 +5,7 @@ description: "The official game rules."
 
 # Rules
 
-The game has its own rules, which are posted in its official **community server**. On top of them, the [Roblox Community Standards](https://en.help.roblox.com/hc/en-us/articles/203313410) always apply, also in the 18+ version.
+The game has its own rules, which are posted in its official **community server**. On top of them, the [Roblox Community Standards](https://about.roblox.com/community-standards) always apply, also in the 18+ version.
 
 !!! question "Needs info"
 

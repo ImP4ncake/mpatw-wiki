@@ -14,7 +14,7 @@ The rules that keep the wiki accurate and pleasant to read.
 3. **No personal information.** Don't write about specific players, their countries or anything that could identify them. The only exception is the game's developer.
 4. **No private staff material.** Only publish moderation information that is public. No internal documents, staff tests or leaks.
 5. **No exploits or hacks.** Don't post ways to break the game's rules.
-6. **Follow Roblox's rules.** The game is 18+, but the wiki follows the [Roblox Community Standards](https://en.help.roblox.com/hc/en-us/articles/203313410): no explicit or hateful content.
+6. **Follow Roblox's rules.** The game is 18+, but the wiki follows the [Roblox Community Standards](https://about.roblox.com/community-standards): no explicit or hateful content.
 7. **Use your own screenshots.** Crop them, keep them small (`.webp` or `.png`) and put them in `docs/assets/images/`.
 8. **Write in English**, in a friendly and neutral tone.
 
