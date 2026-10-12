@@ -5,7 +5,7 @@ description: "Differences between the 18+ and the standard version."
 
 # Game Versions
 
-*Meet People Across The World* exists as **two separate Roblox experiences**, both made by [Nogo](nogo.md). This wiki covers the **18+ version**.
+*Meet People Across The World* exists as **two separate Roblox experiences**, both made by [<span class="mp-face mp-face--nogo"></span>Nogo](nogo.md){ .mp-who }. This wiki covers the **18+ version**.
 
 | | 18+ version | Standard version |
 |---|---|---|

@@ -53,6 +53,7 @@ from pathlib import Path
 UNIVERSE_ID = 6690355795
 PLACE_ID = 110570058234582
 CREATOR_USER_ID = 149639411  # Nogo's Roblox profile
+CREATOR_GROUP_ID = 3394697  # the Nogo group
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -318,7 +319,20 @@ def fetch_creator_games() -> list[dict]:
                 "visits": g.get("placeVisits"),
                 "place_id": (g.get("rootPlace") or {}).get("id"),
                 "owner": owner_name,
+                "owner_kind": kind,
+                "owner_id": owner_id,
+                "icon": None,
             }
+    try:
+        for group in chunks(list(found), 50):
+            joined = ",".join(str(i) for i in group)
+            url = (f"https://thumbnails.roblox.com/v1/games/icons?universeIds={joined}"
+                   "&returnPolicy=PlaceHolder&size=150x150&format=Png&isCircular=false")
+            for item in get_json(url).get("data", []):
+                if item.get("state") == "Completed" and item.get("imageUrl") and int(item["targetId"]) in found:
+                    found[int(item["targetId"])]["icon"] = item["imageUrl"]
+    except RuntimeError as exc:
+        print(f"warning: game icons not updated ({exc})")
     games = sorted(found.values(), key=lambda g: g.get("created") or "")
     for g in games:  # shown in the workflow log, to check the list
         print(f"  creator game: {g.get('created', '?')[:10]} | {g['name']} | {g.get('visits')} visits | {g['owner']}")
@@ -351,7 +365,7 @@ def update_snapshot(offline: bool) -> tuple[dict, bool]:
         if key == "creator_games" and not value:
             print("warning: no creator games found, keeping the last saved list")
             continue
-        if key in ("badges", "passes"):  # keep known icons if the icon service failed
+        if key in ("badges", "passes", "creator_games"):  # keep known icons if the icon service failed
             old_icons = {x.get("name"): x.get("icon") for x in snap.get(key, [])}
             for item in value:
                 item["icon"] = item["icon"] or old_icons.get(item.get("name"))
@@ -767,35 +781,75 @@ def gen_passes(snap: dict) -> None:
     write("limited-passes.md", '<div class="mp-passes">' + "".join(pass_card(p, p in on_sale) for p in limited) + "</div>" if limited else "")
 
 
+def nogo_face(kind: str) -> str:
+    """Small round picture next to a mention of Nogo: the profile picture
+    for Nogo the creator, the devil for the Nogo group."""
+    return f'<span class="mp-face mp-face--{kind}" aria-hidden="true"></span>'
+
+
+def clean_game_name(name: str) -> tuple[str, bool]:
+    """Drops event tags like "[🎃]" and the 🔊 sign, which becomes a chip.
+    Returns (name, has_voice_chat)."""
+    voice = "🔊" in name
+    name = re.sub(r"^\s*\[[^\]A-Za-z0-9]*\]\s*", "", name).replace("🔊", "")
+    return re.sub(r"\s{2,}", " ", name).strip(), voice
+
+
+def game_owner(g: dict) -> str:
+    kind, owner_id, owner = g.get("owner_kind"), g.get("owner_id"), g.get("owner") or ""
+    if kind == "user" or owner == "Nogo's account":
+        return nogo_face("nogo") + "Nogo's account"
+    if owner_id == CREATOR_GROUP_ID or owner == "Nogo group":
+        return nogo_face("group") + "Nogo group"
+    return f'<span class="mp-face mp-face--other" aria-hidden="true">{lucide("users")}</span>{esc(owner)}'
+
+
 def gen_creator_games(snap: dict) -> None:
-    """Nogo's games as a timeline, oldest first, with the two versions of
-    Meet People Across The World highlighted."""
+    """Nogo's games as cards grouped by year, oldest first, with the two
+    versions of Meet People Across The World highlighted."""
     games = snap.get("creator_games") or []
     if not games:
         write("nogo-games.md", "<p>The list of Nogo's games appears here after the next update from Roblox.</p>")
         return
-    items = []
+    total = sum(g["visits"] for g in games if isinstance(g.get("visits"), int))
+    first = parse_time(games[0].get("created"))
+    out = [
+        '<div class="mp-stats mp-stats--grid">',
+        stat_pill("gamepad-2", "violet", len(games), "games", False),
+        stat_pill("eye", "blue", total, "visits in total", True),
+        '<div class="mp-stat mp-stat--gold"><span class="mp-stat__icon" aria-hidden="true">' + lucide("calendar") + "</span>"
+        f'<span class="mp-stat__value">{first.year if first else "?"}</span><span class="mp-stat__label">first game</span></div>',
+        "</div>",
+        "",
+        '<div class="mp-games">',
+    ]
+    year = None
     for g in games:
-        name = esc(g.get("name") or "?")
-        if g.get("place_id"):
-            name = f'<a href="https://www.roblox.com/games/{esc(g["place_id"])}" target="_blank" rel="noopener">{name}</a>'
-        highlight = "meet people across the world" in (g.get("name") or "").lower()
-        if highlight:
-            name = f"<b>{name}</b>"
         created = parse_time(g.get("created"))
-        when = created.strftime("%b %Y") if created else "?"
-        details = [f"{compact(g['visits'])} visits"] if isinstance(g.get("visits"), int) else []
-        details.append(esc(g.get("owner") or ""))
-        cls = "mp-timeline__item mp-timeline__item--hl" if highlight else "mp-timeline__item"
-        items.append(
-            f'<div class="{cls}"><span class="mp-timeline__date">{when}</span>'
-            f'<span class="mp-timeline__text">{name}<small>{" · ".join(d for d in details if d)}</small></span></div>'
+        if created and created.year != year:
+            year = created.year
+            out.append(f'<div class="mp-games__year">{year}</div>')
+        name, voice = clean_game_name(g.get("name") or "?")
+        mpatw = "meet people across the world" in name.lower()
+        chips = [f'<span class="mp-game__chip">{created.strftime("%b %Y") if created else "?"}</span>']
+        if voice:
+            chips.append(f'<span class="mp-game__chip mp-game__chip--voice">{lucide("mic")} Voice chat</span>')
+        if g.get("id") == UNIVERSE_ID:
+            chips.append('<span class="mp-game__chip mp-game__chip--wiki">This wiki</span>')
+        visits = f'<span class="mp-game__visits">{compact(g["visits"])} visits</span>' if isinstance(g.get("visits"), int) else ""
+        inner = (
+            f"{icon_img(g.get('icon'), name)}"
+            f'<span class="mp-game__name">{esc(name)}</span>'
+            f'<span class="mp-game__chips">{"".join(chips)}</span>'
+            f'<span class="mp-game__foot"><span class="mp-game__by">{game_owner(g)}</span>{visits}</span>'
         )
-    write(
-        "nogo-games.md",
-        f'<p class="mp-lead"><b>{len(games)}</b> public games, from the oldest to the newest. '
-        f'Updated {time_tag(snap.get("fetched_at"))}.</p>\n\n<div class="mp-timeline">\n' + "\n".join(items) + "\n</div>",
-    )
+        cls = "mp-game mp-game--hl" if mpatw else "mp-game"
+        if g.get("place_id"):
+            out.append(f'<a class="{cls}" href="https://www.roblox.com/games/{esc(g["place_id"])}" target="_blank" rel="noopener">{inner}</a>')
+        else:
+            out.append(f'<div class="{cls}">{inner}</div>')
+    out += ["</div>", "", f'<p class="mp-updated">Updated {time_tag(snap.get("fetched_at"))} from Roblox.</p>']
+    write("nogo-games.md", "\n".join(out))
 
 
 def gen_pass_icons(snap: dict) -> None:
@@ -857,10 +911,14 @@ def gen_stats(snap: dict, history: list[dict]) -> None:
     write("stats.md", "\n".join(grid))
 
     on_sale = sum(1 for p in snap.get("passes", []) if p.get("for_sale"))
+    creator = game.get("creator") or "Nogo"
+    developer = esc(creator)
+    if creator.lower() == "nogo":
+        developer = f'<a class="mp-who" href="{rel("game-info/overview.md", "game-info/nogo.md")}">{nogo_face("nogo")}Nogo</a>'
     facts = [
         "| Game | 18+ Meet People Across The World |",
         "|---|---|",
-        f"| **Developer** | {esc(game.get('creator') or 'Nogo')} |",
+        f"| **Developer** | {developer} |",
         f"| **Released** | {nice_date(game.get('created'))} |",
         f"| **Last game update** | {time_tag(game.get('updated'))} |",
         "| **Age requirement** | 18+ |",
