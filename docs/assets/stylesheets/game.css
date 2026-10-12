@@ -3110,18 +3110,27 @@ body {
   color: #fff;
 }
 
-/* the Nogo group's own icon, on a light circle so it shows on the dark card */
-.md-typeset .mp-creator__avatar--img {
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 40%, #ffffff 0, #e4ecf7 70%, #c9d6e8 100%);
+/* Nogo's profile picture, with the Nogo group icon as a small badge in the
+   corner. If the picture can't load, the light circle stays. */
+.md-typeset .mp-creator__avatar--nogo {
+  position: relative;
+  background:
+    url("https://cdn.discordapp.com/avatars/322883679338627072/fb8153d8fef5d5d28c2cb3f8b7f01c1a.webp?size=256") center / cover no-repeat,
+    radial-gradient(circle at 50% 40%, #ffffff 0, #e4ecf7 70%, #c9d6e8 100%);
 }
 
-.md-typeset .mp-creator__avatar--img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: scale(1.18);
+.md-typeset .mp-creator__avatar--nogo::after {
+  content: "";
+  position: absolute;
+  right: -0.35rem;
+  bottom: -0.35rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--mp-ink);
+  background: url("../images/nogo-group.webp") center / contain no-repeat,
+    radial-gradient(circle at 50% 40%, #ffffff 0, #dfe8f5 100%);
+  box-shadow: 0 2px 0 var(--mp-ink);
 }
 
 .md-typeset .mp-creator__avatar .twemoji,
