@@ -14,7 +14,10 @@ description: "How reputation works: players turn their coins into positive or ne
 
 ## Where you see it
 
-Your reputation is the big number on your [profile](profiles.md) card, under your picture. It is also shown under your name in the game, together with your [title](../badges/titles.md).
+<div class="mp-where" markdown>
+<div class="mp-where__item mp-tone--violet" markdown="span"><span class="mp-where__icon">:lucide-id-card:</span><span class="mp-where__text"><b>On your profile card</b>The big number under your picture</span></div>
+<div class="mp-where__item mp-tone--blue" markdown="span"><span class="mp-where__icon">:lucide-user-round:</span><span class="mp-where__text"><b>In the game</b>Under your name, with your [title](../badges/titles.md)</span></div>
+</div>
 
 <figure class="mp-shot" markdown>
 ![A player's profile card in the game, with an arrow pointing to the reputation: −500,976](../assets/images/reputation-profile.webp){ width="960" height="576" loading="lazy" }
@@ -31,15 +34,26 @@ Your reputation is the big number on your [profile](profiles.md) card, under you
 
 ## Good to know
 
-- **You choose** who gets your reputation, and whether it is positive or negative.
-- **Your coins are the only limit.** With **1,000 coins** you can give other players a total of **+1,000** or **−1,000** reputation.
-- **There is no cooldown**: you can give reputation whenever you want, to the same player too.
-- **It can go below zero**, even very far below, like in the picture above.
+<div class="mp-facts" markdown>
+<div class="mp-fact mp-tone--violet" markdown="span"><span class="mp-fact__icon">:lucide-user-check:</span><span class="mp-fact__text"><b>You choose</b>Who gets your reputation, and whether it is positive or negative.</span></div>
+<div class="mp-fact mp-tone--gold" markdown="span"><span class="mp-fact__icon">:lucide-coins:</span><span class="mp-fact__text"><b>Your coins are the only limit</b>With 1,000 coins you can give a total of +1,000 or −1,000.</span></div>
+<div class="mp-fact mp-tone--blue" markdown="span"><span class="mp-fact__icon">:lucide-timer-off:</span><span class="mp-fact__text"><b>No cooldown</b>Give reputation whenever you want, to the same player too.</span></div>
+<div class="mp-fact mp-tone--red" markdown="span"><span class="mp-fact__icon">:lucide-trending-down:</span><span class="mp-fact__text"><b>It can go below zero</b>Even very far below, like the −500,976 in the picture.</span></div>
+</div>
 
 ## Reputation badges
 
---8<-- "generated/badge/famous.md"
+<div class="mp-scale" role="img" aria-label="Reputation scale: at −10,000 you get the Infamous badge, at +10,000 the Famous badge">
+<div class="mp-scale__bar"><span class="mp-scale__mark mp-scale__mark--low"></span><span class="mp-scale__mark mp-scale__mark--zero"></span><span class="mp-scale__mark mp-scale__mark--high"></span></div>
+<div class="mp-scale__labels"><span class="mp-scale__label mp-scale__label--low"><b>−10,000</b>Infamous 🤐</span><span class="mp-scale__label mp-scale__label--zero"><b>0</b></span><span class="mp-scale__label mp-scale__label--high"><b>+10,000</b>Famous 🤩</span></div>
+</div>
+
+<div class="mp-rep-badges" markdown>
 
 --8<-- "generated/badge/infamous.md"
+
+--8<-- "generated/badge/famous.md"
+
+</div>
 
 See also: [Reputation Guide](../guides/reputation.md).
