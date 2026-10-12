@@ -278,10 +278,11 @@
     setInterval(spawn, 1300);
   }
 
-  // Page titles get a black outline layer under a gold layer, like the
-  // game's title, without letters cutting into each other.
+  // Page titles and the wiki's name in the header get a black outline layer
+  // under a gold layer, like the game's title, without letters cutting into
+  // each other.
   function initTitles() {
-    document.querySelectorAll(".md-typeset h1").forEach(function (h) {
+    document.querySelectorAll(".md-typeset h1, .md-header__topic:first-child .md-ellipsis").forEach(function (h) {
       var copy = h.cloneNode(true);
       copy.querySelectorAll(".headerlink").forEach(function (x) { x.remove(); });
       var label = copy.textContent.trim();
