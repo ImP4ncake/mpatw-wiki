@@ -152,7 +152,7 @@ PASS_INFO = {
     "Speed Coil": "Boosts your movement speed",
     "Gravity Coil": "Boosts your jump height",
     "Fusion Coil": "Boosts your speed and jump height",
-    "Gamepass Info [READ DESC]": "Not a real pass: a notice that gamepasses bought in the standard version carry over",
+    "Gamepass Info [READ DESC]": "Not a real pass: a notice saying gamepasses are linked to the standard version",
 }
 
 RARITY_TIERS = [

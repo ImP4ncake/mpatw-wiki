@@ -20,13 +20,23 @@ description: "Differences between the 18+ and the standard version."
 
 ## What carries over
 
-| | Shared between versions? |
-|---|---|
-| Gamepasses | :lucide-check: Yes |
-| Badges | :lucide-check: Yes |
-| Everything else you have saved (for example coins) | :lucide-x: No, each version keeps its own data |
+The official description of **both** versions says:
 
-The 18+ version also lists a **Gamepass Info** notice: it explains that gamepasses can be bought in the standard version and carry over to this one.
+> Gamepasses + Badges save between versions, Data does not save between versions
+
+| | According to the game's description |
+|---|---|
+| Gamepasses | Saved between versions |
+| Badges | Saved between versions |
+| Everything else (for example coins) | Not saved: each version keeps its own data |
+
+The 18+ version also has a **Gamepass Info** pass (buying it does nothing) whose description explains how this works: all its gamepasses are **linked to the standard version**, so a gamepass bought there carries over to the 18+ version.
+
+!!! question "Needs info: not yet confirmed in-game"
+
+    The wiki hasn't been able to test this in the game, and some players say gamepasses don't carry over. If you have tested it, tell us what happened: does a gamepass bought in the standard version work in the 18+ version? And the other way around? [Help complete this page](../wiki/contribute.md).
+
+<small>Source: the descriptions of both games and of the Gamepass Info pass on Roblox, checked 12 October 2026.</small>
 
 ## Places inside the 18+ version
 
