@@ -2911,6 +2911,8 @@ body {
 .md-typeset .mp-code__tag {
   padding: 0.15em 0.65em;
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--mp-on-dark-2);
   font-size: 0.62rem;
   font-weight: 800;
   line-height: 1.6;
