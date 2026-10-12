@@ -120,7 +120,7 @@ body {
   font-family: var(--mp-display);
   font-weight: 700;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--mp-gold-2);
   text-shadow: var(--mp-outline-thin);
 }
@@ -2571,6 +2571,44 @@ body {
   animation: mp-title-shine 6s linear 1s infinite;
 }
 
+/* The wiki's name in the header: the same gold title as on the home page */
+.md-header__topic:first-child .md-ellipsis.mp-outlined {
+  position: relative;
+  overflow: visible;
+  letter-spacing: 0.02em;
+  word-spacing: 0.12em;
+  padding-left: 0.08em;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+.md-header__topic:first-child .md-ellipsis.mp-outlined::before,
+.md-header__topic:first-child .md-ellipsis.mp-outlined::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  pointer-events: none;
+}
+
+.md-header__topic:first-child .md-ellipsis.mp-outlined::before {
+  -webkit-text-fill-color: var(--mp-ink);
+  -webkit-text-stroke: 0.17em var(--mp-ink);
+  text-shadow: 0 0.07em 0 var(--mp-ink), 0 0.14em 0.3em rgba(0, 0, 0, 0.35);
+}
+
+.md-header__topic:first-child .md-ellipsis.mp-outlined::after {
+  background: linear-gradient(100deg, var(--mp-gold-2) 0%, var(--mp-gold-1) 18%, var(--mp-gold-2) 30%, var(--mp-gold-3) 52%,
+      var(--mp-gold-2) 70%, #fffbe0 80%, var(--mp-gold-2) 90%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: mp-title-shine 6s linear 1s infinite;
+}
+
 /* text boxes on the sky: solid enough that clouds don't show through */
 .mp-hero__sub,
 .mp-hero .mp-updated,
@@ -2676,13 +2714,13 @@ body {
 
 @media screen and (max-width: 380px) {
   .md-header__topic:first-child .md-ellipsis {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
   }
 }
 
 @media screen and (max-width: 340px) {
   .md-header__topic:first-child .md-ellipsis {
-    font-size: 0.78rem;
+    font-size: 1rem;
     padding-right: 0.15em;
   }
 }
