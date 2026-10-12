@@ -140,7 +140,7 @@ body {
 
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 1.9rem;
+  height: 2.3rem;
   width: auto;
 }
 
@@ -2571,13 +2571,45 @@ body {
   animation: mp-title-shine 6s linear 1s infinite;
 }
 
-/* The wiki's name in the header: the same gold title as on the home page */
+/* Header logo: the globe sits on the left end of a dark name plate with a
+   gold rim, and the name is the same gold title as on the home page */
+.md-header__button.md-logo {
+  position: relative;
+  z-index: 1;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.md-header__button.md-logo img {
+  filter: drop-shadow(0 2px 0 var(--mp-ink));
+  transition: transform 0.5s cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+
+.md-header__button.md-logo:hover img {
+  transform: rotate(-20deg) scale(1.08);
+}
+
+.md-header__title {
+  margin-left: -1.1rem;
+}
+
+.md-header__topic:first-child {
+  cursor: pointer;
+}
+
+.md-header__topic:first-child .md-ellipsis {
+  line-height: 1.85rem;
+  margin-top: 0.275rem;
+  padding: 0 0.8rem 0 1.45rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #3b3d49, #23242c);
+  box-shadow: inset 0 0 0 2px var(--mp-ink), inset 0 0 0 4px rgba(255, 214, 72, 0.55), 0 3px 0 var(--mp-ink);
+}
+
 .md-header__topic:first-child .md-ellipsis.mp-outlined {
   position: relative;
-  overflow: visible;
   letter-spacing: 0.02em;
   word-spacing: 0.12em;
-  padding-left: 0.08em;
   color: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0;
@@ -2595,18 +2627,26 @@ body {
 
 .md-header__topic:first-child .md-ellipsis.mp-outlined::before {
   -webkit-text-fill-color: var(--mp-ink);
-  -webkit-text-stroke: 0.17em var(--mp-ink);
-  text-shadow: 0 0.07em 0 var(--mp-ink), 0 0.14em 0.3em rgba(0, 0, 0, 0.35);
+  -webkit-text-stroke: 0.14em var(--mp-ink);
+  text-shadow: 0 0.08em 0 var(--mp-ink);
 }
 
 .md-header__topic:first-child .md-ellipsis.mp-outlined::after {
-  background: linear-gradient(100deg, var(--mp-gold-2) 0%, var(--mp-gold-1) 18%, var(--mp-gold-2) 30%, var(--mp-gold-3) 52%,
-      var(--mp-gold-2) 70%, #fffbe0 80%, var(--mp-gold-2) 90%);
-  background-size: 250% 100%;
+  background: linear-gradient(180deg, #fff6b8 10%, var(--mp-gold-2) 52%, var(--mp-gold-3) 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: mp-title-shine 6s linear 1s infinite;
+}
+
+/* phones and tablets: the globe stays next to the name, after the menu button */
+@media screen and (max-width: 76.234375em) {
+  .md-header__button.md-logo {
+    display: block;
+  }
+
+  .md-header__button[for="__drawer"] {
+    order: -1;
+  }
 }
 
 /* text boxes on the sky: solid enough that clouds don't show through */
@@ -2712,16 +2752,33 @@ body {
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
+  .md-header__button.md-logo img {
+    height: 2rem;
+  }
+
+  .md-header__title {
+    margin-left: -1rem;
+  }
+
   .md-header__topic:first-child .md-ellipsis {
-    font-size: 1.15rem;
+    font-size: clamp(0.75rem, calc((100vw - 228px) / 6.2), 1.15rem);
+    padding: 0 0.6rem 0 1.25rem;
   }
 }
 
 @media screen and (max-width: 340px) {
+  .md-header__button.md-logo img {
+    height: 1.7rem;
+  }
+
+  .md-header__title {
+    margin-left: -0.9rem;
+  }
+
   .md-header__topic:first-child .md-ellipsis {
-    font-size: 1rem;
-    padding-right: 0.15em;
+    font-size: clamp(0.65rem, calc((100vw - 218px) / 6), 0.9rem);
+    padding: 0 0.45rem 0 1.05rem;
   }
 }
 

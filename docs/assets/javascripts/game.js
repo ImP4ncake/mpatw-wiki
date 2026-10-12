@@ -292,6 +292,14 @@
     });
   }
 
+  // The name plate in the header leads to the home page, like the globe.
+  function initHeaderName() {
+    var logo = document.querySelector(".md-header__button.md-logo");
+    var name = document.querySelector(".md-header__topic:first-child");
+    if (!logo || !name) return;
+    name.addEventListener("click", function () { window.location.href = logo.href; });
+  }
+
   // A burst of sparks when you press Play.
   function initSparks() {
     var EMOJI = ["✨", "⭐", "🌍", "💬", "🎉"];
@@ -325,6 +333,7 @@
 
   function init() {
     initTitles();
+    initHeaderName();
     initAccent();
     initSearchBox();
     initCounters();
