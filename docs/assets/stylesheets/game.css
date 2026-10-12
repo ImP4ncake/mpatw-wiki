@@ -3114,9 +3114,7 @@ body {
    corner. If the picture can't load, the light circle stays. */
 .md-typeset .mp-creator__avatar--nogo {
   position: relative;
-  background:
-    url("https://cdn.discordapp.com/avatars/322883679338627072/fb8153d8fef5d5d28c2cb3f8b7f01c1a.webp?size=256") center / cover no-repeat,
-    radial-gradient(circle at 50% 40%, #ffffff 0, #e4ecf7 70%, #c9d6e8 100%);
+  background: var(--mp-nogo-pfp) center / cover no-repeat, var(--mp-face-bg);
 }
 
 .md-typeset .mp-creator__avatar--nogo::after {
@@ -3128,8 +3126,7 @@ body {
   height: 1.75rem;
   border-radius: 50%;
   border: 2px solid var(--mp-ink);
-  background: url("../images/nogo-group.webp") center / contain no-repeat,
-    radial-gradient(circle at 50% 40%, #ffffff 0, #dfe8f5 100%);
+  background: var(--mp-nogo-group) center / contain no-repeat, var(--mp-face-bg);
   box-shadow: 0 2px 0 var(--mp-ink);
 }
 
@@ -3202,6 +3199,192 @@ body {
 .md-typeset .mp-timeline__item--hl::before {
   background: #fff3a8;
   box-shadow: 0 0 0 2px var(--mp-ink), 0 0 10px rgba(255, 214, 72, 0.9);
+}
+
+/* ==========================================================================
+   Nogo everywhere: the profile picture next to Nogo the creator, the devil
+   next to the Nogo group. Used in text, buttons, tiles and game cards.
+   ========================================================================== */
+
+:root {
+  --mp-nogo-pfp: url("https://cdn.discordapp.com/avatars/322883679338627072/fb8153d8fef5d5d28c2cb3f8b7f01c1a.webp?size=256");
+  --mp-nogo-group: url("../images/nogo-group.webp");
+  --mp-face-bg: radial-gradient(circle at 50% 40%, #ffffff 0, #e4ecf7 70%, #c9d6e8 100%);
+}
+
+.md-typeset .mp-face {
+  display: inline-block;
+  flex: none;
+  width: 1.4em;
+  height: 1.4em;
+  margin-right: 0.35em;
+  border-radius: 50%;
+  vertical-align: -0.35em;
+  background: var(--mp-face-bg);
+  box-shadow: 0 0 0 2px var(--mp-ink);
+}
+
+.md-typeset .mp-face--nogo {
+  background: var(--mp-nogo-pfp) center / cover no-repeat, var(--mp-face-bg);
+}
+
+.md-typeset .mp-face--group {
+  background: var(--mp-nogo-group) center / contain no-repeat, var(--mp-face-bg);
+}
+
+.md-typeset .mp-face--other {
+  display: inline-grid;
+  place-items: center;
+  background: #3b3d49;
+  color: #c9cdd8;
+}
+
+.md-typeset .mp-face--other svg {
+  width: 0.85em;
+  height: 0.85em;
+}
+
+.md-typeset .mp-btn .mp-face {
+  margin-right: 0;
+}
+
+.md-typeset .mp-who {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* the photo fills a stat tile's icon circle */
+.md-typeset .mp-stat__icon.mp-face--nogo,
+.md-typeset .mp-stat__icon.mp-face--group {
+  box-shadow: none;
+}
+
+/* Games by Nogo: one card per game, grouped by year */
+.mp-games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.5rem), 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0 1rem;
+}
+
+.mp-games__year {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--mp-heading);
+}
+
+.mp-games__year::after {
+  content: "";
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--mp-gold-2), transparent);
+}
+
+.md-typeset .mp-game {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: 0.85rem;
+  row-gap: 0.3rem;
+  padding: 0.85rem;
+  border-radius: 14px;
+  background: var(--mp-tile);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #0b0b0e, 0 5px 0 #0b0b0e;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.16s cubic-bezier(0.2, 1.4, 0.4, 1), box-shadow 0.16s;
+}
+
+.md-typeset a.mp-game:hover {
+  background: var(--mp-tile-hi);
+  transform: translateY(-4px);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #4fb3ff, 0 8px 0 #0b0b0e;
+}
+
+.md-typeset .mp-game--hl {
+  background: linear-gradient(180deg, rgba(255, 214, 72, 0.2), rgba(255, 214, 72, 0.06)), var(--mp-tile);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #0b0b0e, 0 5px 0 #0b0b0e, inset 0 0 0 2px rgba(255, 214, 72, 0.65);
+}
+
+.md-typeset a.mp-game--hl:hover {
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px var(--mp-gold-2), 0 8px 0 #0b0b0e;
+}
+
+.mp-game .mp-thumb {
+  grid-row: span 3;
+}
+
+.mp-game__name {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  text-shadow: var(--mp-outline-thin);
+}
+
+.mp-game__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.mp-game__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.05em 0.55em;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1.6;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-game__chip svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.mp-game__chip--voice {
+  background: rgba(79, 179, 255, 0.2);
+  color: #8fd0ff;
+}
+
+.mp-game__chip--wiki {
+  background: rgba(255, 214, 72, 0.2);
+  color: var(--mp-gold-2);
+}
+
+.mp-game__foot {
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem 0.6rem;
+  margin-top: 0.15rem;
+}
+
+.mp-game__by {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-game__visits {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--mp-gold-2);
+  text-shadow: var(--mp-outline-thin);
 }
 
 /* ==========================================================================
