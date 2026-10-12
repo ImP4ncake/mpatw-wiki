@@ -5,9 +5,9 @@ on:
   push:
     branches:
       - main
-  # Refresh live game data (stats, badges, gamepasses) every 6 hours
+  # Refresh live game data and official Discord updates every hour
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
   # Manual run from the Actions tab
   workflow_dispatch:
 
@@ -38,20 +38,24 @@ jobs:
       # can never break the site by surprise. Change it there to upgrade.
       - run: pip install -r requirements.txt
 
-      # Download fresh data from the official Roblox APIs. If Roblox can't be
-      # reached, the script keeps the last saved data and never fails.
+      # Download fresh data from the official Roblox APIs and new
+      # announcements from Discord. If something can't be reached, the
+      # script keeps the last saved data and never fails.
       - name: Update game data
         id: data
         run: python scripts/update_data.py
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
 
-      # Once a day, save the new data point in the repository so the
-      # history chart keeps growing.
-      - name: Save daily data
-        if: steps.data.outputs.new_day == 'true' && github.event_name != 'push'
+      # Save new announcements right away (their images expire on Discord),
+      # and one data point per day for the history chart.
+      - name: Save data
+        if: steps.data.outputs.discord_changed == 'true' || (steps.data.outputs.new_day == 'true' && github.event_name != 'push')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data includes/generated
+          git add data includes/generated docs/assets/updates 2>/dev/null || git add data includes/generated
           git commit -m "Update game data ($(date -u +%F))" || exit 0
           git pull --rebase origin main
           git push origin HEAD:main

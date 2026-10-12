@@ -62,7 +62,7 @@ The `generated/badge/...` line inserts a live badge card. The names of all badge
 
 ## Pages that update automatically
 
-The badge lists, titles, tag effects, gamepasses, stats, update history, missing pages and recent changes are filled in automatically every 6 hours. Don't edit those parts by hand: they would be overwritten.
+The badge lists, titles, tag effects, gamepasses, stats, update history, missing pages and recent changes are filled in automatically every hour. Don't edit those parts by hand: they would be overwritten.
 
 To change how a badge or gamepass is described, edit the `BADGE_INFO` or `PASS_INFO` lists in [`scripts/update_data.py`](https://github.com/ImP4ncake/mpatw-wiki/blob/main/scripts/update_data.py).
 

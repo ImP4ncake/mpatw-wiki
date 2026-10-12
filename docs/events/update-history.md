@@ -5,10 +5,14 @@ description: "Chronological record of game updates."
 
 # Update History
 
-Every time Nogo updates the 18+ version, Roblox records the date. The wiki checks it every 6 hours and keeps a list here **automatically**.
+Every update announced by the developer, taken **automatically** from the game's official Discord updates channel. New announcements appear here within an hour, together with their images.
+
+--8<-- "generated/discord-count.md"
+
+--8<-- "generated/discord-updates.md"
+
+## Game update dates
+
+Every time Nogo publishes a new version of the 18+ game, Roblox records the date. The wiki checks it every hour and keeps the list here.
 
 --8<-- "generated/update-history.md"
-
-!!! question "Needs info"
-
-    What changed in each update? Patch notes from the community server are welcome. [Help complete this page](../wiki/contribute.md).

@@ -26,7 +26,7 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 | `zensical.toml` | Site settings and the navigation menu |
 | `templates/` | Starting points for new pages (page, badge, item, event) |
 | `requirements.txt` | The pinned Zensical version |
-| `.github/workflows/docs.yml` | Builds and publishes the site on every push to `main` and every 6 hours |
+| `.github/workflows/docs.yml` | Builds and publishes the site on every push to `main` and every hour |
 
 ### Preview on your computer (optional)
 
@@ -41,7 +41,20 @@ Then open http://localhost:8000 in your browser. The preview reloads automatical
 
 ### Live game data
 
-Every 6 hours GitHub Actions runs `scripts/update_data.py`, which reads the official Roblox APIs for the 18+ version (no login needed) and regenerates stats, badges, titles, tag effects, gamepasses and the update history, then republishes the site. It also builds the category cards, the home page menu, Missing Pages and Recent Changes from the nav in `zensical.toml`. Once a day it also saves a data point in `data/history.json`, which feeds the "Visits per day" chart.
+Every hour GitHub Actions runs `scripts/update_data.py`, which reads the official Roblox APIs for the 18+ version (no login needed) and regenerates stats, badges, titles, tag effects, gamepasses and the update history, then republishes the site. It also builds the category cards, the home page menu, Missing Pages and Recent Changes from the nav in `zensical.toml`. Once a day it also saves a data point in `data/history.json`, which feeds the "Visits per day" chart.
+
+#### Official updates from Discord
+
+The **Update History** page shows the announcements of the game's official Discord updates channel. That channel is *followed* into a channel of the wiki's own Discord server, where a read-only bot reads the announcements. The script saves them in `data/discord-updates.json` and copies their images into `docs/assets/updates/` (Discord image links expire).
+
+It needs two repository secrets (Settings → Secrets and variables → Actions):
+
+| Secret | Value |
+|---|---|
+| `DISCORD_BOT_TOKEN` | The bot's token (Discord Developer Portal → Bot → Reset Token). Turn on **Message Content Intent** |
+| `DISCORD_CHANNEL_ID` | The ID of the channel in your server that follows the updates channel |
+
+Without them the page simply keeps what is already saved.
 
 To run it yourself: `python scripts/update_data.py` (or `--offline` to only regenerate the pages from the saved data).
 

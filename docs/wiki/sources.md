@@ -9,11 +9,12 @@ Where the wiki's information comes from.
 
 | Source | What we use it for | How often |
 |---|---|---|
-| **Roblox game API** | Players online, visits, favorites, release and update dates | Every 6 hours, automatically |
-| **Roblox votes API** | Likes and dislikes | Every 6 hours, automatically |
-| **Roblox badges API** | Every badge, its description, title, tag effect and number of owners | Every 6 hours, automatically |
-| **Roblox game passes API** | Every gamepass, with price and availability | Every 6 hours, automatically |
-| **Roblox thumbnails API** | Badge and gamepass icons | Every 6 hours, automatically |
+| **Roblox game API** | Players online, visits, favorites, release and update dates | Every hour, automatically |
+| **Roblox votes API** | Likes and dislikes | Every hour, automatically |
+| **Roblox badges API** | Every badge, its description, title, tag effect and number of owners | Every hour, automatically |
+| **Roblox game passes API** | Every gamepass, with price and availability | Every hour, automatically |
+| **Roblox thumbnails API** | Badge and gamepass icons | Every hour, automatically |
+| **Official Discord updates channel** | The game's update announcements, with their images | Every hour, automatically |
 | [Rolimons](https://www.rolimons.com/game/110570058234582) | Player peaks, average playtime, server stats | Snapshot, with the date |
 | [RoDen](https://robloxden.com/game-codes/meet-people-across-the-world) | Reported codes | Checked by hand |
 | The game itself | Menus, mechanics, screenshots from players | Checked by hand |

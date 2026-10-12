@@ -58,6 +58,7 @@ hide:
 <div class="mp-chat">
 <div class="mp-chat__tabs"><span class="mp-chat__tab is-active">Here</span><span class="mp-chat__tab">Wiki</span></div>
 <ul class="mp-news">
+--8<-- "generated/home-discord.md"
 <li data-hide-after="2026-11-02T00:00:00Z"><span class="mp-news__date">Event</span>🎃 Halloween is live: the limited <b>Pumpkin Tip Jar</b> is in the shop</li>
 --8<-- "generated/home-news.md"
 --8<-- "generated/latest-changes.md"

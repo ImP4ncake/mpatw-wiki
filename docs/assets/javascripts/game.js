@@ -171,7 +171,7 @@
 
   // Blocks slide in and grids pop in tile by tile as you scroll.
   var BLOCKS = ".md-typeset h2, .md-typeset .md-typeset__scrollwrap, .md-typeset .admonition, .md-typeset details, " +
-    ".mp-menu, .mp-chat, .mp-cta, .mp-event, .mp-soon, .mp-gamemenu, .mp-mainmenu, .mp-chart, .mp-chart-empty, .mp-missing, .mp-item";
+    ".mp-menu, .mp-chat, .mp-cta, .mp-event, .mp-soon, .mp-gamemenu, .mp-mainmenu, .mp-chart, .mp-chart-empty, .mp-missing, .mp-item, .mp-patch";
   var GRIDS = ".mp-cats, .mp-cards, .mp-featured, .mp-badges, .mp-titles, .mp-tags, .mp-passes, .mp-timeline, " +
     ".mp-hunt, .mp-platforms, .mp-stats--grid";
 

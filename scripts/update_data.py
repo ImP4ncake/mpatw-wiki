@@ -7,8 +7,16 @@
    stats, badges, titles, tag effects, gamepasses, limited rewards, update
    history, category cards, missing pages and recent changes.
 
-    data/game.json      latest snapshot of everything fetched from Roblox
-    data/history.json   one data point per day (stats chart, update history)
+    data/game.json             latest snapshot of everything fetched from Roblox
+    data/history.json          one data point per day (stats chart, update history)
+    data/discord-updates.json  archive of the official update announcements
+
+Official updates come from the game's Discord updates channel. That channel is
+followed into a channel of the wiki's own Discord server, where a read-only
+bot reads them. Set two GitHub secrets to switch this on:
+
+    DISCORD_BOT_TOKEN   the bot's token
+    DISCORD_CHANNEL_ID  the ID of the channel that follows the updates channel
 
 Run it with:
 
@@ -36,6 +44,7 @@ import subprocess
 import sys
 import time
 import tomllib
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -50,6 +59,11 @@ DATA_DIR = ROOT / "data"
 GEN_DIR = ROOT / "includes" / "generated"
 SNAPSHOT = DATA_DIR / "game.json"
 HISTORY = DATA_DIR / "history.json"
+DISCORD_ARCHIVE = DATA_DIR / "discord-updates.json"
+UPDATE_ASSETS = DOCS / "assets" / "updates"
+DISCORD_API = "https://discord.com/api/v10"
+DISCORD_UA = "DiscordBot (https://github.com/ImP4ncake/mpatw-wiki, 1.0)"
+MAX_IMAGE_BYTES = 8 * 1024 * 1024
 REPO_URL = "https://github.com/ImP4ncake/mpatw-wiki"
 
 USER_AGENT = "MPATW-Wiki-Updater/2.0 (+https://github.com/ImP4ncake/mpatw-wiki)"
@@ -411,10 +425,14 @@ def page_url(page: str) -> str:
 
 
 def rel(from_page: str, to_page: str, anchor: str = "") -> str:
-    """Relative link between two pages, as it works on the published site."""
-    a = page_url(from_page) or "./"
-    b = page_url(to_page) or "./"
-    r = posixpath.relpath(b, a)
+    """Relative link from one page to another, for HTML written into a page.
+
+    Zensical treats relative URLs in a page as relative to the page's source
+    file and adjusts them for the published site, so links are computed from
+    the source file's folder to the target page's published folder."""
+    start = posixpath.dirname(from_page) or "."
+    target = page_url(to_page) or "."
+    r = posixpath.relpath(target, start)
     return ("./" if r == "." else r + "/") + (f"#{anchor}" if anchor else "")
 
 
@@ -738,7 +756,7 @@ def gen_stats(snap: dict, history: list[dict]) -> None:
         stat_pill("thumbs-down", "slate", votes.get("down"), "dislikes", True),
         "</div>",
         "",
-        f'<p class="mp-updated">Updated {time_tag(snap.get("fetched_at"))}. The wiki refreshes these numbers every 6 hours.</p>',
+        f'<p class="mp-updated">Updated {time_tag(snap.get("fetched_at"))}. The wiki refreshes these numbers every hour.</p>',
     ]
     write("stats.md", "\n".join(grid))
 
@@ -845,6 +863,364 @@ def gen_update_history(snap: dict, history: list[dict]) -> None:
         )
     out.append("</div>")
     write("update-history.md", "\n".join(out))
+
+
+# --------------------------------------------------------------------------
+# Official updates from Discord
+# --------------------------------------------------------------------------
+
+
+def discord_get(path: str, token: str) -> list | dict:
+    url = DISCORD_API + path
+    for attempt in range(4):
+        req = urllib.request.Request(url, headers={"Authorization": f"Bot {token}", "User-Agent": DISCORD_UA})
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429:
+                try:
+                    wait = float(json.loads(exc.read().decode("utf-8")).get("retry_after", 2))
+                except Exception:  # noqa: BLE001
+                    wait = 2.0
+                time.sleep(min(wait, 30) + 0.5)
+                continue
+            raise RuntimeError(f"Discord answered {exc.code} for {path}") from None
+        except Exception as exc:  # noqa: BLE001
+            if attempt == 3:
+                raise RuntimeError(f"could not reach Discord ({exc.__class__.__name__})") from None
+            time.sleep(2 * (attempt + 1))
+    raise RuntimeError("Discord rate limit")
+
+
+def fetch_discord_messages(token: str, channel: str, pages: int) -> tuple[list[dict], bool]:
+    """Newest first. Returns (messages, complete) where complete means the
+    whole channel history was read."""
+    messages: list[dict] = []
+    before = ""
+    for _ in range(pages):
+        query = "?limit=100" + (f"&before={before}" if before else "")
+        page = discord_get(f"/channels/{channel}/messages{query}", token)
+        if not isinstance(page, list):
+            break
+        messages += page
+        if len(page) < 100:
+            return messages, True
+        before = page[-1]["id"]
+    return messages, False
+
+
+def download(url: str, target: Path) -> bool:
+    if target.exists():
+        return True
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = resp.read(MAX_IMAGE_BYTES + 1)
+        if len(data) > MAX_IMAGE_BYTES:
+            return False
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+        return True
+    except Exception as exc:  # noqa: BLE001
+        print(f"warning: image not downloaded ({exc.__class__.__name__})")
+        return False
+
+
+IMAGE_EXT = {"image/png": ".png", "image/jpeg": ".jpg", "image/gif": ".gif", "image/webp": ".webp"}
+
+
+def image_ext(url: str, content_type: str | None) -> str | None:
+    if content_type in IMAGE_EXT:
+        return IMAGE_EXT[content_type]
+    path = urllib.parse.urlparse(url).path.lower()
+    for ext in (".png", ".jpg", ".jpeg", ".gif", ".webp"):
+        if path.endswith(ext):
+            return ".jpg" if ext == ".jpeg" else ext
+    return None
+
+
+def simplify_message(m: dict) -> dict | None:
+    """Keeps only announcements that arrived through the channel follow."""
+    if not (m.get("flags", 0) & 2) or m.get("type", 0) not in (0, 19):
+        return None
+    ref = m.get("message_reference") or {}
+    author = m.get("author") or {}
+    avatar = None
+    if author.get("avatar") and author.get("id"):
+        avatar = f"https://cdn.discordapp.com/avatars/{author['id']}/{author['avatar']}.png?size=64"
+    source = None
+    if ref.get("guild_id") and ref.get("channel_id") and ref.get("message_id"):
+        source = f"https://discord.com/channels/{ref['guild_id']}/{ref['channel_id']}/{ref['message_id']}"
+    images = []
+    for att in m.get("attachments", []):
+        ext = image_ext(att.get("url", ""), att.get("content_type"))
+        if ext and (att.get("size") or 0) <= MAX_IMAGE_BYTES:
+            images.append({"name": f"{m['id']}-{att['id']}{ext}", "url": att["url"], "alt": att.get("filename", "")})
+    embeds = []
+    for i, e in enumerate(m.get("embeds", [])):
+        item = {"title": e.get("title"), "description": e.get("description"), "url": e.get("url"), "image": None}
+        pic = (e.get("image") or {}).get("url") or ((e.get("thumbnail") or {}).get("url") if e.get("type") == "image" else None)
+        ext = image_ext(pic or "", None) if pic else None
+        if pic and ext:
+            item["image"] = {"name": f"{m['id']}-e{i}{ext}", "url": pic, "alt": e.get("title") or "image"}
+        if item["title"] or item["description"] or item["image"]:
+            embeds.append(item)
+    return {
+        "id": m["id"],
+        "timestamp": m.get("timestamp"),
+        "edited": m.get("edited_timestamp"),
+        "author": author.get("global_name") or author.get("username") or "Updates",
+        "avatar": avatar,
+        "content": m.get("content") or "",
+        "mentions": {u["id"]: (u.get("global_name") or u.get("username") or "someone") for u in m.get("mentions", [])},
+        "source": source,
+        "images": images,
+        "embeds": embeds,
+    }
+
+
+def save_images(item: dict) -> None:
+    """Discord image links expire, so the wiki keeps its own copy."""
+    for img in item["images"] + [e["image"] for e in item["embeds"] if e.get("image")]:
+        if download(img["url"], UPDATE_ASSETS / img["name"]):
+            img["file"] = f"assets/updates/{img['name']}"
+        img.pop("url", None)
+
+
+def update_discord() -> bool:
+    """Merges new announcements into the archive. Returns True if it changed."""
+    token = os.environ.get("DISCORD_BOT_TOKEN", "").strip()
+    channel = os.environ.get("DISCORD_CHANNEL_ID", "").strip()
+    archive = json.loads(DISCORD_ARCHIVE.read_text("utf-8")) if DISCORD_ARCHIVE.exists() else []
+    if not token or not channel:
+        print("Discord updates: not configured (DISCORD_BOT_TOKEN / DISCORD_CHANNEL_ID)")
+        return False
+    try:
+        raw, complete = fetch_discord_messages(token, channel, pages=1 if archive else 5)
+    except RuntimeError as exc:
+        print(f"warning: Discord updates not refreshed, keeping the archive ({exc})")
+        return False
+
+    fetched = {}
+    for m in raw:
+        item = simplify_message(m)
+        if item:
+            fetched[item["id"]] = item
+    before = json.dumps(archive, sort_keys=True)
+    by_id = {a["id"]: a for a in archive}
+    for msg_id, item in fetched.items():
+        old = by_id.get(msg_id)
+        if old and old.get("edited") == item["edited"] and old.get("content") == item["content"]:
+            continue
+        save_images(item)
+        by_id[msg_id] = item
+    # Announcements deleted on Discord disappear from the wiki too.
+    if raw:
+        oldest_seen = min(int(m["id"]) for m in raw)
+        for msg_id in list(by_id):
+            if msg_id not in fetched and (complete or int(msg_id) >= oldest_seen):
+                del by_id[msg_id]
+    archive = sorted(by_id.values(), key=lambda a: int(a["id"]), reverse=True)
+    after = json.dumps(archive, sort_keys=True)
+    if after != before:
+        DISCORD_ARCHIVE.write_text(json.dumps(archive, indent=1, ensure_ascii=False) + "\n", "utf-8")
+        print(f"Discord updates: {len(archive)} in the archive (changed)")
+        return True
+    print(f"Discord updates: {len(archive)} in the archive (no change)")
+    return False
+
+
+def _inline(text: str) -> str:
+    text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
+    text = re.sub(r"__(.+?)__", r"<u>\1</u>", text)
+    text = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<i>\1</i>", text)
+    text = re.sub(r"(?<![\w])_(?!\s)(.+?)(?<!\s)_(?![\w])", r"<i>\1</i>", text)
+    text = re.sub(r"~~(.+?)~~", r"<s>\1</s>", text)
+    text = re.sub(r"\|\|(.+?)\|\|", r'<span class="mp-spoiler" tabindex="0">\1</span>', text)
+    return text
+
+
+def discord_html(text: str, mentions: dict) -> str:
+    """Discord markdown -> safe HTML (everything is escaped first)."""
+    kept: list[str] = []
+
+    def keep(fragment: str) -> str:
+        kept.append(fragment)
+        return f"\x00{len(kept) - 1}\x00"
+
+    text = re.sub(r"```(?:[\w+-]*\n)?(.*?)```", lambda m: keep(f"<pre><code>{esc(m.group(1).strip(chr(10)))}</code></pre>"), text, flags=re.S)
+    text = re.sub(r"`([^`\n]+)`", lambda m: keep(f"<code>{esc(m.group(1))}</code>"), text)
+    text = re.sub(
+        r"<(a?):(\w+):(\d+)>",
+        lambda m: keep(
+            f'<img class="mp-emoji" src="https://cdn.discordapp.com/emojis/{m.group(3)}.{"gif" if m.group(1) else "webp"}?size=48" '
+            f'alt=":{esc(m.group(2))}:" title=":{esc(m.group(2))}:">'
+        ),
+        text,
+    )
+    text = re.sub(
+        r"<t:(-?\d+)(?::[tTdDfFR])?>",
+        lambda m: keep(esc(nice_date(dt.datetime.fromtimestamp(int(m.group(1)), dt.timezone.utc).isoformat(), True))),
+        text,
+    )
+    text = re.sub(r"<@!?(\d+)>", lambda m: keep(f'<span class="mp-mention">@{esc(mentions.get(m.group(1), "someone"))}</span>'), text)
+    text = re.sub(r"<@&\d+>", "", text)
+    text = re.sub(r"<#\d+>", lambda m: keep('<span class="mp-mention">#channel</span>'), text)
+    text = re.sub(r"@(everyone|here)\b", "", text)
+    text = re.sub(
+        r"\[([^\]\n]+)\]\(<?(https?://[^\s)>]+)>?\)",
+        lambda m: keep(f'<a href="{esc(m.group(2))}" target="_blank" rel="noopener nofollow">{_inline(esc(m.group(1)))}</a>'),
+        text,
+    )
+    text = re.sub(
+        r"<?(https?://[^\s<>]+[^\s<>.,!?)])>?",
+        lambda m: keep(
+            f'<a href="{esc(m.group(1))}" target="_blank" rel="noopener nofollow">'
+            f"{esc(re.sub(r'^https?://(www[.])?', '', m.group(1))[:60])}</a>"
+        ),
+        text,
+    )
+    text = esc(text)
+
+    out: list[str] = []
+    para: list[str] = []
+    items: list[str] = []
+    quote: list[str] = []
+
+    def flush() -> None:
+        if para:
+            out.append("<p>" + "<br>".join(_inline(x) for x in para) + "</p>")
+            para.clear()
+        if items:
+            out.append("<ul>" + "".join(f"<li>{_inline(x)}</li>" for x in items) + "</ul>")
+            items.clear()
+        if quote:
+            out.append("<blockquote>" + "<br>".join(_inline(x) for x in quote) + "</blockquote>")
+            quote.clear()
+
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith("&gt;&gt;&gt; "):
+            flush()
+            quote.extend([stripped[13:]] + lines[i + 1 :])
+            break
+        heading = re.match(r"^(#{1,3}) (.+)$", stripped)
+        if heading:
+            flush()
+            out.append(f'<p class="mp-patch__h mp-patch__h--{len(heading.group(1))}">{_inline(heading.group(2))}</p>')
+        elif stripped.startswith("-# "):
+            flush()
+            out.append(f'<p class="mp-patch__sub">{_inline(stripped[3:])}</p>')
+        elif re.match(r"^[-*•] ", stripped):
+            if para or quote:
+                flush()
+            items.append(stripped[2:])
+        elif stripped.startswith("&gt; "):
+            if para or items:
+                flush()
+            quote.append(stripped[5:])
+        elif not stripped:
+            flush()
+        else:
+            if items or quote:
+                flush()
+            para.append(stripped)
+    flush()
+    html_out = "\n".join(out)
+    return re.sub(r"\x00(\d+)\x00", lambda m: kept[int(m.group(1))], html_out)
+
+
+def split_title(content: str) -> tuple[str | None, str]:
+    """Uses a first line that is a heading or fully bold as the title."""
+    lines = content.strip().split("\n")
+    if not lines or not lines[0].strip():
+        return None, content
+    first = lines[0].strip()
+    m = re.match(r"^#{1,3} (.+)$", first) or re.match(r"^\*\*([^*]+)\*\*$", first) or re.match(r"^__\*\*([^*]+)\*\*__$", first)
+    if m:
+        return m.group(1).strip(), "\n".join(lines[1:]).strip()
+    return None, content
+
+
+def plain_title(update: dict) -> str:
+    title, body = split_title(update.get("content", ""))
+    if not title and update.get("embeds"):
+        title = update["embeds"][0].get("title")
+    if not title:
+        first = next((x.strip() for x in body.splitlines() if x.strip()), "")
+        title = first or "Game update"
+    title = re.sub(r"<a?:\w+:\d+>|<@[!&]?\d+>|<#\d+>|<t:-?\d+(?::\w)?>", "", title)
+    title = re.sub(r"[*_~|`#>]", "", title).strip()
+    return title[:90] + ("…" if len(title) > 90 else "")
+
+
+def gen_discord(page: str = "events/update-history.md") -> None:
+    archive = json.loads(DISCORD_ARCHIVE.read_text("utf-8")) if DISCORD_ARCHIVE.exists() else []
+    if not archive:
+        write(
+            "discord-updates.md",
+            '<div class="mp-patch mp-patch--empty"><p>The official update announcements from the game\'s Discord '
+            "will appear here automatically as soon as the next one is posted.</p></div>",
+        )
+        write("home-discord.md", "")
+        write("discord-count.md", "")
+        return
+    asset_base = posixpath.relpath("assets", posixpath.dirname(page) or ".")
+    out = []
+    for u in archive:
+        title, body = split_title(u.get("content", ""))
+        when = u.get("timestamp")
+        t = parse_time(when)
+        new_until = (t + dt.timedelta(days=7)).isoformat() if t else ""
+        head = (
+            f'<header class="mp-patch__head">'
+            + (f'<img class="mp-patch__avatar" src="{esc(u["avatar"])}" alt="" width="40" height="40" loading="lazy">' if u.get("avatar") else '<span class="mp-patch__avatar"></span>')
+            + f'<span class="mp-patch__who"><b class="mp-patch__title">{_inline(esc(title)) if title else "Game update"}</b>'
+            f'<span class="mp-patch__meta">{esc(u.get("author") or "Updates")} · {time_tag(when)}</span></span>'
+            + (f'<span class="mp-patch__new" data-hide-after="{esc(new_until)}">NEW</span>' if new_until else "")
+            + "</header>"
+        )
+        parts = [f'<article class="mp-patch" id="update-{esc(u["id"])}">', head, '<div class="mp-patch__body">']
+        if body.strip():
+            parts.append(discord_html(body, u.get("mentions", {})))
+        for e in u.get("embeds", []):
+            parts.append('<div class="mp-patch__embed">')
+            if e.get("title"):
+                t_html = _inline(esc(e["title"]))
+                if e.get("url"):
+                    t_html = f'<a href="{esc(e["url"])}" target="_blank" rel="noopener nofollow">{t_html}</a>'
+                parts.append(f'<p class="mp-patch__h mp-patch__h--3">{t_html}</p>')
+            if e.get("description"):
+                parts.append(discord_html(e["description"], u.get("mentions", {})))
+            if e.get("image") and e["image"].get("file"):
+                parts.append(f'<img class="mp-patch__img" src="{esc(asset_base + "/" + e["image"]["file"][len("assets/"):])}" alt="{esc(e["image"]["alt"])}" loading="lazy">')
+            parts.append("</div>")
+        pics = [img for img in u.get("images", []) if img.get("file")]
+        if pics:
+            parts.append('<div class="mp-patch__gallery">')
+            for img in pics:
+                src = asset_base + "/" + img["file"][len("assets/"):]
+                parts.append(f'<a href="{esc(src)}" target="_blank" rel="noopener"><img class="mp-patch__img" src="{esc(src)}" alt="{esc(img["alt"])}" loading="lazy"></a>')
+            parts.append("</div>")
+        parts.append("</div>")
+        if u.get("source"):
+            parts.append(f'<a class="mp-patch__src" href="{esc(u["source"])}" target="_blank" rel="noopener">View on Discord</a>')
+        parts.append("</article>")
+        out.append("".join(parts))
+    write("discord-updates.md", '<div class="mp-patches">\n' + "\n".join(out) + "\n</div>")
+    write("discord-count.md", f'<p class="mp-lead"><b>{len(archive)}</b> official announcements collected so far.</p>')
+
+    lines = []
+    for u in archive[:3]:
+        d = parse_time(u.get("timestamp"))
+        label = f"Update · {d.day} {d.strftime('%b')}" if d else "Update"
+        lines.append(
+            f'<li><span class="mp-news__date">{esc(label)}</span>'
+            f'<a href="{rel("index.md", page, "update-" + u["id"])}">{esc(plain_title(u))}</a></li>'
+        )
+    write("home-discord.md", "\n".join(lines))
 
 
 # --------------------------------------------------------------------------
@@ -1020,6 +1396,7 @@ def main() -> int:
         SNAPSHOT.write_text(json.dumps(snap, indent=1, ensure_ascii=False) + "\n", "utf-8")
     new_day = update_history(snap, game_fetched) if snap else False
     history = json.loads(HISTORY.read_text("utf-8")) if HISTORY.exists() else []
+    discord_changed = False if offline else update_discord()
 
     badges = prepare_badges(snap) if snap else []
     gen_stats(snap, history)
@@ -1029,6 +1406,7 @@ def main() -> int:
     gen_badge_timeline(badges)
     gen_passes(snap)
     gen_update_history(snap, history)
+    gen_discord()
     gen_home_news(snap, badges)
     gen_categories(read_structure())
     gen_changes()
@@ -1036,6 +1414,7 @@ def main() -> int:
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
             fh.write(f"new_day={'true' if new_day else 'false'}\n")
+            fh.write(f"discord_changed={'true' if discord_changed else 'false'}\n")
     print(f"done (new day of history: {new_day})")
     return 0
 

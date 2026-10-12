@@ -1957,6 +1957,238 @@ body {
 }
 
 
+
+/* ==========================================================================
+   Official update announcements (Update History)
+   ========================================================================== */
+
+.mp-patches {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.mp-patch {
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--mp-panel);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink), 0 18px 32px -18px rgba(10, 30, 60, 0.5);
+  color: #e9edf4;
+  scroll-margin-top: 5rem;
+}
+
+.mp-patch:target {
+  box-shadow: 0 0 0 3px var(--mp-gold-2), 0 6px 0 var(--mp-ink), 0 0 28px -4px var(--mp-gold-2);
+}
+
+.mp-patch--empty {
+  padding: 1.2rem 1.4rem;
+  font-weight: 700;
+  color: var(--mp-on-dark-2);
+}
+
+.md-typeset .mp-patch--empty p {
+  margin: 0;
+}
+
+.mp-patch__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: radial-gradient(circle at 0% 0%, rgba(255, 214, 72, 0.18), transparent 50%), rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.mp-patch__avatar {
+  flex: none;
+  overflow: hidden;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4a9df5;
+  box-shadow: 0 0 0 2px var(--mp-ink);
+}
+
+.mp-patch__who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.mp-patch__title {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--mp-gold-2);
+  text-shadow: var(--mp-outline-thin);
+}
+
+.mp-patch__meta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-patch__new {
+  flex: none;
+  padding: 0.05em 0.6em;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: linear-gradient(180deg, #ff6a63, #d92f29);
+  font-family: var(--mp-label);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 0.62rem;
+  color: #fff;
+  text-shadow: var(--mp-outline-thin);
+  animation: mp-pulse 1.6s ease-in-out infinite;
+}
+
+.mp-patch__body {
+  overflow-wrap: anywhere;
+  padding: 0.6rem 1.1rem 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.md-typeset .mp-patch__body p,
+.md-typeset .mp-patch__body ul,
+.md-typeset .mp-patch__body blockquote {
+  margin: 0.5em 0;
+}
+
+.md-typeset .mp-patch__body ul {
+  padding-left: 1.2em;
+}
+
+.md-typeset .mp-patch__body li {
+  margin: 0.15em 0;
+}
+
+.md-typeset .mp-patch__body li::marker {
+  color: var(--mp-gold-2);
+}
+
+.md-typeset .mp-patch__body blockquote {
+  padding: 0.2em 0.8em;
+  border-left: 4px solid rgba(255, 255, 255, 0.25);
+  color: var(--mp-on-dark-2);
+}
+
+.md-typeset .mp-patch__body a {
+  color: #8fd0ff;
+}
+
+.md-typeset .mp-patch__body code {
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffe58a;
+}
+
+.md-typeset .mp-patch__body pre {
+  margin: 0.6em 0;
+}
+
+.md-typeset .mp-patch__h {
+  margin: 0.8em 0 0.3em;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: var(--mp-outline-thin);
+}
+
+.md-typeset .mp-patch__h--1 { font-size: 1.25rem; }
+.md-typeset .mp-patch__h--2 { font-size: 1.1rem; }
+.md-typeset .mp-patch__h--3 { font-size: 0.98rem; }
+
+.md-typeset .mp-patch__sub {
+  font-size: 0.7rem;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-patch__embed {
+  margin: 0.7rem 0;
+  padding: 0.5rem 0.9rem 0.7rem;
+  border-radius: 10px;
+  border-left: 4px solid #4a9df5;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.mp-patch__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.mp-patch__img {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--mp-on-dark-2);
+  width: 100%;
+  max-height: 26rem;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 0 2px var(--mp-ink), 0 4px 0 var(--mp-ink);
+  transition: transform 0.18s ease;
+}
+
+.mp-patch__gallery a:hover .mp-patch__img {
+  transform: scale(1.02) rotate(-0.5deg);
+}
+
+.md-typeset .mp-patch__src {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--mp-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #a5b4fc;
+  text-decoration: none;
+}
+
+.md-typeset .mp-patch__src:hover {
+  color: #fff;
+}
+
+.mp-emoji {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 0;
+  width: 1.35em;
+  height: 1.35em;
+  vertical-align: -0.3em;
+  object-fit: contain;
+}
+
+.mp-mention {
+  padding: 0 0.25em;
+  border-radius: 4px;
+  background: rgba(88, 101, 242, 0.3);
+  color: #c9cdfb;
+  font-weight: 700;
+}
+
+.mp-spoiler {
+  border-radius: 4px;
+  background: #0d0e11;
+  color: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mp-spoiler:hover,
+.mp-spoiler:focus {
+  background: rgba(0, 0, 0, 0.3);
+  color: inherit;
+}
+
 /* ==========================================================================
    Motion: everything below is added by game.js and switched off for people
    who ask their system for reduced motion.

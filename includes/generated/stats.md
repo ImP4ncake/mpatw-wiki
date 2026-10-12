@@ -7,4 +7,4 @@
 <div class="mp-stat mp-stat--slate"><span class="mp-stat__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-thumbs-down" viewBox="0 0 24 24"><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88M17 14V2"/></svg></span><span class="mp-stat__value" data-count="2083" data-compact title="2,083">2.1K</span><span class="mp-stat__label">dislikes</span></div>
 </div>
 
-<p class="mp-updated">Updated <time datetime="2026-10-12T15:28:42Z" data-time="2026-10-12T15:28:42Z">12 Oct 2026, 15:28 UTC</time>. The wiki refreshes these numbers every 6 hours.</p>
+<p class="mp-updated">Updated <time datetime="2026-10-12T15:28:42Z" data-time="2026-10-12T15:28:42Z">12 Oct 2026, 15:28 UTC</time>. The wiki refreshes these numbers every hour.</p>

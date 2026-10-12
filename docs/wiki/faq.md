@@ -15,7 +15,7 @@ description: "Frequently asked questions about the wiki."
 
 ??? question "How up to date is it?"
 
-    Stats, badges, gamepasses and update dates refresh **automatically every 6 hours** from the official Roblox data. Everything else is written by players and shows when it was checked.
+    Stats, badges, gamepasses and update dates refresh **automatically every hour** from the official Roblox data, and the official update announcements come straight from the game's Discord. Everything else is written by players and shows when it was checked.
 
 ??? question "Who writes it?"
 
