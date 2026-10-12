@@ -911,14 +911,21 @@ def gen_stats(snap: dict, history: list[dict]) -> None:
     write("stats.md", "\n".join(grid))
 
     on_sale = sum(1 for p in snap.get("passes", []) if p.get("for_sale"))
+    # Nogo the creator gets the profile picture, the Nogo group (which
+    # publishes the game on Roblox) gets the devil
     creator = game.get("creator") or "Nogo"
-    developer = esc(creator)
+    developer, publisher = esc(creator), ""
     if creator.lower() == "nogo":
         developer = f'<a class="mp-who" href="{rel("game-info/overview.md", "game-info/nogo.md")}">{nogo_face("nogo")}Nogo</a>'
+        publisher = (
+            f'| **Published by** | <a class="mp-who" href="https://www.roblox.com/groups/{CREATOR_GROUP_ID}" '
+            f'target="_blank" rel="noopener">{nogo_face("group")}Nogo group</a> |'
+        )
     facts = [
         "| Game | 18+ Meet People Across The World |",
         "|---|---|",
         f"| **Developer** | {developer} |",
+        *([publisher] if publisher else []),
         f"| **Released** | {nice_date(game.get('created'))} |",
         f"| **Last game update** | {time_tag(game.get('updated'))} |",
         "| **Age requirement** | 18+ |",
