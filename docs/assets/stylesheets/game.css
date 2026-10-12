@@ -3003,6 +3003,126 @@ body {
 }
 
 /* ==========================================================================
+   Reputation: what one coin is worth (1 coin -> +1 or -1)
+   ========================================================================== */
+
+.md-typeset .mp-rate {
+  margin: 1.3rem 0 1.6rem;
+  padding: 1rem 1rem 0.9rem;
+  border-radius: 18px;
+  background: var(--mp-panel);
+  color: var(--mp-on-dark);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink), 0 18px 30px -18px rgba(10, 30, 60, 0.55);
+  text-align: center;
+}
+
+.md-typeset .mp-rate > p,
+.md-typeset .mp-rate__row,
+.md-typeset .mp-rate__note {
+  margin: 0;
+}
+
+.md-typeset .mp-rate__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem 0.7rem;
+}
+
+.md-typeset .mp-rate__pill {
+  --pill: #6b7280;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3em 0.85em 0.35em 0.7em;
+  border-radius: 999px;
+  border: 2px solid var(--mp-ink);
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.45), transparent 55%), var(--pill);
+  box-shadow: 0 4px 0 var(--mp-ink);
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: var(--mp-outline-thin);
+  white-space: nowrap;
+}
+
+.md-typeset .mp-rate__pill .twemoji,
+.md-typeset .mp-rate__pill svg {
+  width: 1.15em;
+  height: 1.15em;
+  max-height: none;
+  stroke-width: 2.6;
+  filter: drop-shadow(0 1px 0 var(--mp-ink));
+}
+
+.md-typeset .mp-rate__pill--coin { --pill: #f2ab00; }
+.md-typeset .mp-rate__pill--up { --pill: #2fb84f; }
+.md-typeset .mp-rate__pill--down { --pill: #ee3d37; }
+
+.md-typeset .mp-rate__arrow {
+  display: inline-flex;
+  color: var(--mp-gold-2);
+}
+
+.md-typeset .mp-rate__arrow .twemoji,
+.md-typeset .mp-rate__arrow svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  max-height: none;
+  stroke-width: 3;
+}
+
+.md-typeset .mp-rate__choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* on phones the arrow points down to the choice below */
+@media screen and (max-width: 30em) {
+  .md-typeset .mp-rate__row {
+    flex-direction: column;
+  }
+
+  .md-typeset .mp-rate__arrow {
+    transform: rotate(90deg);
+  }
+
+  .md-typeset .mp-rate {
+    padding-inline: 0.6rem;
+  }
+
+  .md-typeset .mp-rate__choice {
+    gap: 0.45rem;
+  }
+
+  .md-typeset .mp-rate__pill {
+    font-size: 1.05rem;
+  }
+}
+
+.md-typeset .mp-rate__or {
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mp-on-dark-2);
+}
+
+.md-typeset .mp-rate__note {
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  color: var(--mp-on-dark-2);
+}
+
+.md-typeset .mp-rate__note strong {
+  color: #fff;
+}
+
+/* ==========================================================================
    Back to the section a page belongs to (game.js adds it above the title;
    it takes the place of the breadcrumb trail)
    ========================================================================== */
