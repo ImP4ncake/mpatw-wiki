@@ -258,9 +258,9 @@ body {
    ========================================================================== */
 
 .md-typeset .mp-btn {
-  --b1: #6b6f7d;
-  --b2: #3d404b;
-  --b3: #22242c;
+  --b1: #8b909e;
+  --b2: #5a5e6b;
+  --b3: #3b3e49;
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
@@ -2986,6 +2986,84 @@ body {
   .md-typeset .mp-steps {
     grid-template-columns: 1fr;
     gap: 1.4rem;
+  }
+}
+
+/* ==========================================================================
+   Back to top: a round gold button like the game's, bottom right
+   ========================================================================== */
+
+.mp-totop {
+  position: fixed;
+  right: 1.2rem;
+  bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  padding: 0;
+  border: 2px solid #a86f00;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffe58a, #ffd85c 40%, #f2a900);
+  color: var(--mp-ink);
+  box-shadow: 0 0 0 2px var(--mp-ink), inset 0 2px 0 rgba(255, 255, 255, 0.55), 0 5px 0 var(--mp-ink),
+    0 12px 20px -8px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1.2rem) scale(0.7);
+  transition: opacity 0.2s ease, transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.12s ease;
+}
+
+.mp-totop.is-shown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.mp-totop svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.mp-totop.is-shown:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px var(--mp-ink), inset 0 2px 0 rgba(255, 255, 255, 0.55), 0 8px 0 var(--mp-ink),
+    0 16px 24px -8px rgba(0, 0, 0, 0.45);
+}
+
+.mp-totop.is-shown:hover svg {
+  animation: mp-totop-hop 0.6s ease-in-out infinite;
+}
+
+@keyframes mp-totop-hop {
+  50% { transform: translateY(-3px); }
+}
+
+.mp-totop.is-shown:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 2px var(--mp-ink), inset 0 2px 0 rgba(255, 255, 255, 0.45), 0 1px 0 var(--mp-ink);
+  transition-duration: 0.06s;
+}
+
+.mp-totop:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 4px;
+}
+
+/* phones and tablets: the theme's round "on this page" button sits in the
+   corner, so this one goes just above it */
+@media screen and (max-width: 59.984375em) {
+  .mp-totop {
+    right: 1.1rem;
+    bottom: calc(4.4rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media print {
+  .mp-totop {
+    display: none;
   }
 }
 

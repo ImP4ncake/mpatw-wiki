@@ -338,6 +338,41 @@
     });
   }
 
+  // A round "back to top" button that shows up once you scroll down.
+  // It scrolls smoothly back up, without reloading the page.
+  function initBackToTop() {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mp-totop";
+    btn.title = "Back to top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7M12 19V5"/></svg>';
+    document.body.appendChild(btn);
+
+    var shown = false;
+    var ticking = false;
+    function update() {
+      var show = window.scrollY > 600;
+      if (show !== shown) {
+        shown = show;
+        btn.classList.toggle("is-shown", show);
+      }
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
   // A burst of sparks when you press Play.
   function initSparks() {
     var EMOJI = ["✨", "⭐", "🌍", "💬", "🎉"];
@@ -373,6 +408,7 @@
     initTitles();
     initHeaderName();
     initCopyButtons();
+    initBackToTop();
     initAccent();
     initSearchBox();
     initCounters();
