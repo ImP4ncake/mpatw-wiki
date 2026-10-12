@@ -707,6 +707,10 @@ def gen_badge_hunting(badges: list[dict]) -> None:
 
 
 def gen_badge_timeline(badges: list[dict]) -> None:
+    """Game History: summary tiles, then every month that added badges,
+    grouped by year, with each badge as a small chip (icon, rarity color,
+    link to its card on the badge pages)."""
+    page = "game-info/history.md"
     months: dict[str, list[dict]] = {}
     for b in badges:
         t = parse_time(b.get("created"))
@@ -715,14 +719,43 @@ def gen_badge_timeline(badges: list[dict]) -> None:
     if not months:
         write("badge-timeline.md", "The badge timeline appears here once the wiki has downloaded the badge data.")
         return
-    out = ['<div class="mp-timeline">']
-    for key in sorted(months):
-        t = dt.datetime.strptime(key, "%Y-%m")
-        names = ", ".join(f"<b>{esc(b['short'])}</b>" for b in months[key])
+    keys = sorted(months)
+    busiest = max(keys, key=lambda k: (len(months[k]), k))
+
+    def month(key: str, fmt: str = "%b %Y") -> str:
+        return dt.datetime.strptime(key, "%Y-%m").strftime(fmt)
+
+    def tile(icon: str, color: str, value: str, label: str) -> str:
+        return (
+            f'<div class="mp-stat mp-stat--{color}"><span class="mp-stat__icon" aria-hidden="true">{lucide(icon)}</span>'
+            f'<span class="mp-stat__value">{value}</span><span class="mp-stat__label">{label}</span></div>'
+        )
+
+    out = [
+        '<div class="mp-stats mp-stats--grid">',
+        tile("flag", "gold", month(keys[0]), "first badge"),
+        tile("sparkles", "blue", month(keys[-1]), "newest badges"),
+        tile("flame", "orange", month(busiest), "record month"),
+        "</div>",
+        "",
+        '<div class="mp-timeline mp-timeline--badges">',
+    ]
+    year = None
+    for key in keys:
+        if key[:4] != year:
+            year = key[:4]
+            out.append(f'<div class="mp-timeline__year">{year}</div>')
+        chips = []
+        for b in months[key]:
+            rarity = b["rarity"][1] or "common"
+            chips.append(
+                f'<a class="mp-bchip mp-bchip--{rarity}" href="{rel(page, b["page"], b["anchor"])}" title="{esc(b["how"])}">'
+                f'{icon_img(b.get("icon"), b["short"], "mp-thumb mp-thumb--tiny")}<span>{esc(b["short"])}</span></a>'
+            )
         noun = "badge" if len(months[key]) == 1 else "badges"
         out.append(
-            f'<div class="mp-timeline__item"><span class="mp-timeline__date">{t.strftime("%B %Y")}</span>'
-            f'<span class="mp-timeline__text">{len(months[key])} new {noun}: {names}</span></div>'
+            f'<div class="mp-timeline__item"><span class="mp-timeline__date">{month(key, "%B %Y")} · {len(months[key])} new {noun}</span>'
+            f'<span class="mp-bchips">{"".join(chips)}</span></div>'
         )
     out.append("</div>")
     write("badge-timeline.md", "\n".join(out))
@@ -933,9 +966,6 @@ def gen_stats(snap: dict, history: list[dict]) -> None:
         f"| **Last game update** | {time_tag(game.get('updated'))} |",
         "| **Age requirement** | 18+ |",
         f"| **Players per server** | {full(game.get('max_players'))} |",
-        f"| **Visits** | {full(game.get('visits'))} |",
-        f"| **Favorites** | {full(game.get('favorites'))} |",
-        f"| **Like ratio** | {f'{r:.1f}%' if r is not None else '?'} |",
         f"| **Badges** | {len(snap.get('badges', []))} |",
         f"| **Gamepasses** | {len(snap.get('passes', []))} ({on_sale} on sale) |",
         f"| **Play** | [Open on Roblox](https://www.roblox.com/games/{PLACE_ID}) |",

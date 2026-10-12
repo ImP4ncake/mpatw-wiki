@@ -9,4 +9,4 @@ The main facts about **18+ Meet People Across The World** at a glance, live from
 
 --8<-- "generated/facts.md"
 
-New to the game? The [Beginner's Guide](../guides/beginners.md) shows the main screen, the in-game menu and what to do first.
+Players online, visits, favorites and likes are on [Game Stats](stats.md). New to the game? The [Beginner's Guide](../guides/beginners.md) shows the main screen, the in-game menu and what to do first.

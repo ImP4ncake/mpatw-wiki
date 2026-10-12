@@ -3401,6 +3401,69 @@ body {
 }
 
 /* ==========================================================================
+   Game History: year labels on the timeline and badge chips
+   ========================================================================== */
+
+.mp-timeline__year {
+  position: relative;
+  display: inline-block;
+  margin: 0.3rem 0 0.9rem -1.55rem;
+  padding: 0.1rem 0.85rem;
+  border-radius: 999px;
+  border: 2px solid var(--mp-ink);
+  background: linear-gradient(180deg, var(--mp-gold-1), var(--mp-gold-3));
+  box-shadow: 0 3px 0 var(--mp-ink);
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--mp-ink);
+}
+
+.mp-timeline--badges .mp-timeline__item {
+  gap: 0.5rem;
+}
+
+.mp-bchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.md-typeset .mp-bchip {
+  --chip: #9aa1ae;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.65rem 0.2rem 0.2rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 2px var(--chip);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.md-typeset .mp-bchip:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
+.md-typeset .mp-bchip--uncommon { --chip: #3fcf5c; }
+.md-typeset .mp-bchip--rare { --chip: #4b9cf5; }
+.md-typeset .mp-bchip--epic { --chip: #a970f5; }
+.md-typeset .mp-bchip--legendary { --chip: #f2ab00; }
+
+.mp-thumb--tiny {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #000;
+}
+
+/* ==========================================================================
    Small screens and reduced motion
    ========================================================================== */
 
