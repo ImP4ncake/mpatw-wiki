@@ -3110,24 +3110,27 @@ body {
   color: #fff;
 }
 
-/* Nogo's profile picture, with the Nogo group icon as a small badge in the
-   corner. If the picture can't load, the light circle stays. */
+/* creator card: Nogo's profile picture; group card: the Nogo group's devil.
+   If the picture can't load, the light circle stays. */
 .md-typeset .mp-creator__avatar--nogo {
-  position: relative;
   background: var(--mp-nogo-pfp) center / cover no-repeat, var(--mp-face-bg);
 }
 
-.md-typeset .mp-creator__avatar--nogo::after {
-  content: "";
-  position: absolute;
-  right: -0.35rem;
-  bottom: -0.35rem;
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 50%;
-  border: 2px solid var(--mp-ink);
-  background: var(--mp-nogo-group) center / contain no-repeat, var(--mp-face-bg);
-  box-shadow: 0 2px 0 var(--mp-ink);
+.md-typeset .mp-creator__avatar--group {
+  background: var(--mp-nogo-group) center / 88% no-repeat, var(--mp-face-bg);
+}
+
+/* the creator card and the group card: side by side when there is room,
+   otherwise one under the other */
+.md-typeset .mp-creators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.2rem;
+  margin: 1.2rem 0 1.8rem;
+}
+
+.md-typeset .mp-creators .mp-creator {
+  margin: 0;
 }
 
 .md-typeset .mp-creator__avatar .twemoji,
