@@ -367,7 +367,9 @@ def badge_reward(description: str) -> str:
     """Reads 'Grants access to the "X" Title + "🍀" Tag effect' style text."""
     parts = []
     for line in description.splitlines():
-        if "title" not in line.lower() and "effect" not in line.lower() and "coins" not in line.lower():
+        # Only the reward lines ("Grants access to ...", "Unlocks ..."), not
+        # requirement lines like "Earn 1000 Coins in the AFK World".
+        if not re.search(r"grant|unlock|title|effect", line, re.I):
             continue
         tag = re.search(r'"([^"]+)"\s*(?:Tag|Effect)', line, re.I)
         quoted = re.findall(r'"([^"]+)"', line)
