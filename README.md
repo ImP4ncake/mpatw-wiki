@@ -1,68 +1,119 @@
+<div align="center">
+
+<a href="https://imp4ncake.github.io/mpatw-wiki/"><img src="docs/assets/images/logo.svg" width="104" alt="MPATW Wiki logo"></a>
+
 # MPATW Wiki
 
-Unofficial fan wiki for the **18+ version** of the Roblox game **Meet People Across The World**.
+### The community encyclopedia for 18+ Meet People Across The World
 
-**Read the wiki:** https://imp4ncake.github.io/mpatw-wiki/
+Every badge, title, gamepass, code and event of the Roblox hangout<br>
+where you meet people from all over the world, with live numbers straight from Roblox.
 
-> This is a fan project. It is not affiliated with, endorsed by or connected to Roblox Corporation or Nogo.
+<br>
 
-## Contributing
+[![Open the wiki](https://img.shields.io/badge/Open_the_wiki-FFD648?style=for-the-badge&logo=bookstack&logoColor=1B1C21)](https://imp4ncake.github.io/mpatw-wiki/)
+&nbsp;
+[![Play on Roblox](https://img.shields.io/badge/Play_on_Roblox-3CCF5A?style=for-the-badge&logo=roblox&logoColor=white)](https://www.roblox.com/games/110570058234582)
 
-Anyone with a GitHub account can help. The easiest way is to click the edit button on any wiki page. See [CONTRIBUTING.md](CONTRIBUTING.md) for the rules.
+![Live data every hour](https://img.shields.io/badge/live_data-every_hour-4FB3FF?style=flat-square)
+![Unofficial fan wiki](https://img.shields.io/badge/unofficial-fan_wiki-FF5FA2?style=flat-square)
+![Last update](https://img.shields.io/github/last-commit/ImP4ncake/mpatw-wiki?style=flat-square&label=last%20update&color=B06CFF)
 
-## How the site works
+<br>
 
-The wiki is built with [Zensical](https://zensical.org) and hosted for free on GitHub Pages.
+<a href="https://imp4ncake.github.io/mpatw-wiki/"><img src=".github/readme/showcase.webp" alt="The MPATW Wiki home page on a computer and on a phone"></a>
 
-| Path | What it is |
-|---|---|
-| `docs/` | The wiki pages, in 10 category folders, written in Markdown |
-| `docs/assets/stylesheets/game.css` | The game-style look (colors, fonts, buttons, menu tiles) |
-| `docs/assets/javascripts/game.js` | Animated counters and countdowns |
-| `scripts/update_data.py` | Downloads live stats, badges and gamepasses from the Roblox APIs |
-| `data/` | Saved game data and the daily history used for the stats chart |
-| `includes/` | Snippets included in pages (`includes/generated/` is written by the script) |
-| `docs/assets/images/` | Screenshots and images |
-| `zensical.toml` | Site settings and the navigation menu |
-| `templates/` | Starting points for new pages (page, badge, item, event) |
-| `requirements.txt` | The pinned Zensical version |
-| `.github/workflows/docs.yml` | Builds and publishes the site on every push to `main` and every hour |
+</div>
 
-### Preview on your computer (optional)
+<br>
 
-You need Python 3 installed.
+## ✨ Highlights
 
-```bash
-pip install -r requirements.txt
-zensical serve
-```
+<table>
+<tr>
+<td align="center" width="33%">
+<h3>📈</h3>
+<b>Live numbers</b><br>
+<sub>Players online, visits, favorites and likes, refreshed from Roblox every hour</sub>
+</td>
+<td align="center" width="33%">
+<h3>🏅</h3>
+<b>Every badge, ranked</b><br>
+<sub>From the easiest to the hardest, based on how many players own each one</sub>
+</td>
+<td align="center" width="33%">
+<h3>📢</h3>
+<b>Official updates</b><br>
+<sub>The developer's announcements from the game's Discord, within the hour</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<h3>⏳</h3>
+<b>Limited-time timers</b><br>
+<sub>Countdowns for event items before they leave the shop</sub>
+</td>
+<td align="center" width="33%">
+<h3>🎮</h3>
+<b>Looks like the game</b><br>
+<sub>Chunky buttons, menu tiles and the sunny sky of Meet People Across The World</sub>
+</td>
+<td align="center" width="33%">
+<h3>📱</h3>
+<b>Made for every screen</b><br>
+<sub>Works on phones, with light and dark mode and instant search</sub>
+</td>
+</tr>
+</table>
 
-Then open http://localhost:8000 in your browser. The preview reloads automatically when you save a file.
+## 🗺️ What's inside
 
-### Live game data
+<table>
+<tr>
+<td width="50%">📖 &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/game-info/"><b>Game Information</b></a><br><sub>The game, its creator, its history and its versions</sub></td>
+<td width="50%">⚙️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/mechanics/"><b>Game Mechanics</b></a><br><sub>The core systems and how they work</sub></td>
+</tr>
+<tr>
+<td>🏆 &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/badges/"><b>Badges &amp; Titles</b></a><br><sub>Achievements, unlockable titles and tag effects</sub></td>
+<td>🗺️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/activities/"><b>Activities &amp; Locations</b></a><br><sub>Minigames and interactive areas around the map</sub></td>
+</tr>
+<tr>
+<td>🛍️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/items/"><b>Items &amp; Customization</b></a><br><sub>Items, trolls, cosmetics and gamepasses</sub></td>
+<td>🖥️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/servers/"><b>Servers &amp; Features</b></a><br><sub>Server types, voice chat and custom servers</sub></td>
+</tr>
+<tr>
+<td>📅 &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/events/"><b>Events &amp; Updates</b></a><br><sub>Seasonal events, limited-time rewards and game updates</sub></td>
+<td>🛡️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/community/"><b>Community &amp; Moderation</b></a><br><sub>Rules, moderation and community links</sub></td>
+</tr>
+<tr>
+<td>🎓 &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/guides/"><b>Guides &amp; Tutorials</b></a><br><sub>Step-by-step guides for new and experienced players</sub></td>
+<td>📂 &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/wiki/"><b>Wiki Resources</b></a><br><sub>How the wiki works and how to help</sub></td>
+</tr>
+</table>
 
-Every hour GitHub Actions runs `scripts/update_data.py`, which reads the official Roblox APIs for the 18+ version (no login needed) and regenerates stats, badges, titles, tag effects, gamepasses and the update history, then republishes the site. It also builds the category cards, the home page menu, Missing Pages and Recent Changes from the nav in `zensical.toml`. Once a day it also saves a data point in `data/history.json`, which feeds the "Visits per day" chart.
+## 📸 A look around
 
-#### Official updates from Discord
+<table>
+<tr>
+<td width="50%"><a href="https://imp4ncake.github.io/mpatw-wiki/"><img src=".github/readme/menu.webp" alt="The wiki menu with its ten categories"></a></td>
+<td width="50%"><a href="https://imp4ncake.github.io/mpatw-wiki/game-info/stats/"><img src=".github/readme/stats.webp" alt="The Game Stats page with live numbers"></a></td>
+</tr>
+<tr>
+<td align="center"><sub>The wiki menu, styled like the in-game one</sub></td>
+<td align="center"><sub>Live game stats, straight from Roblox</sub></td>
+</tr>
+</table>
 
-The **Update History** page shows the announcements of the game's official Discord updates channel. That channel is *followed* into a channel of the wiki's own Discord server, where a read-only bot reads the announcements. The script saves them in `data/discord-updates.json` and copies their images into `docs/assets/updates/` (Discord image links expire).
+## 🤝 Want to help?
 
-It needs two repository secrets (Settings → Secrets and variables → Actions):
+Spotted something missing or out of date? Every page has an edit button: suggest your change, and it goes live once the wiki's owner has reviewed and approved it.
+The [contribution guide](https://imp4ncake.github.io/mpatw-wiki/wiki/contribute/) explains everything step by step.
 
-| Secret | Value |
-|---|---|
-| `DISCORD_BOT_TOKEN` | The bot's token (Discord Developer Portal → Bot → Reset Token). Turn on **Message Content Intent** |
-| `DISCORD_CHANNEL_ID` | The ID of the channel in your server that follows the updates channel |
+<br>
 
-Without them the page simply keeps what is already saved.
-
-To run it yourself: `python scripts/update_data.py` (or `--offline` to only regenerate the pages from the saved data).
-
-### Updating Zensical
-
-Zensical is still in early development (0.x versions), so the version is pinned in `requirements.txt`. To upgrade, change the version there, run `zensical build` locally to check that nothing breaks, then push.
-
-## License
-
-- Wiki text: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- Site code and configuration: Apache License 2.0 (see [LICENSE](LICENSE))
+<div align="center">
+<sub>
+Unofficial fan project, not affiliated with or endorsed by Roblox Corporation or Nogo.<br>
+Wiki text under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Site code under <a href="LICENSE">Apache 2.0</a> · <a href=".github/MAINTAINING.md">How the site is built</a>
+</sub>
+</div>
