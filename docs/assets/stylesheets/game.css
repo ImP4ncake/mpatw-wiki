@@ -3152,6 +3152,174 @@ body {
 }
 
 /* ==========================================================================
+   Small cards with a round icon (where you see it, good to know)
+   ========================================================================== */
+
+.md-typeset .mp-where,
+.md-typeset .mp-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1.1rem 0 1.3rem;
+}
+
+.md-typeset .mp-where__item,
+.md-typeset .mp-fact {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.75rem 0.9rem 0.75rem 0.75rem;
+  border-radius: 16px;
+  background: var(--mp-card);
+  color: var(--mp-text);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 5px 0 var(--mp-ink);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.md-typeset .mp-fact {
+  align-items: flex-start;
+}
+
+.md-typeset .mp-where__icon,
+.md-typeset .mp-fact__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  border: 2px solid var(--mp-ink);
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 50%), var(--tone, #6b7280);
+  box-shadow: 0 3px 0 var(--mp-ink);
+}
+
+.md-typeset .mp-where__icon .twemoji,
+.md-typeset .mp-where__icon svg,
+.md-typeset .mp-fact__icon .twemoji,
+.md-typeset .mp-fact__icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  max-height: none;
+  color: #fff;
+  stroke-width: 2.6;
+  filter: drop-shadow(0 1px 0 var(--mp-ink));
+}
+
+.md-typeset .mp-where__text b,
+.md-typeset .mp-fact__text b {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  color: var(--mp-heading);
+}
+
+.mp-tone--violet { --tone: #9466f5; }
+.mp-tone--blue { --tone: #3b8ff0; }
+.mp-tone--gold { --tone: #f2ab00; }
+.mp-tone--red { --tone: #ff4b45; }
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .mp-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .md-typeset .mp-where {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Reputation scale with the badge milestones
+   ========================================================================== */
+
+.md-typeset .mp-scale {
+  margin: 1.1rem 0 1.3rem;
+  padding: 1.3rem 1.2rem 0.6rem;
+  border-radius: 18px;
+  background: var(--mp-panel);
+  color: var(--mp-on-dark);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink), 0 18px 30px -18px rgba(10, 30, 60, 0.55);
+}
+
+.md-typeset .mp-scale__bar {
+  position: relative;
+  height: 0.95rem;
+  border-radius: 999px;
+  border: 2px solid var(--mp-ink);
+  background: linear-gradient(90deg, #ee3d37 0%, #ff8a2b 28%, #8b909e 50%, #7fd36a 72%, #2fb84f 100%);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35);
+}
+
+.md-typeset .mp-scale__mark {
+  position: absolute;
+  top: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--mp-ink);
+  background: radial-gradient(circle at 35% 30%, #fff, #dfe3ea);
+  box-shadow: 0 2px 0 var(--mp-ink);
+  transform: translate(-50%, -50%);
+}
+
+.md-typeset .mp-scale__mark--low { left: 18%; }
+.md-typeset .mp-scale__mark--zero { left: 50%; width: 0.75rem; height: 0.75rem; }
+.md-typeset .mp-scale__mark--high { left: 82%; }
+
+.md-typeset .mp-scale__labels {
+  position: relative;
+  height: 2.9rem;
+  margin-top: 0.55rem;
+}
+
+.md-typeset .mp-scale__label {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--mp-on-dark-2);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.md-typeset .mp-scale__label b {
+  display: block;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  text-shadow: var(--mp-outline-thin);
+}
+
+.md-typeset .mp-scale__label--low { left: 18%; }
+.md-typeset .mp-scale__label--low b { color: #ff8a84; }
+.md-typeset .mp-scale__label--zero { left: 50%; }
+.md-typeset .mp-scale__label--high { left: 82%; }
+.md-typeset .mp-scale__label--high b { color: #8ff0a2; }
+
+/* the two badges side by side, in the same order as the scale */
+.md-typeset .mp-rep-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0.9rem;
+  margin: 0 0 1.4rem;
+}
+
+.md-typeset .mp-rep-badges > .mp-badges {
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+}
+
+/* ==========================================================================
    Back to the section a page belongs to (game.js adds it above the title;
    it takes the place of the breadcrumb trail)
    ========================================================================== */
