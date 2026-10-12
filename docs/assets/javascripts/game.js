@@ -107,7 +107,46 @@
     });
   }
 
+  // Each wiki category has its own color: set it from the URL.
+  var ACCENTS = {
+    "game-info": "blue", mechanics: "violet", badges: "gold", activities: "green", items: "pink",
+    servers: "cyan", events: "orange", community: "red", guides: "teal", wiki: "indigo"
+  };
+
+  function initAccent() {
+    var parts = location.pathname.split("/").filter(Boolean);
+    for (var i = 0; i < parts.length; i++) {
+      if (ACCENTS[parts[i]]) {
+        document.body.setAttribute("data-accent", ACCENTS[parts[i]]);
+        return;
+      }
+    }
+  }
+
+  // The big search box on the home page opens the site search.
+  function initSearchBox() {
+    document.querySelectorAll("[data-open-search]").forEach(function (el) {
+      el.addEventListener("click", function (event) {
+        var button = document.querySelector(".md-search__button");
+        var toggle = document.getElementById("__search");
+        event.preventDefault();
+        if (button && button.offsetParent !== null) {
+          button.click();
+        } else if (toggle) {
+          toggle.checked = true;
+          toggle.dispatchEvent(new Event("change"));
+        }
+        setTimeout(function () {
+          var input = document.querySelector(".md-search__input, .md-search input");
+          if (input) input.focus();
+        }, 80);
+      });
+    });
+  }
+
   function init() {
+    initAccent();
+    initSearchBox();
     initCounters();
     initCountdowns();
     initRelativeTimes();

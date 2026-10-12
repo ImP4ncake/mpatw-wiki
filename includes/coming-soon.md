@@ -3,5 +3,5 @@
 
 This section is still empty: we are filling it in piece by piece. Do you know something about it? Every bit helps.
 
-[:lucide-pencil: Help write this page](../contributing.md){ .mp-btn .mp-btn--green }
+[:lucide-pencil: Help write this page](../wiki/contribute.md){ .mp-btn .mp-btn--green }
 </div>

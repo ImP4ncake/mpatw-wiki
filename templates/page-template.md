@@ -1,5 +1,6 @@
 ---
 icon: lucide/file-text
+description: "One short sentence about this page (shown on its category card)."
 ---
 
 # Page title
@@ -12,22 +13,13 @@ The main information. Short paragraphs and lists are easier to read than long bl
 
 ## How it works
 
-Explain the feature step by step.
-
 1. First step
 2. Second step
 3. Third step
 
 ## Related badges
 
-| Badge | How to get it |
-|---|---|
-| Badge name | Requirement |
-
-## Tips
-
-- A useful tip
-- Another tip
+;--8<-- "generated/badge/pianist.md"
 
 !!! question "Needs info"
 
@@ -35,8 +27,9 @@ Explain the feature step by step.
 
 <!--
 Checklist before opening a pull request:
-- Everything on this page was checked in the game
+- Everything on this page was checked in the 18+ version of the game
 - Things that change (codes, prices) have a date
 - No personal information about other players
-- New page added to the nav list in zensical.toml
+- New page added to the nav list in zensical.toml, under its category
+- To insert a live badge card, remove the ";" at the start of the line above
 -->
