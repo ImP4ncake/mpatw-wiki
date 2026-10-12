@@ -3003,6 +3003,32 @@ body {
 }
 
 /* ==========================================================================
+   Back to the section a page belongs to (game.js adds it above the title;
+   it takes the place of the breadcrumb trail)
+   ========================================================================== */
+
+.mp-has-back .md-path {
+  display: none;
+}
+
+.md-typeset .mp-btn--back {
+  gap: 0.35em;
+  margin: 0.2rem 0 0.9rem;
+  padding: 0.3em 0.95em 0.35em 0.65em;
+  font-size: 0.8rem;
+}
+
+.md-typeset .mp-btn--back svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform 0.15s ease;
+}
+
+.md-typeset .mp-btn--back:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ==========================================================================
    Back to top: a round gold button like the game's, bottom right
    ========================================================================== */
 

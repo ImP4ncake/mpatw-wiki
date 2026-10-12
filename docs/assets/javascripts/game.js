@@ -338,6 +338,35 @@
     });
   }
 
+  // Every page below the home page gets a "back" button to the section it
+  // belongs to (taken from the breadcrumb trail), so you don't have to go all
+  // the way back home. On a section page it leads home.
+  function initBackButton() {
+    var links = document.querySelectorAll(".md-path .md-path__link");
+    var title = document.querySelector(".md-content__inner h1");
+    if (!links.length || !title) return;
+    var here = location.href.split("#")[0].replace(/index\.html$/, "");
+    var target = null;
+    for (var i = links.length - 1; i >= 0; i--) {
+      if (links[i].href.split("#")[0].replace(/index\.html$/, "") !== here) {
+        target = links[i];
+        break;
+      }
+    }
+    if (!target) return;
+    var name = target.textContent.trim();
+    var back = document.createElement("a");
+    back.className = "mp-btn mp-btn--back";
+    back.href = target.href;
+    back.setAttribute("aria-label", "Back to " + name);
+    back.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7M19 12H5"/></svg>' +
+      "<span></span>";
+    back.querySelector("span").textContent = name;
+    title.parentNode.insertBefore(back, title);
+    document.body.classList.add("mp-has-back");
+  }
+
   // A round "back to top" button that shows up once you scroll down.
   // It scrolls smoothly back up, without reloading the page.
   function initBackToTop() {
@@ -409,6 +438,7 @@
     initHeaderName();
     initCopyButtons();
     initBackToTop();
+    initBackButton();
     initAccent();
     initSearchBox();
     initCounters();
