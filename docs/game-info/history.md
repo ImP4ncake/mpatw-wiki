@@ -1,13 +1,11 @@
 ---
 icon: lucide/history
-description: "Development history and important milestones."
+description: "When each badge was added, and every game update."
 ---
 
 # Game History
 
-## Milestones
-
---8<-- "milestones.md"
+How the 18+ version has changed since it opened in October 2024. The main milestones are on [Game Information](index.md#how-its-growing).
 
 ## Badges added over time
 

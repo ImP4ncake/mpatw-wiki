@@ -11,12 +11,10 @@ description: "Differences between the 18+ and the standard version."
 |---|---|---|
 | **Who can play** | Adults (18+) only | Everyone allowed by Roblox |
 | **Released** | 18 Oct 2024 | 1 Sep 2024 |
-| **Visits** (Oct 2026) | about 33 million | about 76.5 million |
 | **Average playtime** | about 19 minutes | about 10.5 minutes |
-| **All-time player peak** | 1,758 (8 Aug 2026) | 2,988 (25 Jul 2026) |
 | **Play** | [Open on Roblox](https://www.roblox.com/games/110570058234582) | [Open on Roblox](https://www.roblox.com/games/78699621133325) |
 
-<small>Visits, playtime and peaks from Rolimons, checked 12 October 2026. Live numbers for the 18+ version are on [Game Stats](stats.md).</small>
+<small>Playtime from Rolimons, checked 12 October 2026. Visits and player peaks of both versions are on [Game Information](index.md#how-its-growing), live numbers on [Game Stats](stats.md).</small>
 
 ## What carries over
 

@@ -1,15 +1,11 @@
 ---
 icon: lucide/info
-description: "What the game is, in a few lines and key facts."
+description: "The main facts about the game at a glance, updated every hour."
 ---
 
-# Overview
+# Key Facts
 
-**18+ Meet People Across The World** is the adults-only version of *Meet People Across The World*, a Roblox social hangout made by [Nogo](nogo.md). Every player's country is visible, so you can meet and talk to people from all over the world, often with voice chat.
-
-## Key facts
-
-Live from Roblox, updated every hour:
+The main facts about **18+ Meet People Across The World** at a glance, live from Roblox and updated every hour.
 
 --8<-- "generated/facts.md"
 

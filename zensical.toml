@@ -14,7 +14,7 @@ nav = [
   { "Home" = "index.md" },
   { "Game Information" = [
     "game-info/index.md",
-    { "Overview" = "game-info/overview.md" },
+    { "Key Facts" = "game-info/overview.md" },
     { "Nogo" = "game-info/nogo.md" },
     { "Game History" = "game-info/history.md" },
     { "Supported Platforms" = "game-info/platforms.md" },
