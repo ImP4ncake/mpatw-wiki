@@ -52,6 +52,7 @@ from pathlib import Path
 # The 18+ version of the game
 UNIVERSE_ID = 6690355795
 PLACE_ID = 110570058234582
+CREATOR_USER_ID = 149639411  # Nogo's Roblox profile
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -283,6 +284,47 @@ def fetch_passes() -> list[dict]:
     return passes
 
 
+def list_games(base_url: str) -> list[dict]:
+    games, cursor = [], ""
+    while True:
+        url = base_url + ("&cursor=" + urllib.parse.quote(cursor) if cursor else "")
+        page = get_json(url)
+        games += page.get("data", [])
+        cursor = page.get("nextPageCursor")
+        if not cursor:
+            return games
+
+
+def fetch_creator_games() -> list[dict]:
+    """Every public game connected to Nogo's profile: the games of the
+    account itself and of every group the account owns."""
+    owners = [("user", CREATOR_USER_ID, "Nogo's account")]
+    roles = get_json(f"https://groups.roblox.com/v1/users/{CREATOR_USER_ID}/groups/roles").get("data", [])
+    for r in roles:
+        group = r.get("group") or {}
+        if (r.get("role") or {}).get("rank") == 255 and group.get("id"):
+            owners.append(("group", group["id"], f"{group.get('name') or 'Group'} group"))
+    found: dict[int, dict] = {}
+    for kind, owner_id, owner_name in owners:
+        if kind == "user":
+            base = f"https://games.roblox.com/v2/users/{owner_id}/games?accessFilter=Public&limit=50&sortOrder=Asc"
+        else:
+            base = f"https://games.roblox.com/v2/groups/{owner_id}/gamesV2?accessFilter=Public&limit=50&sortOrder=Asc"
+        for g in list_games(base):
+            found[g["id"]] = {
+                "id": g["id"],
+                "name": g.get("name"),
+                "created": g.get("created"),
+                "visits": g.get("placeVisits"),
+                "place_id": (g.get("rootPlace") or {}).get("id"),
+                "owner": owner_name,
+            }
+    games = sorted(found.values(), key=lambda g: g.get("created") or "")
+    for g in games:  # shown in the workflow log, to check the list
+        print(f"  creator game: {g.get('created', '?')[:10]} | {g['name']} | {g.get('visits')} visits | {g['owner']}")
+    return games
+
+
 def update_snapshot(offline: bool) -> tuple[dict, bool]:
     """Returns (snapshot, game_fetched)."""
     snap = json.loads(SNAPSHOT.read_text("utf-8")) if SNAPSHOT.exists() else {}
@@ -293,11 +335,21 @@ def update_snapshot(offline: bool) -> tuple[dict, bool]:
     snap["universe_id"] = UNIVERSE_ID
 
     fetched_game = False
-    for key, fetcher in (("game", fetch_game), ("votes", fetch_votes), ("badges", fetch_badges), ("passes", fetch_passes)):
+    fetchers = (
+        ("game", fetch_game),
+        ("votes", fetch_votes),
+        ("badges", fetch_badges),
+        ("passes", fetch_passes),
+        ("creator_games", fetch_creator_games),
+    )
+    for key, fetcher in fetchers:
         try:
             value = fetcher()
         except Exception as exc:  # noqa: BLE001
             print(f"warning: could not fetch {key}, keeping the last saved data ({exc})")
+            continue
+        if key == "creator_games" and not value:
+            print("warning: no creator games found, keeping the last saved list")
             continue
         if key in ("badges", "passes"):  # keep known icons if the icon service failed
             old_icons = {x.get("name"): x.get("icon") for x in snap.get(key, [])}
@@ -363,6 +415,7 @@ def compact(n) -> str:
 def parse_time(value: str | None) -> dt.datetime | None:
     if not value:
         return None
+    value = re.sub(r"(\.\d{6})\d+", r"\1", value)
     try:
         return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
@@ -712,6 +765,37 @@ def gen_passes(snap: dict) -> None:
     write("gamepasses.md", "\n".join(out))
     limited = [p for p in passes if "LIMITED" in p["name"]]
     write("limited-passes.md", '<div class="mp-passes">' + "".join(pass_card(p, p in on_sale) for p in limited) + "</div>" if limited else "")
+
+
+def gen_creator_games(snap: dict) -> None:
+    """Nogo's games as a timeline, oldest first, with the two versions of
+    Meet People Across The World highlighted."""
+    games = snap.get("creator_games") or []
+    if not games:
+        write("nogo-games.md", "<p>The list of Nogo's games appears here after the next update from Roblox.</p>")
+        return
+    items = []
+    for g in games:
+        name = esc(g.get("name") or "?")
+        if g.get("place_id"):
+            name = f'<a href="https://www.roblox.com/games/{esc(g["place_id"])}" target="_blank" rel="noopener">{name}</a>'
+        highlight = "meet people across the world" in (g.get("name") or "").lower()
+        if highlight:
+            name = f"<b>{name}</b>"
+        created = parse_time(g.get("created"))
+        when = created.strftime("%b %Y") if created else "?"
+        details = [f"{compact(g['visits'])} visits"] if isinstance(g.get("visits"), int) else []
+        details.append(esc(g.get("owner") or ""))
+        cls = "mp-timeline__item mp-timeline__item--hl" if highlight else "mp-timeline__item"
+        items.append(
+            f'<div class="{cls}"><span class="mp-timeline__date">{when}</span>'
+            f'<span class="mp-timeline__text">{name}<small>{" · ".join(d for d in details if d)}</small></span></div>'
+        )
+    write(
+        "nogo-games.md",
+        f'<p class="mp-lead"><b>{len(games)}</b> public games, from the oldest to the newest. '
+        f'Updated {time_tag(snap.get("fetched_at"))}.</p>\n\n<div class="mp-timeline">\n' + "\n".join(items) + "\n</div>",
+    )
 
 
 def gen_pass_icons(snap: dict) -> None:
@@ -1418,6 +1502,7 @@ def main() -> int:
     gen_badge_timeline(badges)
     gen_passes(snap)
     gen_pass_icons(snap)
+    gen_creator_games(snap)
     gen_update_history(snap, history)
     gen_discord()
     gen_home_news(snap, badges)

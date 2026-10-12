@@ -24,7 +24,7 @@ A month and a half later came the **18+ version**: a separate experience only fo
 ## The creator
 
 <div class="mp-creator" markdown>
-<div class="mp-creator__avatar" markdown="span">:lucide-user-round:</div>
+<div class="mp-creator__avatar mp-creator__avatar--img" markdown="span">![Nogo group icon](../assets/images/nogo-group.webp)</div>
 <div class="mp-creator__body" markdown>
 <div class="mp-creator__name" markdown="span">Nogo <span class="mp-creator__chip">:lucide-badge-check: Verified group</span></div>
 

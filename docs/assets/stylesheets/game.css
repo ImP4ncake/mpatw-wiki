@@ -1844,6 +1844,13 @@ body {
   color: #8fd0ff;
 }
 
+.md-typeset .mp-timeline__text small {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.68rem;
+  color: var(--mp-on-dark-2);
+}
+
 .mp-missing {
   margin: 0 0 1rem;
   padding: 0.85rem 1rem;
@@ -3101,6 +3108,20 @@ body {
     linear-gradient(180deg, #b48cff, #7c4ddb);
   box-shadow: 0 4px 0 var(--mp-ink);
   color: #fff;
+}
+
+/* the Nogo group's own icon, on a light circle so it shows on the dark card */
+.md-typeset .mp-creator__avatar--img {
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #ffffff 0, #e4ecf7 70%, #c9d6e8 100%);
+}
+
+.md-typeset .mp-creator__avatar--img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.18);
 }
 
 .md-typeset .mp-creator__avatar .twemoji,
