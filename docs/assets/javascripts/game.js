@@ -149,26 +149,6 @@
   // Motion
   // ---------------------------------------------------------------------
 
-  // Thin rainbow bar that shows how far down the page you are.
-  function initScrollbar() {
-    var bar = document.createElement("div");
-    bar.className = "mp-scrollbar";
-    document.body.appendChild(bar);
-    var ticking = false;
-    function update() {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.setProperty("--progress", max > 0 ? Math.min(window.scrollY / max, 1) : 0);
-      ticking = false;
-    }
-    window.addEventListener("scroll", function () {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-    }, { passive: true });
-    update();
-  }
-
   // Blocks slide in and grids pop in tile by tile as you scroll.
   var BLOCKS = ".md-typeset h2, .md-typeset .md-typeset__scrollwrap, .md-typeset .admonition, .md-typeset details, " +
     ".mp-menu, .mp-chat, .mp-cta, .mp-event, .mp-soon, .mp-gamemenu, .mp-mainmenu, .mp-chart, .mp-chart-empty, .mp-missing, .mp-item, .mp-patch";
@@ -334,7 +314,6 @@
   }
 
   function initMotion() {
-    initScrollbar();
     if (reduceMotion) return;
     initReveal();
     initTilt();

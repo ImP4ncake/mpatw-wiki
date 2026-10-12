@@ -125,6 +125,19 @@ body {
   text-shadow: var(--mp-outline-thin);
 }
 
+/* the header always shows the wiki's name, it doesn't switch to the
+   page title when you scroll down */
+.md-header__title .md-header__topic:first-child {
+  z-index: 0;
+  pointer-events: auto;
+  opacity: 1;
+  transform: none;
+}
+
+.md-header__topic + .md-header__topic {
+  display: none;
+}
+
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   height: 1.9rem;
@@ -2192,21 +2205,6 @@ body {
    Motion: everything below is added by game.js and switched off for people
    who ask their system for reduced motion.
    ========================================================================== */
-
-/* reading progress bar under the header */
-.mp-scrollbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  height: 4px;
-  width: 100%;
-  transform-origin: 0 50%;
-  transform: scaleX(var(--progress, 0));
-  background: linear-gradient(90deg, #3ccf5a, #ffd648, #ff8a2b, #ff5fa2, #b06cff, #4fb3ff);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-}
 
 /* page content fades in */
 .md-content__inner {
