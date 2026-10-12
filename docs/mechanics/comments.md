@@ -5,7 +5,7 @@ description: "How the player comment system works."
 
 # Comments
 
-You can leave **comments** on other players' profiles, and they can leave comments on yours. Comments are a nice way to say thanks after a good conversation.
+You can leave **comments** on the profiles of the players you interact with, and they can leave comments on yours. Comments are a nice way to say thanks after a good conversation, together with some [reputation](reputation.md).
 
 !!! warning "Be respectful"
 

@@ -27,10 +27,13 @@ Earning 1,000 coins in the AFK World gives the **AFK** badge:
 
 ## Spending coins
 
-You can also "make it rain" a currency for other players, which gives the **Rainmaker** badge.
+| Use | How it works |
+|---|---|
+| **[Give reputation](reputation.md)** | Every coin gives another player **1 reputation**, positive (+1) or negative (−1) |
+| **Make it rain** | Shower a currency on other players. Gives the **Rainmaker** badge |
 
 !!! question "Needs info"
 
-    What can you buy with coins, and how much do things cost? [Help complete this page](../wiki/contribute.md).
+    What else can you buy with coins, and how much do things cost? [Help complete this page](../wiki/contribute.md).
 
 See also: [How to Earn Coins](../guides/earn-coins.md).
