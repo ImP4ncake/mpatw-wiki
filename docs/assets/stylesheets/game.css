@@ -2631,6 +2631,13 @@ body {
   visibility: hidden;
 }
 
+/* the theme fades header buttons on hover; the globe stays solid so the
+   plate behind it never shows through */
+.md-header__button.md-logo:hover,
+.md-header__button.md-logo:focus {
+  opacity: 1;
+}
+
 .md-header__button.md-logo::before,
 .md-header__button.md-logo::after {
   content: "";
