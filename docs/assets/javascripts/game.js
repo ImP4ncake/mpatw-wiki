@@ -300,6 +300,44 @@
     name.addEventListener("click", function () { window.location.href = logo.href; });
   }
 
+  // Codes: click to copy, and the button says "Copied!" for a moment.
+  function initCopyButtons() {
+    document.querySelectorAll("[data-copy]").forEach(function (btn) {
+      var label = btn.querySelector(".mp-code__btn");
+      var timer;
+      function copied() {
+        btn.classList.add("is-copied");
+        if (label) label.textContent = "Copied!";
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          btn.classList.remove("is-copied");
+          if (label) label.textContent = "Copy";
+        }, 1600);
+      }
+      function fallback(text) {
+        var area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        try {
+          if (document.execCommand("copy")) copied();
+        } catch (e) { /* the code stays visible to copy by hand */ }
+        area.remove();
+      }
+      btn.addEventListener("click", function () {
+        var text = btn.getAttribute("data-copy");
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(copied, function () { fallback(text); });
+        } else {
+          fallback(text);
+        }
+      });
+    });
+  }
+
   // A burst of sparks when you press Play.
   function initSparks() {
     var EMOJI = ["✨", "⭐", "🌍", "💬", "🎉"];
@@ -334,6 +372,7 @@
   function init() {
     initTitles();
     initHeaderName();
+    initCopyButtons();
     initAccent();
     initSearchBox();
     initCounters();
