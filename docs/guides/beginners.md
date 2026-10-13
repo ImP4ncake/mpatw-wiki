@@ -30,7 +30,7 @@ Each one unlocks a [title and a tag effect](../badges/titles.md).
 
 ## 4. Earn coins
 
-Coins arrive regularly while you play. Redeem [codes](../mechanics/codes.md) and visit the **AFK World** when you step away. More in [How to Earn Coins](earn-coins.md).
+Coins arrive regularly while you play. Redeem [codes](../mechanics/codes.md) and visit the **AFK World** when you step away. More in [How to Farm Coins](earn-coins.md).
 
 ## 5. Explore the activities
 

@@ -41,13 +41,11 @@ hide:
 
 ## Featured Guides
 
-<div class="mp-featured" markdown>
+<div class="mp-featured mp-featured--guides" markdown>
 [<span class="mp-feature__icon">:lucide-rocket:</span><span class="mp-feature__text"><b>Beginner's Guide</b><small>Everything for your first hour</small></span>](guides/beginners.md){ .mp-feature .mp-cat--teal }
-[<span class="mp-feature__icon">:lucide-target:</span><span class="mp-feature__text"><b>How to Unlock Every Badge</b><small>From the easiest to the hardest</small></span>](guides/badge-hunting.md){ .mp-feature .mp-cat--gold }
-[<span class="mp-feature__icon">:lucide-coins:</span><span class="mp-feature__text"><b>How to Farm Coins</b><small>Every known method</small></span>](guides/earn-coins.md){ .mp-feature .mp-cat--green }
-[<span class="mp-feature__icon">:lucide-hourglass:</span><span class="mp-feature__text"><b>All Limited-Time Rewards</b><small>Event badges and items</small></span>](events/limited-rewards.md){ .mp-feature .mp-cat--orange }
-[<span class="mp-feature__icon">:lucide-tag:</span><span class="mp-feature__text"><b>How to Unlock Every Title</b><small>Titles and tag effects</small></span>](badges/titles.md){ .mp-feature .mp-cat--violet }
-[<span class="mp-feature__icon">:lucide-chart-line:</span><span class="mp-feature__text"><b>Live Game Stats</b><small>Players, visits and records</small></span>](game-info/stats.md){ .mp-feature .mp-cat--blue }
+[<span class="mp-feature__icon">:lucide-coins:</span><span class="mp-feature__text"><b>How to Farm Coins</b><small>Every known way, quickest first</small></span>](guides/earn-coins.md){ .mp-feature .mp-cat--green }
+[<span class="mp-feature__icon">:lucide-target:</span><span class="mp-feature__text"><b>Badge Hunting Guide</b><small>Every badge, from the easiest to the hardest</small></span>](guides/badge-hunting.md){ .mp-feature .mp-cat--gold }
+[<span class="mp-feature__icon">:lucide-trophy:</span><span class="mp-feature__text"><b>Leaderboard Guide</b><small>Reach #1 and get the Angel badge</small></span>](guides/leaderboards.md){ .mp-feature .mp-cat--violet }
 </div>
 
 ## Latest Updates
