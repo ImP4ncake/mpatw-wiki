@@ -1,0 +1,526 @@
+{
+ "source": {
+  "name": "Detailed Ban Info",
+  "where": "the official community Discord",
+  "invite": "https://discord.gg/vcworld",
+  "ban_posts": "https://discord.com/channels/1260693663160209501/1486416123267383446",
+  "checked": "13 October 2026"
+ },
+ "reading": {
+  "notes": [
+   "If an Example has * at the end, it means there's an Example below.",
+   "The rules apply for all languages."
+  ],
+  "words": [
+   {
+    "word": "Say",
+    "icon": "message-circle",
+    "means": "Text Chat, Voice Chat, Signs, Images, Written Text in the Draw Area, Bios, Usernames, Words found on anything you wear, Comments to other Players, etc"
+   },
+   {
+    "word": "Image",
+    "icon": "image",
+    "means": "Image Signs, Booth Images, Stickers, Drawings in the Draw Area you participated in, Builds you participated in, Stuff found on the Clothes you wear, Camera Booth Pictures, etc"
+   },
+   {
+    "word": "Audio",
+    "icon": "volume-2",
+    "means": "Voice Chat, Boombox Sounds, what you play on Instruments (Pianos), etc"
+   },
+   {
+    "word": "Country",
+    "icon": "earth",
+    "means": "City, Village, Province, State, Continent, etc"
+   },
+   {
+    "word": "Emote / Body Movement",
+    "icon": "person-standing",
+    "means": "Emotes, Items that Move Your Arm, VR Movement, anything that allows you to move your body, etc"
+   }
+  ]
+ },
+ "lengths": {
+  "steps": [
+   {
+    "n": "1st ban",
+    "len": "3 days"
+   },
+   {
+    "n": "2nd ban",
+    "len": "7 days"
+   },
+   {
+    "n": "3rd ban",
+    "len": "30 days"
+   },
+   {
+    "n": "4th ban",
+    "len": "Permanent"
+   }
+  ],
+  "notes": [
+   "For multiple bannable actions around the same time, you will only be punished for one",
+   "Committing the same bannable offense twice is a permanent ban",
+   "Bans under **d** & **e** are immediately permanent (**e5** is an exception which is always 1 Year)",
+   "Bans are shared between all accounts you own"
+  ]
+ },
+ "groups": [
+  {
+   "id": "a",
+   "title": "Behaviour and content",
+   "kind": "ban",
+   "rules": [
+    {
+     "code": "a1",
+     "title": "",
+     "empty": true
+    },
+    {
+     "code": "a2",
+     "title": "Playing NSFW Audios"
+    },
+    {
+     "code": "a3",
+     "title": "Simulating NSFW actions using Animations"
+    },
+    {
+     "code": "a4",
+     "title": "Wearing Inappropriate Avatars",
+     "explain": [
+      "If a Player is wearing an Avatar that breaks another rule, they should be banned for that rule instead.",
+      "Example: an outfit depicting an evil person or organization breaks **b8**, so the ban is for **b8**. A shirt with graphic explicit content is NSFW Imagery, so the ban is for **d1**."
+     ],
+     "bannable": [
+      {
+       "t": "Wearing no visible shirt and no visible pants while being a realistic skin color"
+      },
+      {
+       "t": "Wearing clothes that imply you'd break a rule"
+      },
+      {
+       "t": "You wear a sexual organ as part of your avatar."
+      },
+      {
+       "t": "Wearing avatars of people / things originally from NSFW Media / Explicit Content",
+       "d": "Wearing Avatars of characters who were originally created for explicit content, is bannable."
+      },
+      {
+       "t": "Wearing avatars that display sexual body parts or explicit sexual references",
+       "d": "For example, a shirt with an explicit sexual phrase on it."
+      },
+      {
+       "t": "Wearing avatars heavily associated with Roblox Condos"
+      },
+      {
+       "t": "Wearing very small items that only cover private areas instead of wearing clothing that covers it around the body"
+      }
+     ],
+     "ok": [
+      {
+       "t": "Wearing no visible shirt but wearing pants while being a realistic skin color",
+       "d": "Must be both clothes missing."
+      },
+      {
+       "t": "Wearing no pants but wearing a shirt while being a realistic skin color",
+       "d": "Must be both clothes missing."
+      },
+      {
+       "t": "Wearing no visible shirt and no visible pants while being a non realistic skin color",
+       "d": "If you aren't a realistic skin color, then you aren't trying to look like a real life person which the above rules are for."
+      },
+      {
+       "t": "Wearing a bypassed avatar that doesn't break any rules",
+       "d": "It wouldn't be fair to ban a player for something we wouldn't ban normally. While having swear words on a shirt would be a \"Bypassed\" Shirt since Roblox doesn't normally allow this, because we don't ban for swear words, this wouldn't be bannable."
+      },
+      {
+       "t": "Wearing an Avatar that depicts drug use",
+       "d": "We don't ban for the use or mention of any drugs."
+      },
+      {
+       "t": "Wearing a bikini without suggestive intent",
+       "d": "Wearing a Bikini on its own is not bannable."
+      }
+     ],
+     "pictures": true
+    },
+    {
+     "code": "a5",
+     "title": "Discussing and/or directing highly explicit content to a player"
+    },
+    {
+     "code": "a6",
+     "title": "Participating in an activity with someone else who's breaking rules"
+    },
+    {
+     "code": "a7",
+     "title": "Doing something that can get other players banned"
+    },
+    {
+     "code": "a8",
+     "title": "Insinuating that someone is a pedophile with no valid reason"
+    },
+    {
+     "code": "a9",
+     "title": "Behavior that can cause harm to yourself"
+    }
+   ]
+  },
+  {
+   "id": "b",
+   "title": "Hate and harm",
+   "kind": "ban",
+   "rules": [
+    {
+     "code": "b1",
+     "title": "",
+     "empty": true
+    },
+    {
+     "code": "b2",
+     "title": "",
+     "empty": true
+    },
+    {
+     "code": "b3",
+     "title": "Referring to or saying a racial / homophobic slur, or the insults r*tard, sl*t or wh*re"
+    },
+    {
+     "code": "b4",
+     "title": "Telling / Implying someone to harm themselves"
+    },
+    {
+     "code": "b5",
+     "title": "Wishing / Joking about death / elimination on any race / countries / ethnicity / religion / person"
+    },
+    {
+     "code": "b6",
+     "title": "Discrimination"
+    },
+    {
+     "code": "b7",
+     "title": "",
+     "empty": true
+    },
+    {
+     "code": "b8",
+     "title": "Depicting Nazi / Terrorists / KKK / Axis / Zov / Dead Dictators / USSR / Pedos / Hate figures"
+    },
+    {
+     "code": "b9",
+     "title": "Crude Images (Poop, Pee, Vomit, gross images)"
+    }
+   ]
+  },
+  {
+   "id": "c",
+   "title": "Cheating, spam and fake staff",
+   "kind": "ban",
+   "rules": [
+    {
+     "code": "c1",
+     "title": "Pretending to being a Mod / having Mod powers / Mini-Modding",
+     "scope": "This rule applies inside and outside the game",
+     "explain": [
+      "\"Staff\" means any of these words: **Mod**, **Admin**, **Head Admin**, **Owner (Nogo)**, **Staff**, **Mini-Mod**."
+     ],
+     "bannable": [
+      {
+       "t": "You say \"I can ban you when I want\"."
+      },
+      {
+       "t": "You say you're a Staff."
+      },
+      {
+       "t": "You say \"I'm friends with a [Staff]\" with the intent to make the Player believe you have power."
+      },
+      {
+       "t": "You have your Display Name or Region as a Staff Title."
+      },
+      {
+       "t": "You say you have Admin Powers."
+      },
+      {
+       "t": "You are not a Staff, and you say you'll be constantly watching someone to make sure they don't break any rules, and you constantly follow them through servers and you make it clear your sole intent from joining a server they're in, is to make sure they follow rules."
+      },
+      {
+       "t": "You tell the Player you can get them unbanned if they do something for you",
+       "d": "Example: You report a Player and they get Banned. You then tell the Banned Player that if they \"Send you robux\" or \"Send Ban proof on other users\" you will get them unbanned. If the \"something\" is explicit, you would be banned for **d4** instead."
+      }
+     ],
+     "ok": [
+      {
+       "t": "You have your username set to Admin or Mod if it isn't showing as your display name.",
+       "d": "If you aren't showing it to others, so you have a Display Name to cover it, this is fine as you aren't actively making people think you're staff."
+      }
+     ]
+    },
+    {
+     "code": "c2",
+     "title": "Using a method to fake donations that appears in data",
+     "tag": "Data wipe",
+     "note": "Will get you data wiped"
+    },
+    {
+     "code": "c3",
+     "title": "Using a method to gain infinite Currencies / Reputation",
+     "tag": "Data wipe",
+     "note": "Will get you data wiped"
+    },
+    {
+     "code": "c4",
+     "title": "Spam advertising"
+    },
+    {
+     "code": "c5",
+     "title": "Boosting in Ranked",
+     "removed": true,
+     "note": "Ranked is currently removed. It used to get you data wiped."
+    },
+    {
+     "code": "c6",
+     "title": "Bug Abuse that can disrupt other players / Exploiting / Lagging the server"
+    },
+    {
+     "code": "c7",
+     "title": "",
+     "empty": true
+    },
+    {
+     "code": "c8",
+     "title": "Lying in a Player Report / Misusing Ingame Player Reports"
+    },
+    {
+     "code": "c9",
+     "title": "Creating / Showing suggestive content"
+    }
+   ]
+  },
+  {
+   "id": "d",
+   "title": "Permanent bans",
+   "kind": "permanent",
+   "note": "Some apply inside and outside the game",
+   "rules": [
+    {
+     "code": "d1",
+     "title": "NSFW Imagery"
+    },
+    {
+     "code": "d2",
+     "title": "Threatening a Player / Server",
+     "never": [
+      "You threaten or attempt to Doxx",
+      "You threaten or attempt to harm someone in real life"
+     ]
+    },
+    {
+     "code": "d3",
+     "title": "Trying to scare another Player with information not directly linked through their Roblox Account"
+    },
+    {
+     "code": "d4",
+     "title": "Predatory Behavior",
+     "never": [
+      "You are a pedophile",
+      "You say you like minors",
+      "You talk about explicit content to someone you know is a minor while you are 18+",
+      "Adding someone and talking to them off Roblox then sending explicit content unprompted",
+      "You are participating in an online community that shares private information/pictures of people or minors",
+      "Pretending to be younger than you are with the intention to form a friendship/relationship with someone, unless you are attempting to catch a predator",
+      "Using someone's explicit pictures as leverage to get something",
+      "Using self-harm / suicide threats on yourself to get something from someone"
+     ]
+    },
+    {
+     "code": "d5",
+     "title": "Offering/Giving something in exchange for explicit pictures",
+     "never": [
+      "You offer/give something in exchange for explicit pictures / fan signs.",
+      "You advertise that you will give something in exchange for explicit pictures / fan signs.",
+      "You seek out people who will help find you others who will accept something for their explicit pictures / fan signs."
+     ]
+    },
+    {
+     "code": "d6",
+     "title": "Actively trying to make someone harm themselves",
+     "never": [
+      "You actively encourage someone to cut themselves.",
+      "You actively encourage someone to commit suicide."
+     ]
+    },
+    {
+     "code": "d7",
+     "title": "Giving private information about someone without their consent",
+     "never": [
+      "You give out someone's address",
+      "You share private real life pictures meant only for you to other people"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e",
+   "title": "Account bans",
+   "kind": "permanent",
+   "rules": [
+    {
+     "code": "e1",
+     "title": "Bannable Name",
+     "note": "Must break a rule here"
+    },
+    {
+     "code": "e2",
+     "title": "Scamming as a Mod"
+    },
+    {
+     "code": "e3",
+     "title": "Ban Evasion",
+     "note": "Permanent until main account unbanned"
+    },
+    {
+     "code": "e4",
+     "title": "Self-Bans",
+     "note": "Unbanned at your request"
+    },
+    {
+     "code": "e5",
+     "title": "Being below 13 Years Old",
+     "tag": "1 year",
+     "note": "1 Year Ban instead of Permanent"
+    }
+   ]
+  }
+ ],
+ "not_bannable": {
+  "tip": "Instead Hide them by opening their Profile Card (Click on them or click them on the Server List) and click \"Hide Player\"",
+  "items": [
+   {
+    "t": "Being very loud or playing Music in VC.",
+    "d": "This on its own does not break any rules."
+   },
+   {
+    "t": "Being annoying or mean without breaking any rules.",
+    "d": "Since they are not breaking rules they wouldn't be banned."
+   },
+   {
+    "t": "Not being 18+ in the 18+ version.",
+    "d": "This isn't bannable because the unban process would require us to ask for their ID, and it isn't our right to request this information. non18+ Players gained access to 18+ because Roblox Verified their account as 18+, and regardless non18+ and 18+ share the same rules."
+   },
+   {
+    "t": "Covering art in the draw area.",
+    "d": "Unless they are also trying to purposefully cause lag, this isn't bannable."
+   },
+   {
+    "t": "Someone who follows you through servers.",
+    "d": "This is considered being annoying, instead just Hide & Ignore them."
+   }
+  ]
+ },
+ "unbans": [
+  "You are always allowed to request the proof that got you banned, but you can't request who banned you.",
+  "You can be unbanned early by any mod if they believe you won't break the rule again (with the exceptions below).",
+  "If you were banned for doing something to another user, you can also be unbanned if they wish for you to be unbanned.",
+  "If you believe you were unfairly banned, the best way to prove your innocence is to find the matching Ban Code (x#) that banned you, and explain to the mod why your Ban Proof did not violate anything found in the Bannable Examples in the matching Ban Code Post."
+ ],
+ "never_intro": "You can't be unbanned **ever** for the following examples, and you can be banned for these even if it takes place outside of the game (unless your ban is verifiably false):",
+ "never": {
+  "d2": [
+   "You threaten or attempt to Doxx",
+   "You threaten or attempt to harm someone in real life"
+  ],
+  "d4": [
+   "You are a pedophile",
+   "You say you like minors",
+   "You talk about explicit content to someone you know is a minor while you are 18+",
+   "Adding someone and talking to them off Roblox then sending explicit content unprompted",
+   "You are participating in an online community that shares private information/pictures of people or minors",
+   "Pretending to be younger than you are with the intention to form a friendship/relationship with someone, unless you are attempting to catch a predator",
+   "Using someone's explicit pictures as leverage to get something",
+   "Using self-harm / suicide threats on yourself to get something from someone"
+  ],
+  "d5": [
+   "You offer/give something in exchange for explicit pictures / fan signs.",
+   "You advertise that you will give something in exchange for explicit pictures / fan signs.",
+   "You seek out people who will help find you others who will accept something for their explicit pictures / fan signs."
+  ],
+  "d6": [
+   "You actively encourage someone to cut themselves.",
+   "You actively encourage someone to commit suicide."
+  ],
+  "d7": [
+   "You give out someone's address",
+   "You share private real life pictures meant only for you to other people"
+  ]
+ },
+ "faq": [
+  {
+   "q": "Why does my Ban Reason show \"You created or used an account to avoid an enforcement action taken against another account within this experience\"?",
+   "a": "This is an automatic ban by Roblox, meaning no one manually banned you. Because alt accounts detection is enabled, roblox may ban you if someone on your account has also played on a banned account. Mods are able to find this \"linked\" account that got you banned, and then you will have to explain your connection to the account."
+  },
+  {
+   "q": "Why did only I get banned and not them?",
+   "a": "Bans are fully manual, so you are only banned if caught. You were banned because you were reported by a player or seen by a mod. If you never report a player, they may never get banned."
+  },
+  {
+   "q": "Why is my ticket taking so long to get answered?",
+   "a": "Mod work is purely voluntarily, as there is no payment involved from answering tickets. A Mod will get to your ticket when they aren't busy, but they do not owe you their time."
+  },
+  {
+   "q": "I feel like a Mod abused their power, what do I do?",
+   "a": "Instead of a Player Report, submit an Admin Report. You can view all the Mod Rules on the community Discord."
+  },
+  {
+   "q": "Why are some Ban Codes empty?",
+   "a": "Rules can change over time, and some rules are phased out or merged, which can leave some Ban Codes empty."
+  },
+  {
+   "q": "I want a Rule Changed.",
+   "a": "You can leave suggestions for Rule Changes on the community Discord."
+  },
+  {
+   "q": "Will I get in trouble if I don't report someone who breaks rules?",
+   "a": "No, players don't have to report players if they don't want to."
+  },
+  {
+   "q": "I saw a Mod see someone break rules and they didn't ban them!",
+   "a": "Mods don't have to ban players if they don't want to, they can instead choose to warn them or ignore them instead."
+  },
+  {
+   "q": "What punishments do Mods get if they break rules?",
+   "a": "Mods breaking any of the game rules will lose their mod and be banned. Mods breaking the Mod Rules will receive a Mod Strike instead, and at 3 lose their Mod."
+  },
+  {
+   "q": "I want to be Mod!",
+   "a": "Mod Applications open from time to time. The requirements are playing the game a lot, and passing the rules test, and some luck too."
+  },
+  {
+   "q": "Who decided these rules?",
+   "a": "The rules are based on what the owner doesn't want ingame."
+  },
+  {
+   "q": "How do Build Related Rules work?",
+   "a": "Players who collaborate on a build that contains bannable content will be banned, but only if they were aware of it. If a player joins a public build and secretly creates bannable content without others noticing, the other builders in that space are not held responsible. Banning someone requires that they knowingly allowed it to happen. However, if a player witnesses another builder creating bannable content and continues to build alongside them without reporting or stopping it, they are considered a willing participant and will be banned for the same reason as the offending player."
+  },
+  {
+   "q": "Can I be banned for stuff that happens outside the game?",
+   "a": "No. Breaking any of the rules outside the game, such as a separate Discord, will not get you banned ingame. Bans can only be linked if you break the rule in the community Discord (discord.gg/vcworld) or you break one of the \"Unbannables\"."
+  },
+  {
+   "q": "Can I make Unban Requests for my friend / alt?",
+   "a": "Unless your friend is Banned from the Discord, they must make the Unban Request on an account Verified with the same Username. If it's your Alt Account, you must prove ownership."
+  },
+  {
+   "q": "Can I be banned for signing a clipboard?",
+   "a": "No. If a Clipboard is bannable, only the Owner of the clipboard would be banned, not any of the signers."
+  }
+ ],
+ "discord": [
+  "Instead of being banned from the Discord, you will be given a special role (with some exceptions).",
+  "Exceptions: anything under the \"Unbannables\", being under 13, or using an alt account to bypass those bans. If any of those 3 scenarios are met then you will be banned from the Discord instead.",
+  "Anyone who was banned from the Discord previously who doesn't meet the exceptions above can be unbanned."
+ ],
+ "links": {
+  "unbannables": "https://discord.com/channels/1260693663160209501/1493499504832413847/1495246154164867182"
+ }
+}

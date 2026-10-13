@@ -1,12 +1,12 @@
 ---
 icon: lucide/scroll-text
-description: "The official game rules."
+description: "The official game rules as a book: every ban code with its examples, ban lengths, unbans and FAQ."
+hide:
+  - toc
 ---
 
 # Rules
 
-The game has its own rules, which are posted in its official **community server**. On top of them, the [Roblox Community Standards](https://about.roblox.com/community-standards) always apply, also in the 18+ version.
+The official rules of *Meet People Across The World*, as published by the game's moderators on the community Discord. Open a rule to see its explanation and examples. On top of these rules, the [Roblox Community Standards](https://about.roblox.com/community-standards) always apply.
 
-!!! question "Needs info"
-
-    A summary of the official game rules, in your own words. [Help complete this page](../wiki/contribute.md).
+--8<-- "generated/rules-book.md"

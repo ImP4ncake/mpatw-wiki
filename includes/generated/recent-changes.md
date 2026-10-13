@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/53c2e05" target="_blank" rel="noopener">Events: Halloween 2026 as the current event, the others as a yearly rotation</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/bb13563" target="_blank" rel="noopener">Reputation: a nicer, more visual page</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b391d10" target="_blank" rel="noopener">Reputation: show it on a real profile card, and tidy the page</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b18fc5c" target="_blank" rel="noopener">Reputation: no cooldown, and drop the Needs info box</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/7ae5b2f" target="_blank" rel="noopener">Join the globe and the wiki&#x27;s name into one header logo</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/e87d499" target="_blank" rel="noopener">Make the header name the same gold title as on the home page</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/a9caccb" target="_blank" rel="noopener">Keep the wiki&#x27;s name in the header and drop the rainbow scroll bar</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/76b7f6b" target="_blank" rel="noopener">Remove &quot;18+&quot; from the wiki&#x27;s name</a></span></div>
 </div>
