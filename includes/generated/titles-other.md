@@ -35,6 +35,7 @@
 
 <div class="mp-plates mp-plates--how">
 <div class="mp-plate"><span class="mp-plate__name" style="--tc:#a88ce4">Perfection</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">26 exist</span></span><span class="mp-plate__how">Get the <a href="https://deepwoken.fandom.com/wiki/Quests" target="_blank" rel="noopener">Chain of Perfection</a> in <b>Deepwoken</b>, another Roblox game: it&#x27;s the reward for defeating any boss there without taking any damage.</span></div>
+<div class="mp-plate"><span class="mp-plate__name" style="--tc:#9249ff">Evil</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">52 exist</span></span><span class="mp-plate__how">Troll other players <b>1,000 times</b> with <a href="../items/trolls/">trolls</a>. At 50 times you already get the <a href="regular/#badge-troller">Troller</a> badge.</span></div>
 <div class="mp-plate"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#f7f08c">Transcendent</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">17 exist</span></span><span class="mp-plate__how">Unlock <b>10</b> cosmetics with <a href="../items/rarities/">Fabled</a> rarity.</span></div>
 <div class="mp-plate"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#5dff5d">Hero</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">14 exist</span></span><span class="mp-plate__how">Report a <b>major bug</b> in the game on the official <a href="../community/links/">Meet People Discord</a>.</span></div>
 </div>
@@ -53,10 +54,9 @@
 ### Not known yet
 
 <div class="mp-plates mp-plates--how">
-<div class="mp-plate"><span class="mp-plate__name" style="--tc:#9249ff">Evil</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">52 exist</span></span><span class="mp-plate__how">How to get it isn't known yet.</span></div>
 <div class="mp-plate"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#6b6b6b">Founder</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">2 exist</span></span><span class="mp-plate__how">How to get it isn't known yet.</span></div>
 </div>
 
 !!! question "Needs info"
 
-    How do you get **Evil** and **Founder**? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }
+    How do you get **Founder**? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

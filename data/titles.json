@@ -165,7 +165,9 @@
   {
    "name": "Evil",
    "color": "#9249ff",
-   "exist": 52
+   "exist": 52,
+   "group": "feats",
+   "how": "Troll other players **1,000 times** with [trolls](items/trolls.md). At 50 times you already get the [Troller](badges/regular.md#badge-troller) badge."
   },
   {
    "name": "Eternal",
