@@ -62,12 +62,17 @@ hide:
 </ul>
 </div>
 
-<div class="mp-cta" markdown>
+<div class="mp-cta mp-cta--suggest" markdown>
+<div class="mp-cta__avatar" role="img" aria-label="ImP4ncake's profile picture"></div>
+<div class="mp-cta__body" markdown>
+
 ## Suggest a change
 
-Something missing, wrong or out of date? This wiki is made by [<span class="mp-face mp-face--owner"></span>ImP4ncake](wiki/suggest.md){ .mp-who }: send your suggestions for changes or additions on Discord.
+Something missing, wrong or out of date? This wiki is made by **ImP4ncake**: send your suggestions for changes or additions on Discord, to **imp4ncake**.
 
-[:lucide-message-circle: Suggest a change](wiki/suggest.md){ .mp-btn .mp-btn--gold }
+[:fontawesome-brands-discord: Suggest a change](wiki/suggest.md){ .mp-btn .mp-btn--discord }
+
+</div>
 </div>
 
 <small>This is a fan-made wiki. It is not affiliated with, endorsed by or connected to Roblox Corporation or Nogo. Game names and content belong to their respective owners.</small>

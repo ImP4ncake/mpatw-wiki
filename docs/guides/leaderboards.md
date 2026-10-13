@@ -30,4 +30,4 @@ More rare badges are on [Special Badges](../badges/special.md).
 
 !!! question "Needs info"
 
-    Which leaderboards are there, where are they in the game, and how often do they update? Screenshots welcome! If you know, [tell me on Discord](../wiki/suggest.md).
+    Which leaderboards are there, where are they in the game, and how often do they update? Screenshots welcome! If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

@@ -15,4 +15,4 @@ In the **Draw Area** you can draw with other players. Drawing **1,000 times** gi
 
 !!! question "Needs info"
 
-    How does drawing work: colors, brushes, can you save drawings? If you know, [tell me on Discord](../wiki/suggest.md).
+    How does drawing work: colors, brushes, can you save drawings? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

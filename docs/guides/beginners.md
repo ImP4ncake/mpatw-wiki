@@ -85,7 +85,7 @@ The menu on the right side of the screen has these buttons. The highlighted ones
 
 !!! question "Needs info"
 
-    What do Emotes, Visibility, Size, Call, Announce, Avatar, Voice, Daily Rewards and VIP do? If you know, [tell me on Discord](../wiki/suggest.md).
+    What do Emotes, Visibility, Size, Call, Announce, Avatar, Voice, Daily Rewards and VIP do? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }
 
 !!! warning "Stay safe"
 

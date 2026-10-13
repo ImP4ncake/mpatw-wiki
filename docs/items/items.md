@@ -62,10 +62,10 @@ In the ITEMS menu they come right after the troll items. Prices are on the [Game
 
 !!! question "Needs info"
 
-    Which items are in the **Normal** section of the ITEMS menu, what do they do and how do you get them? If you know, [tell me on Discord](../wiki/suggest.md).
+    Which items are in the **Normal** section of the ITEMS menu, what do they do and how do you get them? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }
 
 ## Free community items
 
 !!! question "Needs info"
 
-    Which items are in the **Free Community** section of the ITEMS menu, and how do you unlock them? If you know, [tell me on Discord](../wiki/suggest.md).
+    Which items are in the **Free Community** section of the ITEMS menu, and how do you unlock them? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

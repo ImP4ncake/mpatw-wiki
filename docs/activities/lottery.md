@@ -17,4 +17,4 @@ During **St. Patrick's Day** there is a special lottery: rolling **7777** gave t
 
 !!! question "Needs info"
 
-    How much does a roll cost, and what else can you win? If you know, [tell me on Discord](../wiki/suggest.md).
+    How much does a roll cost, and what else can you win? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

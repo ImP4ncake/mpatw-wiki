@@ -11,4 +11,4 @@ With the **Hammer** you can build blocks. Building **10 blocks** gives the **Bui
 
 !!! question "Needs info"
 
-    Where can you build, how do you get the Hammer, and do your builds stay? If you know, [tell me on Discord](../wiki/suggest.md).
+    Where can you build, how do you get the Hammer, and do your builds stay? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

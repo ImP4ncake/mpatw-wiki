@@ -301,6 +301,7 @@ body {
 .md-typeset .mp-btn--green { --b1: #5ee27a; --b2: #22b14c; --b3: #137a33; }
 .md-typeset .mp-btn--blue { --b1: #6cb6ff; --b2: #2f7fe0; --b3: #1a52a3; }
 .md-typeset .mp-btn--gold { --b1: #ffd85c; --b2: #f2a900; --b3: #a86f00; }
+.md-typeset .mp-btn--discord { --b1: #8a93f8; --b2: #5865f2; --b3: #3a43a8; }
 .md-typeset .mp-btn--pink { --b1: #ff8cc8; --b2: #e8459a; --b3: #a51f68; }
 
 .md-typeset .mp-btn--big {
@@ -3558,6 +3559,7 @@ body {
 .mp-tone--gold { --tone: #f2ab00; }
 .mp-tone--red { --tone: #ff4b45; }
 .mp-tone--green { --tone: #2fb84f; }
+.mp-tone--teal { --tone: #13a89a; }
 
 @media screen and (max-width: 44.9375em) {
   .md-typeset .mp-facts {
@@ -4380,19 +4382,8 @@ body {
   --mp-owner-pfp: url("https://avatars.githubusercontent.com/u/113541361?v=4");
 }
 
-.md-typeset .mp-creator__avatar--owner,
 .md-typeset .mp-face--owner {
   background: var(--mp-owner-pfp) center / cover no-repeat, var(--mp-face-bg);
-}
-
-.md-typeset .mp-creator--owner .mp-creator__chip {
-  background: rgba(255, 214, 72, 0.2);
-  color: var(--mp-gold-2);
-}
-
-.md-typeset .mp-owner__discord {
-  max-width: 19rem;
-  margin: 0.8rem 0 0.2rem;
 }
 
 /* on every page, in the footer: how to suggest a change */
@@ -4403,7 +4394,8 @@ body {
   padding: 0.3em 0.85em 0.35em 0.4em;
   border-radius: 14px;
   line-height: 1.6;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(88, 101, 242, 0.28);
+  box-shadow: inset 0 0 0 1.5px rgba(138, 147, 248, 0.55);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -4412,10 +4404,336 @@ body {
 
 .md-typeset a.mp-footer-suggest:hover,
 .md-typeset a.mp-footer-suggest:focus-visible {
-  background: rgba(88, 101, 242, 0.55);
+  background: #5865f2;
 }
 
 .md-typeset a.mp-footer-suggest b {
   color: var(--mp-gold-2);
   white-space: nowrap;
+}
+
+/* ==========================================================================
+   Suggest a Change: a Discord-style profile card, the steps next to it,
+   the Discord pill in "Needs info" boxes and the home page box
+   ========================================================================== */
+
+.md-typeset .mp-suggest-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 19rem) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+  margin: 1.4rem 0 1.6rem;
+}
+
+.md-typeset .mp-dprofile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #232428;
+  color: #dbdee1;
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink), 0 22px 36px -18px rgba(30, 30, 90, 0.6);
+}
+
+.md-typeset .mp-dprofile > p,
+.md-typeset .mp-dprofile__body > p {
+  margin: 0;
+}
+
+.md-typeset .mp-dprofile__banner {
+  height: 5.2rem;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.28), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 214, 72, 0.45), transparent 50%),
+    linear-gradient(135deg, #7b86ff, #5865f2 55%, #3c45a5);
+}
+
+.md-typeset .mp-dprofile__avatar {
+  position: absolute;
+  top: 2.4rem;
+  left: 1rem;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 50%;
+  border: 6px solid #232428;
+  background: var(--mp-owner-pfp) center / cover no-repeat, var(--mp-face-bg);
+  box-shadow: 0 0 0 3px #5865f2;
+  transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.md-typeset .mp-dprofile:hover .mp-dprofile__avatar {
+  transform: scale(1.05) rotate(-4deg);
+}
+
+.md-typeset .mp-dprofile__body {
+  margin: 0.6rem 0.75rem 0.75rem;
+  padding: 2.9rem 0.85rem 0.9rem;
+  border-radius: 14px;
+  background: #111214;
+}
+
+.md-typeset .mp-dprofile__name {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  color: var(--mp-gold-2);
+  text-shadow: var(--mp-outline-thin);
+}
+
+.md-typeset .mp-dprofile__user {
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b5bac1;
+}
+
+.md-typeset .mp-dprofile__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0.7rem;
+}
+
+.md-typeset .mp-dprofile__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.2em 0.6em;
+  border-radius: 8px;
+  background: rgba(88, 101, 242, 0.22);
+  color: #c9cdfb;
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.md-typeset .mp-dprofile__badge--gold {
+  background: rgba(255, 214, 72, 0.16);
+  color: var(--mp-gold-2);
+}
+
+.md-typeset .mp-dprofile__badge .twemoji,
+.md-typeset .mp-dprofile__badge svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.md-typeset .mp-dprofile__about {
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+.md-typeset .mp-dprofile__about b {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.md-typeset .mp-dprofile__copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.45rem 0.45rem 0.75rem;
+  border: 0;
+  border-radius: 12px;
+  background: #5865f2;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.25), 0 4px 0 #3a43a8;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+}
+
+.md-typeset .mp-dprofile__copy:hover,
+.md-typeset .mp-dprofile__copy:focus-visible {
+  background: #4752c4;
+  outline: none;
+}
+
+.md-typeset .mp-dprofile__copy:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.25), 0 1px 0 #3a43a8;
+}
+
+.md-typeset .mp-dprofile__copy-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--md-code-font-family, ui-monospace, monospace);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.md-typeset .mp-dprofile__copy-text .twemoji,
+.md-typeset .mp-dprofile__copy-text svg {
+  width: 1.25em;
+  height: 1.25em;
+  max-height: none;
+  fill: currentColor;
+}
+
+.md-typeset .mp-dprofile__copy .mp-code__btn {
+  flex: none;
+  padding: 0.3em 0.8em;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: none;
+  background: #fff;
+  color: #4752c4;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.md-typeset .mp-dprofile__copy.is-copied .mp-code__btn {
+  background: #23a55a;
+  color: #fff;
+}
+
+/* the steps next to the card */
+.md-typeset .mp-sendsteps {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.md-typeset .mp-sendsteps > p {
+  margin: 0;
+}
+
+.md-typeset .mp-sendsteps__head {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--mp-heading);
+}
+
+.md-typeset .mp-sendstep {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 16px;
+  background: var(--mp-card);
+  color: var(--mp-text);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 5px 0 var(--mp-ink);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.md-typeset .mp-sendstep__n {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--mp-ink);
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 55%), #5865f2;
+  color: #fff;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 1px 0 var(--mp-ink);
+}
+
+.md-typeset .mp-sendstep__text b {
+  display: block;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--mp-heading);
+}
+
+.md-typeset .mp-facts--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-typeset .mp-facts--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .mp-suggest-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .md-typeset .mp-dprofile {
+    max-width: 22rem;
+  }
+
+  .md-typeset .mp-facts--three {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* "Tell me on Discord" at the end of a Needs info box */
+.md-typeset a.mp-suggest {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin-top: 0.15em;
+  padding: 0.15em 0.75em 0.18em 0.55em;
+  border-radius: 999px;
+  background: #5865f2;
+  box-shadow: 0 2px 0 #3a43a8;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.md-typeset a.mp-suggest:hover,
+.md-typeset a.mp-suggest:focus-visible {
+  background: #4752c4;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.md-typeset a.mp-suggest .twemoji,
+.md-typeset a.mp-suggest svg {
+  width: 1.15em;
+  height: 1.15em;
+  fill: currentColor;
+}
+
+/* home page: the creator's picture next to "Suggest a change" */
+.md-typeset .mp-cta--suggest {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  background: radial-gradient(circle at 0% 50%, rgba(88, 101, 242, 0.45), transparent 60%), var(--mp-panel);
+}
+
+.md-typeset .mp-cta__avatar {
+  flex: none;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  border: 4px solid var(--mp-ink);
+  background: var(--mp-owner-pfp) center / cover no-repeat, var(--mp-face-bg);
+  box-shadow: 0 0 0 3px #5865f2, 0 5px 0 3px var(--mp-ink);
+}
+
+.md-typeset .mp-cta__body > :last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 30em) {
+  .md-typeset .mp-cta--suggest {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
