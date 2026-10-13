@@ -1636,79 +1636,166 @@ def gen_galleries() -> None:
 # --------------------------------------------------------------------------
 
 RULES_FILE = DATA_DIR / "rules.json"
-ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
+RULES_PAGE = "community/rules.md"
+RULE_IMAGES = DOCS / "assets" / "rules"
+
+# Colours and icons of the chapters that are not ban code groups
+RB_EXTRA = {
+    "start": ("Start here", "Start", "book-open-text", "How bans work"),
+    "not": ("Not bannable", "Not bannable", "circle-check", "Things that are allowed"),
+    "unbans": ("Unbans", "Unbans", "unlock", "How to get unbanned"),
+    "faq": ("Questions", "FAQ", "circle-help", "Frequently asked questions"),
+    "discord": ("Discord bans", "Discord", "message-circle", "Bans on the community server"),
+}
+STRIKE = "3 days → 7 days → 30 days → permanent"
 
 
 def md_inline(text: str) -> str:
     return _inline(esc(text))
 
 
-def rule_item(rule: dict, group: dict, ban_posts: str) -> str:
-    code = rule["code"]
-    kind = group["kind"]
-    if rule.get("empty"):
-        return (
-            f'<div class="rb-rule rb-rule--empty rb-rule--{group["id"]}" id="{code}">'
-            f'<span class="rb-code">{code}</span><span class="rb-rule__title">Empty</span>'
-            f'<span class="rb-rule__hint">No rule uses this code right now</span></div>'
+def slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:48]
+
+
+def rule_pic(pic: dict, rule_code: str, side: str) -> str:
+    """One example picture: a thumbnail that opens full size. Bannable ones start hidden, like Discord spoilers."""
+    path = RULE_IMAGES / pic["src"]
+    size = ""
+    try:
+        from PIL import Image  # noqa: PLC0415
+
+        with Image.open(path) as im:
+            size = f' width="{im.width}" height="{im.height}"'
+    except Exception:  # noqa: BLE001
+        pass
+    src = posixpath.relpath(f"assets/rules/{pic['src']}", posixpath.dirname(RULES_PAGE))
+    mark = pic.get("mark") or side
+    spoiler = pic.get("spoiler")
+    veil = ""
+    if spoiler:
+        label = "Bannable example" if mark == "ban" else pic.get("spoiler_label") or "Sensitive"
+        veil = (
+            f'<span class="rb-pic__veil">{lucide("eye-off")}<b>Tap to show</b><small>{esc(label)}</small></span>'
         )
-    tags = []
-    if kind == "permanent":
-        tags.append(("perm", rule.get("tag") or "Permanent"))
-    elif rule.get("tag"):
-        tags.append(("warn", rule["tag"]))
+    sign = lucide("x") if mark == "ban" else lucide("check")
+    return (
+        f'<button type="button" class="rb-pic rb-pic--{mark}{" is-spoiler" if spoiler else ""}" '
+        f'data-src="{esc(src)}" data-cap="{esc(pic["alt"])}" data-mark="{mark}" data-rule="{rule_code}">'
+        f'<img src="{esc(src)}" alt="{esc(pic["alt"])}" loading="lazy"{size}>'
+        f'<span class="rb-pic__mark" aria-hidden="true">{sign}</span>{veil}</button>'
+    )
+
+
+def rule_examples(rule: dict, side: str) -> str:
+    items = rule.get("bannable" if side == "ban" else "ok", [])
+    if not items:
+        return ""
+    head = (lucide("circle-x") + "<span>Bannable</span>") if side == "ban" else (lucide("circle-check") + "<span>Not bannable</span>")
+    out = [f'<div class="rb-side rb-side--{side}"><p class="rb-side__head">{head}<span class="rb-side__n">{len(items)}</span></p><ul class="rb-exs">']
+    for x in items:
+        x = {"t": x} if isinstance(x, str) else x
+        d = f'<span class="rb-ex__d">{md_inline(x["d"])}</span>' if x.get("d") else ""
+        pics = ""
+        if x.get("img"):
+            pics = '<span class="rb-pics">' + "".join(rule_pic({**p, "spoiler_label": x.get("spoiler_label")}, rule["code"], side) for p in x["img"]) + "</span>"
+        out.append(f'<li class="rb-ex"><span class="rb-ex__t">{md_inline(x["t"])}</span>{d}{pics}</li>')
+    out.append("</ul></div>")
+    return "".join(out)
+
+
+def rule_punishment(rule: dict, group: dict) -> tuple[list[tuple[str, str, str]], str]:
+    """(chips for the closed card, sentence for the open card)."""
+    chips: list[tuple[str, str, str]] = []
     if rule.get("removed"):
-        tags.append(("off", "Removed"))
+        return [("off", "ban", "Removed")], "This rule is not used right now."
+    if group["kind"] == "permanent":
+        if rule.get("tag") == "1 year":
+            chips.append(("year", "calendar-x", "1 year ban"))
+            text = "A <b>1 year ban</b> instead of a permanent one."
+        else:
+            chips.append(("perm", "octagon-x", "Permanent"))
+            text = "A <b>permanent ban</b> straight away."
+    else:
+        chips.append(("strike", "timer", "Strike ban"))
+        text = f"Strike ban: <b>{STRIKE}</b>. Breaking this same rule twice is permanent."
+    if rule.get("tag") == "Data wipe":
+        chips.append(("wipe", "database-zap", "Data wipe"))
     if rule.get("scope"):
-        tags.append(("scope", "In and out of game"))
-    if rule.get("bannable") or rule.get("never"):
-        tags.append(("ex", "Examples"))
+        chips.append(("scope", "earth", "In and out of game"))
+    return chips, text
+
+
+def rule_card(rule: dict, group: dict, words: dict, faq: dict) -> str:
+    code = rule["code"]
+    chips, punish = rule_punishment(rule, group)
+    n_ex = len(rule.get("bannable", [])) + len(rule.get("ok", [])) + len(rule.get("never", []))
+    n_pic = sum(len(x.get("img", [])) for x in rule.get("bannable", []) + rule.get("ok", []) if isinstance(x, dict))
+    if n_ex:
+        chips.append(("ex", "list-checks", f"{n_ex} example{'s' if n_ex != 1 else ''}"))
+    if n_pic:
+        chips.append(("pics", "camera", f"{n_pic} picture{'s' if n_pic != 1 else ''}"))
+    if not n_ex and not rule.get("removed"):
+        chips.append(("soon", "hourglass", "Examples soon"))
+
+    chip_html = "".join(f'<span class="rb-chip rb-chip--{k}">{lucide(i)}<span>{esc(t)}</span></span>' for k, i, t in chips)
+    body: list[str] = []
+    note = rule.get("note")
+    if rule.get("scope"):
+        body.append(f'<p class="rb-callout rb-callout--scope">{lucide("earth")}<span>{md_inline(rule["scope"])}.</span></p>')
+    if note and not rule.get("removed"):
+        body.append(f'<p class="rb-callout rb-callout--note">{lucide("info")}<span>{md_inline(note.rstrip("."))}.</span></p>')
+    if rule.get("explain"):
+        body.append(
+            f'<div class="rb-explain"><p class="rb-explain__head">{lucide("lightbulb")}<span>How it works</span></p>'
+            + "".join(f"<p>{md_inline(p)}</p>" for p in rule["explain"])
+            + "</div>"
+        )
+    sides = rule_examples(rule, "ban") + rule_examples(rule, "ok")
+    if sides:
+        body.append(f'<div class="rb-compare">{sides}</div>')
+    if rule.get("never"):
+        body.append(
+            f'<div class="rb-side rb-side--never"><p class="rb-side__head">{lucide("shield-x")}<span>Never unbanned for</span>'
+            f'<span class="rb-side__n">{len(rule["never"])}</span></p><ul class="rb-exs">'
+            + "".join(f'<li class="rb-ex"><span class="rb-ex__t">{md_inline(x)}</span></li>' for x in rule["never"])
+            + "</ul></div>"
+        )
+    if not n_ex and not rule.get("removed"):
+        body.append(
+            f'<p class="rb-soon">{lucide("hourglass")}<span>The examples for this rule are being added to the wiki. '
+            "Until then, the title above is the official rule.</span></p>"
+        )
+    if rule.get("counts"):
+        rows = "".join(
+            f'<span class="rb-count"><b>{lucide(words[w]["icon"])}{esc(w)}</b> means {md_inline(words[w]["means"])}</span>'
+            for w in rule["counts"]
+            if w in words
+        )
+        body.append(f'<div class="rb-counts"><p class="rb-counts__head">Counts everywhere</p>{rows}</div>')
+    for q in rule.get("faq", []):
+        if q in faq:
+            body.append(
+                f'<div class="rb-related"><p class="rb-related__q">{lucide("circle-help")}<span>{md_inline(q)}</span></p>'
+                f"<p>{md_inline(faq[q])}</p></div>"
+            )
+    body.append(
+        f'<div class="rb-rule__foot"><span class="rb-punish">{lucide("gavel")}<span>{punish}</span></span>'
+        f'<button type="button" class="rb-copy" data-code="{code}">{lucide("link")}<span>Copy link</span></button></div>'
+    )
     search = " ".join(
-        [code, rule.get("title", ""), rule.get("note", "")]
-        + [x["t"] + " " + x.get("d", "") for x in rule.get("bannable", []) + rule.get("ok", [])]
+        [code, rule.get("title", ""), rule.get("note", ""), " ".join(rule.get("explain", []))]
+        + [(x["t"] + " " + x.get("d", "")) if isinstance(x, dict) else x for x in rule.get("bannable", []) + rule.get("ok", [])]
         + rule.get("never", [])
     ).lower()
-    chev = lucide("chevron-down")
-    parts = [
-        f'<details class="rb-rule rb-rule--{group["id"]}{" rb-rule--removed" if rule.get("removed") else ""}" id="{code}" data-search="{esc(search)}">',
-        f'<summary><span class="rb-code">{code}</span><span class="rb-rule__title">{md_inline(rule["title"])}</span>'
-        + '<span class="rb-tags">' + "".join(f'<span class="rb-tag rb-tag--{k}">{esc(v)}</span>' for k, v in tags) + "</span>"
-        + f'<span class="rb-chev" aria-hidden="true">{chev}</span></summary>',
-        '<div class="rb-rule__body">',
-    ]
-    if rule.get("scope"):
-        parts.append(f'<p class="rb-scope">{lucide("globe")}<span>{md_inline(rule["scope"])}</span></p>')
-    if rule.get("note"):
-        parts.append(f'<p class="rb-note">{md_inline(rule["note"])}.</p>' if not rule["note"].endswith(".") else f'<p class="rb-note">{md_inline(rule["note"])}</p>')
-    for para in rule.get("explain", []):
-        parts.append(f'<p class="rb-explain">{md_inline(para)}</p>')
-
-    def example_list(cls: str, icon: str, title: str, items: list) -> None:
-        parts.append(f'<div class="rb-ex rb-ex--{cls}"><p class="rb-ex__head">{lucide(icon)}<span>{title}</span></p><ul>')
-        for x in items:
-            if isinstance(x, str):
-                parts.append(f"<li><span class=\"rb-ex__t\">{md_inline(x)}</span></li>")
-            else:
-                d = f'<span class="rb-ex__d">{md_inline(x["d"])}</span>' if x.get("d") else ""
-                parts.append(f'<li><span class="rb-ex__t">{md_inline(x["t"])}</span>{d}</li>')
-        parts.append("</ul></div>")
-
-    if rule.get("bannable"):
-        example_list("ban", "circle-x", "Bannable examples", rule["bannable"])
-    if rule.get("ok"):
-        example_list("ok", "circle-check", "Not bannable", rule["ok"])
-    if rule.get("never"):
-        example_list("never", "shield-x", "Can never be unbanned", rule["never"])
-    if rule.get("pictures"):
-        parts.append('<p class="rb-more">The Ban Code Post on Discord also shows example pictures.</p>')
-    if not (rule.get("bannable") or rule.get("never")) and not rule.get("removed"):
-        parts.append(
-            '<p class="rb-more">The full list of bannable examples for this code is in its '
-            f'<a href="{esc(ban_posts)}" target="_blank" rel="noopener">Ban Code Post</a> on the community Discord. '
-            "A ban is only valid if it matches one of those examples.</p>"
-        )
-    parts.append("</div></details>")
-    return "".join(parts)
+    return (
+        f'<details class="rb-rule rb-rule--{group["id"]}{" is-removed" if rule.get("removed") else ""}" id="{code}" data-search="{esc(search)}">'
+        f'<summary><span class="rb-code">{code}</span><span class="rb-rule__main">'
+        f'<span class="rb-rule__title">{md_inline(rule["title"])}</span><span class="rb-chips">{chip_html}</span></span>'
+        f'<span class="rb-rule__toggle" aria-hidden="true"><span class="rb-rule__open">Open</span>'
+        f'<span class="rb-rule__close">Close</span>{lucide("chevron-down")}</span></summary>'
+        f'<div class="rb-rule__body"><div class="rb-rule__inner">{"".join(body)}</div></div></details>'
+    )
 
 
 def gen_rules() -> None:
@@ -1717,135 +1804,218 @@ def gen_rules() -> None:
         return
     R = json.loads(RULES_FILE.read_text("utf-8"))
     src = R["source"]
-    ban_posts = src["ban_posts"]
-    codes = sum(len(g["rules"]) for g in R["groups"])
-    active = sum(1 for g in R["groups"] for r in g["rules"] if not r.get("empty") and not r.get("removed"))
+    words = {w["word"]: w for w in R["reading"]["words"]}
+    faq = {x["q"]: x["a"] for x in R["faq"]}
+    groups = R["groups"]
+    active = [r for g in groups for r in g["rules"] if not r.get("empty") and not r.get("removed")]
 
-    chapters: list[tuple[str, str, str]] = []  # (id, plain title, html)
-    letters: dict[str, str] = {}  # group chapters get their letter badge next to the title
+    # (id, title, short name, icon or letter, subtitle, html, css class)
+    chapters: list[dict] = []
 
-    # I. How to read the rules
-    words = "".join(
-        f'<div class="rb-word"><span class="rb-word__icon">{lucide(w["icon"])}</span>'
-        f'<span class="rb-word__w">"{esc(w["word"])}"</span><span class="rb-word__m">{md_inline(w["means"])}</span></div>'
+    def chapter(cid: str, title: str, short: str, mark: str, sub: str, about: str, html_body: str, cls: str, letter: bool = False) -> None:
+        chapters.append({"id": f"rb-{cid}", "title": title, "short": short, "mark": mark, "letter": letter,
+                         "sub": sub, "about": about, "body": html_body, "cls": cls})
+
+    # ---------------------------------------------------------------- Start here
+    steps = R["lengths"]["steps"]
+    ladder = "".join(
+        f'<div class="rb-step rb-step--{i}"><span class="rb-step__n">{esc(s["n"])}</span>'
+        f'<span class="rb-step__len">{esc(s["len"])}</span></div>'
+        + (f'<span class="rb-step__arrow" aria-hidden="true">{lucide("chevron-right")}</span>' if i < len(steps) - 1 else "")
+        for i, s in enumerate(steps)
+    )
+    fact_heads = [("layers", "Many at once = one ban"), ("repeat", "Same rule twice = permanent"),
+                  ("octagon-x", "d and e = permanent now"), ("users", "Counts on all your accounts")]
+    facts = "".join(
+        f'<div class="rb-fact"><span class="rb-fact__icon">{lucide(fact_heads[i][0])}</span>'
+        f'<b>{esc(fact_heads[i][1])}</b><span>{md_inline(n.rstrip("."))}.</span></div>'
+        for i, n in enumerate(R["lengths"]["notes"][:4])
+    )
+    tiles = "".join(
+        f'<a class="rb-gtile rb-gtile--{g["id"]}" href="#rb-{g["id"]}"><span class="rb-letter">{g["id"]}</span>'
+        f'<span class="rb-gtile__t"><b>{esc(g["title"])}</b><small>{esc(g["about"])}</small></span>'
+        f'<span class="rb-gtile__k rb-gtile__k--{"perm" if g["kind"] == "permanent" else "strike"}">'
+        f'{"Permanent" if g["kind"] == "permanent" else "Strike"}</span></a>'
+        for g in groups
+    )
+    word_tiles = "".join(
+        f'<div class="rb-word"><span class="rb-word__icon">{lucide(w["icon"])}</span><b>"{esc(w["word"])}"</b>'
+        f'<span class="rb-word__list">'
+        + "".join(f"<span>{esc(x.strip())}</span>" for x in w["means"].replace(", etc", "").split(","))
+        + "<span>and more</span></span></div>"
         for w in R["reading"]["words"]
     )
-    notes = "".join(f"<li>{md_inline(n)}</li>" for n in R["reading"]["notes"])
-    chapters.append((
-        "rb-read", "How to read the rules",
-        f'<p class="rb-lead">Every rule has a <b>ban code</b>: a letter for its group and a number, like <b>c1</b>. '
-        f"When a rule uses one of these words, it means all of this:</p>"
-        f'<div class="rb-words">{words}</div><ul class="rb-list">{notes}</ul>',
-    ))
-
-    # II. Ban lengths
-    steps = "".join(
-        f'<div class="rb-step rb-step--{i}"><span class="rb-step__n">{esc(x["n"])}</span><span class="rb-step__len">{esc(x["len"])}</span></div>'
-        + ('<span class="rb-step__arrow" aria-hidden="true">' + lucide("chevron-right") + "</span>" if i < len(R["lengths"]["steps"]) - 1 else "")
-        for i, x in enumerate(R["lengths"]["steps"])
+    start = (
+        '<h3 class="rb-h">How long is a ban?</h3>'
+        '<p class="rb-p">For the rules in <b>a</b>, <b>b</b> and <b>c</b>, every new ban is longer than the last one:</p>'
+        f'<div class="rb-ladder">{ladder}</div>'
+        f'<div class="rb-facts">{facts}</div>'
+        '<h3 class="rb-h">The five groups of rules</h3>'
+        '<p class="rb-p">Every rule has a <b>ban code</b>: its group letter and a number, like <b>c1</b>. '
+        "The code is written in your ban message.</p>"
+        f'<div class="rb-gtiles">{tiles}</div>'
+        '<h3 class="rb-h">Words used in the rules</h3>'
+        '<p class="rb-p">When a rule uses one of these words, it counts in all of these places. The rules apply in every language.</p>'
+        f'<div class="rb-words">{word_tiles}</div>'
+        f'<p class="rb-source">{lucide("scroll-text")}<span>Copied from the official <b>{esc(src["name"])}</b> posts on '
+        f'{esc(src["where"])} (<a href="{esc(src["invite"])}" target="_blank" rel="noopener">discord.gg/vcworld</a>) on '
+        f'{esc(src["checked"])}. If anything here is different, the Discord version is the one that counts.</span></p>'
     )
-    lnotes = "".join(f"<li>{md_inline(n)}</li>" for n in R["lengths"]["notes"])
-    chapters.append(("rb-lengths", "Ban lengths", f'<div class="rb-steps">{steps}</div><ul class="rb-list">{lnotes}</ul>'))
+    t, short, icon, sub = RB_EXTRA["start"]
+    chapter("start", t, short, icon, sub, f"{len(active)} rules in 5 groups, explained simply.", start, "start")
 
-    # Groups
-    for g in R["groups"]:
-        items = "".join(rule_item(r, g, ban_posts) for r in g["rules"])
-        head = f'<p class="rb-lead">{md_inline(g["note"])}.</p>' if g.get("note") else ""
-        if g["kind"] == "permanent" and g["id"] == "d":
-            head = (
-                '<p class="rb-lead rb-lead--perm">Every ban in this chapter is <b>permanent right away</b>, '
-                "and some of these rules apply inside and outside the game.</p>"
+    # ---------------------------------------------------------------- Groups
+    for g in groups:
+        live = [r for r in g["rules"] if not r.get("empty")]
+        empty = [r["code"] for r in g["rules"] if r.get("empty")]
+        cards = "".join(rule_card(r, g, words, faq) for r in live)
+        if g["kind"] == "permanent":
+            punish = (
+                f'<div class="rb-banner rb-banner--perm">{lucide("octagon-x")}<span><b>Permanent right away.</b> '
+                + ("Except <b>e5</b>, which is always a 1 year ban." if g["id"] == "e" else "Some of these count even outside the game.")
+                + "</span></div>"
             )
-        if g["kind"] == "permanent" and g["id"] == "e":
-            head = '<p class="rb-lead rb-lead--perm">Also <b>permanent right away</b>, except <b>e5</b>, which is always a 1 year ban.</p>'
-        letters[f"rb-{g['id']}"] = f' <span class="rb-letter rb-letter--{g["id"]}">{g["id"]}</span>'
-        chapters.append((f"rb-{g['id']}", g["title"], head + f'<div class="rb-rules">{items}</div>'))
+        else:
+            punish = (
+                f'<div class="rb-banner rb-banner--strike">{lucide("timer")}<span><b>Strike bans:</b> {STRIKE}. '
+                '<a href="#rb-start">How bans work</a></span></div>'
+            )
+        unused = ""
+        if empty:
+            unused = (
+                f'<p class="rb-unused">{lucide("info")}<span>Codes not used right now: <b>{", ".join(empty)}</b>. '
+                "Rules change over time and some were merged or removed.</span></p>"
+            )
+        n = len([r for r in live if not r.get("removed")])
+        chapter(
+            g["id"], g["title"], g["short"], g["id"], f"{n} rules · {'permanent' if g['kind'] == 'permanent' else 'strike bans'}",
+            g["about"], punish + f'<div class="rb-rules">{cards}</div>' + unused, f"group rb-ch--{g['id']}", letter=True,
+        )
 
-    # Not bannable
+    # ---------------------------------------------------------------- Not bannable
     nb = R["not_bannable"]
-    nb_items = "".join(
+    ok_cards = "".join(
         f'<div class="rb-okcard"><span class="rb-okcard__icon">{lucide("circle-check")}</span>'
-        f'<span class="rb-okcard__t">{md_inline(x["t"])}</span><span class="rb-okcard__d">{md_inline(x["d"])}</span></div>'
+        f'<span class="rb-okcard__t">{md_inline(x["t"].rstrip("."))}</span><span class="rb-okcard__d">{md_inline(x["d"])}</span></div>'
         for x in nb["items"]
     )
-    chapters.append((
-        "rb-not", "Not bannable",
-        f'<p class="rb-lead">These things are <b>not</b> against the rules. {md_inline(nb["tip"])}.</p>'
-        f'<div class="rb-okcards">{nb_items}</div>',
-    ))
-
-    # Unbans
-    unb = "".join(f"<li>{md_inline(x)}</li>" for x in R["unbans"])
-    never = "".join(
-        f'<div class="rb-never"><a class="rb-code rb-code--link" href="#{code}">{code}</a><ul>'
-        + "".join(f"<li>{md_inline(x)}</li>" for x in items)
-        + "</ul></div>"
-        for code, items in R["never"].items()
+    hide = (
+        f'<div class="rb-howto"><p class="rb-howto__head">{lucide("eye-off")}<span>Someone is annoying you? Hide them</span></p>'
+        '<ol class="rb-howto__steps"><li>Click on the player, or find them in the <b>Server List</b></li>'
+        "<li>Their <b>Profile Card</b> opens</li><li>Click <b>Hide Player</b></li></ol></div>"
     )
-    chapters.append((
-        "rb-unbans", "Unbans",
-        f'<ul class="rb-list">{unb}</ul>'
-        f'<p class="rb-ban-posts"><a class="mp-btn mp-btn--blue" href="{esc(ban_posts)}" target="_blank" rel="noopener">'
-        f'{lucide("scroll-text")} Ban Code Posts on Discord</a></p>'
-        f'<div class="rb-warning"><p class="rb-warning__head">{lucide("shield-x")}<span>Never unbannable</span></p>'
-        f'<p>{md_inline(R["never_intro"])}</p>{never}</div>',
-    ))
+    t, short, icon, sub = RB_EXTRA["not"]
+    chapter("not", t, short, icon, sub, "These things are not against the rules, so nobody gets banned for them.",
+            f'<div class="rb-okcards">{ok_cards}</div>' + hide, "not")
 
-    # FAQ
-    faq = "".join(
-        f'<details class="rb-faq"><summary><span class="rb-faq__q">Q</span><span class="rb-faq__t">{md_inline(x["q"])}</span>'
-        f'<span class="rb-chev" aria-hidden="true">{lucide("chevron-down")}</span></summary>'
-        f'<div class="rb-rule__body"><p><span class="rb-faq__a">A</span>{md_inline(x["a"])}</p></div></details>'
+    # ---------------------------------------------------------------- Unbans
+    unban_icons = ["file-search", "clock-3", "hand-heart", "scale"]
+    unbans = "".join(
+        f'<div class="rb-ustep"><span class="rb-ustep__icon">{lucide(unban_icons[i % len(unban_icons)])}</span>'
+        f"<span>{md_inline(x)}</span></div>"
+        for i, x in enumerate(R["unbans"])
+    )
+    never = "".join(
+        f'<a class="rb-never" href="#{code}"><span class="rb-code rb-code--sm">{code}</span>'
+        f'<span>{esc(next((r["title"] for g in groups for r in g["rules"] if r["code"] == code), code))}</span></a>'
+        for code in R["never"]
+    )
+    t, short, icon, sub = RB_EXTRA["unbans"]
+    chapter(
+        "unbans", t, short, icon, sub, "You can ask for the proof of your ban, and many bans can end early.",
+        f'<div class="rb-usteps">{unbans}</div>'
+        f'<div class="rb-banner rb-banner--info">{lucide("scale")}<span><b>A ban only counts</b> if what you did matches '
+        "one of the bannable examples of its ban code.</span></div>"
+        f'<div class="rb-nevers"><p class="rb-nevers__head">{lucide("shield-x")}<span>Never unbanned</span></p>'
+        f"<p>{md_inline(R['never_intro'])}</p><div class=\"rb-never-list\">{never}</div>"
+        '<p class="rb-nevers__tip">Open each rule to see exactly which cases are never unbanned.</p></div>',
+        "unbans",
+    )
+
+    # ---------------------------------------------------------------- FAQ
+    faq_html = "".join(
+        f'<details class="rb-faq" id="faq-{slug(x["q"])}" data-search="{esc((x["q"] + " " + x["a"]).lower())}">'
+        f'<summary><span class="rb-faq__q">?</span><span class="rb-faq__t">{md_inline(x["q"])}</span>'
+        f'<span class="rb-rule__toggle" aria-hidden="true">{lucide("chevron-down")}</span></summary>'
+        f'<div class="rb-rule__body"><div class="rb-rule__inner"><p class="rb-faq__a">{md_inline(x["a"])}</p></div></div></details>'
         for x in R["faq"]
     )
-    chapters.append(("rb-faq", "Frequently asked questions", f'<div class="rb-faqs">{faq}</div>'))
+    t, short, icon, sub = RB_EXTRA["faq"]
+    chapter("faq", t, short, icon, sub, "Answers from the moderators to the questions they get the most.",
+            f'<div class="rb-faqs">{faq_html}</div>', "faq")
 
-    # Discord bans
-    disc = "".join(f"<li>{md_inline(x)}</li>" for x in R["discord"])
-    chapters.append(("rb-discord", "Discord bans", f'<ul class="rb-list">{disc}</ul>'))
+    # ---------------------------------------------------------------- Discord
+    disc = "".join(f'<li>{md_inline(x)}</li>' for x in R["discord"])
+    t, short, icon, sub = RB_EXTRA["discord"]
+    chapter("discord", t, short, icon, sub, "How bans work on the community Discord server.",
+            f'<ul class="rb-list">{disc}</ul>', "discord")
 
-    # Contents page
-    toc = "".join(
-        f'<li><a href="#{cid}"><span class="rb-toc__n">{ROMAN[i]}</span>'
-        f'<span class="rb-toc__t">{esc(t)}</span><span class="rb-toc__dots"></span>'
-        f'<span class="rb-toc__p">{i + 2}</span></a></li>'
-        for i, (cid, t, _) in enumerate(chapters)
+    # ---------------------------------------------------------------- Index (left page)
+    def ix(c: dict, i: int) -> str:
+        mark = (
+            f'<span class="rb-letter">{c["mark"]}</span>' if c["letter"]
+            else f'<span class="rb-ix__icon">{lucide(c["mark"])}</span>'
+        )
+        return (
+            f'<a class="rb-ix rb-ix--{c["cls"].split()[-1].replace("rb-ch--", "")}" href="#{c["id"]}" data-ch="{c["id"]}">'
+            f'{mark}<span class="rb-ix__text"><b class="rb-ix__long">{esc(c["title"])}</b><b class="rb-ix__short">{esc(c["short"])}</b>'
+            f'<small>{esc(c["sub"])}</small></span><span class="rb-ix__p">{i + 1}</span></a>'
+        )
+
+    index = (
+        f'<p class="rb-index__head">{lucide("book-open")}<span>Contents</span></p>'
+        + ix(chapters[0], 0)
+        + '<p class="rb-index__sub">Ban codes</p>'
+        + "".join(ix(c, i) for i, c in enumerate(chapters) if c["letter"])
+        + '<p class="rb-index__sub">Good to know</p>'
+        + "".join(ix(c, i) for i, c in enumerate(chapters) if i and not c["letter"])
     )
-    tabs = "".join(
-        f'<a class="rb-tab" href="#{cid}" title="{esc(t)}">{ROMAN[i]}</a>'
-        for i, (cid, t, _) in enumerate(chapters)
-    )
+
+    # ---------------------------------------------------------------- Pages
+    pages = []
+    for i, c in enumerate(chapters):
+        prev_c = chapters[i - 1] if i else None
+        next_c = chapters[i + 1] if i + 1 < len(chapters) else None
+        turn = '<nav class="rb-turn" aria-label="Turn the page">'
+        turn += (
+            f'<a class="rb-turn__btn rb-turn__btn--prev" href="#{prev_c["id"]}">{lucide("arrow-left")}'
+            f'<span><small>Previous</small><b>{esc(prev_c["title"])}</b></span></a>' if prev_c else "<span></span>"
+        )
+        turn += (
+            f'<a class="rb-turn__btn rb-turn__btn--next" href="#{next_c["id"]}"><span><small>Next</small>'
+            f'<b>{esc(next_c["title"])}</b></span>{lucide("arrow-right")}</a>' if next_c else "<span></span>"
+        )
+        turn += "</nav>"
+        badge = (
+            f'<span class="rb-ch__badge rb-letter">{c["mark"]}</span>' if c["letter"]
+            else f'<span class="rb-ch__badge rb-ch__badge--icon">{lucide(c["mark"])}</span>'
+        )
+        kicker = f"Chapter {i + 1} · ban codes" if c["letter"] else f"Chapter {i + 1}"
+        pages.append(
+            f'<section class="rb-ch rb-ch--{c["cls"].split()[0]} {c["cls"].split()[-1] if c["letter"] else ""}" id="{c["id"]}" data-title="{esc(c["title"])}">'
+            f'<header class="rb-ch__head">{badge}<div><span class="rb-ch__kicker">{esc(kicker)}</span>'
+            f'<h2 class="rb-ch__title">{esc(c["title"])}</h2><p class="rb-ch__about">{esc(c["about"])}</p></div></header>'
+            f'{c["body"]}{turn}<span class="rb-folio">{i + 1}</span></section>'
+        )
 
     out = [
-        '<div class="rb-book" id="rulebook">',
-        '<div class="rb-cover"><div class="rb-cover__pages" aria-hidden="true"></div><div class="rb-cover__front">'
-        '<span class="rb-cover__badge">OFFICIAL</span>'
-        '<span class="rb-cover__emblem" aria-hidden="true">' + lucide("scroll-text") + "</span>"
-        '<span class="rb-cover__title">The Rulebook</span>'
-        '<span class="rb-cover__sub">Meet People Across The World</span>'
-        f'<span class="rb-cover__meta">{active} rules · {len(chapters)} chapters</span>'
-        f'<a class="rb-open" href="#rb-contents">{lucide("book-open-text")}<span>Open the book</span></a>'
-        "</div></div>",
-        '<nav class="rb-bar" aria-label="Chapters"><div class="rb-tabs">' + tabs + '<span class="rb-tabs__ink" aria-hidden="true"></span></div>'
-        '<label class="rb-search">' + lucide("search") + '<input type="search" placeholder="Find a rule (e.g. c1)" aria-label="Find a rule"></label>'
-        '<button type="button" class="rb-toggle-all" data-open="0">' + lucide("list-tree") + "<span>Open all</span></button>"
-        '<span class="rb-progress" aria-hidden="true"><span></span></span></nav>',
-        '<p class="rb-noresults" hidden>No rule matches your search.</p>',
-        '<section class="rb-page rb-page--toc" id="rb-contents"><header class="rb-chap"><span class="rb-chap__n">The Rulebook</span>'
-        '<h2 class="rb-chap__t">Contents</h2></header>'
-        f'<ol class="rb-toc">{toc}</ol>'
-        f'<p class="rb-src">Copied from the official <b>{esc(src["name"])}</b> posts on {esc(src["where"])} '
-        f'(<a href="{esc(src["invite"])}" target="_blank" rel="noopener">discord.gg/vcworld</a>) on {esc(src["checked"])}. '
-        "If anything here is different from Discord, the Discord version is the one that counts.</p>"
-        '<span class="rb-folio">1</span></section>',
+        '<div class="rb" id="rulebook">',
+        '<div class="rb-finder">'
+        f'<div class="rb-finder__copy"><span class="rb-finder__icon">{lucide("gavel")}</span>'
+        '<span><b class="rb-finder__title">Got banned?</b>'
+        "<span>Type the code from your ban message, like <b>c1</b>, or search any word.</span></span></div>"
+        f'<label class="rb-search">{lucide("search")}<input type="search" placeholder="Ban code or word…" '
+        'aria-label="Find a rule" autocomplete="off" spellcheck="false"><kbd>/</kbd></label></div>',
+        '<div class="rb-book">',
+        f'<aside class="rb-index" aria-label="Chapters"><nav class="rb-index__inner">{index}</nav></aside>',
+        '<div class="rb-pages">',
+        *pages,
+        '<section class="rb-ch rb-ch--results" id="rb-results" hidden><header class="rb-ch__head">'
+        f'<span class="rb-ch__badge rb-ch__badge--icon">{lucide("search")}</span><div><span class="rb-ch__kicker">Search</span>'
+        '<h2 class="rb-ch__title">Results</h2><p class="rb-ch__about rb-results__count"></p></div></header>'
+        '<div class="rb-results"></div></section>',
+        "</div></div></div>",
     ]
-    for i, (cid, title, body) in enumerate(chapters):
-        out.append(
-            f'<section class="rb-page" id="{cid}" data-chapter="{ROMAN[i]}"><header class="rb-chap">'
-            f'<span class="rb-chap__n">Chapter {ROMAN[i]}</span><h2 class="rb-chap__t">{esc(title)}{letters.get(cid, "")}</h2></header>'
-            f'{body}<span class="rb-folio">{i + 2}</span></section>'
-        )
-    out.append("</div>")
     write("rules-book.md", "\n".join(out))
 
 

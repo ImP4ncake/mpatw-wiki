@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       urls:
-        description: "Image links separated by spaces. Optional file name before ::, e.g. a4-ok-bikini::https://..."
+        description: "Image links separated by spaces. Optional file name before ::, e.g. a4-ok-bikini::https://... Write clean to delete the fetched-images branch"
         required: true
       key:
         description: "Optional password. If set, the images are also saved encrypted on the temporary branch fetched-images"
@@ -26,6 +26,10 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
+      - name: Delete the temporary fetched-images branch
+        if: inputs.urls == 'clean'
+        run: git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" --delete fetched-images || true
+
       - name: Hide the password in the log
         if: inputs.key != ''
         run: |
@@ -33,6 +37,7 @@ jobs:
           echo "::add-mask::$KEY"
 
       - name: Download the images
+        if: inputs.urls != 'clean'
         env:
           URLS: ${{ inputs.urls }}
         run: |
@@ -59,6 +64,7 @@ jobs:
           EOF
 
       - name: Keep them for 3 days
+        if: inputs.urls != 'clean'
         uses: actions/upload-artifact@v4
         with:
           name: images
@@ -67,7 +73,7 @@ jobs:
           if-no-files-found: error
 
       - name: Save them encrypted on the fetched-images branch
-        if: inputs.key != ''
+        if: inputs.key != '' && inputs.urls != 'clean'
         run: |
           KEY=$(jq -r '.inputs.key' "$GITHUB_EVENT_PATH")
           tar -czf images.tgz images

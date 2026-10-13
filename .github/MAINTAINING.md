@@ -11,6 +11,7 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 | `data/` | Saved game data and the daily history used for the stats chart |
 | `includes/` | Snippets included in pages (`includes/generated/` is written by the script) |
 | `docs/assets/images/` | Screenshots and images |
+| `docs/assets/rules/` | Example pictures for the Rules page |
 | `zensical.toml` | Site settings and the navigation menu |
 | `templates/` | Starting points for new pages (page, badge, item, event) |
 | `requirements.txt` | The pinned Zensical version |
@@ -54,6 +55,19 @@ It needs two repository secrets (Settings → Secrets and variables → Actions)
 Without them the page simply keeps what is already saved.
 
 To run it yourself: `python scripts/update_data.py` (or `--offline` to only regenerate the pages from the saved data).
+
+## The Rules page
+
+The Rules page is built from `data/rules.json` (copied from the official *Detailed Ban Info* posts on the community Discord). Every rule can have `explain` paragraphs and `bannable`, `ok` and `never` example lists. Each example has a title (`t`), an optional note (`d`) and optional pictures (`img`):
+
+```json
+{"t": "Wearing a bikini without suggestive intent", "d": "Wearing a Bikini on its own is not bannable.",
+ "img": [{"src": "a4-ok-bikini.webp", "alt": "A player wearing a bikini in a normal way"}]}
+```
+
+Pictures go in `docs/assets/rules/`. Add `"spoiler": true` to show a picture blurred until it is clicked (used for every bannable example). Hide player names in screenshots before adding them. After editing, run `python scripts/update_data.py --offline` or just push: the hourly run rebuilds the page.
+
+Discord image links stop working about a day after they are copied, and they can't be downloaded from everywhere. The **Fetch images** workflow (Actions → Fetch images → Run workflow) downloads them on GitHub and keeps them for 3 days as a download on the run page. Run it with `clean` as the links to remove the temporary `fetched-images` branch it can create.
 
 ## Updating Zensical
 

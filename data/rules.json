@@ -8,7 +8,6 @@
  },
  "reading": {
   "notes": [
-   "If an Example has * at the end, it means there's an Example below.",
    "The rules apply for all languages."
   ],
   "words": [
@@ -78,11 +77,17 @@
     },
     {
      "code": "a2",
-     "title": "Playing NSFW Audios"
+     "title": "Playing NSFW Audios",
+     "counts": [
+      "Audio"
+     ]
     },
     {
      "code": "a3",
-     "title": "Simulating NSFW actions using Animations"
+     "title": "Simulating NSFW actions using Animations",
+     "counts": [
+      "Emote / Body Movement"
+     ]
     },
     {
      "code": "a4",
@@ -93,10 +98,24 @@
      ],
      "bannable": [
       {
-       "t": "Wearing no visible shirt and no visible pants while being a realistic skin color"
+       "t": "Wearing no visible shirt and no visible pants while being a realistic skin color",
+       "img": [
+        {
+         "src": "a4-ban-no-clothes.webp",
+         "alt": "A plain avatar with skin-coloured body and no clothes at all",
+         "spoiler": true
+        }
+       ]
       },
       {
-       "t": "Wearing clothes that imply you'd break a rule"
+       "t": "Wearing clothes that imply you'd break a rule",
+       "img": [
+        {
+         "src": "a4-ban-implying-clothes.webp",
+         "alt": "An avatar wearing a shirt that says 'Racista Certificado' (certified racist)",
+         "spoiler": true
+        }
+       ]
       },
       {
        "t": "You wear a sexual organ as part of your avatar."
@@ -110,39 +129,111 @@
        "d": "For example, a shirt with an explicit sexual phrase on it."
       },
       {
-       "t": "Wearing avatars heavily associated with Roblox Condos"
+       "t": "Wearing avatars heavily associated with Roblox Condos",
+       "img": [
+        {
+         "src": "a4-ban-condo-1.webp",
+         "alt": "A 'condo' style avatar with a skin-coloured body",
+         "spoiler": true
+        },
+        {
+         "src": "a4-ban-condo-2.webp",
+         "alt": "A 'condo' style avatar with an exaggerated body and swimsuit",
+         "spoiler": true
+        },
+        {
+         "src": "a4-ban-condo-3.webp",
+         "alt": "A 'condo' style avatar with an exaggerated body, circled in red",
+         "spoiler": true
+        }
+       ]
       },
       {
-       "t": "Wearing very small items that only cover private areas instead of wearing clothing that covers it around the body"
+       "t": "Wearing very small items that only cover private areas instead of wearing clothing that covers it around the body",
+       "d": "In the pictures, the first avatar (✗) is bannable and the second one (✓) is not.",
+       "img": [
+        {
+         "src": "a4-ban-tiny-items.webp",
+         "alt": "Bannable: one small leaf that only covers the private area",
+         "spoiler": true,
+         "mark": "ban"
+        },
+        {
+         "src": "a4-ok-tiny-items.webp",
+         "alt": "Not bannable: a leaf skirt that goes all around the body",
+         "mark": "ok"
+        }
+       ]
       }
      ],
      "ok": [
       {
        "t": "Wearing no visible shirt but wearing pants while being a realistic skin color",
-       "d": "Must be both clothes missing."
+       "d": "Must be both clothes missing.",
+       "img": [
+        {
+         "src": "a4-ok-no-shirt.webp",
+         "alt": "Skin-coloured avatar with no shirt but wearing pants"
+        }
+       ]
       },
       {
        "t": "Wearing no pants but wearing a shirt while being a realistic skin color",
-       "d": "Must be both clothes missing."
+       "d": "Must be both clothes missing.",
+       "img": [
+        {
+         "src": "a4-ok-no-pants.webp",
+         "alt": "Skin-coloured avatar wearing a shirt but no pants"
+        }
+       ]
       },
       {
        "t": "Wearing no visible shirt and no visible pants while being a non realistic skin color",
-       "d": "If you aren't a realistic skin color, then you aren't trying to look like a real life person which the above rules are for."
+       "d": "If you aren't a realistic skin color, then you aren't trying to look like a real life person which the above rules are for.",
+       "img": [
+        {
+         "src": "a4-ok-unreal-skin.webp",
+         "alt": "Avatar with a white, non realistic skin colour and no clothes"
+        }
+       ]
       },
       {
        "t": "Wearing a bypassed avatar that doesn't break any rules",
-       "d": "It wouldn't be fair to ban a player for something we wouldn't ban normally. While having swear words on a shirt would be a \"Bypassed\" Shirt since Roblox doesn't normally allow this, because we don't ban for swear words, this wouldn't be bannable."
+       "d": "It wouldn't be fair to ban a player for something we wouldn't ban normally. While having swear words on a shirt would be a \"Bypassed\" Shirt since Roblox doesn't normally allow this, because we don't ban for swear words, this wouldn't be bannable.",
+       "img": [
+        {
+         "src": "a4-ok-bypassed-shirt.webp",
+         "alt": "A shirt with a swear word on it (contains swearing)",
+         "spoiler": true
+        }
+       ],
+       "spoiler_label": "Swearing"
       },
       {
        "t": "Wearing an Avatar that depicts drug use",
-       "d": "We don't ban for the use or mention of any drugs."
+       "d": "We don't ban for the use or mention of any drugs.",
+       "img": [
+        {
+         "src": "a4-ok-drug-avatar-1.webp",
+         "alt": "An avatar with a shirt that says 'on that zaza'"
+        },
+        {
+         "src": "a4-ok-drug-avatar-2.webp",
+         "alt": "An avatar with a cannabis leaf on the shirt"
+        }
+       ]
       },
       {
        "t": "Wearing a bikini without suggestive intent",
-       "d": "Wearing a Bikini on its own is not bannable."
+       "d": "Wearing a Bikini on its own is not bannable.",
+       "img": [
+        {
+         "src": "a4-ok-bikini.webp",
+         "alt": "A player wearing a bikini in a normal way"
+        }
+       ]
       }
-     ],
-     "pictures": true
+     ]
     },
     {
      "code": "a5",
@@ -150,7 +241,10 @@
     },
     {
      "code": "a6",
-     "title": "Participating in an activity with someone else who's breaking rules"
+     "title": "Participating in an activity with someone else who's breaking rules",
+     "faq": [
+      "How do Build Related Rules work?"
+     ]
     },
     {
      "code": "a7",
@@ -164,7 +258,10 @@
      "code": "a9",
      "title": "Behavior that can cause harm to yourself"
     }
-   ]
+   ],
+   "short": "Behaviour",
+   "icon": "message-circle-warning",
+   "about": "Things you say, play, wear or do in the game."
   },
   {
    "id": "b",
@@ -183,7 +280,10 @@
     },
     {
      "code": "b3",
-     "title": "Referring to or saying a racial / homophobic slur, or the insults r*tard, sl*t or wh*re"
+     "title": "Referring to or saying a racial / homophobic slur, or the insults r*tard, sl*t or wh*re",
+     "counts": [
+      "Say"
+     ]
     },
     {
      "code": "b4",
@@ -191,7 +291,10 @@
     },
     {
      "code": "b5",
-     "title": "Wishing / Joking about death / elimination on any race / countries / ethnicity / religion / person"
+     "title": "Wishing / Joking about death / elimination on any race / countries / ethnicity / religion / person",
+     "counts": [
+      "Country"
+     ]
     },
     {
      "code": "b6",
@@ -204,13 +307,22 @@
     },
     {
      "code": "b8",
-     "title": "Depicting Nazi / Terrorists / KKK / Axis / Zov / Dead Dictators / USSR / Pedos / Hate figures"
+     "title": "Depicting Nazi / Terrorists / KKK / Axis / Zov / Dead Dictators / USSR / Pedos / Hate figures",
+     "counts": [
+      "Image"
+     ]
     },
     {
      "code": "b9",
-     "title": "Crude Images (Poop, Pee, Vomit, gross images)"
+     "title": "Crude Images (Poop, Pee, Vomit, gross images)",
+     "counts": [
+      "Image"
+     ]
     }
-   ]
+   ],
+   "short": "Hate & harm",
+   "icon": "shield-alert",
+   "about": "Slurs, hate, discrimination and wishing harm on people."
   },
   {
    "id": "c",
@@ -294,7 +406,10 @@
      "code": "c9",
      "title": "Creating / Showing suggestive content"
     }
-   ]
+   ],
+   "short": "Cheating & fake staff",
+   "icon": "bot",
+   "about": "Pretending to be staff, cheating, exploits, spam and false reports."
   },
   {
    "id": "d",
@@ -304,7 +419,10 @@
    "rules": [
     {
      "code": "d1",
-     "title": "NSFW Imagery"
+     "title": "NSFW Imagery",
+     "counts": [
+      "Image"
+     ]
     },
     {
      "code": "d2",
@@ -357,7 +475,10 @@
       "You share private real life pictures meant only for you to other people"
      ]
     }
-   ]
+   ],
+   "short": "Instant permanent",
+   "icon": "octagon-x",
+   "about": "The most serious rules. Breaking one is a permanent ban straight away."
   },
   {
    "id": "e",
@@ -376,7 +497,10 @@
     {
      "code": "e3",
      "title": "Ban Evasion",
-     "note": "Permanent until main account unbanned"
+     "note": "Permanent until main account unbanned",
+     "faq": [
+      "Why does my Ban Reason show \"You created or used an account to avoid an enforcement action taken against another account within this experience\"?"
+     ]
     },
     {
      "code": "e4",
@@ -389,7 +513,10 @@
      "tag": "1 year",
      "note": "1 Year Ban instead of Permanent"
     }
-   ]
+   ],
+   "short": "Account bans",
+   "icon": "user-x",
+   "about": "Bans for your account itself: names, scams, alts, age and self-bans."
   }
  ],
  "not_bannable": {

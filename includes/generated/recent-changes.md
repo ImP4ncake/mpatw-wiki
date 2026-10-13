@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/5f471ee" target="_blank" rel="noopener">Rules: the official rulebook as a book with chapters, opening rules, search and animations</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/53c2e05" target="_blank" rel="noopener">Events: Halloween 2026 as the current event, the others as a yearly rotation</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/bb13563" target="_blank" rel="noopener">Reputation: a nicer, more visual page</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b391d10" target="_blank" rel="noopener">Reputation: show it on a real profile card, and tidy the page</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b9f47ea" target="_blank" rel="noopener">List every troll item and gamepass item</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/7ae5b2f" target="_blank" rel="noopener">Join the globe and the wiki&#x27;s name into one header logo</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/e87d499" target="_blank" rel="noopener">Make the header name the same gold title as on the home page</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/a9caccb" target="_blank" rel="noopener">Keep the wiki&#x27;s name in the header and drop the rainbow scroll bar</a></span></div>
 </div>
