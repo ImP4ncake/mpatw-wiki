@@ -28,7 +28,9 @@ jobs:
     steps:
       - name: Delete the temporary fetched-images branch
         if: inputs.urls == 'clean'
-        run: git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" --delete fetched-images || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/fetched-images" || echo "No fetched-images branch to delete"
 
       - name: Hide the password in the log
         if: inputs.key != ''
