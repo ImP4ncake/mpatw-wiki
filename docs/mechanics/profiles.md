@@ -27,4 +27,4 @@ The **CUSTOMIZE** button in the menu lets you change how your profile looks. The
 
 !!! question "Needs info"
 
-    Which profile options exist, and which ones need Better Customization? Screenshots welcome! If you know, [tell me on Discord](../wiki/suggest.md).
+    Which profile options exist, and which ones need Better Customization? Screenshots welcome! If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

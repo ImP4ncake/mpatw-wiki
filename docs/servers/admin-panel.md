@@ -13,4 +13,4 @@ The **Admin Panel** is available to the owner of a [custom server](custom-server
 
 !!! question "Needs info"
 
-    Which options does the admin panel have? Screenshots welcome! If you know, [tell me on Discord](../wiki/suggest.md).
+    Which options does the admin panel have? Screenshots welcome! If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

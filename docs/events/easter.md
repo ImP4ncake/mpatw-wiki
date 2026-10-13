@@ -23,4 +23,4 @@ During the **Easter event**, players hunt for **50 Easter Eggs** hidden around t
 
 !!! question "Needs info"
 
-    Where were the eggs hidden? Did the event come back in 2026? If you know, [tell me on Discord](../wiki/suggest.md).
+    Where were the eggs hidden? Did the event come back in 2026? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

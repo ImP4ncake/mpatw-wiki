@@ -14,4 +14,4 @@ Cosmetics change how you and your profile look. Related menu buttons: **CUSTOMIZ
 
 !!! question "Needs info"
 
-    Which cosmetics exist and how do you get them? If you know, [tell me on Discord](../wiki/suggest.md).
+    Which cosmetics exist and how do you get them? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

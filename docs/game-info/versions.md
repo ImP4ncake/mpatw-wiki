@@ -31,7 +31,7 @@ The 18+ version also has a **Gamepass Info** pass (buying it does nothing) whose
 
 !!! question "Needs info: not yet confirmed in-game"
 
-    The wiki hasn't been able to test this in the game, and some players say gamepasses don't carry over. If you have tested it, tell us what happened: does a gamepass bought in the standard version work in the 18+ version? And the other way around? If you know, [tell me on Discord](../wiki/suggest.md).
+    The wiki hasn't been able to test this in the game, and some players say gamepasses don't carry over. If you have tested it, tell us what happened: does a gamepass bought in the standard version work in the 18+ version? And the other way around? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }
 
 <small>Source: the descriptions of both games and of the Gamepass Info pass on Roblox, checked 12 October 2026.</small>
 

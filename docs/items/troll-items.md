@@ -87,6 +87,6 @@ The game says Troll Sniper and Troll AK47 become **permanent with the Weapons Pa
     - How much do Troll Laser and Death Note cost? The menu doesn't show a price.
     - What exactly changes for Troll Sniper and Troll AK47 with the Weapons Pack?
 
-    If you know, [tell me on Discord](../wiki/suggest.md).
+    If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }
 
 See also: [Trolls](trolls.md), the actions in the **TROLL** menu.

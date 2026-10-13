@@ -11,4 +11,4 @@ Titles appear above your name in the game. Every title below is unlocked by a ba
 
 !!! question "Needs info"
 
-    Are there titles you can get without badges, for example from the shop or VIP? If you know, [tell me on Discord](../wiki/suggest.md).
+    Are there titles you can get without badges, for example from the shop or VIP? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

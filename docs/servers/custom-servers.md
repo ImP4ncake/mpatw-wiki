@@ -12,4 +12,4 @@ Anyone can create a **custom server** that other players can join. Custom server
 
 !!! question "Needs info"
 
-    How do you create a custom server, does it cost anything, and how do others join? If you know, [tell me on Discord](../wiki/suggest.md).
+    How do you create a custom server, does it cost anything, and how do others join? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

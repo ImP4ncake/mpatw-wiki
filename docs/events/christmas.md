@@ -23,4 +23,4 @@ Christmas is the game's December event. Giving a gift during the event unlocks t
 
 !!! question "Needs info"
 
-    What did the Christmas events include? Was there a Christmas 2025 event, and what was new? If you know, [tell me on Discord](../wiki/suggest.md).
+    What did the Christmas events include? Was there a Christmas 2025 event, and what was new? If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }

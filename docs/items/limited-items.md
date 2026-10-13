@@ -21,4 +21,4 @@ The **Pumpkin Tip Jar** is the Halloween 2026 version of the tip jar. It can be 
 
 !!! question "Needs info"
 
-    Other limited items from past events, with their prices. If you know, [tell me on Discord](../wiki/suggest.md).
+    Other limited items from past events, with their prices. If you know, [:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }
