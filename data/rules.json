@@ -237,18 +237,135 @@
     },
     {
      "code": "a5",
-     "title": "Discussing and/or directing highly explicit content to a player"
+     "title": "Discussing and/or directing highly explicit content to a player",
+     "bannable": [
+      {
+       "t": "Showing links to explicit sites through text or images",
+       "ex": [
+        "You post \"explicitsite.com\" in chat, or you have an Image Sign that says \"Go to my explicitsite.com\"."
+       ]
+      },
+      {
+       "t": "Showing icons or color schemes that reference explicit sites",
+       "ex": [
+        "You have an image with the icon of an explicit site.",
+        "You use colors that are obviously meant to reference an explicit site."
+       ]
+      },
+      {
+       "t": "Talking about highly explicit actions",
+       "d": "If it's directed at someone (you say you're doing it *to them*), it's a ban for **d4** instead.",
+       "ex": [
+        "Telling someone you're going to do an explicit action.",
+        "Talking about sexual positions."
+       ]
+      },
+      {
+       "t": "Talking about sexual body parts",
+       "ex": [
+        "You say \"Penis\", \"Vagina\" or \"Boobs\"."
+       ]
+      },
+      {
+       "t": "Hinting at a sexual phrase that would break a rule",
+       "ex": [
+        "You say \"pay gorn\". It obviously means \"gay p*rn\", which would be bannable.",
+        "You wear a shirt that says \"I come in peace\" and someone else wears one that says \"I'm peace\". Together they obviously mean \"I c*m in them\", so both players are banned."
+       ]
+      },
+      {
+       "t": "Talking about sex toys."
+      },
+      {
+       "t": "Talking about nude pictures."
+      },
+      {
+       "t": "Calling someone, or yourself, a \"stress reliever\"."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Talking about relationships without going into highly explicit details",
+       "d": "You can talk about your own relationships, as long as you don't go into more detail than the conversation needs.",
+       "ex": [
+        "You're talking about your life and mention you were cheated on because your partner slept with other people. It refers to an explicit action, but in this context and without details, it's fine.",
+        "You mention you met someone and briefly say they were \"10/10 in bed\". It refers to an explicit action, but you don't go into details, so it's fine."
+       ]
+      },
+      {
+       "t": "Using a word that is a common insult but also means a sexual body part, as an insult or expression",
+       "d": "It only becomes bannable when you are talking about the body part itself.",
+       "ex": [
+        "\"You're such a d*ck\". Not bannable: it's a common insult, and you aren't talking about the body part.",
+        "\"Your d*ck is small\" or \"My d*ck is big\". Bannable: it's an insult, but you are talking about the body part.",
+        "\"I love d*ck\". Bannable: it isn't an insult, and you are talking about the body part.",
+        "\"D*ck\" on its own, with no other meaning. Bannable: it isn't an insult or an expression, so you are talking about the body part."
+       ]
+      }
+     ]
     },
     {
      "code": "a6",
      "title": "Participating in an activity with someone else who's breaking rules",
+     "bannable": [
+      {
+       "t": "Harassing another player together with someone who's breaking rules",
+       "ex": [
+        "You and your friend walk up to a player and call them ugly. That alone is \"being mean\", which isn't bannable. Then your friend starts calling them slurs while you keep calling them ugly: your friend is banned for **b3**, and because you are both harassing the same player, you are banned too, for **a6**."
+       ]
+      },
+      {
+       "t": "Voluntarily taking a picture with players who are breaking rules",
+       "ex": [
+        "Three players take a picture together. Two of them are breaking a rule (**b8**), the third one isn't but voluntarily stands with them for the picture. The two are banned for **b8**, and the third one for **a6**."
+       ]
+      },
+      {
+       "t": "Voluntarily building with someone you know is breaking rules with their own build."
+      },
+      {
+       "t": "Purposely drawing together with a player who's breaking rules with their drawings (collaborative drawings)."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Harassing another player with your friend, when neither of you breaks any rules",
+       "d": "\"Harassing\" another player doesn't break any rules on its own, as long as nobody involved is breaking a rule."
+      },
+      {
+       "t": "Harassing another player with your friend, then stopping completely when your friend starts breaking a rule",
+       "d": "Your friend is banned, but you stopped as soon as they broke a rule, so you are no longer linked."
+      }
+     ],
      "faq": [
       "How do Build Related Rules work?"
      ]
     },
     {
      "code": "a7",
-     "title": "Doing something that can get other players banned"
+     "title": "Doing something that can get other players banned",
+     "bannable": [
+      {
+       "t": "Telling someone to say something that breaks a rule",
+       "ex": [
+        "You tell someone to say \"Book\" in Lithuanian. That's \"Knyga\", which obviously refers to the N-word, so in that context it's bannable under **b3**.",
+        "Someone asks you for help talking to someone in Spanish. You give them a sentence and say it means \"Hello, how are you!\", but it really means \"I want to f*ck you\", which is bannable under **a5**. Because you told them to say something that would get them banned, you are banned for **a7**."
+       ]
+      },
+      {
+       "t": "Giving players the ID of an Image that would get them banned."
+      },
+      {
+       "t": "Giving players the ID of a Sound that would get them banned."
+      },
+      {
+       "t": "Having bannable content in your Lasers",
+       "ex": [
+        "You have a bannable avatar inside your Avatar Laser.",
+        "You have a bannable avatar item inside your Avatar Item Laser."
+       ]
+      }
+     ]
     },
     {
      "code": "a8",
@@ -256,7 +373,54 @@
     },
     {
      "code": "a9",
-     "title": "Behavior that can cause harm to yourself"
+     "title": "Behavior that can cause harm to yourself",
+     "bannable": [
+      {
+       "t": "Saying \"I'm [minor age] years old\" and using your age as the main reason someone should talk to you",
+       "ex": [
+        "You have a Booth that only says \"I'm 13 yrs old\". You are using the age of a minor (below 18) as the only reason someone should talk to you, so it's bannable."
+       ]
+      },
+      {
+       "t": "Actively looking for older people to have relationships with while you are a minor."
+      },
+      {
+       "t": "Being a minor and lying about your age to seem older."
+      },
+      {
+       "t": "Offering to sell your body, or to do explicit actions or fan signs, for anything."
+      },
+      {
+       "t": "Showing full credit card info",
+       "ex": [
+        "You show the card number, the expiry date and the security code, like \"1234 5678 9012 3456 01/26 123\"."
+       ]
+      },
+      {
+       "t": "Showing a full address that includes numbers",
+       "ex": [
+        "You show an address like \"1234 MeetPeople, State, Country\". Without the numbers, like \"MeetPeople, State, Country\", it would be allowed."
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "Giving your social media to another person.",
+       "d": "Giving out your social media is not bannable on its own."
+      },
+      {
+       "t": "Having your social media account in your username or bio.",
+       "d": "Giving out your social media is not bannable on its own."
+      },
+      {
+       "t": "Having your age in your bio",
+       "d": "A bio just shares general information about you. Something like a Booth sign actively uses your age as a reason for people to come to you: the difference is the intent and the context."
+      },
+      {
+       "t": "Offering to sell your artistic skills for anything.",
+       "d": "Selling your art skills isn't dangerous. This includes singing for players: it's a skill you perform, not selling your body or anything explicit."
+      }
+     ]
     }
    ],
    "short": "Behaviour",
@@ -283,6 +447,54 @@
      "title": "Referring to or saying a racial / homophobic slur, or the insults r*tard, sl*t or wh*re",
      "counts": [
       "Say"
+     ],
+     "bannable": [
+      {
+       "t": "Saying a racial or homophobic slur."
+      },
+      {
+       "t": "Saying a word that clearly tries to reference a racial or homophobic slur",
+       "ex": [
+        "You say \"Neck Hurt\" while clearly referring to the hard-R N-word.",
+        "You set your name to \"Nick Gurr\", which clearly references the hard-R N-word."
+       ]
+      },
+      {
+       "t": "Saying \"n*gga\" when it isn't part of a conversation",
+       "ex": [
+        "You wear clothes that refer to or say \"n*gga\". It isn't used in a conversation, so it counts as saying a racist slur."
+       ]
+      },
+      {
+       "t": "Using \"n*gga\" as a slur",
+       "ex": [
+        "You tell someone \"You're a dirty n*gga\", and from the context it isn't because they haven't showered but because they're black. Even in a conversation, this is like using it as a slur, so it's bannable."
+       ]
+      },
+      {
+       "t": "Saying r*tard, sl*t or wh*re."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Saying \"n*gga\" in a conversation",
+       "d": "In a conversation it doesn't carry the same weight as directly calling someone a slur.",
+       "ex": [
+        "You're talking to your friend and say \"Yo n*gga what's good\". It's clearly part of the conversation and not meant as a slur."
+       ]
+      },
+      {
+       "t": "Saying \"b*tch\".",
+       "d": "It's not a racial or homophobic slur, so it's not bannable."
+      },
+      {
+       "t": "Saying \"f*ck\".",
+       "d": "It's not a racial or homophobic slur, so it's not bannable."
+      },
+      {
+       "t": "Saying \"moid\" or \"foid\".",
+       "d": "They're not racial or homophobic slurs, so they're not bannable."
+      }
      ]
     },
     {
@@ -594,11 +806,129 @@
      "code": "c5",
      "title": "Boosting in Ranked",
      "removed": true,
-     "note": "Ranked is currently removed. It used to get you data wiped."
+     "note": "Ranked is currently removed. Boosting used to get your ELO wiped and your coins reduced",
+     "bannable": [
+      {
+       "t": "Using alts or friends to boost your own ELO in Ranked unfairly, without any real fight happening",
+       "ex": [
+        "A player keeps winning against someone who leaves every match straight away, so the matches last less than 30 seconds. Nobody would queue Ranked again and again only to leave instantly against one specific player, so it's boosting."
+       ]
+      },
+      {
+       "t": "Helping someone boost their ELO in Ranked unfairly, without any real fight happening",
+       "ex": [
+        "A player keeps joining matches and leaving straight away, boosting someone else's ELO. There's no other reason to queue Ranked again and again only to leave instantly, so it's boosting."
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "Beating the same player again and again and winning easily, with real fighting happening",
+       "d": "With few people in the queue you can easily get the same player many times. As long as there is real fighting, it's not boosting.",
+       "ex": [
+        "A player beats the same opponent over and over, but the match times show real fights. They might be boosting, or they might just be much better: it can't be proven for certain, so it's not bannable."
+       ]
+      }
+     ]
     },
     {
      "code": "c6",
-     "title": "Bug Abuse that can disrupt other players / Exploiting / Lagging the server"
+     "title": "Bug Abuse that can disrupt other players / Exploiting / Lagging the server",
+     "explain": [
+      "**Exploiting** means using \"hacks\" or unintended third-party software.",
+      "For Admins: lagging the game with something from the Admin Panel is a strike instead of an instant demotion."
+     ],
+     "bannable": [
+      {
+       "t": "Flying using exploits, including flying without the Fly gamepass",
+       "d": "Mods can tell when a player flies this way, because they hear swimming sound effects."
+      },
+      {
+       "t": "Spectating players in Rooms",
+       "d": "This is impossible unless you are an Admin."
+      },
+      {
+       "t": "Walking on air using exploits."
+      },
+      {
+       "t": "Cheating in the Arenas using exploits."
+      },
+      {
+       "t": "Attaching yourself to a player using exploits."
+      },
+      {
+       "t": "Using something with collisions to physically move other players."
+      },
+      {
+       "t": "Playing an audio for the whole server, unless it's done with the Admin command."
+      },
+      {
+       "t": "Using a catalog accessory that makes your character take up a large part of the map",
+       "d": "Here an accessory that's far too big has changed the sky of the whole map.",
+       "img": [
+        {
+         "src": "c6-ban-accessory-skybox.webp",
+         "alt": "The whole map under a strange dark sky, changed by an accessory that is far too big",
+         "spoiler": true
+        }
+       ]
+      },
+      {
+       "t": "Using a bug to make an item take up a large part of the map",
+       "d": "If an item you're holding is bigger than the whole Drink Area, you are most likely abusing a bug. At Size 5 (the biggest Size Changer size) an item is still smaller than that.",
+       "img": [
+        {
+         "src": "c6-ok-item-size5.webp",
+         "alt": "Not bannable: at Size 5, the image sign a player holds is smaller than the Drink Area",
+         "mark": "ok"
+        },
+        {
+         "src": "c6-ban-item-bug.webp",
+         "alt": "Bannable: an image sign bigger than the whole Drink Area",
+         "spoiler": true
+        }
+       ]
+      },
+      {
+       "t": "Scribbling nonsense in the Draw Area only to make people lag."
+      },
+      {
+       "t": "Making players lag by spamming an item or activity."
+      },
+      {
+       "t": "Seeing players who are invisible without being an Admin."
+      },
+      {
+       "t": "Firing every Remote Event to try to backdoor the game",
+       "ex": [
+        "You fire every Remote Event with a small piece of code that tries to create a new object in the game."
+       ]
+      },
+      {
+       "t": "Claiming to sell exploits for the game, on Discord or in game."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Using exploits only for emotes",
+       "d": "As long as it doesn't break **a3** (simulating NSFW actions with animations). These can sometimes become a viral clip that grows the game."
+      },
+      {
+       "t": "Using Size 5 with the Size Changer gamepass",
+       "d": "It never makes you big enough to cover a large part of the map, and it's an intended feature."
+      },
+      {
+       "t": "Covering a large part of the map because an Admin used a Size Change command on you",
+       "d": "It wouldn't make sense to ban players for something only Admins can do."
+      },
+      {
+       "t": "Using a large Draw Count in the Draw Area for a real drawing that isn't nonsense",
+       "d": "You are making a real drawing, not drawing only to make people lag."
+      },
+      {
+       "t": "Entering or spectating a Room as an Admin."
+      }
+     ]
     },
     {
      "code": "c7",
@@ -607,11 +937,115 @@
     },
     {
      "code": "c8",
-     "title": "Lying in a Player Report / Misusing Ingame Player Reports"
+     "title": "Lying in a Player Report / Misusing Ingame Player Reports",
+     "bannable": [
+      {
+       "t": "Lying on purpose to get another player banned."
+      },
+      {
+       "t": "Creating several (at least 3) fake in-game player reports."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Lying on purpose to get someone unbanned",
+       "d": "They're already banned, so there's no need to ban them again, and it's hard to prove 100% that someone is lying and not just forgetting. Mods keep it in mind if they try to appeal again."
+      }
+     ]
     },
     {
      "code": "c9",
-     "title": "Creating / Showing suggestive content"
+     "title": "Creating / Showing suggestive content",
+     "explain": [
+      "**Suggestive** means content that is intentionally designed to sexualize the body, not content that simply shows skin.",
+      "That includes drawings with clothing or textures that expose or simulate nudity on genitals, buttocks or nipples (thongs, pasties, lingerie), an exaggerated body shape with minimal clothing that draws sexual focus to those areas, and explicitly sexual animations, poses or accessories.",
+      "Swimwear like bikinis and trunks isn't highly suggestive on its own, because it has a clear real-world context. It only counts when combined with the things above.",
+      "Ask yourself: is the drawing designed to look sexual, or does it simply happen to show skin?"
+     ],
+     "bannable": [
+      {
+       "t": "Showing cartoonish depictions of sexual organs",
+       "ex": [
+        "You type a text drawing of a penis or of breasts.",
+        "You draw 🍆 in a context where you're clearly talking about the sexual organ."
+       ]
+      },
+      {
+       "t": "Showing suggestive artwork",
+       "ex": [
+        "A drawing of a woman with breasts of an exaggerated size that looks suggestive. Drawing women with breasts is fine on its own, but exaggerated sizes are bannable."
+       ]
+      },
+      {
+       "t": "Showing people or things from NSFW media or explicit content",
+       "ex": [
+        "You build a pole that is clearly meant to be a stripper pole.",
+        "You draw a character that was originally created in NSFW or explicit media. Drawing these characters is bannable whatever the context you draw them in."
+       ]
+      },
+      {
+       "t": "Showing a cropped or edited image of explicit content, even without the explicit parts",
+       "ex": [
+        "You take a picture of a scene from an explicit video and cover all the sexual organs with food. Nothing explicit is showing, but it's still an edited image of explicit content, so it's bannable.",
+        "You take a picture of a scene from an explicit video and crop it so only the face shows. Nothing explicit is showing, but it's still a cropped image of explicit content, so it's bannable."
+       ]
+      },
+      {
+       "t": "Showing pictures of porn actors, even when there's nothing explicit in the picture."
+      },
+      {
+       "t": "Showing places typically used for sex work (strip clubs, buildings with stripper poles)."
+      },
+      {
+       "t": "Referring to \"👌 👈\"."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Showing swimsuits without suggestive intent",
+       "d": "Swimsuits don't make a drawing suggestive on their own, unless the drawing uses them that way."
+      },
+      {
+       "t": "Showing abs",
+       "d": "Abs show a lot of skin, but they mean the person is fit, not that the drawing is suggestive, unless the drawing uses them in a suggestive way.",
+       "img": [
+        {
+         "src": "c9-ok-abs-1.webp",
+         "alt": "A drawing in the Draw Area of an anime man lifting his shirt to show his abs"
+        },
+        {
+         "src": "c9-ok-abs-2.webp",
+         "alt": "A drawing of a shirtless, very muscular anime man"
+        },
+        {
+         "src": "c9-ok-abs-3.webp",
+         "alt": "A sketch of a muscular horror monster with a pyramid-shaped helmet"
+        }
+       ]
+      },
+      {
+       "t": "Showing women with breasts that aren't exaggerated in size",
+       "d": "Women have breasts, so drawing them doesn't make a drawing suggestive. Exaggerated sizes, or clothes meant to be suggestive, would be bannable.",
+       "img": [
+        {
+         "src": "c9-ok-body-1.webp",
+         "alt": "A drawing of a red-haired anime woman in a white shirt and black trousers"
+        },
+        {
+         "src": "c9-ok-body-2.webp",
+         "alt": "A line drawing of a woman with angel wings in a long dress"
+        },
+        {
+         "src": "c9-ok-body-3.webp",
+         "alt": "A sketch of a faceless horror nurse in her uniform"
+        }
+       ]
+      },
+      {
+       "t": "Cartoonish depictions of a butt",
+       "d": "Fine when it's very cartoonish and obviously not meant to be sexual."
+      }
+     ]
     }
    ],
    "short": "Cheating & fake staff",
@@ -641,7 +1075,29 @@
     },
     {
      "code": "d3",
-     "title": "Trying to scare another Player with information not directly linked through their Roblox Account"
+     "title": "Finding someone's information that isn't directly accessible through their Roblox / Discord",
+     "scope": "This rule applies inside and outside the game",
+     "explain": [
+      "**Discord Account** means the player's linked Discord account: the one directly linked to their Roblox account, through a verification bot or through the Roblox connection on their Discord profile."
+     ],
+     "bannable": [
+      {
+       "t": "Finding a player's social media through a connection that isn't linked to their Roblox or Discord account",
+       "ex": [
+        "You check a player's Roblox profile and there are no social links. You still search their username on Google, find one of their social media accounts and ask them \"Are you [that account]?\". Nothing was linked to their Roblox or Discord account, so you found something they didn't want you to find, and it's bannable."
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "Finding a player's social media through a connection linked to their Roblox or Discord account",
+       "d": "It would be unfair to ban you for talking about an account they made public.",
+       "ex": [
+        "A player has no social links on their Roblox profile, but you find their Discord account with the same name, and it has a social media account attached. You ask \"Are you [that account]?\". It was linked to their Discord account, so it's not bannable.",
+        "A player's Roblox profile links to social media X, and through the links on X you find their social media Y. You ask \"Are you [account on Y]?\". You found Y through links that start from their Roblox or Discord account, so it's not bannable."
+       ]
+      }
+     ]
     },
     {
      "code": "d4",
@@ -813,13 +1269,50 @@
     {
      "code": "e4",
      "title": "Self-Bans",
-     "note": "Unbanned at your request"
+     "note": "Unbanned at your request",
+     "explain": [
+      "You are only unbanned when you ask for an unban through the ticket system."
+     ],
+     "bannable": [
+      {
+       "t": "Asking for a self-ban through a ticket",
+       "d": "Open a ticket on the official Discord and choose \"Self Ban\". The ban only applies to the account linked to your Discord account."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Asking a Mod to ban you in game",
+       "d": "You can only ask for a self-ban through the ticket system."
+      },
+      {
+       "t": "Asking for a ban on an account that isn't linked to your Discord account",
+       "d": "You can only ask for a ban on your linked account."
+      }
+     ]
     },
     {
      "code": "e5",
      "title": "Being below 13 Years Old",
      "tag": "1 year",
-     "note": "1 Year Ban instead of Permanent"
+     "note": "1 Year Ban instead of Permanent",
+     "explain": [
+      "**How to get unbanned:** open any ticket to appeal an e5 ban and you are unbanned straight away."
+     ],
+     "bannable": [
+      {
+       "t": "Showing behavior that makes it clear you are truly below 13 years old",
+       "ex": [
+        "You sound like a kid below 13, and it's clear it's not just your voice: you really are below 13.",
+        "You run around playing very loud, annoying TV or TikTok sounds, and you behave like a kid below 13."
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "Wearing a childish avatar and pretending to be younger",
+       "d": "This doesn't mean you are truly below 13. See **d4** for when pretending to be younger is bannable."
+      }
+     ]
     }
    ],
    "short": "Account bans",
