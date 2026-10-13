@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/e7c02d0" target="_blank" rel="noopener">Rules: the last 18 rules in detail, all in the a4 style</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b219804" target="_blank" rel="noopener">Rules: balanced layout and chat bubbles for every rule</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/edcc920" target="_blank" rel="noopener">Rules: a5, a6, a7, a9, b3, c5, c6, c8, c9, d3, e4 and e5 in detail</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/d152055" target="_blank" rel="noopener">Rules: b6 Discrimination in detail</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/6308ba5" target="_blank" rel="noopener">Add a back-to-top button and match the Start here button&#x27;s border</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/2c3162a" target="_blank" rel="noopener">Codes work in both the 18+ and the standard version</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/34a8a35" target="_blank" rel="noopener">Keep the header globe solid on hover</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/28c0a0f" target="_blank" rel="noopener">Put the codes first on the Codes page</a></span></div>
 </div>

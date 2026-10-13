@@ -144,12 +144,12 @@
      "code": "a4",
      "title": "Wearing Inappropriate Avatars",
      "explain": [
-      "If a Player is wearing an Avatar that breaks another rule, they should be banned for that rule instead.",
-      "Example: an outfit depicting an evil person or organization breaks **b8**, so the ban is for **b8**. A shirt with graphic explicit content is NSFW Imagery, so the ban is for **d1**."
+      "If an avatar breaks another rule, the ban is for that rule instead.",
+      "For example: an outfit showing an evil person or organization breaks **b8**, so the ban is for **b8**. A shirt with graphic explicit content is NSFW Imagery, so the ban is for **d1**."
      ],
      "bannable": [
       {
-       "t": "Wearing no visible shirt and no visible pants while being a realistic skin color",
+       "t": "Wearing no visible shirt and no visible pants with a realistic skin color",
        "img": [
         {
          "src": "a4-ban-no-clothes.webp",
@@ -169,18 +169,18 @@
        ]
       },
       {
-       "t": "You wear a sexual organ as part of your avatar."
+       "t": "Wearing a sexual organ as part of your avatar."
       },
       {
-       "t": "Wearing avatars of people / things originally from NSFW Media / Explicit Content",
-       "d": "Wearing Avatars of characters who were originally created for explicit content, is bannable."
+       "t": "Wearing avatars of people or things originally from NSFW media or explicit content",
+       "d": "Avatars of characters that were originally created for explicit content are bannable."
       },
       {
-       "t": "Wearing avatars that display sexual body parts or explicit sexual references",
+       "t": "Wearing avatars that show sexual body parts or explicit sexual references",
        "d": "For example, a shirt with an explicit sexual phrase on it."
       },
       {
-       "t": "Wearing avatars heavily associated with Roblox Condos",
+       "t": "Wearing avatars heavily associated with Roblox condos",
        "img": [
         {
          "src": "a4-ban-condo-1.webp",
@@ -200,7 +200,7 @@
        ]
       },
       {
-       "t": "Wearing very small items that only cover private areas instead of wearing clothing that covers it around the body",
+       "t": "Wearing very small items that only cover private areas, instead of clothing that goes around the body",
        "d": "In the pictures, the first avatar (✗) is bannable and the second one (✓) is not.",
        "img": [
         {
@@ -219,8 +219,8 @@
      ],
      "ok": [
       {
-       "t": "Wearing no visible shirt but wearing pants while being a realistic skin color",
-       "d": "Must be both clothes missing.",
+       "t": "Wearing no visible shirt, but wearing pants, with a realistic skin color",
+       "d": "It's only bannable when both are missing.",
        "img": [
         {
          "src": "a4-ok-no-shirt.webp",
@@ -229,8 +229,8 @@
        ]
       },
       {
-       "t": "Wearing no pants but wearing a shirt while being a realistic skin color",
-       "d": "Must be both clothes missing.",
+       "t": "Wearing no pants, but wearing a shirt, with a realistic skin color",
+       "d": "It's only bannable when both are missing.",
        "img": [
         {
          "src": "a4-ok-no-pants.webp",
@@ -239,8 +239,8 @@
        ]
       },
       {
-       "t": "Wearing no visible shirt and no visible pants while being a non realistic skin color",
-       "d": "If you aren't a realistic skin color, then you aren't trying to look like a real life person which the above rules are for.",
+       "t": "Wearing no visible shirt and no visible pants with a skin color that isn't realistic",
+       "d": "Without a realistic skin color you aren't trying to look like a real person, which is what this rule is about.",
        "img": [
         {
          "src": "a4-ok-unreal-skin.webp",
@@ -250,7 +250,7 @@
       },
       {
        "t": "Wearing a bypassed avatar that doesn't break any rules",
-       "d": "It wouldn't be fair to ban a player for something we wouldn't ban normally. While having swear words on a shirt would be a \"Bypassed\" Shirt since Roblox doesn't normally allow this, because we don't ban for swear words, this wouldn't be bannable.",
+       "d": "A shirt with swear words is \"bypassed\" because Roblox doesn't normally allow it, but swearing isn't bannable here, so the shirt isn't either. It wouldn't be fair to ban for something that is never banned otherwise.",
        "img": [
         {
          "src": "a4-ok-bypassed-shirt.webp",
@@ -261,8 +261,8 @@
        "spoiler_label": "Swearing"
       },
       {
-       "t": "Wearing an Avatar that depicts drug use",
-       "d": "We don't ban for the use or mention of any drugs.",
+       "t": "Wearing an avatar that shows drug use",
+       "d": "Using or mentioning drugs is never a reason for a ban.",
        "img": [
         {
          "src": "a4-ok-drug-avatar-1.webp",
@@ -276,7 +276,7 @@
       },
       {
        "t": "Wearing a bikini without suggestive intent",
-       "d": "Wearing a Bikini on its own is not bannable.",
+       "d": "A bikini on its own is not bannable.",
        "img": [
         {
          "src": "a4-ok-bikini.webp",
@@ -747,46 +747,46 @@
      ],
      "bannable": [
       {
-       "t": "You say negative stereotypes generalizing an entire race / ethnicity / sexuality that doesn't have to do with weight",
+       "t": "Saying negative stereotypes about an entire race, ethnicity or sexuality (except about weight)",
        "ex": [
-        "Calling someone from Iraq a Suicide Bomber. This is a negative stereotype because being a Suicide Bomber is not a good thing, and you're assuming that because they're from Iraq they must be a Suicide Bomber.",
-        "Going up to a Black Person and saying \"Do you want KFC and Watermelon?\". Black people liking KFC or Watermelon has racist roots so it would be considered a negative stereotype and would be bannable.",
-        "Going up to an Asian Person and saying \"Ch*ng Ch*ng\". This is a negative stereotype because Asian people do not talk like that and has racist roots, so this would be bannable.",
-        "You see an Indian and immediately call them stinky. Generalizing every Indian person to be stinky, as if they are born stinky just because they are Indian, is a negative stereotype, so this would be bannable.",
-        "You start mimicking an Indian Accent and talk about how you run a scam call center. By mimicking an Indian Accent you are generalizing yourself as Indian and assuming all Indians run Call Centers, which is a negative stereotype, which is bannable.",
-        "You go up to Spanish People and call them Illegals. This is a negative stereotype because you are assuming every Spanish person is an illegal immigrant, so it is bannable."
+        "Calling someone from Iraq a suicide bomber. It's a negative stereotype: being a suicide bomber isn't a good thing, and you're assuming they must be one because they're from Iraq.",
+        "Going up to a Black person and saying \"Do you want KFC and watermelon?\". Black people liking KFC or watermelon has racist roots, so it's a negative stereotype and bannable.",
+        "Going up to an Asian person and saying \"Ch*ng Ch*ng\". Asian people don't talk like that and it has racist roots, so it's bannable.",
+        "Seeing an Indian player and calling them stinky straight away. Treating every Indian person as stinky, as if they're born that way, is a negative stereotype, so it's bannable.",
+        "Mimicking an Indian accent while talking about running a scam call center. You're assuming all Indians run call centers, which is a negative stereotype, so it's bannable.",
+        "Going up to Spanish people and calling them illegals. You're assuming every Spanish person is an illegal immigrant, so it's bannable."
        ]
       },
       {
-       "t": "You say you don't like a race / ethnicity / sexuality / people from a religion",
+       "t": "Saying you don't like a race, ethnicity, sexuality, or the people of a religion",
        "ex": [
-        "You say \"I don't like Black People\"",
-        "You say \"I don't like Gay People\"",
-        "You say \"I don't like White People\"",
+        "You say \"I don't like Black people\".",
+        "You say \"I don't like gay people\".",
+        "You say \"I don't like white people\".",
         "You say \"I don't like Christians\". Saying \"I don't like Christianity\" is fine."
        ]
       },
       {
-       "t": "You insinuate a race / ethnicity / sexuality / religion isn't normal"
+       "t": "Hinting that a race, ethnicity, sexuality or religion isn't normal."
       },
       {
-       "t": "You insinuate someone is less than human",
+       "t": "Hinting that someone is less than human",
        "ex": [
         "You say \"Black people are less than human\".",
         "You call Black people \"Chocolate People\".",
         "You call Mexicans \"Taco People\".",
-        "You call Japanese People \"Anime People\".",
-        "You go up to a group of Japanese players and say \"Hello ramen people!\"",
-        "You walk up to a black person and say \"Hello black\"",
-        "You say \"F*ck you gay\"",
-        "You say \"F*ck you black\"",
-        "You go up to a woman and say \"Go to the kitchen and make me a sandwich\"",
-        "You ask someone \"Are you colored or normal?\". This implies that if you are not colored, so in this case referring to white, you are normal. Meaning, if you are not white, you are not normal. This is bannable.",
-        "Creating images that rank skin colours, like a \"tier list\" of skin tones, or a skin-colour chart marked \"okay\" and \"not okay\"."
+        "You call Japanese people \"Anime People\".",
+        "You go up to a group of Japanese players and say \"Hello ramen people!\".",
+        "You walk up to a Black player and say \"Hello black\".",
+        "You say \"F*ck you gay\".",
+        "You say \"F*ck you black\".",
+        "You go up to a woman and say \"Go to the kitchen and make me a sandwich\".",
+        "You ask someone \"Are you colored or normal?\". It implies that only white people are normal, so it's bannable.",
+        "You make images that rank skin colors, like a \"tier list\" of skin tones, or a chart of skin colors marked okay and not okay."
        ]
       },
       {
-       "t": "You use an image of a race / sexuality / religion with an ❌ on top of it",
+       "t": "Using an image of a race, sexuality or religion with an ❌ on it",
        "img": [
         {
          "src": "b6-ban-group-cross.webp",
@@ -796,7 +796,7 @@
        ]
       },
       {
-       "t": "You use an image of a Country with a ❌ on top of it while comparing it to another country",
+       "t": "Using an image of a country with an ❌ on it, while comparing it to another country",
        "img": [
         {
          "src": "b6-ban-country-compare.webp",
@@ -805,43 +805,43 @@
        ]
       },
       {
-       "t": "You wear an Avatar that's meant to represent a racist caricature",
+       "t": "Wearing an avatar meant to be a racist caricature",
        "ex": [
-        "A racist caricature of a black person: very black skin and bright red lips.",
-        "A racist caricature of an asian person: yellow skin, slanted eyes and a straw hat."
+        "A racist caricature of a Black person: very black skin and bright red lips.",
+        "A racist caricature of an Asian person: yellow skin, slanted eyes and a straw hat."
        ]
       },
       {
        "t": "Calling First Nations people Indian."
       },
       {
-       "t": "Calling Trans people Transformers."
+       "t": "Calling trans people Transformers."
       },
       {
        "t": "Mocking a religion",
        "ex": [
-        "You call the Mecca a Minecraft Block",
-        "You call Allah \"Pig Allah\"",
-        "You mock a religious saying, for example saying \"outshallah\" (the inverse of inshallah)",
-        "Wearing a Religious Avatar in a way that mocks the religion"
+        "You call the Mecca a Minecraft block.",
+        "You call Allah \"Pig Allah\".",
+        "You mock a religious saying, for example by saying \"outshallah\" (the opposite of inshallah).",
+        "You wear a religious avatar in a way that mocks the religion."
        ]
       },
       {
-       "t": "Outright declaring a religion as fake, false, or invalid outside of a structured debate context."
+       "t": "Declaring a religion fake, false or invalid, outside of a structured debate."
       },
       {
-       "t": "You deny the existence of a real country recognized ingame",
+       "t": "Denying that a real country recognized in the game exists",
        "ex": [
-        "You say \"Israel isn't a real country\"",
-        "You say \"Palestine isn't a real country\""
+        "You say \"Israel isn't a real country\".",
+        "You say \"Palestine isn't a real country\"."
        ]
       },
       {
-       "t": "Political taunting directed towards another player purely because of someone's nationality, ethnicity, religion or gender outside of a structured debate context",
+       "t": "Taunting a player about politics only because of their nationality, ethnicity, religion or gender, outside of a structured debate",
        "ex": [
-        "You go up to a random person from Palestine and say to them \"Free Israel!\". While the phrase on its own is not bannable, going up to a random person from Palestine and saying it is bannable, outside of a structured debate context.",
-        "You go up to a random person from Israel and say to them \"Free Palestine!\". While the phrase on its own is not bannable, going up to a random person from Israel and saying it is bannable, outside of a structured debate context.",
-        "You go up to a random black person and say to them \"Do you love George Floyd?\""
+        "You go up to a random player from Palestine and say \"Free Israel!\". The phrase isn't bannable on its own, but saying it to a random person from Palestine is.",
+        "You go up to a random player from Israel and say \"Free Palestine!\". The phrase isn't bannable on its own, but saying it to a random person from Israel is.",
+        "You go up to a random Black player and say \"Do you love George Floyd?\"."
        ]
       },
       {
@@ -850,8 +850,8 @@
      ],
      "ok": [
       {
-       "t": "You use an image of a Country with a ❌ on top of it without comparing it to another country",
-       "d": "This on its own is equivalent to saying \"I don't like Country X\" which is not bannable.",
+       "t": "Using an image of a country with an ❌ on it, without comparing it to another country",
+       "d": "On its own it's like saying \"I don't like Country X\", which is not bannable.",
        "img": [
         {
          "src": "b6-ok-country-cross.webp",
@@ -860,92 +860,90 @@
        ]
       },
       {
-       "t": "You say how a certain culture eats their cultural food",
-       "d": "It isn't discrimination to say how certain cultures eat certain foods.",
+       "t": "Talking about the food of a culture",
+       "d": "Saying how certain cultures eat certain foods isn't discrimination.",
        "ex": [
-        "You go up to someone from France and say \"How often do you eat Baguettes?\"",
-        "You walk up to someone from Quebec and say \"Is Poutine really that good?\"",
-        "You go to a Canadian and say \"Do you really eat Maple Syrup with everything?\"",
-        "You go to a Japanese and ask \"Is ramen actually that good?\""
+        "You go up to someone from France and say \"How often do you eat baguettes?\".",
+        "You walk up to someone from Quebec and say \"Is poutine really that good?\".",
+        "You go to a Canadian and say \"Do you really eat maple syrup with everything?\".",
+        "You go to a Japanese player and ask \"Is ramen actually that good?\"."
        ]
       },
       {
-       "t": "You say you don't like a Country / Religion.",
-       "d": "You are allowed to say you don't like a Country / Religion."
+       "t": "Saying you don't like a country or a religion."
       },
       {
-       "t": "A Player says \"F*ck Country X!\".",
-       "d": "This is equivalent to saying you don't like a Country and you are allowed to say this."
+       "t": "Saying \"F*ck Country X!\"",
+       "d": "It's like saying you don't like a country, which is allowed."
       },
       {
-       "t": "You say you don't like people from a Country.",
-       "d": "You are allowed to say you don't like people from a Country."
+       "t": "Saying you don't like people from a country."
       },
       {
-       "t": "You say a country is poor.",
-       "d": "You are allowed to insult countries by calling them poor as this is too tame to warrant a ban."
+       "t": "Calling a country poor",
+       "d": "Insulting a country by calling it poor is too tame for a ban."
       },
       {
-       "t": "You say you don't like a race / ethnicity / sexuality / religion as a romantic preference",
-       "d": "You are allowed to say you wouldn't date certain people as this doesn't mean you see them less than human or that they aren't normal.",
+       "t": "Saying you wouldn't date people of a race, ethnicity, sexuality or religion",
+       "d": "A dating preference doesn't mean you see them as less than human or not normal.",
        "ex": [
-        "You say \"Me personally I wouldn't date a X Person\".",
-        "You say \"I'm not into X People\"."
+        "You say \"Me personally, I wouldn't date an X person\".",
+        "You say \"I'm not into X people\"."
        ]
       },
       {
-       "t": "You call someone Fat as an insult.",
-       "d": "This is too tame to warrant a ban."
+       "t": "Calling someone fat as an insult",
+       "d": "It's too tame for a ban."
       },
       {
-       "t": "You generalize an entire race / ethnicity / sexuality's weight",
-       "d": "You are allowed to insult an entire race / ethnicity / sexuality's weight as this is too tame to warrant a ban.",
+       "t": "Generalizing about the weight of a whole race, ethnicity or sexuality",
+       "d": "Insults about weight are too tame for a ban.",
        "ex": [
-        "You say \"Everyone in Country X is fat\""
+        "You say \"Everyone in Country X is fat\"."
        ]
       },
       {
-       "t": "You say positive stereotypes generalizing an entire race / ethnicity / sexuality",
-       "d": "This is not discrimination but rather positive.",
+       "t": "Saying positive stereotypes about a race, ethnicity or sexuality",
+       "d": "This isn't discrimination: it's positive.",
        "ex": [
-        "You say \"You're Black so you must be really athletic!\"",
-        "You say \"You're Asian so you must be really smart!\"",
-        "You say \"You're from Dubai you must be really rich!\""
+        "You say \"You're Black so you must be really athletic!\".",
+        "You say \"You're Asian so you must be really smart!\".",
+        "You say \"You're from Dubai, you must be really rich!\"."
        ]
       },
       {
-       "t": "You mimic an accent.",
-       "d": "Mimicking an accent on its own is fine as long as you aren't saying bannable things with it."
+       "t": "Mimicking an accent",
+       "d": "Fine on its own, as long as you don't say bannable things with it."
       },
       {
-       "t": "You play audio that contains stereotypical songs of any culture.",
-       "d": "Playing songs on its own is fine as long as bannable things aren't said along with it."
+       "t": "Playing stereotypical songs of any culture",
+       "d": "Fine on its own, as long as nothing bannable is said with it."
       },
       {
-       "t": "Wearing the Avatar of a Religious Figure.",
-       "d": "If you aren't mocking it in some way, this is fine."
+       "t": "Wearing the avatar of a religious figure",
+       "d": "Fine, as long as you aren't mocking it."
       },
       {
-       "t": "Saying you don't believe in a Religion.",
-       "d": "If you aren't mocking it in some way, this is fine."
+       "t": "Saying you don't believe in a religion",
+       "d": "Fine, as long as you aren't mocking it."
       },
       {
-       "t": "You say you don't like things that a race / ethnicity / sexuality / people from a religion do",
-       "d": "If what you're saying isn't breaking any other rule, it's fine.",
+       "t": "Saying you don't like things that a race, ethnicity, sexuality or religion does",
+       "d": "Fine, as long as what you say doesn't break another rule.",
        "ex": [
-        "You say \"I don't like how Christians are so strict\"",
-        "You say \"I personally don't like Asian food\"",
-        "You say \"I don't like Jewish songs\"",
-        "You say \"I don't like Mexican food\""
+        "You say \"I don't like how Christians are so strict\".",
+        "You say \"I personally don't like Asian food\".",
+        "You say \"I don't like Jewish songs\".",
+        "You say \"I don't like Mexican food\"."
        ]
       },
       {
-       "t": "You say a country is fake in a joking way.",
-       "d": "Such as saying you're not Indonesian you're Polish, which is meant to be about the flag being the reverse."
+       "t": "Saying a country is fake as a joke",
+       "d": "Like saying \"You're not Indonesian, you're Polish\", a joke about the two flags being upside down versions of each other."
       },
       {
-       "t": "You say a country is sh*t.",
-       "d": "This is equivalent to saying you don't like a Country, and that isn't bannable."
+       "t": "Saying a country is sh*t",
+       "d": "It's like saying you don't like a country, which isn't bannable."
       }
      ]
     },
@@ -1079,36 +1077,39 @@
      "title": "Pretending to being a Mod / having Mod powers / Mini-Modding",
      "scope": "This rule applies inside and outside the game",
      "explain": [
-      "\"Staff\" means any of these words: **Mod**, **Admin**, **Head Admin**, **Owner (Nogo)**, **Staff**, **Mini-Mod**."
+      "**Staff** means any of these words: **Mod**, **Admin**, **Head Admin**, **Owner (Nogo)**, **Staff**, **Mini-Mod**."
      ],
      "bannable": [
       {
-       "t": "You say \"I can ban you when I want\"."
+       "t": "Saying \"I can ban you when I want\"."
       },
       {
-       "t": "You say you're a Staff."
+       "t": "Saying you are Staff."
       },
       {
-       "t": "You say \"I'm friends with a [Staff]\" with the intent to make the Player believe you have power."
+       "t": "Saying \"I'm friends with a [Staff]\" to make a player believe you have power."
       },
       {
-       "t": "You have your Display Name or Region as a Staff Title."
+       "t": "Having a Staff title as your display name or region."
       },
       {
-       "t": "You say you have Admin Powers."
+       "t": "Saying you have Admin powers."
       },
       {
-       "t": "You are not a Staff, and you say you'll be constantly watching someone to make sure they don't break any rules, and you constantly follow them through servers and you make it clear your sole intent from joining a server they're in, is to make sure they follow rules."
+       "t": "Saying you'll constantly watch someone to make sure they follow the rules, when you aren't Staff",
+       "d": "Like following them from server to server and making it clear you only join their servers to check on them."
       },
       {
-       "t": "You tell the Player you can get them unbanned if they do something for you",
-       "d": "Example: You report a Player and they get Banned. You then tell the Banned Player that if they \"Send you robux\" or \"Send Ban proof on other users\" you will get them unbanned. If the \"something\" is explicit, you would be banned for **d4** instead."
+       "t": "Telling a player you can get them unbanned if they do something for you",
+       "ex": [
+        "You report a player and they get banned. Then you tell them you'll get them unbanned if they \"Send you Robux\" or \"Send ban proof on other users\". If the \"something\" is explicit, the ban is for **d4** instead."
+       ]
       }
      ],
      "ok": [
       {
-       "t": "You have your username set to Admin or Mod if it isn't showing as your display name.",
-       "d": "If you aren't showing it to others, so you have a Display Name to cover it, this is fine as you aren't actively making people think you're staff."
+       "t": "Having Admin or Mod as your username, when your display name covers it",
+       "d": "You aren't showing it to others, so you aren't actively making people think you're Staff."
       }
      ]
     },
@@ -1560,98 +1561,98 @@
      ],
      "bannable": [
       {
-       "t": "You are a pedophile, or say things that insinuate you're a pedophile",
+       "t": "Being a pedophile, or saying things that hint you are one",
        "ex": [
-        "Wearing a Jeffrey Epstein Avatar, who is a very well known pedophile. Wearing an avatar of a pedophile implies that you are one as well.",
-        "You say jokes that insinuate you would do explicit things to minors.",
+        "You wear a Jeffrey Epstein avatar. He is a very well-known pedophile, and wearing a pedophile's avatar implies you are one too.",
+        "You make jokes hinting that you would do explicit things to minors.",
         "You show explicit pictures of a minor."
        ]
       },
       {
-       "t": "You are a zoophile, or say things that insinuate you're a zoophile",
+       "t": "Being a zoophile, or saying things that hint you are one",
        "ex": [
-        "You say you are sexually / romantically attracted to animals.",
-        "You engage in inappropriate behaviors revolving around animals."
+        "You say you are sexually or romantically attracted to animals.",
+        "You behave inappropriately in ways that involve animals."
        ]
       },
       {
-       "t": "You say self-referring jokes about rape."
+       "t": "Making rape jokes about yourself."
       },
       {
-       "t": "You say you like minors."
+       "t": "Saying you like minors."
       },
       {
-       "t": "You flirt or talk about explicit content to someone you know is a minor while you are 18+."
+       "t": "Flirting or talking about explicit content with someone you know is a minor, while you are 18+."
       },
       {
        "t": "Adding someone and talking to them off Roblox, then sending explicit content unprompted",
        "ex": [
-        "You add someone on a Social Media after finding them ingame. During your conversations, you send explicit pictures / messages while, based on the context of the conversation, it is clear the other person did not want this nor asked for it to be sent. This is bannable."
+        "You add someone on social media after meeting them in game. In your conversations you send explicit pictures or messages that, from the context, they clearly didn't want or ask for. This is bannable."
        ]
       },
       {
-       "t": "You are participating in an online community that shares private information/pictures of people or minors."
+       "t": "Taking part in an online community that shares private information or pictures of people or minors."
       },
       {
-       "t": "Catfishing to get something from someone, unless you are predator catching",
+       "t": "Catfishing to get something from someone, unless you are catching a predator",
        "ex": [
-        "You fabricate an identity that isn't you with the intent of getting a real relationship with someone.",
-        "You fabricate an identity that isn't you with the intent of getting real life money from someone.",
-        "You fabricate an identity that isn't you with the intent of getting pictures from someone."
+        "You make up an identity to get a real relationship with someone.",
+        "You make up an identity to get real-life money from someone.",
+        "You make up an identity to get pictures from someone."
        ]
       },
       {
-       "t": "Pretending to be younger than you are with the intention to form a friendship/relationship with someone, unless you are attempting to catch a predator",
+       "t": "Pretending to be younger than you are to start a friendship or relationship, unless you are catching a predator",
        "ex": [
-        "You are 20 Years Old, but tell people you are 18 to try and befriend people that believe you are that age.",
-        "You are 20 Years Old, but put \"18\" in your Bio with the intent to have people think you are 18."
+        "You are 20, but tell people you are 18 to befriend people who believe you are that age.",
+        "You are 20, but put \"18\" in your bio so people think you are 18."
        ]
       },
       {
-       "t": "You say you're doing an explicit action in real life towards someone",
+       "t": "Saying you are doing an explicit action in real life because of someone",
        "ex": [
         "You tell someone, even with slang or hints, that you are doing something sexual to yourself because of them.",
-        "You add someone on a Social Media after finding them ingame. During your conversations, you tell them you were doing something sexual to yourself while thinking of them, and based on the context of the conversation, it is clear the other person did not want this nor asked for it. This is bannable."
+        "You add someone on social media after meeting them in game. In your conversations you tell them you were doing something sexual to yourself while thinking of them, and from the context they clearly didn't want or ask for this. This is bannable."
        ]
       },
       {
-       "t": "Using self-harm / suicide threats on yourself to get something from someone",
+       "t": "Threatening to hurt or kill yourself to get something from someone",
        "ex": [
         "You tell someone to call you or you'll hurt yourself again.",
-        "You say \"I'll die right now if you don't do X\""
+        "You say \"I'll die right now if you don't do X\"."
        ]
       },
       {
        "t": "Using someone's explicit pictures as leverage to get something",
        "ex": [
-        "You say to someone \"Send me explicit pictures or else I won't stop trolling you ingame\""
+        "You say to someone \"Send me explicit pictures or else I won't stop trolling you in game\"."
        ]
       }
      ],
      "ok": [
       {
-       "t": "You scam someone.",
-       "d": "Although predatory by definition, unless it is done by a mod, it is not enough to warrant a ban."
+       "t": "Scamming someone",
+       "d": "It's predatory by definition, but unless a Mod does it (that's **e2**), it isn't enough for a ban."
       },
       {
        "t": "Catfishing without trying to get something from someone",
-       "d": "Pretending to be someone you're not is fine if you don't go too far, and if it's not a Mod, since then it's bannable under **c1**: Pretending to being a Mod / having Mod powers.",
+       "d": "Pretending to be someone you're not is fine if you don't go too far, and if you don't pretend to be a Mod (that's bannable under **c1**).",
        "ex": [
-        "You fabricate an identity ingame and keep it ingame.",
-        "You pretend to be any gender ingame without taking it outside the game to try and get something from someone by faking who you are."
+        "You make up an identity in game and keep it in the game.",
+        "You pretend to be any gender in game, without taking it outside the game to get something from someone."
        ]
       },
       {
-       "t": "Wearing outfits with baby items like a pacifier, or joking about being younger than you are, without using that to form a friendship/relationship with someone",
-       "d": "While it is weird, if you aren't actively saying you are an age younger than you are with a real intent to form a friendship/relationship with someone, it's fine.",
+       "t": "Wearing baby items like a pacifier, or joking about being younger than you are, without using it to start a friendship or relationship",
+       "d": "It's weird, but fine as long as you aren't really claiming a younger age to start a friendship or relationship.",
        "ex": [
         "You pretend to cry.",
-        "Someone asks you \"How old are you, you sound 15\" and you say \"Yeah I'm 15 for sure man\" and leave it at that. This can be seen as a one-off joke as you aren't actively portraying that to be your age and using that to form relationships/friendships with someone.",
+        "Someone asks you \"How old are you, you sound 15\" and you say \"Yeah I'm 15 for sure man\" and leave it at that. It's a one-off joke: you aren't really presenting it as your age to start relationships or friendships.",
         "You wear an outfit with a pacifier."
        ]
       },
       {
-       "t": "Not saying your age when someone asks how old you are.",
+       "t": "Not saying your age when someone asks how old you are",
        "d": "You are allowed to keep your information private."
       }
      ]
@@ -1735,10 +1736,10 @@
     {
      "code": "e1",
      "title": "Bannable Name",
-     "note": "Must break a rule here",
+     "note": "Unbanned once the name is gone from your username and display name",
      "explain": [
       "You are allowed to play on other accounts while you are banned for this rule.",
-      "If your username breaks any rule that isn't in section **d**, you are banned for **e1** instead. You are unbanned when the bannable name is gone from both your username and your display name."
+      "If your username breaks any rule that isn't in section **d**, the ban is for **e1** instead."
      ],
      "bannable": [
       {
@@ -1757,10 +1758,8 @@
     {
      "code": "e2",
      "title": "Scamming as a Mod",
+     "note": "Unbanned only when all your victims are refunded in full",
      "scope": "This rule applies inside and outside the game",
-     "explain": [
-      "You are only unbanned when all your victims are refunded in full."
-     ],
      "bannable": [
       {
        "t": "A player offers you Robux for a Country. You take the Robux but never give the Country."
@@ -1773,9 +1772,8 @@
     {
      "code": "e3",
      "title": "Ban Evasion",
-     "note": "Permanent until main account unbanned",
+     "note": "Unbanned only when your original banned account is unbanned",
      "explain": [
-      "You are only unbanned when your original banned account is unbanned.",
       "**Banned** here means banned from this game, not by Roblox and not from voice chat."
      ],
      "bannable": [
@@ -1806,10 +1804,7 @@
     {
      "code": "e4",
      "title": "Self-Bans",
-     "note": "Unbanned at your request",
-     "explain": [
-      "You are only unbanned when you ask for an unban through the ticket system."
-     ],
+     "note": "Unbanned only when you ask for it through the ticket system",
      "bannable": [
       {
        "t": "Asking for a self-ban through a ticket",
@@ -1969,7 +1964,7 @@
   },
   {
    "q": "Can I be banned for stuff that happens outside the game?",
-   "a": "No. Breaking any of the rules outside the game, such as a separate Discord, will not get you banned ingame. Bans can only be linked if you break the rule in the community Discord (discord.gg/vcworld) or you break one of the \"Unbannables\"."
+   "a": "No. Breaking any of the rules outside the game, such as a separate Discord, will not get you banned in game. Bans can only be linked if you break the rule in the community Discord (discord.gg/vcworld) or you break one of the \"Unbannables\"."
   },
   {
    "q": "Can I make Unban Requests for my friend / alt?",
