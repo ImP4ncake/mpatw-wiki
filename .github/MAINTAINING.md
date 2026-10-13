@@ -65,7 +65,9 @@ The Rules page is built from `data/rules.json` (copied from the official *Detail
  "img": [{"src": "a4-ok-bikini.webp", "alt": "A player wearing a bikini in a normal way"}]}
 ```
 
-Words in quotes after *say*, *tell*, *ask*, *call*, *post*, *type* or *write* (in the same sentence) are shown as in-game chat bubbles, so write what a player says between "double quotes".
+Words in quotes after *say*, *tell*, *ask*, *call*, *post*, *type* or *write* (in the same sentence) are shown as in-game chat bubbles, so write what a player says between "double quotes". A ban code in bold, like `**b8**`, becomes a link that opens that rule, and `section **d**` opens that chapter. Game words listed in `RULE_LINKS` in `scripts/update_data.py` (Draw Area, Lottery, Admin Panel…) link to their wiki page the first time they appear in a rule.
+
+On other pages, link a ban code to its rule with `[c6](../community/rules.md#c6){ .mp-rule }`: it shows as a small chip that opens the rule.
 
 Pictures go in `docs/assets/rules/`. Add `"spoiler": true` to show a picture blurred until it is clicked (used for every bannable example). Hide player names in screenshots before adding them. After editing, run `python scripts/update_data.py --offline` or just push: the hourly run rebuilds the page.
 

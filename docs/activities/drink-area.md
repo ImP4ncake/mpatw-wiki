@@ -9,6 +9,10 @@ At the **Drink Area** players make and serve drinks. The **Drink Maker** [gamepa
 
 --8<-- "generated/badge/drink-maker.md"
 
+!!! info "In the rules"
+
+    The Drink Area is the size check for bugged items: an item bigger than the whole Drink Area most likely comes from a bug, which is bannable ([c6](../community/rules.md#c6){ .mp-rule }).
+
 !!! question "Needs info"
 
     Which drinks can you make, and what do they do? [Help complete this page](../wiki/contribute.md).

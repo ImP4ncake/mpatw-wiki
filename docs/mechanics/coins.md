@@ -32,6 +32,10 @@ Earning 1,000 coins in the AFK World gives the **AFK** badge:
 | **[Give reputation](reputation.md)** | Every coin gives another player **1 reputation**, positive (+1) or negative (−1) |
 | **Make it rain** | Shower a currency on other players. Gives the **Rainmaker** badge |
 
+!!! warning "In the rules"
+
+    Using a bug to get infinite coins gets you banned **and data wiped** ([c3](../community/rules.md#c3){ .mp-rule }). Report the bug instead and you get a reward.
+
 !!! question "Needs info"
 
     What else can you buy with coins, and how much do things cost? [Help complete this page](../wiki/contribute.md).

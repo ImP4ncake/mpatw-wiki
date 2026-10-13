@@ -21,6 +21,10 @@ Every player has a profile that other players can open.
 
 The **CUSTOMIZE** button in the menu lets you change how your profile looks. The **Better Customization** [gamepass](../items/gamepasses.md) unlocks extra options.
 
+!!! info "In the rules"
+
+    Your age or your social media in your bio are fine ([a9](../community/rules.md#a9){ .mp-rule }). A username or display name that breaks a rule is a ban for [e1](../community/rules.md#e1){ .mp-rule }.
+
 !!! question "Needs info"
 
     Which profile options exist, and which ones need Better Customization? Screenshots welcome! [Help complete this page](../wiki/contribute.md).

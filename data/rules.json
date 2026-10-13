@@ -2,7 +2,7 @@
  "source": {
   "name": "Detailed Ban Info",
   "where": "the official community Discord",
-  "invite": "https://discord.gg/vcworld",
+  "invite": "https://discord.com/invite/ASRasdGjzA",
   "ban_posts": "https://discord.com/channels/1260693663160209501/1486416123267383446",
   "checked": "13 October 2026"
  },
@@ -1743,7 +1743,7 @@
      ],
      "bannable": [
       {
-       "t": "Having a username or display name that breaks a rule outside section d."
+       "t": "Having a username or display name that breaks a rule outside section **d**."
       }
      ],
      "ok": [
@@ -1964,7 +1964,7 @@
   },
   {
    "q": "Can I be banned for stuff that happens outside the game?",
-   "a": "No. Breaking any of the rules outside the game, such as a separate Discord, will not get you banned in game. Bans can only be linked if you break the rule in the community Discord (discord.gg/vcworld) or you break one of the \"Unbannables\"."
+   "a": "No. Breaking any of the rules outside the game, such as a separate Discord, will not get you banned in game. Bans can only be linked if you break the rule in the community Discord or you break one of the \"Unbannables\"."
   },
   {
    "q": "Can I make Unban Requests for my friend / alt?",

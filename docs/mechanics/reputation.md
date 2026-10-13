@@ -41,6 +41,10 @@ description: "How reputation works: players turn their coins into positive or ne
 <div class="mp-fact mp-tone--red" markdown="span"><span class="mp-fact__icon">:lucide-trending-down:</span><span class="mp-fact__text"><b>It can go below zero</b>Even very far below, like the −500,976 in the picture.</span></div>
 </div>
 
+!!! warning "In the rules"
+
+    Getting or giving reputation without it costing coins, through a bug, gets you banned **and data wiped** ([c3](../community/rules.md#c3){ .mp-rule }).
+
 ## Reputation badges
 
 <div class="mp-scale" role="img" aria-label="Reputation scale: at −10,000 you get the Infamous badge, at +10,000 the Famous badge">
