@@ -65,6 +65,8 @@ The Rules page is built from `data/rules.json` (copied from the official *Detail
  "img": [{"src": "a4-ok-bikini.webp", "alt": "A player wearing a bikini in a normal way"}]}
 ```
 
+Words in quotes after *say*, *tell*, *ask*, *call*, *post*, *type* or *write* (in the same sentence) are shown as in-game chat bubbles, so write what a player says between "double quotes". When the bannable and not bannable lists are about as long, they sit side by side; otherwise each list takes the full width and flows into two columns.
+
 Pictures go in `docs/assets/rules/`. Add `"spoiler": true` to show a picture blurred until it is clicked (used for every bannable example). Hide player names in screenshots before adding them. After editing, run `python scripts/update_data.py --offline` or just push: the hourly run rebuilds the page.
 
 Discord image links stop working about a day after they are copied, and they can't be downloaded from everywhere. The **Fetch images** workflow (Actions → Fetch images → Run workflow) downloads them on GitHub and keeps them for 3 days as a download on the run page. Run it with `clean` as the links to remove the temporary `fetched-images` branch it can create.
