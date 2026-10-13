@@ -5,7 +5,7 @@ description: "Every title in the game, in its in-game color, and how to get it."
 
 # Titles
 
-<p class="mp-lead">Titles appear above your name in the game. Most come from <b>badges</b>, others with the <b>VIP subscription</b>, with time played, coins and Robux, or events. You can show one at a time.</p>
+<p class="mp-lead">Titles appear above your name in the game. They come with the <b>VIP subscription</b>, with <b>badges</b>, or from playing, spending and events.</p>
 
 --8<-- "generated/titles-summary.md"
 
@@ -15,20 +15,16 @@ description: "Every title in the game, in its in-game color, and how to get it."
 <div class="mp-fact mp-tone--blue" markdown="span"><span class="mp-fact__icon">:lucide-users:</span><span class="mp-fact__text"><b>How many exist</b>The game shows how many of each title exist: the fewer, the rarer.</span></div>
 </div>
 
-## All titles
-
---8<-- "generated/titles-all.md"
-
 ## VIP titles
 
-All the yellow titles come with the **VIP subscription**, paid every month.
+Buying the **VIP subscription** gives all the yellow titles.
 
 --8<-- "generated/titles-vip.md"
 
 ## Badge titles
 
---8<-- "generated/titles.md"
+Each one comes with a badge: click a title to open its badge. The colored chip is the badge's [rarity](index.md).
 
-Each title is shown in the color it has in the game, and the badge chip under it shows the badge's [rarity](index.md). The **exist** numbers come from the game's title list and grow as more players get each title.
+--8<-- "generated/titles.md"
 
 --8<-- "generated/titles-other.md"

@@ -680,7 +680,7 @@ def gen_badges(snap: dict, badges: list[dict]) -> None:
     write("badges-summary.md", "\n".join(out))
 
 
-def title_name(name: str, info: dict | None, cls: str = "mp-title-card__title") -> str:
+def title_name(name: str, info: dict | None, cls: str = "mp-plate__name") -> str:
     """A title in its color from the game (the rarity color when the game's isn't known)."""
     style, extra = "", ""
     if info and info.get("color"):
@@ -696,7 +696,7 @@ def title_name(name: str, info: dict | None, cls: str = "mp-title-card__title") 
     return f'<span class="{cls}"{style}{extra}>{esc(name)}</span>'
 
 
-def title_exist(info: dict | None, checked: str, cls: str = "mp-title-card__exist") -> str:
+def title_exist(info: dict | None, checked: str, cls: str = "mp-plate__exist") -> str:
     if not info or not isinstance(info.get("exist"), int):
         return ""
     when = nice_date(checked + "T00:00:00Z") if checked else ""
@@ -717,27 +717,39 @@ def title_how(text: str, here: str) -> str:
     return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", link, _inline(esc(text)))
 
 
+def title_plate(name: str, look: dict | None, checked: str, how: str, side: str = "", tag: str = "div", attrs: str = "") -> str:
+    """One title as a row of the game's title list: the name, then how to get it."""
+    return (
+        f'<{tag} class="mp-plate" id="title-{slug(name)}"{attrs}>{title_name(name, look, "mp-plate__name")}'
+        f'<span class="mp-plate__side">{side}{title_exist(look, checked, "mp-plate__exist")}</span>'
+        f'<span class="mp-plate__how">{how}</span></{tag}>'
+    )
+
+
 def gen_titles(badges: list[dict]) -> None:
     here = "badges/titles.md"
     data = load_titles()
     checked = data.get("checked", "")
     info = {t["name"]: t for t in data["titles"]}
-    rows = []
-    for b in badges:
-        for t in b["reward"]["titles"]:
-            rows.append((t, b))
-    out = [f'<p class="mp-lead"><b>{len(rows)}</b> titles you can unlock with badges. Click a title to see its badge.</p>', ""]
-    out.append('<div class="mp-titles">')
-    for t, b in rows:
-        css = b["rarity"][1] or "common"
-        out.append(
-            f'<a class="mp-title-card mp-title-card--{css}" id="title-{slug(t)}" href="{rel(here, b["page"], b["anchor"])}">'
-            f'{title_name(t, info.get(t))}'
-            f'<span class="mp-title-card__tag">{esc(b["reward"]["tag"] or "")}</span>'
-            f'<span class="mp-title-card__from">{esc(b["short"])}</span>{title_exist(info.get(t), checked)}{rarity_chip(b)}</a>'
-        )
-    out.append("</div>")
-    write("titles.md", "\n".join(out))
+    rows = [(t, b) for b in badges for t in b["reward"]["titles"]]
+
+    # Badge titles, by the badge's page; each one opens its badge
+    out = []
+    for page, heading in (("regular", "Regular badges"), ("special", "Special badges"), ("limited", "Limited badges")):
+        items = [(t, b) for t, b in rows if b["page"] == f"badges/{page}.md"]
+        if not items:
+            continue
+        out += ["", f"### {heading}", "", '<div class="mp-plates mp-plates--how">']
+        for t, b in items:
+            tag = b["reward"]["tag"]
+            side = (f'<span class="mp-plate__tag" title="Tag effect">{esc(tag)}</span>' if tag else "") + rarity_chip(b)
+            how = esc(b["how"].rstrip(".") + ".")
+            if b["short"] != t:
+                how += f' <span class="mp-plate__from">{esc(b["short"])} badge</span>'
+            href = rel(here, b["page"], b["anchor"])
+            out.append(title_plate(t, info.get(t), checked, how, side, "a", f' href="{href}" title="Open the {esc(b["short"])} badge"'))
+        out.append("</div>")
+    write("titles.md", "\n".join(out).strip())
 
     # VIP titles
     vip = data.get("vip") or {}
@@ -746,7 +758,8 @@ def gen_titles(badges: list[dict]) -> None:
     if vip_titles:
         price = full(vip.get("price")) if vip.get("price") else "?"
         plates = "".join(
-            f'<span class="mp-plate">{title_name(t, {"color": vip.get("color")}, "mp-plate__name")}</span>' for t in vip_titles
+            f'<span class="mp-plate" id="title-{slug(t)}">{title_name(t, {"color": vip.get("color")}, "mp-plate__name")}</span>'
+            for t in vip_titles
         )
         out = [
             '<div class="mp-vip">',
@@ -755,7 +768,6 @@ def gen_titles(badges: list[dict]) -> None:
             '<div class="mp-vip__about"><b class="mp-vip__name">VIP subscription</b>'
             f'<span class="mp-vip__price"><span class="mp-price"><span class="mp-robux" aria-hidden="true"></span>{price}</span>'
             f' every {esc(vip.get("every", "month"))}</span></div>',
-            f'<span class="mp-vip__count"><b>{len(vip_titles)}</b> titles</span>',
             "</div>",
             f'<div class="mp-plates">{plates}</div>',
             "</div>",
@@ -767,11 +779,7 @@ def gen_titles(badges: list[dict]) -> None:
     others = [t for t in data["titles"] if t["name"] not in known]
     out = []
     if others:
-        out += [
-            "## Other titles",
-            "",
-            f'<p>These <b>{len(others)}</b> titles don\'t come from a badge or with VIP.</p>',
-        ]
+        out += ["## Other titles", "", "<p>These titles don't come from a badge or with VIP.</p>"]
         groups = data.get("groups", [])
         keys = {g["key"] for g in groups}
         for g in groups + [{"key": None, "name": "Not known yet"}]:
@@ -781,12 +789,8 @@ def gen_titles(badges: list[dict]) -> None:
             out += ["", f"### {g['name']}", "", '<div class="mp-plates mp-plates--how">']
             for t in items:
                 label = f'<span class="mp-plate__label">{esc(t["label"])}</span>' if t.get("label") else ""
-                text = title_how(t["how"], here) if t.get("how") else "How to get it isn't known yet."
-                out.append(
-                    f'<div class="mp-plate" id="title-{slug(t["name"])}">{title_name(t["name"], t, "mp-plate__name")}'
-                    f'<span class="mp-plate__side">{label}{title_exist(t, checked, "mp-plate__exist")}</span>'
-                    f'<span class="mp-plate__how">{text}</span></div>'
-                )
+                how = title_how(t["how"], here) if t.get("how") else "How to get it isn't known yet."
+                out.append(title_plate(t["name"], t, checked, how, label))
             out.append("</div>")
             if g["key"] is None:
                 names = [f"**{t['name']}**" for t in items]
@@ -802,47 +806,20 @@ def gen_titles(badges: list[dict]) -> None:
                 ]
     write("titles-other.md", "\n".join(out))
 
-    # Count for the top of the page
+    # The counts at the top, in the order of the sections they open
     stats = [
-        ("award", "gold", len(rows), "badge titles"),
-        ("crown", "orange", len(vip_titles), "VIP titles"),
-        ("circle-help", "violet", len(others), "other titles"),
+        ("crown", "orange", len(vip_titles), "VIP titles", "vip-titles"),
+        ("award", "gold", len(rows), "badge titles", "badge-titles"),
+        ("circle-help", "violet", len(others), "other titles", "other-titles"),
     ]
     out = ['<div class="mp-stats mp-stats--grid mp-stats--three">']
-    for icon, color, value, label in stats:
+    for icon, color, value, label, anchor in stats:
         out.append(
-            f'<div class="mp-stat mp-stat--{color}"><span class="mp-stat__icon" aria-hidden="true">{lucide(icon)}</span>'
-            f'<span class="mp-stat__value" data-count="{value}">{value}</span><span class="mp-stat__label">{label}</span></div>'
+            f'<a class="mp-stat mp-stat--{color}" href="#{anchor}"><span class="mp-stat__icon" aria-hidden="true">{lucide(icon)}</span>'
+            f'<span class="mp-stat__value" data-count="{value}">{value}</span><span class="mp-stat__label">{label}</span></a>'
         )
     out.append("</div>")
     write("titles-summary.md", "\n".join(out))
-
-    # Every title in one list, in the game's order, each linking to how to get it
-    badge_titles = {t for t, _ in rows}
-    other_info = {t["name"]: t for t in others}
-    short = {g["key"]: g.get("short", g["name"]) for g in data.get("groups", [])}
-    names = all_title_names(badges)
-    out = [
-        f'<p><b>{len(names)}</b> titles, in the order of the game\'s title list. Click a title to see how to get it.</p>',
-        "",
-        '<div class="mp-plates mp-plates--all">',
-    ]
-    for name in names:
-        if name in vip_titles:
-            src, key, href, look = "VIP", "vip", "#vip-titles", {"color": vip.get("color")}
-        elif name in badge_titles:
-            src, key, href, look = "Badge", "badge", f"#title-{slug(name)}", info.get(name)
-        else:
-            look = other_info.get(name, {})
-            key = look.get("group") if look.get("how") and look.get("group") in short else "unknown"
-            src = short.get(key, "Not known")
-            href = f"#title-{slug(name)}"
-        out.append(
-            f'<a class="mp-plate mp-plate--all" href="{href}">{title_name(name, look, "mp-plate__name")}'
-            f'<span class="mp-src mp-src--{key}">{esc(src)}</span></a>'
-        )
-    out.append("</div>")
-    write("titles-all.md", "\n".join(out))
 
     here = "badges/tag-effects.md"
     tagged = [b for b in badges if b["reward"]["tag"]]

@@ -1,6 +1,6 @@
 ## Other titles
 
-<p>These <b>25</b> titles don't come from a badge or with VIP.</p>
+<p>These titles don't come from a badge or with VIP.</p>
 
 ### Time played and daily streaks
 

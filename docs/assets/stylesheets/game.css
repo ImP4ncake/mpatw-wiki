@@ -1617,53 +1617,45 @@ body {
   overflow-wrap: anywhere;
 }
 
-/* every title in one list, each with where it comes from */
-.md-typeset .mp-plates--all {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11.5rem), 1fr));
-  margin: 0.8rem 0 1.4rem;
-}
-
-.md-typeset a.mp-plate--all {
-  align-items: center;
+/* a title that opens its badge, and the counts that open their section */
+.md-typeset a.mp-plate,
+.md-typeset a.mp-stat {
   color: inherit;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.md-typeset a.mp-plate--all:hover {
+.md-typeset a.mp-plate:hover {
   transform: translateY(-2px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 0 2px var(--mp-gold-2), 0 5px 0 #0b0b0e;
 }
 
-.mp-plate--all .mp-plate__name {
-  font-size: 1rem;
+.md-typeset a.mp-stat:hover {
+  transform: translateY(-2px);
 }
 
-.mp-src {
-  --src: #8b93a3;
-  flex: none;
-  padding: 0.05rem 0.4rem;
+.mp-plate__tag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.mp-plate__side .mp-rarity {
+  font-size: 0.5rem;
+}
+
+.mp-plate__from {
+  display: inline-block;
+  margin-left: 0.2rem;
+  padding: 0 0.4rem;
   border-radius: 999px;
-  background: var(--src);
-  box-shadow: 0 2px 0 #0b0b0e;
-  color: #fff;
-  font-size: 0.55rem;
-  font-weight: 900;
-  letter-spacing: 0.03em;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
-  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.35);
+  color: #d5d9e2;
+  font-size: 0.64rem;
+  font-weight: 800;
   white-space: nowrap;
 }
 
-.mp-src--vip { --src: #d9a400; }
-.mp-src--badge { --src: #3b8ff0; }
-.mp-src--time { --src: #14a3a3; }
-.mp-src--money { --src: #2e9e4f; }
-.mp-src--events { --src: #e8702a; }
-.mp-src--feats { --src: #8a5cf0; }
-.mp-src--team { --src: #d6365c; }
-
-/* a title the full list links to lands below the header */
+/* a title a link points to lands below the header */
 [id^="title-"] {
   scroll-margin-top: 5rem;
 }
