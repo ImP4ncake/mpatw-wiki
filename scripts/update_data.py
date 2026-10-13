@@ -1413,9 +1413,18 @@ def gen_discord(page: str = "events/update-history.md") -> None:
     for u in archive[:3]:
         d = parse_time(u.get("timestamp"))
         label = f"Update · {d.day} {d.strftime('%b')}" if d else "Update"
+        # the first change of the update, so the home page says what's new
+        _, body = split_title(u.get("content", ""))
+        first = next((re.sub(r"^[-*•] ", "", x.strip()) for x in body.splitlines() if x.strip()), "")
+        first = re.sub(r"<a?:\w+:\d+>|<@[!&]?\d+>|<#\d+>|[*_~|`#>]", "", first).strip()
+        # the bug report credit stays on the Update History page
+        first = re.sub(r"\s*\(Thanks [^)]*\)\s*$", "", first)
+        if len(first) > 90:
+            first = first[:90].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+        more = f' <span class="mp-news__more">{esc(first)}</span>' if first else ""
         lines.append(
             f'<li><span class="mp-news__date">{esc(label)}</span>'
-            f'<a href="{rel("index.md", page, "update-" + u["id"])}">{esc(plain_title(u))}</a></li>'
+            f'<a href="{rel("index.md", page, "update-" + u["id"])}">{esc(plain_title(u))}</a>{more}</li>'
         )
     write("home-discord.md", "\n".join(lines))
 

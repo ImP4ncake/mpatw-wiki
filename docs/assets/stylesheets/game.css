@@ -1001,6 +1001,15 @@ body {
   content: "]";
 }
 
+/* what changed in a game update, after its title */
+.mp-news__more {
+  color: var(--mp-on-dark-2);
+}
+
+.mp-news__more::before {
+  content: "— ";
+}
+
 /* home page call to action (suggest a change) */
 .mp-cta {
   margin: 2rem 0 1rem;

@@ -51,12 +51,11 @@ hide:
 ## Latest Updates
 
 <div class="mp-chat">
-<div class="mp-chat__tabs"><span class="mp-chat__tab is-active">Here</span><span class="mp-chat__tab">Wiki</span></div>
+<div class="mp-chat__tabs"><span class="mp-chat__tab is-active">Game</span><span class="mp-chat__tab">Updates</span></div>
 <ul class="mp-news">
 --8<-- "generated/home-discord.md"
 --8<-- "generated/home-event-news.md"
 --8<-- "generated/home-news.md"
---8<-- "generated/latest-changes.md"
 </ul>
 </div>
 

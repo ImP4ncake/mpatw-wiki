@@ -1,1 +1,3 @@
-
+<li><span class="mp-news__date">Update · 11 Oct</span><a href="events/update-history/#update-1558695137771520000">October 11 (57.12)</a> <span class="mp-news__more">Fixed one of the Minigame blockers</span></li>
+<li><span class="mp-news__date">Update · 10 Oct</span><a href="events/update-history/#update-1558553705840640000">October 10 (57.11)</a> <span class="mp-news__more">Voice Changer Laser is now Invis</span></li>
+<li><span class="mp-news__date">Update · 10 Oct</span><a href="events/update-history/#update-1558359928995840000">October 10 (57.1)</a> <span class="mp-news__more">Fixed being able to use Bring or Teleport on yourself and it would cost Troll Tokens</span></li>
