@@ -1,0 +1,57 @@
+name: Fetch images
+
+# Maintenance helper. Downloads images from links (for example Discord
+# attachments, which stop working about a day after they are copied) and keeps
+# them for 3 days as a download on the run page, so they can be checked before
+# they are added to the wiki. Nothing is committed to the repository.
+#
+# Run it from Actions > Fetch images > Run workflow, or with:
+#   gh workflow run fetch-images.yml -f urls="name1::https://... name2::https://..."
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Image links separated by spaces. Optional file name before ::, e.g. a4-ok-bikini::https://..."
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the images
+        env:
+          URLS: ${{ inputs.urls }}
+        run: |
+          python3 - <<'EOF'
+          import os, pathlib, re, urllib.request
+          out = pathlib.Path("images")
+          out.mkdir()
+          types = {"image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/gif": ".gif"}
+          for i, item in enumerate(os.environ["URLS"].split(), 1):
+              name, sep, url = item.partition("::")
+              if not sep:
+                  name, url = f"image-{i:02d}", item
+              name = re.sub(r"[^a-z0-9-]+", "-", name.lower()).strip("-") or f"image-{i:02d}"
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (mpatw-wiki image fetch)"})
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      data = r.read()
+                      ext = types.get(r.headers.get_content_type(), ".bin")
+              except Exception as e:
+                  print(f"FAILED {name}: {e}")
+                  continue
+              (out / f"{name}{ext}").write_bytes(data)
+              print(f"ok {name}{ext} {len(data)} bytes")
+          EOF
+
+      - name: Keep them for 3 days
+        uses: actions/upload-artifact@v4
+        with:
+          name: images
+          path: images
+          retention-days: 3
+          if-no-files-found: error
