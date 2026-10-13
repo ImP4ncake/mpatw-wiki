@@ -1662,8 +1662,35 @@ SPEECH_VERB = re.compile(
 )
 
 
+RULES_DISCORD = "https://discord.com/invite/ASRasdGjzA"
+
+# Game words in the rules that link to their wiki page (each one once per rule)
+RULE_LINKS = [
+    (r"\bDraw(?:ing)? Area\b", "activities/draw-area.md", ""),
+    (r"\bDrink Area\b", "activities/drink-area.md", ""),
+    (r"\bArenas\b", "activities/combat-arenas.md", ""),
+    (r"\bLottery\b", "activities/lottery.md", ""),
+    (r"\bAvatar (?:Item )?Laser\b|\bLasers\b", "items/troll-items.md", "lasers"),
+    (r"\bFly gamepass\b", "items/gamepasses.md", ""),
+    (r"\bSize Changer gamepass\b", "items/gamepasses.md", ""),
+    (r"\bAdmin Panel\b", "servers/admin-panel.md", ""),
+    (r"\breputation\b", "mechanics/reputation.md", ""),
+    (r"\bcoins\b", "mechanics/coins.md", ""),
+    (r"\bvoice chat\b", "servers/voice-chat.md", ""),
+    (r"\bplayer reports\b", "community/reporting.md", ""),
+    (r"\bStaff\b", "community/staff-roles.md", ""),
+    (r"\bbio\b", "mechanics/profiles.md", ""),
+    (r"(?:(?<=\ba )|(?<=\bthe ))Country\b(?! [XY])", "mechanics/countries.md", ""),
+    (r"\b(?:official|community) Discord\b", None, RULES_DISCORD),
+]
+_rule_linked: set[int] = set()  # RULE_LINKS already used in the rule being written
+_rule_codes: set[str] = set()  # codes that have a card, so "**b8**" can link to it
+_rule_current: list[str] = [""]  # the rule being written, which never links to itself
+
+
 def rule_text(text: str) -> str:
-    """md_inline, with the quoted words players say shown as in-game chat bubbles."""
+    """md_inline, with the quoted words players say shown as in-game chat bubbles,
+    other rules' codes linked to their card and game words linked to their wiki page."""
     out, pos, armed = [], 0, False
     for m in re.finditer(r'"([^"]+)"', text):
         before = text[pos:m.start()]
@@ -1678,13 +1705,50 @@ def rule_text(text: str) -> str:
         out.append(f"\x01{m.group(1)}\x02" if armed else m.group(0))
         pos = m.end()
     out.append(text[pos:])
-    html_text = md_inline("".join(out))
-    return html_text.replace("\x01", '<span class="rb-say">').replace("\x02", "</span>")
+
+    urls: list[str] = []
+
+    def link_words(part: str) -> str:
+        for i, (pattern, page, target) in enumerate(RULE_LINKS):
+            if i in _rule_linked:
+                continue
+            m = re.search(pattern, part)
+            if not m:
+                continue
+            _rule_linked.add(i)
+            urls.append(target if page is None else rel(RULES_PAGE, page, target))
+            part = f"{part[:m.start()]}\x03{len(urls) - 1}\x04{m.group(0)}\x05{part[m.end():]}"
+        return part
+
+    # never link inside a chat bubble
+    joined = "".join(p if p.startswith("\x01") else link_words(p) for p in re.split(r"(\x01[^\x02]*\x02)", "".join(out)))
+    html_text = md_inline(joined).replace("\x01", '<span class="rb-say">').replace("\x02", "</span>")
+
+    def page_link(m: re.Match) -> str:
+        url = urls[int(m.group(1))]
+        new_tab = ' target="_blank" rel="noopener"' if url.startswith("http") else ""
+        return f'<a class="rb-ref rb-ref--page" href="{esc(url)}"{new_tab}>{m.group(2)}</a>'
+
+    html_text = re.sub(r"\x03(\d+)\x04(.*?)\x05", page_link, html_text)
+    html_text = re.sub(
+        r"<b>([a-e][1-9])</b>",
+        lambda m: f'<a class="rb-ref rb-ref--code" href="#{m.group(1)}">{m.group(1)}</a>'
+        if m.group(1) in _rule_codes and m.group(1) != _rule_current[0] else m.group(0),
+        html_text,
+    )
+    return re.sub(r"section <b>([a-e])</b>", r'section <a class="rb-ref rb-ref--code" href="#rb-\1">\1</a>', html_text)
 
 
 
 def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:48]
+
+
+def rule_note(text: str) -> str:
+    """rule_text for text outside the rule cards (each block links its words again)."""
+    _rule_linked.clear()
+    _rule_current[0] = ""
+    return rule_text(text)
 
 
 def rule_pic(pic: dict, rule_code: str, side: str) -> str:
@@ -1768,6 +1832,8 @@ def rule_punishment(rule: dict, group: dict) -> tuple[list[tuple[str, str, str]]
 
 def rule_card(rule: dict, group: dict, words: dict, faq: dict) -> str:
     code = rule["code"]
+    _rule_linked.clear()
+    _rule_current[0] = code
     chips, punish = rule_punishment(rule, group)
     n_ex = len(rule.get("bannable", [])) + len(rule.get("ok", [])) + len(rule.get("never", []))
     n_pic = sum(len(x.get("img", [])) for x in rule.get("bannable", []) + rule.get("ok", []) if isinstance(x, dict))
@@ -1784,11 +1850,11 @@ def rule_card(rule: dict, group: dict, words: dict, faq: dict) -> str:
     if rule.get("scope"):
         body.append(f'<p class="rb-callout rb-callout--scope">{lucide("earth")}<span>{md_inline(rule["scope"])}.</span></p>')
     if note and not rule.get("removed"):
-        body.append(f'<p class="rb-callout rb-callout--note">{lucide("info")}<span>{md_inline(note.rstrip("."))}.</span></p>')
+        body.append(f'<p class="rb-callout rb-callout--note">{lucide("info")}<span>{rule_text(note.rstrip("."))}.</span></p>')
     if rule.get("explain"):
         body.append(
             f'<div class="rb-explain"><p class="rb-explain__head">{lucide("lightbulb")}<span>How it works</span></p>'
-            + "".join(f"<p>{md_inline(p)}</p>" for p in rule["explain"])
+            + "".join(f"<p>{rule_text(p)}</p>" for p in rule["explain"])
             + "</div>"
         )
     sides = rule_examples(rule, "ban") + rule_examples(rule, "ok")
@@ -1817,7 +1883,7 @@ def rule_card(rule: dict, group: dict, words: dict, faq: dict) -> str:
         if q in faq:
             body.append(
                 f'<div class="rb-related"><p class="rb-related__q">{lucide("circle-help")}<span>{md_inline(q)}</span></p>'
-                f"<p>{md_inline(faq[q])}</p></div>"
+                f"<p>{rule_text(faq[q])}</p></div>"
             )
     body.append(
         f'<div class="rb-rule__foot"><span class="rb-punish">{lucide("gavel")}<span>{punish}</span></span>'
@@ -1849,6 +1915,8 @@ def gen_rules() -> None:
     faq = {x["q"]: x["a"] for x in R["faq"]}
     groups = R["groups"]
     active = [r for g in groups for r in g["rules"] if not r.get("empty") and not r.get("removed")]
+    _rule_codes.clear()
+    _rule_codes.update(r["code"] for g in groups for r in g["rules"] if not r.get("empty"))
 
     # (id, title, short name, icon or letter, subtitle, html, css class)
     chapters: list[dict] = []
@@ -1869,7 +1937,7 @@ def gen_rules() -> None:
                   ("octagon-x", "d and e = permanent now"), ("users", "Counts on all your accounts")]
     facts = "".join(
         f'<div class="rb-fact"><span class="rb-fact__icon">{lucide(fact_heads[i][0])}</span>'
-        f'<b>{esc(fact_heads[i][1])}</b><span>{md_inline(n.rstrip("."))}.</span></div>'
+        f'<b>{esc(fact_heads[i][1])}</b><span>{rule_note(n.rstrip("."))}.</span></div>'
         for i, n in enumerate(R["lengths"]["notes"][:4])
     )
     tiles = "".join(
@@ -1899,7 +1967,7 @@ def gen_rules() -> None:
         '<p class="rb-p">When a rule uses one of these words, it counts in all of these places. The rules apply in every language.</p>'
         f'<div class="rb-words">{word_tiles}</div>'
         f'<p class="rb-source">{lucide("scroll-text")}<span>Copied from the official <b>{esc(src["name"])}</b> posts on '
-        f'{esc(src["where"])} (<a href="{esc(src["invite"])}" target="_blank" rel="noopener">discord.gg/vcworld</a>) on '
+        f'<a href="{esc(src["invite"])}" target="_blank" rel="noopener">{esc(src["where"])}</a> on '
         f'{esc(src["checked"])}. If anything here is different, the Discord version is the one that counts.</span></p>'
     )
     t, short, icon, sub = RB_EXTRA["start"]
@@ -1953,7 +2021,7 @@ def gen_rules() -> None:
     unban_icons = ["file-search", "clock-3", "hand-heart", "scale"]
     unbans = "".join(
         f'<div class="rb-ustep"><span class="rb-ustep__icon">{lucide(unban_icons[i % len(unban_icons)])}</span>'
-        f"<span>{md_inline(x)}</span></div>"
+        f"<span>{rule_note(x)}</span></div>"
         for i, x in enumerate(R["unbans"])
     )
     never = "".join(
@@ -1978,7 +2046,7 @@ def gen_rules() -> None:
         f'<details class="rb-faq" id="faq-{slug(x["q"])}" data-search="{esc((x["q"] + " " + x["a"]).lower())}">'
         f'<summary><span class="rb-faq__q">?</span><span class="rb-faq__t">{md_inline(x["q"])}</span>'
         f'<span class="rb-rule__toggle" aria-hidden="true">{lucide("chevron-down")}</span></summary>'
-        f'<div class="rb-rule__body"><div class="rb-rule__inner"><p class="rb-faq__a">{md_inline(x["a"])}</p></div></div></details>'
+        f'<div class="rb-rule__body"><div class="rb-rule__inner"><p class="rb-faq__a">{rule_note(x["a"])}</p></div></div></details>'
         for x in R["faq"]
     )
     t, short, icon, sub = RB_EXTRA["faq"]
@@ -1986,7 +2054,7 @@ def gen_rules() -> None:
             f'<div class="rb-faqs">{faq_html}</div>', "faq")
 
     # ---------------------------------------------------------------- Discord
-    disc = "".join(f'<li>{md_inline(x)}</li>' for x in R["discord"])
+    disc = "".join(f'<li>{rule_note(x)}</li>' for x in R["discord"])
     t, short, icon, sub = RB_EXTRA["discord"]
     chapter("discord", t, short, icon, sub, "How bans work on the community Discord server.",
             f'<ul class="rb-list">{disc}</ul>', "discord")
@@ -2041,6 +2109,11 @@ def gen_rules() -> None:
 
     out = [
         '<div class="rb" id="rulebook">',
+        f'<div class="rb-uptodate"><span class="rb-uptodate__icon">{lucide("calendar-check")}</span>'
+        f'<span class="rb-uptodate__text"><b>Rules as of {esc(src["checked"])}</b>This page has the rules available up to that day. '
+        "Rules can change: for the always up-to-date rules, check the official community Discord server.</span>"
+        f'<a class="rb-uptodate__btn" href="{esc(src["invite"])}" target="_blank" rel="noopener">{lucide("message-circle")}'
+        "<span>Open the Discord</span></a></div>",
         '<div class="rb-finder">'
         f'<div class="rb-finder__copy"><span class="rb-finder__icon">{lucide("gavel")}</span>'
         '<span><b class="rb-finder__title">Got banned?</b>'

@@ -18,3 +18,7 @@ Some gamepasses also give you an item in the **ITEMS** menu, like Fly, Invisibil
 !!! tip "Good to know"
 
     The owner of a [custom server](../servers/custom-servers.md) can make all trolls and items free for everyone in that server.
+
+!!! info "In the rules"
+
+    Flying without the **Fly** gamepass means using exploits, which is bannable ([c6](../community/rules.md#c6){ .mp-rule }). Using Size 5 with the **Size Changer** gamepass is fine: it's an intended feature.

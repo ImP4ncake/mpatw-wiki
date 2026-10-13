@@ -47,6 +47,10 @@ There are **27 troll items**. Items marked <span class="mp-limited mp-limited--s
 | <span class="mp-iconname"><span class="mp-icon">:lucide-scaling:</span>**Size Changer Laser**</span> | Turns a player into the size you choose | <span class="mp-rarity mp-rarity--rare" title="Troll Tokens per use">2 tokens</span> |
 | <span class="mp-iconname"><span class="mp-icon">:lucide-mic-vocal:</span>**Voice Changer Laser**</span> | Forces a player to change their voice | <span class="mp-rarity mp-rarity--rare" title="Troll Tokens per use">2 tokens</span> |
 
+!!! warning "In the rules"
+
+    Bannable content inside your Avatar Laser or Avatar Item Laser can get other players banned, and you too ([a7](../community/rules.md#a7){ .mp-rule }).
+
 ## Items that kill
 
 All of these have the red <span class="mp-limited mp-limited--small">KILLS</span> label in the game.

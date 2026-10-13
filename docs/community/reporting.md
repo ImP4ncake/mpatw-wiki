@@ -16,3 +16,7 @@ Reports go to Roblox's moderation team. For problems with voice chat, report the
 !!! tip
 
     Never share personal information such as your real name, address, phone number or passwords, even with people you trust in the game.
+
+!!! warning "In the rules"
+
+    Lying in a report to get someone banned, or making several fake reports, is bannable ([c8](../community/rules.md#c8){ .mp-rule }).

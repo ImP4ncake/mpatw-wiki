@@ -4266,3 +4266,25 @@ body {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   A ban code that opens its rule on the Rules page, like [c6](rules.md#c6){ .mp-rule }
+   ========================================================================== */
+
+.md-typeset a.mp-rule {
+  display: inline-block;
+  padding: 0 0.4em;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--md-typeset-a-color) 13%, transparent);
+  font-family: var(--mp-display);
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.md-typeset a.mp-rule:hover,
+.md-typeset a.mp-rule:focus-visible {
+  background: var(--md-typeset-a-color);
+  color: #fff;
+}

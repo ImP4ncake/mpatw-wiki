@@ -33,3 +33,7 @@ There are **six combat arenas**, each with its own weapon. Defeating **50 player
 --8<-- "generated/badge/arsonist.md"
 
 --8<-- "generated/badge/warrior.md"
+
+!!! warning "In the rules"
+
+    Cheating in the Arenas with exploits is bannable: see [c6](../community/rules.md#c6){ .mp-rule }.
