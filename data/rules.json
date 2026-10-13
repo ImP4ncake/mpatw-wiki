@@ -655,6 +655,107 @@
       "Pretending to be younger than you are with the intention to form a friendship/relationship with someone, unless you are attempting to catch a predator",
       "Using someone's explicit pictures as leverage to get something",
       "Using self-harm / suicide threats on yourself to get something from someone"
+     ],
+     "scope": "This rule applies inside and outside the game",
+     "counts": [
+      "Say"
+     ],
+     "bannable": [
+      {
+       "t": "You are a pedophile, or say things that insinuate you're a pedophile",
+       "ex": [
+        "Wearing a Jeffrey Epstein Avatar, who is a very well known pedophile. Wearing an avatar of a pedophile implies that you are one as well.",
+        "You say jokes that insinuate you would do explicit things to minors.",
+        "You show explicit pictures of a minor."
+       ]
+      },
+      {
+       "t": "You are a zoophile, or say things that insinuate you're a zoophile",
+       "ex": [
+        "You say you are sexually / romantically attracted to animals.",
+        "You engage in inappropriate behaviors revolving around animals."
+       ]
+      },
+      {
+       "t": "You say self-referring jokes about rape."
+      },
+      {
+       "t": "You say you like minors."
+      },
+      {
+       "t": "You flirt or talk about explicit content to someone you know is a minor while you are 18+."
+      },
+      {
+       "t": "Adding someone and talking to them off Roblox, then sending explicit content unprompted",
+       "ex": [
+        "You add someone on a Social Media after finding them ingame. During your conversations, you send explicit pictures / messages while, based on the context of the conversation, it is clear the other person did not want this nor asked for it to be sent. This is bannable."
+       ]
+      },
+      {
+       "t": "You are participating in an online community that shares private information/pictures of people or minors."
+      },
+      {
+       "t": "Catfishing to get something from someone, unless you are predator catching",
+       "ex": [
+        "You fabricate an identity that isn't you with the intent of getting a real relationship with someone.",
+        "You fabricate an identity that isn't you with the intent of getting real life money from someone.",
+        "You fabricate an identity that isn't you with the intent of getting pictures from someone."
+       ]
+      },
+      {
+       "t": "Pretending to be younger than you are with the intention to form a friendship/relationship with someone, unless you are attempting to catch a predator",
+       "ex": [
+        "You are 20 Years Old, but tell people you are 18 to try and befriend people that believe you are that age.",
+        "You are 20 Years Old, but put \"18\" in your Bio with the intent to have people think you are 18."
+       ]
+      },
+      {
+       "t": "You say you're doing an explicit action in real life towards someone",
+       "ex": [
+        "You tell someone, even with slang or hints, that you are doing something sexual to yourself because of them.",
+        "You add someone on a Social Media after finding them ingame. During your conversations, you tell them you were doing something sexual to yourself while thinking of them, and based on the context of the conversation, it is clear the other person did not want this nor asked for it. This is bannable."
+       ]
+      },
+      {
+       "t": "Using self-harm / suicide threats on yourself to get something from someone",
+       "ex": [
+        "You tell someone to call you or you'll hurt yourself again.",
+        "You say \"I'll die right now if you don't do X\""
+       ]
+      },
+      {
+       "t": "Using someone's explicit pictures as leverage to get something",
+       "ex": [
+        "You say to someone \"Send me explicit pictures or else I won't stop trolling you ingame\""
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "You scam someone.",
+       "d": "Although predatory by definition, unless it is done by a mod, it is not enough to warrant a ban."
+      },
+      {
+       "t": "Catfishing without trying to get something from someone",
+       "d": "Pretending to be someone you're not is fine if you don't go too far, and if it's not a Mod, since then it's bannable under **c1**: Pretending to being a Mod / having Mod powers.",
+       "ex": [
+        "You fabricate an identity ingame and keep it ingame.",
+        "You pretend to be any gender ingame without taking it outside the game to try and get something from someone by faking who you are."
+       ]
+      },
+      {
+       "t": "Wearing outfits with baby items like a pacifier, or joking about being younger than you are, without using that to form a friendship/relationship with someone",
+       "d": "While it is weird, if you aren't actively saying you are an age younger than you are with a real intent to form a friendship/relationship with someone, it's fine.",
+       "ex": [
+        "You pretend to cry.",
+        "Someone asks you \"How old are you, you sound 15\" and you say \"Yeah I'm 15 for sure man\" and leave it at that. This can be seen as a one-off joke as you aren't actively portraying that to be your age and using that to form relationships/friendships with someone.",
+        "You wear an outfit with a pacifier."
+       ]
+      },
+      {
+       "t": "Not saying your age when someone asks how old you are.",
+       "d": "You are allowed to keep your information private."
+      }
      ]
     },
     {
