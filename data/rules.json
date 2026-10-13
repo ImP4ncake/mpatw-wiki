@@ -298,7 +298,214 @@
     },
     {
      "code": "b6",
-     "title": "Discrimination"
+     "title": "Discrimination",
+     "counts": [
+      "Say",
+      "Image"
+     ],
+     "bannable": [
+      {
+       "t": "You say negative stereotypes generalizing an entire race / ethnicity / sexuality that doesn't have to do with weight",
+       "ex": [
+        "Calling someone from Iraq a Suicide Bomber. This is a negative stereotype because being a Suicide Bomber is not a good thing, and you're assuming that because they're from Iraq they must be a Suicide Bomber.",
+        "Going up to a Black Person and saying \"Do you want KFC and Watermelon?\". Black people liking KFC or Watermelon has racist roots so it would be considered a negative stereotype and would be bannable.",
+        "Going up to an Asian Person and saying \"Ch*ng Ch*ng\". This is a negative stereotype because Asian people do not talk like that and has racist roots, so this would be bannable.",
+        "You see an Indian and immediately call them stinky. Generalizing every Indian person to be stinky, as if they are born stinky just because they are Indian, is a negative stereotype, so this would be bannable.",
+        "You start mimicking an Indian Accent and talk about how you run a scam call center. By mimicking an Indian Accent you are generalizing yourself as Indian and assuming all Indians run Call Centers, which is a negative stereotype, which is bannable.",
+        "You go up to Spanish People and call them Illegals. This is a negative stereotype because you are assuming every Spanish person is an illegal immigrant, so it is bannable."
+       ]
+      },
+      {
+       "t": "You say you don't like a race / ethnicity / sexuality / people from a religion",
+       "ex": [
+        "You say \"I don't like Black People\"",
+        "You say \"I don't like Gay People\"",
+        "You say \"I don't like White People\"",
+        "You say \"I don't like Christians\". Saying \"I don't like Christianity\" is fine."
+       ]
+      },
+      {
+       "t": "You insinuate a race / ethnicity / sexuality / religion isn't normal"
+      },
+      {
+       "t": "You insinuate someone is less than human",
+       "ex": [
+        "You say \"Black people are less than human\".",
+        "You call Black people \"Chocolate People\".",
+        "You call Mexicans \"Taco People\".",
+        "You call Japanese People \"Anime People\".",
+        "You go up to a group of Japanese players and say \"Hello ramen people!\"",
+        "You walk up to a black person and say \"Hello black\"",
+        "You say \"F*ck you gay\"",
+        "You say \"F*ck you black\"",
+        "You go up to a woman and say \"Go to the kitchen and make me a sandwich\"",
+        "You ask someone \"Are you colored or normal?\". This implies that if you are not colored, so in this case referring to white, you are normal. Meaning, if you are not white, you are not normal. This is bannable.",
+        "Creating images that rank skin colours, like a \"tier list\" of skin tones, or a skin-colour chart marked \"okay\" and \"not okay\"."
+       ]
+      },
+      {
+       "t": "You use an image of a race / sexuality / religion with an ❌ on top of it",
+       "img": [
+        {
+         "src": "b6-ban-group-cross.webp",
+         "alt": "An avatar wearing a shirt with a crossed-out rainbow flag",
+         "spoiler": true
+        }
+       ]
+      },
+      {
+       "t": "You use an image of a Country with a ❌ on top of it while comparing it to another country",
+       "img": [
+        {
+         "src": "b6-ban-country-compare.webp",
+         "alt": "Bannable: one flag with a tick next to another flag with a red cross"
+        }
+       ]
+      },
+      {
+       "t": "You wear an Avatar that's meant to represent a racist caricature",
+       "ex": [
+        "A racist caricature of a black person: very black skin and bright red lips.",
+        "A racist caricature of an asian person: yellow skin, slanted eyes and a straw hat."
+       ]
+      },
+      {
+       "t": "Calling First Nations people Indian."
+      },
+      {
+       "t": "Calling Trans people Transformers."
+      },
+      {
+       "t": "Mocking a religion",
+       "ex": [
+        "You call the Mecca a Minecraft Block",
+        "You call Allah \"Pig Allah\"",
+        "You mock a religious saying, for example saying \"outshallah\" (the inverse of inshallah)",
+        "Wearing a Religious Avatar in a way that mocks the religion"
+       ]
+      },
+      {
+       "t": "Outright declaring a religion as fake, false, or invalid outside of a structured debate context."
+      },
+      {
+       "t": "You deny the existence of a real country recognized ingame",
+       "ex": [
+        "You say \"Israel isn't a real country\"",
+        "You say \"Palestine isn't a real country\""
+       ]
+      },
+      {
+       "t": "Political taunting directed towards another player purely because of someone's nationality, ethnicity, religion or gender outside of a structured debate context",
+       "ex": [
+        "You go up to a random person from Palestine and say to them \"Free Israel!\". While the phrase on its own is not bannable, going up to a random person from Palestine and saying it is bannable, outside of a structured debate context.",
+        "You go up to a random person from Israel and say to them \"Free Palestine!\". While the phrase on its own is not bannable, going up to a random person from Israel and saying it is bannable, outside of a structured debate context.",
+        "You go up to a random black person and say to them \"Do you love George Floyd?\""
+       ]
+      },
+      {
+       "t": "Saying \"Ch*ng Ch*ng\"."
+      }
+     ],
+     "ok": [
+      {
+       "t": "You use an image of a Country with a ❌ on top of it without comparing it to another country",
+       "d": "This on its own is equivalent to saying \"I don't like Country X\" which is not bannable.",
+       "img": [
+        {
+         "src": "b6-ok-country-cross.webp",
+         "alt": "Not bannable: one flag with a red cross, not compared to another country"
+        }
+       ]
+      },
+      {
+       "t": "You say how a certain culture eats their cultural food",
+       "d": "It isn't discrimination to say how certain cultures eat certain foods.",
+       "ex": [
+        "You go up to someone from France and say \"How often do you eat Baguettes?\"",
+        "You walk up to someone from Quebec and say \"Is Poutine really that good?\"",
+        "You go to a Canadian and say \"Do you really eat Maple Syrup with everything?\"",
+        "You go to a Japanese and ask \"Is ramen actually that good?\""
+       ]
+      },
+      {
+       "t": "You say you don't like a Country / Religion.",
+       "d": "You are allowed to say you don't like a Country / Religion."
+      },
+      {
+       "t": "A Player says \"F*ck Country X!\".",
+       "d": "This is equivalent to saying you don't like a Country and you are allowed to say this."
+      },
+      {
+       "t": "You say you don't like people from a Country.",
+       "d": "You are allowed to say you don't like people from a Country."
+      },
+      {
+       "t": "You say a country is poor.",
+       "d": "You are allowed to insult countries by calling them poor as this is too tame to warrant a ban."
+      },
+      {
+       "t": "You say you don't like a race / ethnicity / sexuality / religion as a romantic preference",
+       "d": "You are allowed to say you wouldn't date certain people as this doesn't mean you see them less than human or that they aren't normal.",
+       "ex": [
+        "You say \"Me personally I wouldn't date a X Person\".",
+        "You say \"I'm not into X People\"."
+       ]
+      },
+      {
+       "t": "You call someone Fat as an insult.",
+       "d": "This is too tame to warrant a ban."
+      },
+      {
+       "t": "You generalize an entire race / ethnicity / sexuality's weight",
+       "d": "You are allowed to insult an entire race / ethnicity / sexuality's weight as this is too tame to warrant a ban.",
+       "ex": [
+        "You say \"Everyone in Country X is fat\""
+       ]
+      },
+      {
+       "t": "You say positive stereotypes generalizing an entire race / ethnicity / sexuality",
+       "d": "This is not discrimination but rather positive.",
+       "ex": [
+        "You say \"You're Black so you must be really athletic!\"",
+        "You say \"You're Asian so you must be really smart!\"",
+        "You say \"You're from Dubai you must be really rich!\""
+       ]
+      },
+      {
+       "t": "You mimic an accent.",
+       "d": "Mimicking an accent on its own is fine as long as you aren't saying bannable things with it."
+      },
+      {
+       "t": "You play audio that contains stereotypical songs of any culture.",
+       "d": "Playing songs on its own is fine as long as bannable things aren't said along with it."
+      },
+      {
+       "t": "Wearing the Avatar of a Religious Figure.",
+       "d": "If you aren't mocking it in some way, this is fine."
+      },
+      {
+       "t": "Saying you don't believe in a Religion.",
+       "d": "If you aren't mocking it in some way, this is fine."
+      },
+      {
+       "t": "You say you don't like things that a race / ethnicity / sexuality / people from a religion do",
+       "d": "If what you're saying isn't breaking any other rule, it's fine.",
+       "ex": [
+        "You say \"I don't like how Christians are so strict\"",
+        "You say \"I personally don't like Asian food\"",
+        "You say \"I don't like Jewish songs\"",
+        "You say \"I don't like Mexican food\""
+       ]
+      },
+      {
+       "t": "You say a country is fake in a joking way.",
+       "d": "Such as saying you're not Indonesian you're Polish, which is meant to be about the flag being the reverse."
+      },
+      {
+       "t": "You say a country is sh*t.",
+       "d": "This is equivalent to saying you don't like a Country, and that isn't bannable."
+      }
+     ]
     },
     {
      "code": "b7",

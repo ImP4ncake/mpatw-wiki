@@ -1696,10 +1696,21 @@ def rule_examples(rule: dict, side: str) -> str:
     for x in items:
         x = {"t": x} if isinstance(x, str) else x
         d = f'<span class="rb-ex__d">{md_inline(x["d"])}</span>' if x.get("d") else ""
+        sub = ""
+        if x.get("ex"):
+            items_html = []
+            for e in x["ex"]:
+                first, sep, rest = e.partition(". ")
+                if sep and rest:
+                    items_html.append(f'<li><span class="rb-sub__t">{md_inline(first)}.</span> <span class="rb-sub__why">{md_inline(rest)}</span></li>')
+                else:
+                    items_html.append(f'<li><span class="rb-sub__t">{md_inline(e)}</span></li>')
+            label = "For example" if len(x["ex"]) == 1 else f'{len(x["ex"])} examples'
+            sub = f'<span class="rb-sub"><span class="rb-sub__head">{label}</span><ul>{"".join(items_html)}</ul></span>'
         pics = ""
         if x.get("img"):
             pics = '<span class="rb-pics">' + "".join(rule_pic({**p, "spoiler_label": x.get("spoiler_label")}, rule["code"], side) for p in x["img"]) + "</span>"
-        out.append(f'<li class="rb-ex"><span class="rb-ex__t">{md_inline(x["t"])}</span>{d}{pics}</li>')
+        out.append(f'<li class="rb-ex"><span class="rb-ex__t">{md_inline(x["t"])}</span>{d}{sub}{pics}</li>')
     out.append("</ul></div>")
     return "".join(out)
 
@@ -1785,7 +1796,8 @@ def rule_card(rule: dict, group: dict, words: dict, faq: dict) -> str:
     )
     search = " ".join(
         [code, rule.get("title", ""), rule.get("note", ""), " ".join(rule.get("explain", []))]
-        + [(x["t"] + " " + x.get("d", "")) if isinstance(x, dict) else x for x in rule.get("bannable", []) + rule.get("ok", [])]
+        + [(x["t"] + " " + x.get("d", "") + " " + " ".join(x.get("ex", []))) if isinstance(x, dict) else x
+           for x in rule.get("bannable", []) + rule.get("ok", [])]
         + rule.get("never", [])
     ).lower()
     return (

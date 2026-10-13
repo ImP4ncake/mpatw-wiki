@@ -928,6 +928,49 @@ details[open] > summary .rb-rule__close {
   color: var(--rb-muted);
 }
 
+/* worked examples under one case */
+
+.rb-sub {
+  display: block;
+  margin-top: 0.45rem;
+}
+
+.rb-sub__head {
+  display: block;
+  margin-bottom: 0.25rem;
+  font: italic 800 0.6rem var(--mp-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--side) 75%, var(--rb-text));
+}
+
+.md-typeset .rb .rb-sub ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset .rb .rb-sub li {
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0 9px 9px 0;
+  border-left: 3px solid color-mix(in srgb, var(--side) 60%, transparent);
+  background: color-mix(in srgb, var(--rb-card) 70%, transparent);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.rb-sub__t {
+  font-weight: 700;
+}
+
+.rb-sub__why {
+  color: var(--rb-muted);
+}
+
 /* example pictures */
 
 .rb-pics {
