@@ -4,7 +4,7 @@ site_name = "MPATW Wiki"
 site_description = "Unofficial fan wiki for the Roblox game Meet People Across The World: guides, badges, gamepasses, codes and more."
 site_author = "ImP4ncake"
 
-copyright = 'Unofficial fan wiki, not affiliated with or endorsed by Roblox Corporation or Nogo. Wiki text is available under CC BY-SA 4.0.<br><a class="mp-footer-suggest" href="https://imp4ncake.github.io/mpatw-wiki/wiki/suggest/"><span class="mp-face mp-face--owner"></span>Suggestions or corrections? Contact ImP4ncake on Discord: <b>imp4ncake</b></a>'
+copyright = "Unofficial fan wiki, not affiliated with or endorsed by Roblox Corporation or Nogo. Wiki text under CC BY-SA 4.0."
 
 nav = [
   { "Home" = "index.md" },
@@ -101,11 +101,13 @@ nav = [
 
 # Change ?v= whenever you edit game.css or game.js, so browsers load the new
 # version right away instead of a copy saved up to 10 minutes earlier.
-extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-9", "assets/stylesheets/rulebook.css?v=20261013-9"]
+extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-12", "assets/stylesheets/rulebook.css?v=20261013-9"]
 extra_javascript = ["assets/javascripts/game.js?v=20261013-2", "assets/javascripts/rulebook.js?v=20261013-5"]
 
 [project.theme]
 language = "en"
+# overrides/partials/copyright.html replaces the footer text
+custom_dir = "overrides"
 features = [
   "announce.dismiss",
   "content.tabs.link",

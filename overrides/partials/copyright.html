@@ -1,0 +1,22 @@
+{#-
+  The footer of every page: the wiki's name with a short disclaimer on the
+  left, and how to suggest a change (ImP4ncake on Discord) on the right.
+  Replaces the theme's copyright partial, so "Made with Zensical" is gone.
+-#}
+<div class="md-copyright mp-foot">
+  <div class="mp-foot__brand">
+    <img class="mp-foot__logo" src="{{ config.theme.logo | url }}" alt="" width="40" height="40">
+    <div class="mp-foot__about">
+      <b class="mp-foot__name">{{ config.site_name }}</b>
+      <span class="mp-foot__note">{{ config.copyright }}</span>
+    </div>
+  </div>
+  <a class="mp-foot__suggest" href="{{ 'wiki/suggest/' | url }}">
+    <span class="mp-foot__pfp" role="img" aria-label="ImP4ncake's profile picture"></span>
+    <span class="mp-foot__text">
+      <small>Suggestions or corrections?</small>
+      <b>Contact ImP4ncake on Discord</b>
+    </span>
+    <span class="mp-foot__btn">{% include ".icons/fontawesome/brands/discord.svg" %}imp4ncake</span>
+  </a>
+</div>
