@@ -61,7 +61,7 @@ To run it yourself: `python scripts/update_data.py` (or `--offline` to only rege
 
 ## The Titles page
 
-Badge titles come from the badges' descriptions automatically. What the game's title list (in the **CUSTOMIZE** menu) shows is saved by hand in `data/titles.json`: each title's color, the "Nx Exist" number and the day it was checked (`checked`). A dark title with a colored outline has an `edge` color, and a title in more than one color has a `gradient`. The VIP titles and their price are under `vip`. A title that no badge gives and that isn't VIP shows up under **Other titles**, in the group named by its `group` (with `how`, how to get it), or under **Not known yet** with a Needs info box. **All titles** lists every title once, in the game's order, and the title count on Badges & Titles counts them all.
+Badge titles come from the badges' descriptions automatically. What the game's title list (in the **CUSTOMIZE** menu) shows is saved by hand in `data/titles.json`: each title's color, the "Nx Exist" number and the day it was checked (`checked`). A dark title with a colored outline has an `edge` color, and a title in more than one color has a `gradient`. The VIP titles and their price are under `vip`. A title that no badge gives and that isn't VIP shows up under **Other titles**, in the group named by its `group` (with `how`, how to get it), or under **Not known yet** with a Needs info box. Every title appears once on the page: VIP, then badge titles (each opens its badge), then the other titles. The title count on Badges & Titles counts them all.
 
 To update the numbers, change `exist` (and `checked`) and push.
 
