@@ -3557,6 +3557,7 @@ body {
 .mp-tone--blue { --tone: #3b8ff0; }
 .mp-tone--gold { --tone: #f2ab00; }
 .mp-tone--red { --tone: #ff4b45; }
+.mp-tone--green { --tone: #2fb84f; }
 
 @media screen and (max-width: 44.9375em) {
   .md-typeset .mp-facts {
@@ -4287,4 +4288,86 @@ body {
 .md-typeset a.mp-rule:focus-visible {
   background: var(--md-typeset-a-color);
   color: #fff;
+}
+
+/* ==========================================================================
+   The official community Discord, as a call to action
+   ========================================================================== */
+
+.md-typeset .mp-discord {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 0.9rem;
+  margin: 1.6rem 0 1rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #6773f5, #4752c4);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink);
+  color: #fff;
+}
+
+.md-typeset .mp-discord > p {
+  display: contents;
+}
+
+.md-typeset .mp-discord__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 2px solid var(--mp-ink);
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.5), transparent 55%), #5865f2;
+}
+
+.md-typeset .mp-discord__icon .twemoji,
+.md-typeset .mp-discord__icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  max-height: none;
+  color: #fff;
+  stroke-width: 2.4;
+  filter: drop-shadow(0 1px 0 var(--mp-ink));
+}
+
+.md-typeset .mp-discord__text {
+  flex: 1 1 15rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.md-typeset .mp-discord__text b {
+  display: block;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: var(--mp-outline-thin);
+}
+
+.md-typeset a.mp-discord__btn {
+  flex: none;
+  padding: 0.45rem 1.05rem 0.5rem;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--mp-ink), 0 4px 0 var(--mp-ink);
+  color: #4752c4;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.md-typeset a.mp-discord__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--mp-ink), 0 6px 0 var(--mp-ink);
+}
+
+.md-typeset a.mp-discord__btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 2px var(--mp-ink), 0 2px 0 var(--mp-ink);
 }

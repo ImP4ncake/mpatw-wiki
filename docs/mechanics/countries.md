@@ -26,4 +26,3 @@ When you join, the main screen shows the current server's **primary language** a
 
     How does the game decide your country, and how exactly do you discover a new country? [Help complete this page](../wiki/contribute.md).
 
-See also: [Country Collection Guide](../guides/country-collection.md).

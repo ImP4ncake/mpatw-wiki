@@ -60,4 +60,3 @@ description: "How reputation works: players turn their coins into positive or ne
 
 </div>
 
-See also: [Reputation Guide](../guides/reputation.md).

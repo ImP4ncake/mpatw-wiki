@@ -1,6 +1,6 @@
 ---
 icon: lucide/link
-description: "Official community resources."
+description: "The official links: both versions of the game, Nogo, the community Discord and more."
 ---
 
 # Community Links

@@ -1,9 +1,9 @@
 ---
 icon: lucide/coins
-description: "Coin-earning methods and strategies."
+description: "Every known way to farm coins, from the quickest to the slowest."
 ---
 
-# How to Earn Coins
+# How to Farm Coins
 
 All the known ways to earn [coins](../mechanics/coins.md), from easiest to slowest.
 
