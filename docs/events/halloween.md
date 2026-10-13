@@ -7,7 +7,7 @@ description: "Halloween events and rewards."
 
 --8<-- "generated/event-status/halloween.md"
 
-Halloween is the game's October event. While it runs, the game's name gets a 🎃 in front (**[🎃] 18+ Meet People Across The World**), and there are limited items and a limited badge to collect.
+Halloween is the game's October event. While it runs, the game's name gets a 🎃 in front (**[🎃] 18+ Meet People Across The World**), and there are limited items and a limited badge to collect. Taking part in the Halloween event **2 years in a row** gives the **Spooky** [title](../badges/titles.md#events).
 
 ## Halloween 2026
 

@@ -5,7 +5,7 @@ description: "Every title in the game, in its in-game color, and how to get it."
 
 # Titles
 
-<p class="mp-lead">Titles appear above your name in the game. You get them from <b>badges</b> or from the <b>VIP subscription</b>, and you can show one at a time.</p>
+<p class="mp-lead">Titles appear above your name in the game. Most come from <b>badges</b>, others with the <b>VIP subscription</b>, with time played, coins and Robux, or events. You can show one at a time.</p>
 
 --8<-- "generated/titles-summary.md"
 

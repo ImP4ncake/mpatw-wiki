@@ -1,5 +1,5 @@
 {
- "_about": "Titles in the order of the game's title list (CUSTOMIZE menu). 'color' is the title's color in the game; 'edge' is the colored outline of a dark title; 'gradient' is for a title in more than one color. 'exist' is the 'Nx Exist' number next to it on the day in 'checked' (null when the game shows none). 'badge_title' is the name a badge's description uses when it differs from the game's. Titles that no badge gives and that aren't VIP are listed on the Titles page as 'Other titles'.",
+ "_about": "Titles in the order of the game's title list (CUSTOMIZE menu). 'color' is the title's color in the game; 'edge' is the colored outline of a dark title; 'gradient' is for a title in more than one color. 'exist' is the 'Nx Exist' number next to it on the day in 'checked' (null when the game shows none). 'badge_title' is the name a badge's description uses when it differs from the game's. Titles that no badge gives and that aren't VIP are listed on the Titles page as 'Other titles', under the 'groups' heading named by 'group', with 'how' (how to get it; **bold** and [links](page.md#anchor) with docs-relative paths work) and an optional 'label'. Without 'how' they are listed as not known yet.",
  "checked": "2026-10-13",
  "vip": {
   "price": 2000,
@@ -29,7 +29,9 @@
   {
    "name": "Perfection",
    "color": "#a88ce4",
-   "exist": 26
+   "exist": 26,
+   "group": "feats",
+   "how": "Get the [Chain of Perfection](https://deepwoken.fandom.com/wiki/Quests) in **Deepwoken**, another Roblox game: it's the reward for defeating any boss there without taking any damage."
   },
   {
    "name": "Gifter",
@@ -111,7 +113,9 @@
   {
    "name": "i only exist online",
    "color": "#17bcdd",
-   "exist": 253
+   "exist": 253,
+   "group": "time",
+   "how": "Play Meet People Across The World for **1,000 hours**."
   },
   {
    "name": "Robot",
@@ -167,13 +171,17 @@
    "name": "Eternal",
    "color": "#1b1b3a",
    "exist": 109,
-   "edge": "#c8c4ff"
+   "edge": "#c8c4ff",
+   "group": "time",
+   "how": "Keep a daily streak of **100 days**."
   },
   {
    "name": "Transcendent",
    "color": "#111111",
    "exist": 17,
-   "edge": "#f7f08c"
+   "edge": "#f7f08c",
+   "group": "feats",
+   "how": "Unlock **10** cosmetics with [Fabled](items/rarities.md) rarity."
   },
   {
    "name": "Angel",
@@ -224,12 +232,16 @@
   {
    "name": "Golden",
    "color": "#ffd700",
-   "exist": 24
+   "exist": 24,
+   "group": "money",
+   "how": "Have **100,000** [coins](mechanics/coins.md)."
   },
   {
    "name": "Rabbit",
    "color": "#e3b2eb",
-   "exist": 92
+   "exist": 92,
+   "group": "events",
+   "how": "Take part in the [Easter](events/easter.md) egg hunt **2 years in a row**."
   },
   {
    "name": "Builder",
@@ -250,7 +262,10 @@
   {
    "name": "World Champion",
    "color": "#78bf86",
-   "exist": 314
+   "exist": 314,
+   "group": "events",
+   "how": "Guess the team that wins the World Cup final. It was given during the 2026 World Cup, the same event as the [WC2026](badges/limited.md#badge-limited-wc2026) badge, and comes back the same way at the next one, in **2030**.",
+   "label": "Back in 2030"
   },
   {
    "name": "WC2026",
@@ -265,12 +280,17 @@
   {
    "name": "First Millionaire",
    "color": "#7cff7c",
-   "exist": null
+   "exist": null,
+   "group": "team",
+   "how": "Only one exists: it belongs to **Marvin**, the first millionaire in Meet People.",
+   "label": "Unique"
   },
   {
    "name": "Loyal",
    "color": "#fffaa8",
-   "exist": 3
+   "exist": 3,
+   "group": "time",
+   "how": "Keep a daily streak of **365 days**: a whole year."
   },
   {
    "name": "Rainmaker",
@@ -291,36 +311,49 @@
    "name": "Owner",
    "color": "#111111",
    "exist": null,
-   "edge": "#ffffff"
+   "edge": "#ffffff",
+   "group": "team",
+   "how": "Only [Nogo](game-info/nogo.md) and **Oasis**, the game's co-founder, have it."
   },
   {
    "name": "Admin",
    "color": "#111111",
    "exist": null,
-   "edge": "#cfcfcf"
+   "edge": "#cfcfcf",
+   "group": "team",
+   "how": "Given to the game's admins."
   },
   {
    "name": "Hero",
    "color": "#111111",
    "exist": 14,
-   "edge": "#5dff5d"
+   "edge": "#5dff5d",
+   "group": "feats",
+   "how": "Report a **major bug** in the game on the official [Meet People Discord](community/links.md)."
   },
   {
    "name": "Content Creator",
    "color": "#ff2a5c",
-   "exist": null
+   "exist": null,
+   "group": "team",
+   "how": "Given to content creators who work with the game."
   },
   {
    "name": "Vocalist",
    "color": "#111111",
    "exist": 21,
-   "edge": "#8c8c8c"
+   "edge": "#8c8c8c",
+   "group": "team",
+   "how": "Given to players who bought the old [Voice Changers](items/gamepasses.md) gamepass. Voice changers are free now and the gamepass isn't sold anymore, so this title can't be got anymore.",
+   "label": "No longer available"
   },
   {
    "name": "Contributor",
    "color": "#111111",
    "exist": 2,
-   "edge": "#f0f0f0"
+   "edge": "#f0f0f0",
+   "group": "team",
+   "how": "Given to players who helped the game in some way."
   },
   {
    "name": "Trick or Treat?",
@@ -336,42 +369,81 @@
   {
    "name": "Spooky",
    "color": "#ff7a2a",
-   "exist": 92
+   "exist": 92,
+   "group": "events",
+   "how": "Take part in the [Halloween](events/halloween.md) event **2 years in a row**."
   },
   {
    "name": "Beggar",
    "color": "#4c9a4c",
-   "exist": 1149
+   "exist": 1149,
+   "group": "money",
+   "how": "Receive **1,000 Robux** in donations from other players."
   },
   {
    "name": "Donator",
    "color": "#146614",
-   "exist": 2730
+   "exist": 2730,
+   "group": "money",
+   "how": "Probably given for donating to another player in the game.",
+   "label": "Not sure"
   },
   {
    "name": "Prosperous",
    "color": "#178f17",
-   "exist": 2380
+   "exist": 2380,
+   "group": "money",
+   "how": "Spend Robux in the game: less than for **Rich**. The exact amount isn't known yet."
   },
   {
    "name": "Patron",
    "color": "#22a822",
-   "exist": 1690
+   "exist": 1690,
+   "group": "money",
+   "how": "Spend Robux in the game: less than for **Rich**. The exact amount isn't known yet."
   },
   {
    "name": "Rich",
    "color": "#2ec72e",
-   "exist": 455
+   "exist": 455,
+   "group": "money",
+   "how": "Spend **10,000 Robux** in the game."
   },
   {
    "name": "Wealthy",
    "color": "#3aeb3a",
-   "exist": 91
+   "exist": 91,
+   "group": "money",
+   "how": "Spend **100,000 Robux** in the game."
   },
   {
    "name": "Millionaire",
    "color": "#4dff2e",
-   "exist": 3
+   "exist": 3,
+   "group": "money",
+   "how": "Spend **1,000,000 Robux** in the game."
+  }
+ ],
+ "groups": [
+  {
+   "key": "time",
+   "name": "Time played and daily streaks"
+  },
+  {
+   "key": "money",
+   "name": "Coins and Robux"
+  },
+  {
+   "key": "events",
+   "name": "Events"
+  },
+  {
+   "key": "feats",
+   "name": "Feats"
+  },
+  {
+   "key": "team",
+   "name": "Team and special titles"
   }
  ]
 }

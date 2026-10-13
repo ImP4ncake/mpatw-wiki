@@ -11,7 +11,7 @@ The main place of the 18+ version has **voice chat servers**, where you can talk
 
     Voice chat on Roblox depends on your account being eligible for it. Check Roblox's own help pages for the current requirements.
 
-The **Voice Changers** gamepass added voice effects. It is not for sale at the moment.
+Voice changers are **free** now: the old **Voice Changers** gamepass isn't sold anymore. Players who bought it have the **Vocalist** [title](../badges/titles.md#team-and-special-titles), which can't be got anymore.
 
 Prefer text only? Use the [No-Voice Servers](no-voice.md).
 

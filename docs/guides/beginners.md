@@ -26,7 +26,7 @@ These are quick and easy:
 | Pianist | Play the piano |
 | Builder | Build 10 blocks with the Hammer |
 
-Each one unlocks a [title and a tag effect](../badges/titles.md).
+Each one unlocks a [title and a tag effect](../badges/titles.md). More titles come from playing for a long time, daily streaks, coins and events: see [Other titles](../badges/titles.md#other-titles).
 
 ## 4. Earn coins
 

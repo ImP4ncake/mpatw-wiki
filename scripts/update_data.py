@@ -696,6 +696,19 @@ def title_exist(info: dict | None, checked: str, cls: str = "mp-title-card__exis
     return f'<span class="{cls}" title="{esc(tip)}">{full(info["exist"])} exist</span>'
 
 
+def title_how(text: str, here: str) -> str:
+    """How to get a title: **bold** and [links](page.md#anchor) with docs-relative paths."""
+
+    def link(m: re.Match) -> str:
+        label, target = m.group(1), html.unescape(m.group(2))
+        if target.startswith("http"):
+            return f'<a href="{esc(target)}" target="_blank" rel="noopener">{label}</a>'
+        page, _, anchor = target.partition("#")
+        return f'<a href="{rel(here, page, anchor)}">{label}</a>'
+
+    return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", link, _inline(esc(text)))
+
+
 def gen_titles(badges: list[dict]) -> None:
     here = "badges/titles.md"
     data = load_titles()
@@ -749,29 +762,36 @@ def gen_titles(badges: list[dict]) -> None:
         out += [
             "## Other titles",
             "",
-            f'<p>The game also has <b>{len(others)}</b> title{"s" if len(others) != 1 else ""} that no badge gives and that '
-            "don't come with VIP. How to get them isn't known yet.</p>",
-            "",
-            '<div class="mp-plates mp-plates--list">',
+            f'<p>These <b>{len(others)}</b> titles don\'t come from a badge or with VIP.</p>',
         ]
-        for t in others:
-            out.append(
-                f'<span class="mp-plate">{title_name(t["name"], t, "mp-plate__name")}'
-                f'{title_exist(t, checked, "mp-plate__exist")}</span>'
-            )
-        if len(others) <= 4:
-            names = [f"**{t['name']}**" for t in others]
-            ask = "do you get " + (names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1])
-        else:
-            ask = "do you get these titles"
-        out += [
-            "</div>",
-            "",
-            '!!! question "Needs info"',
-            "",
-            f"    How {ask}? If you know, "
-            "[:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }",
-        ]
+        groups = data.get("groups", [])
+        keys = {g["key"] for g in groups}
+        for g in groups + [{"key": None, "name": "Not known yet"}]:
+            items = [t for t in others if (t.get("group") if t.get("group") in keys and t.get("how") else None) == g["key"]]
+            if not items:
+                continue
+            out += ["", f"### {g['name']}", "", '<div class="mp-plates mp-plates--how">']
+            for t in items:
+                label = f'<span class="mp-plate__label">{esc(t["label"])}</span>' if t.get("label") else ""
+                text = title_how(t["how"], here) if t.get("how") else "How to get it isn't known yet."
+                out.append(
+                    f'<div class="mp-plate">{title_name(t["name"], t, "mp-plate__name")}'
+                    f'<span class="mp-plate__side">{label}{title_exist(t, checked, "mp-plate__exist")}</span>'
+                    f'<span class="mp-plate__how">{text}</span></div>'
+                )
+            out.append("</div>")
+            if g["key"] is None:
+                names = [f"**{t['name']}**" for t in items]
+                ask = names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+                if len(names) > 4:
+                    ask = "these titles"
+                out += [
+                    "",
+                    '!!! question "Needs info"',
+                    "",
+                    f"    How do you get {ask}? If you know, "
+                    "[:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }",
+                ]
     write("titles-other.md", "\n".join(out))
 
     # Count for the top of the page

@@ -18,5 +18,6 @@ Where the wiki's information comes from.
 | [Rolimons](https://www.rolimons.com/game/110570058234582) | Player peaks, average playtime, server stats | Snapshot, with the date |
 | [RoDen](https://robloxden.com/game-codes/meet-people-across-the-world) | Reported codes | Checked by hand |
 | The game itself | Menus, mechanics, screenshots from players | Checked by hand |
+| [Deepwoken Wiki](https://deepwoken.fandom.com/wiki/Quests) | How to get the Chain of Perfection, needed for the **Perfection** title | Checked by hand |
 
 All the data the wiki downloads is saved in the [`data/`](https://github.com/ImP4ncake/mpatw-wiki/tree/main/data) folder of the repository.
