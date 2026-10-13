@@ -11,4 +11,4 @@ description: "The country quiz activity."
 
 !!! question "Needs info"
 
-    Where is Country Trivia, what kind of questions does it ask, and are there other rewards? [Help complete this page](../wiki/contribute.md).
+    Where is Country Trivia, what kind of questions does it ask, and are there other rewards? If you know, [tell me on Discord](../wiki/suggest.md).

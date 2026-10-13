@@ -1,7 +1,7 @@
 <div class="mp-soon" markdown>
 <span class="mp-limited">COMING SOON</span>
 
-This section is still empty: we are filling it in piece by piece. Do you know something about it? Every bit helps.
+This section is still empty: it's being filled in piece by piece. Do you know something about it? Send it to the wiki's creator.
 
-[:lucide-pencil: Help write this page](../wiki/contribute.md){ .mp-btn .mp-btn--green }
+[:lucide-message-circle: Suggest it on Discord](../wiki/suggest.md){ .mp-btn .mp-btn--green }
 </div>

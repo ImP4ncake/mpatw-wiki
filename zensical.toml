@@ -2,13 +2,9 @@
 site_url = "https://imp4ncake.github.io/mpatw-wiki/"
 site_name = "MPATW Wiki"
 site_description = "Unofficial fan wiki for the Roblox game Meet People Across The World: guides, badges, gamepasses, codes and more."
-site_author = "MPATW Wiki contributors"
+site_author = "ImP4ncake"
 
 copyright = "Unofficial fan wiki, not affiliated with or endorsed by Roblox Corporation or Nogo. Wiki text is available under CC BY-SA 4.0."
-
-repo_url = "https://github.com/ImP4ncake/mpatw-wiki"
-repo_name = "ImP4ncake/mpatw-wiki"
-edit_uri = "edit/main/docs/"
 
 nav = [
   { "Home" = "index.md" },
@@ -96,26 +92,22 @@ nav = [
   ] },
   { "Wiki Resources" = [
     "wiki/index.md",
-    { "Wiki Guidelines" = "wiki/guidelines.md" },
-    { "How to Contribute" = "wiki/contribute.md" },
-    { "Sources" = "wiki/sources.md" },
+    { "Suggest a Change" = "wiki/suggest.md" },
     { "Wiki FAQ" = "wiki/faq.md" },
-    { "Missing Pages" = "wiki/missing-pages.md" },
+    { "Sources" = "wiki/sources.md" },
     { "Recent Changes" = "wiki/recent-changes.md" },
-    { "Wiki Staff" = "wiki/staff.md" },
   ] },
 ]
 
 # Change ?v= whenever you edit game.css or game.js, so browsers load the new
 # version right away instead of a copy saved up to 10 minutes earlier.
-extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-4", "assets/stylesheets/rulebook.css?v=20261013-9"]
+extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-5", "assets/stylesheets/rulebook.css?v=20261013-9"]
 extra_javascript = ["assets/javascripts/game.js?v=20261013-2", "assets/javascripts/rulebook.js?v=20261013-5"]
 
 [project.theme]
 language = "en"
 features = [
   "announce.dismiss",
-  "content.action.edit",
   "content.tabs.link",
   "content.tooltips",
   "navigation.footer",
@@ -132,9 +124,6 @@ favicon = "assets/images/logo.svg"
 # Fonts are bundled in docs/assets/fonts (see assets/stylesheets/fonts.css)
 font = false
 
-
-[project.theme.icon]
-repo = "fontawesome/brands/github"
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme)"

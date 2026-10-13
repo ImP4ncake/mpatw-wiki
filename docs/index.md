@@ -63,12 +63,11 @@ hide:
 </div>
 
 <div class="mp-cta" markdown>
-## Help build the wiki
+## Suggest a change
 
-This wiki is written by players. Every page has an **edit** button, and some pages are still waiting for someone who knows the answer.
+Something missing, wrong or out of date? This wiki is made by [<span class="mp-face mp-face--owner"></span>ImP4ncake](wiki/suggest.md){ .mp-who }: send your suggestions for changes or additions on Discord.
 
-[:lucide-pencil: How to contribute](wiki/contribute.md){ .mp-btn .mp-btn--gold }
-[:lucide-file-question: Missing pages](wiki/missing-pages.md){ .mp-btn }
+[:lucide-message-circle: Suggest a change](wiki/suggest.md){ .mp-btn .mp-btn--gold }
 </div>
 
 <small>This is a fan-made wiki. It is not affiliated with, endorsed by or connected to Roblox Corporation or Nogo. Game names and content belong to their respective owners.</small>

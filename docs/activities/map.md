@@ -24,4 +24,4 @@ The map is a big open area where players hang out, with lots of activities aroun
 
 !!! question "Needs info"
 
-    A map of the game with every location marked would be great. Where is each activity? [Help complete this page](../wiki/contribute.md).
+    A map of the game with every location marked would be great. Where is each activity? If you know, [tell me on Discord](../wiki/suggest.md).

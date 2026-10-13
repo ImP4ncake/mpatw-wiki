@@ -15,4 +15,4 @@ You can give things to other players as gifts.
 
 !!! question "Needs info"
 
-    Which items can be gifted, and how do you send a gift? [Help complete this page](../wiki/contribute.md).
+    Which items can be gifted, and how do you send a gift? If you know, [tell me on Discord](../wiki/suggest.md).

@@ -9,4 +9,4 @@ The 18+ version has a separate place called **NO-VOICECHAT 18+ Meet People Acros
 
 !!! question "Needs info"
 
-    How do you get to the no-voice servers from the game? [Help complete this page](../wiki/contribute.md).
+    How do you get to the no-voice servers from the game? If you know, [tell me on Discord](../wiki/suggest.md).

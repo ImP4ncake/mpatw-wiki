@@ -13,6 +13,6 @@ In [custom servers](../servers/custom-servers.md), the owner can make all trolls
 
 !!! question "Needs info"
 
-    What trolls exist, what do they do and how much do they cost? [Help complete this page](../wiki/contribute.md).
+    What trolls exist, what do they do and how much do they cost? If you know, [tell me on Discord](../wiki/suggest.md).
 
 See also: [Troll Items](troll-items.md), the items in the **ITEMS** menu that you use on other players for Troll Tokens.

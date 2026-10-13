@@ -104,10 +104,12 @@ where you meet people from all over the world, with live numbers straight from R
 </tr>
 </table>
 
-## 🤝 Want to help?
+## 💬 Suggestions
 
-Spotted something missing or out of date? Every page has an edit button: suggest your change, and it goes live once the wiki's owner has reviewed and approved it.
-The [contribution guide](https://imp4ncake.github.io/mpatw-wiki/wiki/contribute/) explains everything step by step.
+<img src="https://avatars.githubusercontent.com/u/113541361?v=4" width="48" height="48" align="left" alt="ImP4ncake">
+
+Spotted something missing or out of date? Have an idea for a new page?
+Send your suggestion to **ImP4ncake** on Discord: **`imp4ncake`** ([how to](https://imp4ncake.github.io/mpatw-wiki/wiki/suggest/)).
 
 <br>
 
