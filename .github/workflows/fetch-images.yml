@@ -14,14 +14,24 @@ on:
       urls:
         description: "Image links separated by spaces. Optional file name before ::, e.g. a4-ok-bikini::https://..."
         required: true
+      key:
+        description: "Optional password. If set, the images are also saved encrypted on the temporary branch fetched-images"
+        required: false
+        default: ""
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
+      - name: Hide the password in the log
+        if: inputs.key != ''
+        run: |
+          KEY=$(jq -r '.inputs.key' "$GITHUB_EVENT_PATH")
+          echo "::add-mask::$KEY"
+
       - name: Download the images
         env:
           URLS: ${{ inputs.urls }}
@@ -55,3 +65,18 @@ jobs:
           path: images
           retention-days: 3
           if-no-files-found: error
+
+      - name: Save them encrypted on the fetched-images branch
+        if: inputs.key != ''
+        run: |
+          KEY=$(jq -r '.inputs.key' "$GITHUB_EVENT_PATH")
+          tar -czf images.tgz images
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in images.tgz -out images.tgz.enc -pass "pass:$KEY"
+          mkdir branch && cd branch
+          git init -q -b fetched-images
+          cp ../images.tgz.enc .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images.tgz.enc
+          git commit -q -m "Fetched images (encrypted, temporary)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" fetched-images
