@@ -37,7 +37,7 @@ In the ITEMS menu they come right after the troll items. Prices are on the [Game
 
 | Item | What it does | Gamepass |
 |---|---|---|
-| <span class="mp-iconname"><span class="mp-icon" data-pass="tip-jar" aria-hidden="true"></span>**Tip Jar**</span> | Lets other players donate Robux to you in game | Tip Jar |
+| <span class="mp-iconname"><span class="mp-icon" data-pass="tip-jar" aria-hidden="true"></span>**Tip Jar**</span> | Lets other players donate Robux to you in game. Receiving 1,000 Robux in donations gives the **Beggar** [title](../badges/titles.md#coins-and-robux) | Tip Jar |
 | <span class="mp-iconname"><span class="mp-icon" data-pass="fly" aria-hidden="true"></span>**Fly**</span> | Lets you fly. Toggle it with **F** | Fly |
 | <span class="mp-iconname"><span class="mp-icon" data-pass="grab-a-friend" aria-hidden="true"></span>**Friend Grab**</span> | Grab, Lasso, Piggyback or Carry anyone for free, but they have to accept your request | Grab a Friend |
 | <span class="mp-iconname"><span class="mp-icon" data-pass="invisibility" aria-hidden="true"></span>**Invisibility**</span> | Makes you invisible. Toggle it with **G** | Invisibility |

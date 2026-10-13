@@ -23,7 +23,7 @@ On April Fools' Day the game gives out a joke badge, **Win The Lottery?**, whose
 
 --8<-- "generated/event-status/wc2026.md"
 
-During the **2026 World Cup**, guessing a winning team unlocked the limited **WC2026** badge. It was a one-off event, not part of the yearly rotation.
+During the **2026 World Cup**, guessing a winning team unlocked the limited **WC2026** badge, and guessing the team that won the **final** gave the **World Champion** [title](../badges/titles.md#events). It isn't part of the yearly rotation: the World Cup comes every four years, and the World Champion title comes back the same way at the next one, in **2030**.
 
 --8<-- "generated/badge/limited-wc2026.md"
 

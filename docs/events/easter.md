@@ -11,6 +11,8 @@ During the **Easter event**, players hunt for **50 Easter Eggs** hidden around t
 
 --8<-- "generated/badge/limited-easter-collector.md"
 
+Taking part in the egg hunt **2 years in a row** gives the **Rabbit** [title](../badges/titles.md#events).
+
 ## History
 
 <div class="mp-timeline">

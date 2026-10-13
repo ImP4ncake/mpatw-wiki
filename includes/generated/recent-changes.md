@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/af5b31a" target="_blank" rel="noopener">Titles: VIP titles, in-game colors and counts, and the other titles</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/f92096d" target="_blank" rel="noopener">Home: Latest Updates shows the game&#x27;s updates, not the wiki&#x27;s</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/9d3229c" target="_blank" rel="noopener">Featured Guides: the four guides, everywhere with their current names</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/73e2a7b" target="_blank" rel="noopener">Footer: no contact card, only the wiki&#x27;s name and the disclaimer</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/ed19b1f" target="_blank" rel="noopener">Explain how reputation works</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/ec83a11" target="_blank" rel="noopener">Add a back button to the section above every page title</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/3195c2c" target="_blank" rel="noopener">A nicer Game History, and fewer repeats in Game Information</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/194ae1a" target="_blank" rel="noopener">Link Nogo&#x27;s pictures and Key Facts to Nogo&#x27;s Roblox profile</a></span></div>
 </div>

@@ -1617,6 +1617,62 @@ body {
   overflow-wrap: anywhere;
 }
 
+/* other titles: the nameplate, then how to get it */
+.md-typeset .mp-plates--how {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  margin: 0.8rem 0 1.4rem;
+}
+
+.mp-plates--how .mp-plate {
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: center;
+  row-gap: 0.35rem;
+  padding: 0.55rem 0.8rem 0.7rem;
+}
+
+.mp-plate__side {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mp-plate__label {
+  padding: 0.08rem 0.45rem;
+  border-radius: 999px;
+  background: var(--mp-gold-2);
+  box-shadow: 0 2px 0 #0b0b0e;
+  color: #3a2a00;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mp-plate__how {
+  flex: 1 0 100%;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: #eef0f4;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+.mp-plate__how b {
+  color: #fff;
+}
+
+.md-typeset .mp-plate__how a {
+  color: #a9cdff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.md-typeset .mp-plate__how a:hover {
+  color: #fff;
+}
+
 .mp-plate__exist {
   flex: none;
   padding-bottom: 0.05rem;

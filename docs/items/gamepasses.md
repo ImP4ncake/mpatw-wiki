@@ -19,6 +19,10 @@ Some gamepasses also give you an item in the **ITEMS** menu, like Fly, Invisibil
 
     The owner of a [custom server](../servers/custom-servers.md) can make all trolls and items free for everyone in that server.
 
+!!! info "Titles for spending Robux"
+
+    Spending Robux in the game gives [titles](../badges/titles.md#coins-and-robux): **Rich** at 10,000 Robux, **Wealthy** at 100,000 and **Millionaire** at 1,000,000. **Prosperous** and **Patron** come before Rich. The old **Voice Changers** gamepass, now off sale because voice changers are free, gave the **Vocalist** title.
+
 !!! info "In the rules"
 
     Flying without the **Fly** gamepass means using exploits, which is bannable ([c6](../community/rules.md#c6){ .mp-rule }). Using Size 5 with the **Size Changer** gamepass is fine: it's an intended feature.
