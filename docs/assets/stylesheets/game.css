@@ -4386,30 +4386,160 @@ body {
   background: var(--mp-owner-pfp) center / cover no-repeat, var(--mp-face-bg);
 }
 
-/* on every page, in the footer: how to suggest a change */
-.md-typeset a.mp-footer-suggest {
-  display: inline-block;
-  max-width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.3em 0.85em 0.35em 0.4em;
-  border-radius: 14px;
-  line-height: 1.6;
-  background: rgba(88, 101, 242, 0.28);
-  box-shadow: inset 0 0 0 1.5px rgba(138, 147, 248, 0.55);
-  color: #fff;
+/* ==========================================================================
+   The footer of every page (overrides/partials/copyright.html)
+   ========================================================================== */
+
+.md-footer-meta__inner {
+  padding: 0.4rem 0;
+}
+
+.md-copyright.mp-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.6rem;
+  width: 100%;
+  margin: 0.9rem 0.8rem 1rem;
+  color: var(--mp-on-dark-2, #c5cad4);
+}
+
+.mp-foot__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.mp-foot__logo {
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #111216, 0 3px 0 #111216;
+}
+
+.mp-foot__about {
+  display: grid;
+  gap: 0.15rem;
+  line-height: 1.4;
+}
+
+.mp-foot__name {
+  font-family: var(--mp-display);
   font-weight: 700;
-  text-decoration: none;
-  transition: background 0.15s ease;
-}
-
-.md-typeset a.mp-footer-suggest:hover,
-.md-typeset a.mp-footer-suggest:focus-visible {
-  background: #5865f2;
-}
-
-.md-typeset a.mp-footer-suggest b {
+  font-size: 0.95rem;
   color: var(--mp-gold-2);
+  text-shadow: var(--mp-outline-thin);
+}
+
+.mp-foot__note {
+  max-width: 34rem;
+  font-size: 0.62rem;
+  color: #9aa1ad;
+}
+
+.md-typeset a.mp-foot__suggest,
+a.mp-foot__suggest {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex: 0 1 auto;
+  padding: 0.5rem 0.55rem 0.5rem 0.5rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(103, 115, 245, 0.35), rgba(71, 82, 196, 0.25));
+  box-shadow: inset 0 0 0 1.5px rgba(138, 147, 248, 0.6);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+a.mp-foot__suggest:hover,
+a.mp-foot__suggest:focus-visible {
+  background: linear-gradient(135deg, rgba(103, 115, 245, 0.6), rgba(71, 82, 196, 0.5));
+  transform: translateY(-2px);
+}
+
+.mp-foot__pfp {
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 2px solid #111216;
+  background: var(--mp-owner-pfp) center / cover no-repeat, var(--mp-face-bg);
+  box-shadow: 0 0 0 2px #5865f2;
+}
+
+.mp-foot__text {
+  display: grid;
+  line-height: 1.3;
+}
+
+.mp-foot__text small {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #c9cdfb;
+}
+
+.mp-foot__text b {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.mp-foot__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+  background: #5865f2;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.25), 0 3px 0 #3a43a8;
+  color: #fff;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   white-space: nowrap;
+}
+
+.mp-foot__btn svg {
+  width: 1.15em;
+  height: 1.15em;
+  fill: currentColor;
+}
+
+/* keep clear of the floating "back to top" button (and the contents button on phones) */
+@media screen and (min-width: 60em) {
+  .md-copyright.mp-foot {
+    padding-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 59.984375em) {
+  .md-copyright.mp-foot {
+    margin-bottom: 8.4rem;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  a.mp-foot__suggest {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+  }
+
+  .mp-foot__text {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .mp-foot__btn {
+    flex: 1 1 100%;
+    justify-content: center;
+    padding: 0.5em 0.8em;
+  }
 }
 
 /* ==========================================================================
