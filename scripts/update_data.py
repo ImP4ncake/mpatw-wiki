@@ -62,6 +62,9 @@ GEN_DIR = ROOT / "includes" / "generated"
 SNAPSHOT = DATA_DIR / "game.json"
 HISTORY = DATA_DIR / "history.json"
 DISCORD_ARCHIVE = DATA_DIR / "discord-updates.json"
+EVENTS_FILE = DATA_DIR / "events.json"
+GALLERY_ROOT = DOCS / "assets" / "events"
+IMAGE_FILES = (".png", ".jpg", ".jpeg", ".webp", ".gif")
 UPDATE_ASSETS = DOCS / "assets" / "updates"
 DISCORD_API = "https://discord.com/api/v10"
 DISCORD_UA = "DiscordBot (https://github.com/ImP4ncake/mpatw-wiki, 1.0)"
@@ -1418,6 +1421,217 @@ def gen_discord(page: str = "events/update-history.md") -> None:
 
 
 # --------------------------------------------------------------------------
+# Seasonal events: current event, rotation, galleries
+# --------------------------------------------------------------------------
+
+
+def easter(year: int) -> dt.date:
+    """Gregorian Easter Sunday."""
+    a, b, c = year % 19, year // 100, year % 100
+    d, e = b // 4, b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i, k = c // 4, c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    day = (h + l - 7 * m + 114) % 31 + 1
+    return dt.date(year, month, day)
+
+
+def holiday(event: dict, year: int) -> dt.date:
+    if event["date"] == "easter":
+        return easter(year)
+    month, day = (int(x) for x in event["date"].split("-"))
+    return dt.date(year, month, day)
+
+
+def next_holiday(event: dict, today: dt.date) -> dt.date:
+    d = holiday(event, today.year)
+    return d if d >= today else holiday(event, today.year + 1)
+
+
+def load_events() -> dict:
+    if not EVENTS_FILE.exists():
+        return {"rotation": [], "special": []}
+    return json.loads(EVENTS_FILE.read_text("utf-8"))
+
+
+def event_state(now: dt.datetime | None = None) -> dict:
+    """Which event is running now, and the order of the next ones."""
+    cfg = load_events()
+    now = now or dt.datetime.now(dt.timezone.utc)
+    today = now.date()
+    by_id = {e["id"]: e for e in cfg.get("rotation", [])}
+    current = cfg.get("current") or {}
+    ends = parse_time(current.get("ends"))
+    active = bool(current.get("event") in by_id and ends and now < ends)
+    cur_event = by_id.get(current.get("event")) if active else None
+    upcoming = sorted(
+        (e for e in cfg.get("rotation", []) if e is not cur_event),
+        key=lambda e: next_holiday(e, today),
+    )
+    return {"cfg": cfg, "now": now, "today": today, "active": active, "current": current, "event": cur_event,
+            "ends": ends, "upcoming": upcoming, "special": cfg.get("special", [])}
+
+
+def event_link(from_page: str, e: dict) -> str:
+    return rel(from_page, e["page"], e.get("anchor", ""))
+
+
+def gen_events() -> None:
+    st = event_state()
+    today = st["today"]
+    out_status = GEN_DIR / "event-status"
+    out_status.mkdir(parents=True, exist_ok=True)
+
+    # Home page strip and news line
+    if st["active"]:
+        e, cur = st["event"], st["current"]
+        note = f' <small>({esc(cur["ends_note"])})</small>' if cur.get("ends_note") else ""
+        strip = (
+            f'<a class="mp-event" href="{event_link("index.md", e)}" data-hide-after="{esc(cur["ends"])}">'
+            f'<span class="mp-limited">LIMITED</span>'
+            f'<span class="mp-event__emoji">{esc(e["emoji"])}</span>'
+            f'<span><b>{esc(cur.get("edition") or e["name"])} is here!</b> {cur.get("highlight", "")}. '
+            f'Ends in <span class="mp-countdown" data-countdown="{esc(cur["ends"])}">{esc(nice_date(cur["ends"]))}</span>{note}</span>'
+            f'<span class="mp-event__go">See the event</span></a>'
+        )
+        news = (
+            f'<li data-hide-after="{esc(cur["ends"])}"><span class="mp-news__date">Event</span>{esc(e["emoji"])} '
+            f'<a href="{event_link("index.md", e)}">{esc(cur.get("edition") or e["name"])}</a> is live: {cur.get("highlight", "")}</li>'
+        )
+    elif st["upcoming"]:
+        e = st["upcoming"][0]
+        d = next_holiday(e, today)
+        strip = (
+            f'<a class="mp-event mp-event--next" href="{event_link("index.md", e)}">'
+            f'<span class="mp-limited mp-limited--next">NEXT EVENT</span>'
+            f'<span class="mp-event__emoji">{esc(e["emoji"])}</span>'
+            f'<span><b>{esc(e["name"])}</b> usually arrives in {esc(e["season"])} (around {d.day} {d.strftime("%B")}).</span>'
+            f'<span class="mp-event__go">See past editions</span></a>'
+        )
+        news = ""
+    else:
+        strip, news = "", ""
+    write("home-event.md", strip)
+    write("home-event-news.md", news)
+
+    # Event calendar for the Events & Updates page
+    here = "events/index.md"
+    lines = []
+    if st["active"]:
+        e, cur = st["event"], st["current"]
+        lines += [
+            "## Happening now",
+            "",
+            f'<a class="mp-now" href="{event_link(here, e)}">'
+            f'<span class="mp-now__emoji">{esc(e["emoji"])}</span>'
+            f'<span class="mp-now__text"><span class="mp-now__label">NOW</span>'
+            f'<b class="mp-now__title">{esc(cur.get("edition") or e["name"])}</b>'
+            f'<span class="mp-now__desc">{cur.get("highlight", "")}.</span>'
+            f'<span class="mp-now__ends">Ends in <span class="mp-countdown" data-countdown="{esc(cur["ends"])}">'
+            f'{esc(nice_date(cur["ends"]))}</span></span></span></a>',
+            "",
+        ]
+    lines += [
+        "## Event rotation",
+        "",
+        "The seasonal events come back every year around the same holiday. When one ends, the next one in the calendar takes its place.",
+        "",
+        '<div class="mp-rotation">',
+    ]
+    ordered = ([st["event"]] if st["active"] else []) + st["upcoming"]
+    for i, e in enumerate(ordered):
+        if st["active"] and i == 0:
+            tag, when = '<span class="mp-rot__tag mp-rot__tag--now">NOW</span>', "Running now"
+        else:
+            d = next_holiday(e, today)
+            tag = '<span class="mp-rot__tag mp-rot__tag--next">NEXT</span>' if i == (1 if st["active"] else 0) else ""
+            when = f"Around {d.day} {d.strftime('%b %Y')}"
+        lines.append(
+            f'<a class="mp-rot" href="{event_link(here, e)}" style="--i:{i}">{tag}'
+            f'<span class="mp-rot__emoji">{esc(e["emoji"])}</span>'
+            f'<span class="mp-rot__name">{esc(e["name"])}</span>'
+            f'<span class="mp-rot__when">{esc(when)}</span>'
+            f'<span class="mp-rot__season">{esc(e["season"])}</span></a>'
+        )
+    lines.append("</div>")
+    if st["special"]:
+        lines += ["", "## Special events", "", "One-off events that are not part of the yearly rotation.", "", '<div class="mp-rotation">']
+        for i, e in enumerate(st["special"]):
+            lines.append(
+                f'<a class="mp-rot mp-rot--special" href="{event_link(here, e)}" style="--i:{i}">'
+                f'<span class="mp-rot__emoji">{esc(e["emoji"])}</span><span class="mp-rot__name">{esc(e["name"])}</span>'
+                f'<span class="mp-rot__when">{esc(e.get("when", ""))}</span></a>'
+            )
+        lines.append("</div>")
+    write("event-calendar.md", "\n".join(lines))
+
+    # Banner at the top of each event page
+    for e in st["cfg"].get("rotation", []) + st["special"]:
+        if st["active"] and e is st["event"]:
+            cur = st["current"]
+            html_out = (
+                f'<div class="mp-evstatus mp-evstatus--now"><span class="mp-evstatus__emoji">{esc(e["emoji"])}</span>'
+                f'<span><b>Happening now: {esc(cur.get("edition") or e["name"])}</b> · ends in '
+                f'<span class="mp-countdown" data-countdown="{esc(cur["ends"])}">{esc(nice_date(cur["ends"]))}</span></span></div>'
+            )
+        elif "date" in e:
+            d = next_holiday(e, today)
+            html_out = (
+                f'<div class="mp-evstatus"><span class="mp-evstatus__emoji">{esc(e["emoji"])}</span>'
+                f'<span><b>Rotating event</b> · comes back every year in {esc(e["season"])}. '
+                f'Next: around {d.day} {d.strftime("%B %Y")}.</span></div>'
+            )
+        else:
+            html_out = (
+                f'<div class="mp-evstatus"><span class="mp-evstatus__emoji">{esc(e["emoji"])}</span>'
+                f'<span><b>Special event</b> · {esc(e.get("when", ""))}.</span></div>'
+            )
+        write(f"event-status/{e['id']}.md", html_out)
+
+
+def caption_from_name(name: str) -> str:
+    stem = re.sub(r"\.[^.]+$", "", name)
+    stem = re.sub(r"^\d+[-_ ]*", "", stem)
+    text = re.sub(r"[-_]+", " ", stem).strip()
+    return text[:1].upper() + text[1:] if text else ""
+
+
+def gen_galleries() -> None:
+    """Every '--8<-- "generated/gallery/NAME.md"' in a page shows the images
+    found in docs/assets/events/NAME/ (sorted by file name; the file name,
+    without leading numbers, becomes the caption)."""
+    refs: dict[str, str] = {}
+    for md in sorted(DOCS.rglob("*.md")):
+        for name in re.findall(r'^--8<-- "generated/gallery/([\w-]+)\.md"', md.read_text("utf-8"), re.M):
+            refs.setdefault(name, md.relative_to(DOCS).as_posix())
+    for name, page in refs.items():
+        folder = GALLERY_ROOT / name
+        files = sorted(f for f in folder.iterdir() if f.suffix.lower() in IMAGE_FILES) if folder.is_dir() else []
+        if not files:
+            write(
+                f"gallery/{name}.md",
+                '<div class="mp-gallery mp-gallery--empty"><span>📸</span> Screenshots of this edition are coming soon.</div>',
+            )
+            continue
+        start = posixpath.dirname(page) or "."
+        items = []
+        for f in files:
+            src = posixpath.relpath(f"assets/events/{name}/{f.name}", start)
+            cap = caption_from_name(f.name)
+            items.append(
+                f'<figure class="mp-shot"><a href="{esc(src)}" target="_blank" rel="noopener">'
+                f'<img src="{esc(src)}" alt="{esc(cap or name)}" loading="lazy"></a>'
+                + (f"<figcaption>{esc(cap)}</figcaption>" if cap else "")
+                + "</figure>"
+            )
+        write(f"gallery/{name}.md", '<div class="mp-gallery">' + "".join(items) + "</div>")
+
+
+# --------------------------------------------------------------------------
 # Wiki pages: categories, home menu, missing pages, recent changes
 # --------------------------------------------------------------------------
 
@@ -1469,10 +1683,16 @@ def read_structure() -> list[dict]:
     return cats
 
 
-STATUS_LABEL = {"done": "Ready", "live": "Live data", "partial": "Needs info", "soon": "Coming soon"}
+STATUS_LABEL = {"done": "Ready", "live": "Live data", "partial": "Needs info", "soon": "Coming soon", "now": "Happening now"}
 
 
 def gen_categories(cats: list[dict]) -> None:
+    st = event_state()
+    if st["active"]:
+        for cat in cats:
+            for p in cat["pages"]:
+                if p["path"] == st["event"]["page"]:
+                    p["status"] = "now"
     for cat in cats:
         out = [f'<div class="mp-cards mp-cat--{esc(cat.get("category", "blue"))}">']
         for i, p in enumerate(cat["pages"]):
@@ -1603,6 +1823,8 @@ def main() -> int:
     gen_creator_games(snap)
     gen_update_history(snap, history)
     gen_discord()
+    gen_events()
+    gen_galleries()
     gen_home_news(snap, badges)
     gen_categories(read_structure())
     gen_changes()

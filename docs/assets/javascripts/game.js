@@ -151,9 +151,10 @@
 
   // Blocks slide in and grids pop in tile by tile as you scroll.
   var BLOCKS = ".md-typeset h2, .md-typeset .md-typeset__scrollwrap, .md-typeset .admonition, .md-typeset details, " +
-    ".mp-menu, .mp-chat, .mp-cta, .mp-event, .mp-soon, .mp-gamemenu, .mp-mainmenu, .mp-chart, .mp-chart-empty, .mp-missing, .mp-item, .mp-patch";
+    ".mp-menu, .mp-chat, .mp-cta, .mp-event, .mp-soon, .mp-gamemenu, .mp-mainmenu, .mp-chart, .mp-chart-empty, .mp-missing, .mp-item, .mp-patch, " +
+    ".mp-now, .mp-evstatus, .mp-gallery--empty";
   var GRIDS = ".mp-cats, .mp-cards, .mp-featured, .mp-badges, .mp-titles, .mp-tags, .mp-passes, .mp-timeline, " +
-    ".mp-hunt, .mp-platforms, .mp-stats--grid";
+    ".mp-hunt, .mp-platforms, .mp-stats--grid, .mp-rotation, .mp-gallery:not(.mp-gallery--empty)";
 
   function initReveal() {
     if (!("IntersectionObserver" in window)) return;
@@ -186,7 +187,7 @@
   // Cards lean towards the mouse, with a light reflection.
   function initTilt() {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    var selector = "a.mp-cat, a.mp-card, .mp-badge, .mp-pass, a.mp-title-card, a.mp-tag-card, a.mp-feature, .mp-platform";
+    var selector = "a.mp-cat, a.mp-card, .mp-badge, .mp-pass, a.mp-title-card, a.mp-tag-card, a.mp-feature, .mp-platform, a.mp-rot";
     document.querySelectorAll(selector).forEach(function (el) {
       el.classList.add("mp-tilt");
       el.addEventListener("pointermove", function (event) {

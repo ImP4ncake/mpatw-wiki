@@ -1,0 +1,21 @@
+{
+  "_help": "Edit this file to change the current event. 'current' is the event running now: set 'ends' to when it finishes (UTC). After that date the wiki automatically shows the next event of the rotation as upcoming. 'rotation' lists the yearly events in calendar order; 'date' is the real holiday each event is built around (MM-DD, or 'easter').",
+  "current": {
+    "event": "halloween",
+    "edition": "Halloween 2026",
+    "ends": "2026-11-02T00:00:00Z",
+    "ends_note": "approximate, from the in-game timer",
+    "highlight": "The limited <b>Pumpkin Tip Jar</b> is in the shop"
+  },
+  "rotation": [
+    { "id": "halloween", "name": "Halloween", "emoji": "🎃", "page": "events/halloween.md", "date": "10-31", "season": "October" },
+    { "id": "christmas", "name": "Christmas", "emoji": "🎄", "page": "events/christmas.md", "date": "12-25", "season": "December" },
+    { "id": "valentines", "name": "Valentine's Day", "emoji": "❤️", "page": "events/valentines.md", "date": "02-14", "season": "February" },
+    { "id": "st-patricks", "name": "St. Patrick's Day", "emoji": "🍀", "page": "events/st-patricks.md", "date": "03-17", "season": "March" },
+    { "id": "easter", "name": "Easter", "emoji": "🥚", "page": "events/easter.md", "date": "easter", "season": "March or April" },
+    { "id": "april-fools", "name": "April Fools' Day", "emoji": "🤡", "page": "events/other.md", "anchor": "april-fools-day", "date": "04-01", "season": "1 April" }
+  ],
+  "special": [
+    { "id": "wc2026", "name": "2026 World Cup", "emoji": "⚽", "page": "events/other.md", "anchor": "2026-world-cup", "when": "June and July 2026" }
+  ]
+}

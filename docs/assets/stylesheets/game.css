@@ -2256,6 +2256,341 @@ body {
   color: inherit;
 }
 
+
+/* ==========================================================================
+   Seasonal events: current event, rotation, page banner, screenshots
+   ========================================================================== */
+
+/* home strip is a link now */
+.md-typeset a.mp-event {
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.16s cubic-bezier(0.2, 1.4, 0.4, 1), box-shadow 0.16s ease;
+}
+
+.md-typeset a.mp-event:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 3px #ff8a2b, 0 8px 0 var(--mp-ink), 0 0 26px -4px #ff8a2b;
+}
+
+.mp-event__emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  animation: mp-wiggle 2.4s ease-in-out infinite;
+}
+
+.md-typeset a.mp-event > span:not([class]) {
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.mp-event__go {
+  margin-left: auto;
+  padding: 0.25em 0.9em;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: linear-gradient(180deg, #ffb35c, #ff7a1a);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35), 0 3px 0 #000;
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-shadow: 0 0.09em 0 var(--mp-ink);
+  -webkit-text-stroke: 0.15em var(--mp-ink);
+  paint-order: stroke fill;
+}
+
+.mp-event--next {
+  background: radial-gradient(circle at 100% 0%, rgba(79, 179, 255, 0.3), transparent 50%), var(--mp-panel);
+}
+
+.mp-event--next .mp-event__go {
+  background: linear-gradient(180deg, #8cc7ff, #3a8ef0);
+}
+
+.mp-limited--next {
+  color: #8fd0ff;
+  animation: none;
+}
+
+/* "Happening now" card */
+.md-typeset a.mp-now {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 1rem 0 1.6rem;
+  padding: 1.2rem 1.4rem;
+  overflow: hidden;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  background: radial-gradient(circle at 12% 50%, rgba(255, 138, 43, 0.45), transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(176, 108, 255, 0.35), transparent 50%), linear-gradient(135deg, #2a1640, #1c1424 60%, #2b1a0f);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 6px 0 var(--mp-ink), 0 20px 36px -18px #ff8a2b;
+  transition: transform 0.18s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+.md-typeset a.mp-now:hover {
+  transform: translateY(-4px);
+}
+
+.mp-now__emoji {
+  flex: none;
+  font-size: 4rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.5));
+  animation: mp-float 4s ease-in-out infinite;
+}
+
+.mp-now__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.mp-now__label {
+  padding: 0.05em 0.6em;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: linear-gradient(180deg, #ff6a63, #d92f29);
+  font-family: var(--mp-label);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 0.65rem;
+  text-shadow: var(--mp-outline-thin);
+  animation: mp-pulse 1.6s ease-in-out infinite;
+}
+
+.mp-now__title {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  color: #ffb35c;
+  text-shadow: 0 0.09em 0 var(--mp-ink);
+  -webkit-text-stroke: 0.15em var(--mp-ink);
+  paint-order: stroke fill;
+}
+
+.mp-now__desc {
+  font-weight: 600;
+  color: #e9edf4;
+}
+
+.mp-now__ends {
+  font-weight: 800;
+  color: var(--mp-on-dark-2);
+}
+
+/* rotation tiles */
+.mp-rotation {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.md-typeset a.mp-rot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 1.3rem 0.6rem 0.9rem;
+  border-radius: 14px;
+  background: var(--mp-tile);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #0b0b0e, 0 5px 0 #0b0b0e;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.16s cubic-bezier(0.2, 1.4, 0.4, 1), box-shadow 0.16s ease;
+}
+
+.md-typeset a.mp-rot:hover {
+  background: var(--mp-tile-hi);
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #ff8a2b, 0 8px 0 #0b0b0e;
+}
+
+.mp-rot__emoji {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  filter: drop-shadow(0 3px 0 rgba(0, 0, 0, 0.5));
+}
+
+.mp-rot__name {
+  font-family: var(--mp-display);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.15;
+  text-shadow: 0 0.09em 0 var(--mp-ink);
+  -webkit-text-stroke: 0.15em var(--mp-ink);
+  paint-order: stroke fill;
+}
+
+.mp-rot__when {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--mp-gold-2);
+}
+
+.mp-rot__season {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-rot__tag {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 0 0.4em;
+  border-radius: 6px;
+  border: 2px solid #000;
+  font-family: var(--mp-label);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 0.55rem;
+  color: #fff;
+  text-shadow: var(--mp-outline-thin);
+}
+
+.mp-rot__tag--now {
+  background: linear-gradient(180deg, #ff6a63, #d92f29);
+  animation: mp-pulse 1.6s ease-in-out infinite;
+}
+
+.mp-rot__tag--next {
+  background: linear-gradient(180deg, #8cc7ff, #3a8ef0);
+}
+
+.md-typeset a.mp-rot:has(.mp-rot__tag--now) {
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #ff8a2b, 0 5px 0 #0b0b0e, 0 0 24px -4px #ff8a2b;
+}
+
+/* banner at the top of an event page */
+.mp-evstatus {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.4rem;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  background: var(--mp-panel);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 5px 0 var(--mp-ink);
+  color: #e9edf4;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.mp-evstatus b {
+  color: #fff;
+}
+
+.mp-evstatus__emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.mp-evstatus--now {
+  background: radial-gradient(circle at 0% 50%, rgba(255, 138, 43, 0.4), transparent 45%), var(--mp-panel);
+}
+
+.mp-evstatus--now .mp-evstatus__emoji {
+  animation: mp-wiggle 2.4s ease-in-out infinite;
+}
+
+/* screenshot galleries */
+.mp-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.md-typeset .mp-shot {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--mp-panel);
+  box-shadow: 0 0 0 3px var(--mp-ink), 0 5px 0 var(--mp-ink);
+}
+
+.md-typeset .mp-shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.md-typeset .mp-shot a:hover img {
+  transform: scale(1.05);
+}
+
+.md-typeset .mp-shot figcaption {
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #e9edf4;
+  text-align: left;
+}
+
+.mp-gallery--empty {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  border: 3px dashed var(--mp-line);
+  color: var(--mp-muted);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.mp-gallery--empty span {
+  font-size: 1.3rem;
+}
+
+/* "Happening now" status on category cards */
+.mp-status--now {
+  background: linear-gradient(180deg, #ff6a63, #d92f29);
+  animation: mp-pulse 1.6s ease-in-out infinite;
+}
+
+@media screen and (max-width: 47.9375em) {
+  .mp-event__go {
+    margin-left: 0;
+  }
+
+  .mp-rotation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .mp-rot__emoji {
+    font-size: 2rem;
+  }
+
+  .md-typeset a.mp-now {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .mp-now__emoji {
+    font-size: 3rem;
+  }
+
+  .mp-now__title {
+    font-size: 1.45rem;
+  }
+}
+
 /* ==========================================================================
    Motion: everything below is added by game.js and switched off for people
    who ask their system for reduced motion.

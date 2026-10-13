@@ -1,0 +1,1 @@
+<div class="mp-evstatus mp-evstatus--now"><span class="mp-evstatus__emoji">🎃</span><span><b>Happening now: Halloween 2026</b> · ends in <span class="mp-countdown" data-countdown="2026-11-02T00:00:00Z">2 Nov 2026</span></span></div>
