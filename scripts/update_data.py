@@ -1682,21 +1682,6 @@ def rule_text(text: str) -> str:
     return html_text.replace("\x01", '<span class="rb-say">').replace("\x02", "</span>")
 
 
-def rule_weight(items: list) -> float:
-    """Roughly how tall a list of examples is, in lines of text."""
-    def lines(s: str, width: int) -> int:
-        return -(-len(s) // width) if s else 0
-
-    total = 0.0
-    for x in items:
-        x = {"t": x} if isinstance(x, str) else x
-        total += 1.2 + lines(x["t"], 36) + 0.85 * lines(x.get("d", ""), 44)
-        if x.get("ex"):
-            total += 1 + sum(0.85 * lines(e, 40) + 0.6 for e in x["ex"])
-        if x.get("img"):
-            total += 5 * -(-len(x["img"]) // 2)
-    return total
-
 
 def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:48]
@@ -1736,8 +1721,7 @@ def rule_examples(rule: dict, side: str) -> str:
     if not items:
         return ""
     head = (lucide("circle-x") + "<span>Bannable</span>") if side == "ban" else (lucide("circle-check") + "<span>Not bannable</span>")
-    one = " rb-exs--one" if len(items) == 1 else ""
-    out = [f'<div class="rb-side rb-side--{side}"><p class="rb-side__head">{head}<span class="rb-side__n">{len(items)}</span></p><ul class="rb-exs{one}">']
+    out = [f'<div class="rb-side rb-side--{side}"><p class="rb-side__head">{head}<span class="rb-side__n">{len(items)}</span></p><ul class="rb-exs">']
     for x in items:
         x = {"t": x} if isinstance(x, str) else x
         d = f'<span class="rb-ex__d">{rule_text(x["d"])}</span>' if x.get("d") else ""
@@ -1809,11 +1793,7 @@ def rule_card(rule: dict, group: dict, words: dict, faq: dict) -> str:
         )
     sides = rule_examples(rule, "ban") + rule_examples(rule, "ok")
     if sides:
-        # Side by side when both lists are about as long (like a4); otherwise each list
-        # takes the full width and flows into two even columns, so no half stays empty.
-        ban, ok = rule_weight(rule.get("bannable", [])), rule_weight(rule.get("ok", []))
-        even = bool(ban and ok) and (max(ban, ok) <= 1.35 * min(ban, ok) or abs(ban - ok) <= 8)
-        body.append(f'<div class="rb-compare{"" if even else " rb-compare--stack"}">{sides}</div>')
+        body.append(f'<div class="rb-compare">{sides}</div>')
     if rule.get("never"):
         body.append(
             f'<div class="rb-side rb-side--never"><p class="rb-side__head">{lucide("shield-x")}<span>Never unbanned for</span>'

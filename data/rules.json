@@ -80,6 +80,23 @@
      "title": "Playing NSFW Audios",
      "counts": [
       "Audio"
+     ],
+     "bannable": [
+      {
+       "t": "Playing explicit audios from your mic."
+      },
+      {
+       "t": "Playing audios from an explicit site."
+      },
+      {
+       "t": "Moaning."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Talking in a seductive voice",
+       "d": "Talking in a seductive voice doesn't break any rules on its own."
+      }
      ]
     },
     {
@@ -87,6 +104,40 @@
      "title": "Simulating NSFW actions using Animations",
      "counts": [
       "Emote / Body Movement"
+     ],
+     "explain": [
+      "**W+S'ing** means quickly walking forwards and backwards (the W and S keys) against another player."
+     ],
+     "bannable": [
+      {
+       "t": "Simulating NSFW actions by animating your body",
+       "ex": [
+        "Dancing around a pole, pretending to be a stripper on a stripper pole."
+       ]
+      },
+      {
+       "t": "2 people using emotes to perform sexual acts together."
+      },
+      {
+       "t": "Using an emote to perform a sexual act on someone, with clear intent that it's being used in a sexual way."
+      },
+      {
+       "t": "W+S'ing another player who is using an emote in a sexual way, even if you aren't doing any emote yourself."
+      }
+     ],
+     "ok": [
+      {
+       "t": "W+S'ing another player, unless you use an animation or play audios that hint you're doing an explicit action",
+       "d": "W+S'ing on its own, without those, is too tame to warrant a ban."
+      },
+      {
+       "t": "Using an emote that can be used as a sexual emote, but not near any player",
+       "d": "Emotes on their own can be normal dances. They only become bannable when used in a sexual way with another player."
+      },
+      {
+       "t": "Being AFK in an emote that can be used sexually, when a player walks up and performs sexual acts on you",
+       "d": "You weren't actively taking part, so only the player who walked up to you is banned."
+      }
      ]
     },
     {
@@ -369,7 +420,46 @@
     },
     {
      "code": "a8",
-     "title": "Insinuating that someone is a pedophile with no valid reason"
+     "title": "Insinuating that someone is predatory with no valid reason",
+     "bannable": [
+      {
+       "t": "Joking about another player liking minors",
+       "ex": [
+        "You say \"This person is here to meet a 13 year old girl!\" about another player for no valid reason. Unless there is valid proof, it's bannable."
+       ]
+      },
+      {
+       "t": "Hinting that an entire group of people are pedophiles",
+       "ex": [
+        "You say \"All mods are pedophiles and like kids\".",
+        "You say \"All people from Religion X are pedophiles and like kids\".",
+        "You say \"Anyone who plays Minecraft likes kids\"."
+       ]
+      },
+      {
+       "t": "Joking about another player being in the Epstein Files."
+      },
+      {
+       "t": "Hinting that someone protects pedophiles."
+      },
+      {
+       "t": "Hinting that someone buys explicit pictures for Robux, with no valid proof."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Saying that someone who is provably a pedophile is a pedophile.",
+       "d": "There is a valid reason, so it's not bannable."
+      },
+      {
+       "t": "Saying that some people from a group are pedophiles, when it's provably true",
+       "d": "It's not bannable because it's very likely true.",
+       "ex": [
+        "You say \"Roblox has a lot of pedophiles\". Given how many predators have been caught on Roblox, it's a valid statement.",
+        "You say \"Religion X has pedophiles\". Any religion has millions of people, so at least one is most likely a predator: it's a valid statement."
+       ]
+      }
+     ]
     },
     {
      "code": "a9",
@@ -499,13 +589,153 @@
     },
     {
      "code": "b4",
-     "title": "Telling / Implying someone to harm themselves"
+     "title": "Telling / Implying someone to harm themselves",
+     "bannable": [
+      {
+       "t": "Telling someone to kill themselves (kys)."
+      },
+      {
+       "t": "Hinting that you mean to tell someone to kill themselves",
+       "ex": [
+        "You and another player are insulting each other, and you say \"Please keep yourself safe! KYS, as in keeping yourself safe!\". It obviously means you want them to kill themselves, so it's bannable."
+       ]
+      },
+      {
+       "t": "Telling someone to cut themselves or slit their wrists."
+      },
+      {
+       "t": "Telling someone to go die."
+      },
+      {
+       "t": "Telling someone they need to die."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Telling someone to go to hell.",
+       "d": "It doesn't imply they should harm themselves."
+      },
+      {
+       "t": "Saying any of the bannable examples to a verified criminal who has been jailed",
+       "d": "They are people too, but because they commit crimes, wishing them harm is allowed.",
+       "ex": [
+        "Someone is provably a pedophile and you tell them to die. This isn't bannable."
+       ]
+      }
+     ]
     },
     {
      "code": "b5",
-     "title": "Wishing / Joking about death / elimination on any race / countries / ethnicity / religion / person",
+     "title": "Wishing / Joking about death / elimination of a race / country / ethnicity / person / religion",
      "counts": [
       "Country"
+     ],
+     "explain": [
+      "If a player is talking about another player in the game, the ban is for **b4** instead. This rule is for groups of people, or people outside the game."
+     ],
+     "bannable": [
+      {
+       "t": "Wishing, joking or drawing about the death or elimination of a race."
+      },
+      {
+       "t": "Wishing, joking or drawing about the death or elimination of a country",
+       "ex": [
+        "You say \"They need to nuke Country X off the map\".",
+        "You say \"Everyone in Country X needs to die\"."
+       ]
+      },
+      {
+       "t": "Wishing, joking or drawing about the death or elimination of an ethnicity."
+      },
+      {
+       "t": "Wishing, joking or drawing about the death or elimination of a religion."
+      },
+      {
+       "t": "Wishing, joking or drawing about the death or elimination of specific people."
+      },
+      {
+       "t": "Wishing, joking or drawing about the death of a real person who hasn't committed a crime and been jailed for it",
+       "ex": [
+        "You say \"They need to kill this politician because I don't like them\", but the politician hasn't committed any crimes, so it's bannable.",
+        "You say \"I'm glad this person is dead!\", but the person hadn't committed any crimes, so it's bannable.",
+        "You say you hope a real politician dies. Whether or not you believe they're a criminal, they haven't been jailed, so it's bannable."
+       ]
+      },
+      {
+       "t": "Wishing, joking or drawing about a country being entirely wiped out and replaced with a different country",
+       "ex": [
+        "You say \"Country X needs to be wiped off the map and fully replaced with Country Y\"."
+       ]
+      },
+      {
+       "t": "Images showing any flag or religious symbol being burned."
+      },
+      {
+       "t": "Realistic images of real people tarnishing any flag or religious symbol",
+       "d": "Only realistic images count, like photos of real people damaging or disrespecting a flag or a religious symbol."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Wishes, jokes or drawings about the death or elimination of something, when they aren't targeted",
+       "d": "They aren't targeted at anyone, so they affect no one specifically.",
+       "ex": [
+        "You say \"They need to nuke Earth\". It isn't targeted at anyone, so it's not bannable.",
+        "You say \"I hate these chairs, they hurt my back, I hope every chair like this gets blown up\". It's about an object nobody has a cultural attachment to (like they would to a country), so it's not bannable."
+       ]
+      },
+      {
+       "t": "Wishing, joking or drawing about a country being merged with another country",
+       "d": "It's not on the same level as asking for a country to be completely eliminated.",
+       "ex": [
+        "You say \"Country X should merge and become a state of Country Y\"."
+       ]
+      },
+      {
+       "t": "Wishing, joking or drawing about the death of a fictional person.",
+       "d": "Fictional people aren't real, so it doesn't carry the same weight."
+      },
+      {
+       "t": "Wishing, joking or drawing about the death of verified criminals, or people who committed crimes and were jailed",
+       "d": "They are people too, but because they commit crimes, wishing for their death is allowed.",
+       "ex": [
+        "You say \"All rapists should die\". They are criminals, so it's not bannable.",
+        "You say \"All pedophiles should die\". They are criminals, so it's not bannable.",
+        "You say \"Person X is a murderer and I wish they would die already\". If Person X is verifiably a murderer and was jailed for it, it's not bannable."
+       ]
+      },
+      {
+       "t": "Wishing, joking or drawing about your own death.",
+       "d": "Joking about yourself is fine."
+      },
+      {
+       "t": "Saying \"Country X owns Country Y\".",
+       "d": "On its own this is too tame for a ban."
+      },
+      {
+       "t": "Images of a flag with an ❌ on it, without comparing it to another flag",
+       "d": "Compared with another flag it would be bannable, for **b6**: Discrimination.",
+       "img": [
+        {
+         "src": "b6-ok-country-cross.webp",
+         "alt": "Not bannable: one flag with a red cross, not compared to another country"
+        },
+        {
+         "src": "b6-ban-country-compare.webp",
+         "alt": "Bannable for b6: one flag with a tick next to another flag with a red cross",
+         "mark": "ban"
+        }
+       ]
+      },
+      {
+       "t": "Jumping or walking on a flag or religious symbol in the game",
+       "img": [
+        {
+         "src": "b5-ok-walk-flag.webp",
+         "alt": "A player jumping on a drawing of a flag in the Draw Area"
+        }
+       ]
+      }
      ]
     },
     {
@@ -729,6 +959,61 @@
      "title": "Depicting Nazi / Terrorists / KKK / Axis / Zov / Dead Dictators / USSR / Pedos / Hate figures",
      "counts": [
       "Image"
+     ],
+     "explain": [
+      "**Evil People** means people who support the beliefs of, or are the embodiment of: Nazis, terrorists, the KKK (white supremacist groups), the Axis, Zov, dead dictators, the USSR, cartels and hate figures.",
+      "**Hate figures** are people who actively support the beliefs of an Evil Person, or who are known purely for breaking a rule from any ban code. Pedophiles are banned for **d4** instead.",
+      "Using words commonly tied to Evil People with no conversation, or no context that gives them another meaning, counts as supporting them. For example, the username \"Blitzkrieg\", or \"Blitzkrieg\" written on a Text Sign or in the Draw Area with no context, embodies the Nazis and is bannable."
+     ],
+     "bannable": [
+      {
+       "t": "Wearing an avatar that represents an Evil Person",
+       "ex": [
+        "An avatar dressed like the KKK, a white supremacist group.",
+        "An avatar dressed as Hitler, the leader of the Nazis.",
+        "An avatar meant to look like a TikToker who became popular purely for saying racial slurs. Slurs break **b3**, and they are known for breaking it, so they count as a hate figure."
+       ]
+      },
+      {
+       "t": "Having a username or display name that represents an Evil Person."
+      },
+      {
+       "t": "Showing support for the ideology of an Evil Person."
+      },
+      {
+       "t": "Showing symbols that represent an Evil Person."
+      },
+      {
+       "t": "Showing pictures of an Evil Person."
+      },
+      {
+       "t": "Singing songs that represent, or are heavily tied to, an Evil Person."
+      },
+      {
+       "t": "Supporting the beliefs or actions of any dictator, alive or dead."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Talking about Evil People without saying you support them",
+       "d": "Talking about them doesn't mean you actively support their beliefs."
+      },
+      {
+       "t": "Depicting dictators or politicians who are alive today, like Kim Jong Un or Maduro",
+       "d": "It wouldn't be fair: North Korea is a dictatorship, and it's a country Admins can pretend to be from."
+      },
+      {
+       "t": "Wearing ICE avatars",
+       "d": "ICE avatars aren't bannable on their own. Going up to Spanish people and saying \"You're an illegal\" would be bannable for **b6**: Discrimination."
+      },
+      {
+       "t": "Depicting gangs like the Crips or the Bloods",
+       "d": "Gangs aren't on the same level as terrorists or cartels."
+      },
+      {
+       "t": "Talking about or supporting communism",
+       "d": "The USSR is bannable, but not the idea of communism."
+      }
      ]
     },
     {
@@ -736,6 +1021,47 @@
      "title": "Crude Images (Poop, Pee, Vomit, gross images)",
      "counts": [
       "Image"
+     ],
+     "bannable": [
+      {
+       "t": "Showing a real-life image of poop, pee or vomit (crude images)."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Showing crude imagery that isn't a real-life picture",
+       "d": "It's not nearly on the same level as real-life images.",
+       "ex": [
+        "You say \"💩\". It's an emoji, not a real-life picture, so it's fine.",
+        "You draw poop in the Draw Area. It isn't a real-life picture, so it's fine."
+       ]
+      },
+      {
+       "t": "Wearing an avatar that represents crude imagery",
+       "d": "Avatars like these aren't real-life images, even when they look realistic, so they're fine.",
+       "img": [
+        {
+         "src": "b9-ok-crude-monster.webp",
+         "alt": "Not bannable: the avatar item 'the great mighty poo monster'"
+        },
+        {
+         "src": "b9-ok-crude-turd.webp",
+         "alt": "Not bannable: the avatar item 'Poop Turd'"
+        },
+        {
+         "src": "b9-ok-crude-head.webp",
+         "alt": "Not bannable: the avatar item 'Happy Poop Head'"
+        },
+        {
+         "src": "b9-ok-crude-suit.webp",
+         "alt": "Not bannable: the avatar item 'Realistic Poop Suit'"
+        }
+       ]
+      },
+      {
+       "t": "Playing audios of gross or bodily noises (burping, screaming, farting, bowel-movement sounds, etc.)",
+       "d": "It's not nearly on the same level as real-life crude images."
+      }
      ]
     }
    ],
@@ -790,17 +1116,81 @@
      "code": "c2",
      "title": "Using a method to fake donations that appears in data",
      "tag": "Data wipe",
-     "note": "Will get you data wiped"
+     "note": "Will get you data wiped",
+     "explain": [
+      "Found a bug like this? Report it to Nogo with a **Major Bug Report** ticket on the official Discord: you get a reward instead of a ban."
+     ],
+     "bannable": [
+      {
+       "t": "Paying less or no Robux while the game believes you paid more",
+       "ex": [
+        "You pay 2 Robux, but the game registers 1000 Robux and saves the data as if you donated (or they received) 1000 Robux.",
+        "You boost your stats without paying any Robux."
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "Using Fake Donation from the Admin Panel",
+       "d": "It doesn't increase any stats, so it never appears in the data."
+      }
+     ]
     },
     {
      "code": "c3",
      "title": "Using a method to gain infinite Currencies / Reputation",
      "tag": "Data wipe",
-     "note": "Will get you data wiped"
+     "note": "Will get you data wiped",
+     "explain": [
+      "Found a bug like this? Report it to Nogo with a **Major Bug Report** ticket on the official Discord: you get a reward instead of a ban."
+     ],
+     "bannable": [
+      {
+       "t": "Using an unintended method to get infinite currency",
+       "ex": [
+        "Every time you respawn you get +25 coins straight away, so you keep resetting to farm infinite coins. That obviously isn't normal: when caught, you are banned and data wiped."
+       ]
+      },
+      {
+       "t": "Gaining or losing reputation without it costing the other player any currency."
+      },
+      {
+       "t": "Lying in a Purchase Issue ticket to try to get free currency."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Using alts to boost your Friend Bonus.",
+       "d": "This isn't an unintended method."
+      },
+      {
+       "t": "Staying AFK overnight on the Lottery.",
+       "d": "This isn't an unintended method."
+      }
+     ]
     },
     {
      "code": "c4",
-     "title": "Spam advertising"
+     "title": "Spam advertising",
+     "bannable": [
+      {
+       "t": "Constantly spamming the text chat to advertise something."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Advertising while you're in an active conversation with people",
+       "d": "That isn't the same as mindless spam to the whole server."
+      },
+      {
+       "t": "Playing an advertisement through voice chat",
+       "d": "Only a small group of players hears it, not the whole server."
+      },
+      {
+       "t": "Having an advertisement on a Text Sign",
+       "d": "Only the players near you see it, not the whole server."
+      }
+     ]
     },
     {
      "code": "c5",
@@ -1063,6 +1453,15 @@
      "title": "NSFW Imagery",
      "counts": [
       "Image"
+     ],
+     "explain": [
+      "**NSFW Imagery** means: hyper-realistic or real-life depictions of sexual organs, images of sex that show sexual organs, and images of real-life gore.",
+      "If what a player shows isn't one of these, the ban is for **c9** (suggestive content) instead."
+     ],
+     "bannable": [
+      {
+       "t": "Showing NSFW Imagery."
+      }
      ]
     },
     {
@@ -1071,6 +1470,49 @@
      "never": [
       "You threaten or attempt to Doxx",
       "You threaten or attempt to harm someone in real life"
+     ],
+     "scope": "This rule applies inside and outside the game",
+     "bannable": [
+      {
+       "t": "Threatening or attempting to doxx someone",
+       "ex": [
+        "You say \"I'm going to find your address\".",
+        "You say \"I'm going to find where you live\".",
+        "You say \"I'm going to doxx you\".",
+        "You say \"I'm going to put you on Doxbin\"."
+       ]
+      },
+      {
+       "t": "Threatening or attempting to DDoS",
+       "ex": [
+        "You say \"I'm going to shut down the server\".",
+        "You say \"I'm going to disable VC for the entire server\".",
+        "You say \"I'm going to shut off your internet\".",
+        "You say \"I'm going to DDoS you\"."
+       ]
+      },
+      {
+       "t": "Threatening or attempting to hack another player."
+      },
+      {
+       "t": "Threatening or attempting to harm someone in real life",
+       "ex": [
+        "You say \"I'm going to find you and kill you\".",
+        "You say \"I'm going to kill your entire family\".",
+        "You say \"I'm going to break your windows\" or \"slash your tires\".",
+        "You threaten to rape someone. This can also be banned for **d4**: Predatory Behavior.",
+        "You threaten to commit genocide, a mass shooting, a terrorist attack, a bombing or an assassination."
+       ]
+      }
+     ],
+     "ok": [
+      {
+       "t": "Threatening or attempting to kill someone in the game",
+       "d": "As long as you don't add \"in Game X\" to get around the rule: these aren't on the same level as real-life or server threats.",
+       "ex": [
+        "You say \"I'm going to kill you\" and the context clearly refers to the game."
+       ]
+      }
      ]
     },
     {
@@ -1221,7 +1663,8 @@
       "You offer/give something in exchange for explicit pictures / fan signs.",
       "You advertise that you will give something in exchange for explicit pictures / fan signs.",
       "You seek out people who will help find you others who will accept something for their explicit pictures / fan signs."
-     ]
+     ],
+     "scope": "This rule applies inside and outside the game"
     },
     {
      "code": "d6",
@@ -1229,6 +1672,10 @@
      "never": [
       "You actively encourage someone to cut themselves.",
       "You actively encourage someone to commit suicide."
+     ],
+     "scope": "This rule applies inside and outside the game",
+     "explain": [
+      "The difference with **b4**: here a player actively encourages someone to harm themselves through several messages, a few minutes apart and not all at the same moment."
      ]
     },
     {
@@ -1237,6 +1684,42 @@
      "never": [
       "You give out someone's address",
       "You share private real life pictures meant only for you to other people"
+     ],
+     "scope": "This rule applies inside and outside the game",
+     "bannable": [
+      {
+       "t": "Giving out someone's phone number without their consent, for example to random people to prank call them."
+      },
+      {
+       "t": "Sharing private real-life pictures that were meant only for you."
+      },
+      {
+       "t": "Giving out someone's address."
+      },
+      {
+       "t": "Giving out someone's account without their consent."
+      },
+      {
+       "t": "Saying someone's real name without their consent."
+      },
+      {
+       "t": "Sharing pictures from someone's social media that isn't directly linked to their Roblox or Discord account",
+       "d": "See **d3** for what counts as linked."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Giving out someone's phone number for prank calls when they agree to it",
+       "d": "There is consent, so it isn't bannable."
+      },
+      {
+       "t": "Saying a random phone number that belongs to no one",
+       "d": "Nobody needs to consent to it, so it isn't hurting anyone."
+      },
+      {
+       "t": "Sharing pictures from someone's social media that is directly linked to their Roblox or Discord account",
+       "d": "If someone made their social media public, it wouldn't be fair to punish people for posting what they want people to see."
+      }
      ]
     }
    ],
@@ -1252,16 +1735,70 @@
     {
      "code": "e1",
      "title": "Bannable Name",
-     "note": "Must break a rule here"
+     "note": "Must break a rule here",
+     "explain": [
+      "You are allowed to play on other accounts while you are banned for this rule.",
+      "If your username breaks any rule that isn't in section **d**, you are banned for **e1** instead. You are unbanned when the bannable name is gone from both your username and your display name."
+     ],
+     "bannable": [
+      {
+       "t": "Having a username or display name that breaks a rule outside section d."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Getting around Roblox's filter for something that isn't bannable",
+       "ex": [
+        "Your name contains \"F*ck\". It gets around Roblox's filter, but it doesn't break any rule of the game, so you aren't banned."
+       ]
+      }
+     ]
     },
     {
      "code": "e2",
-     "title": "Scamming as a Mod"
+     "title": "Scamming as a Mod",
+     "scope": "This rule applies inside and outside the game",
+     "explain": [
+      "You are only unbanned when all your victims are refunded in full."
+     ],
+     "bannable": [
+      {
+       "t": "A player offers you Robux for a Country. You take the Robux but never give the Country."
+      },
+      {
+       "t": "A player lets you borrow an item, and you don't give it back when they ask."
+      }
+     ]
     },
     {
      "code": "e3",
      "title": "Ban Evasion",
      "note": "Permanent until main account unbanned",
+     "explain": [
+      "You are only unbanned when your original banned account is unbanned.",
+      "**Banned** here means banned from this game, not by Roblox and not from voice chat."
+     ],
+     "bannable": [
+      {
+       "t": "Playing on a different account while your main account is banned from the game."
+      },
+      {
+       "t": "Playing on a friend's account while your main account is banned."
+      },
+      {
+       "t": "Letting a banned player play on your account."
+      }
+     ],
+     "ok": [
+      {
+       "t": "Playing on a different account while your main account is banned from voice chat",
+       "d": "The rule is only for bans from Meet People Across The World."
+      },
+      {
+       "t": "Playing on a different account while your main account is banned by Roblox",
+       "d": "The rule is only for bans from Meet People Across The World."
+      }
+     ],
      "faq": [
       "Why does my Ban Reason show \"You created or used an account to avoid an enforcement action taken against another account within this experience\"?"
      ]
