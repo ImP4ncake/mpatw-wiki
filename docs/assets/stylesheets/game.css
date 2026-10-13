@@ -861,6 +861,17 @@ body {
   display: contents;
 }
 
+/* the four guides: two by two, one per row on phones */
+.mp-featured--guides {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media screen and (max-width: 44.9375em) {
+  .mp-featured--guides {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .md-typeset a.mp-feature {
   display: flex;
   align-items: center;
