@@ -29,7 +29,7 @@ You can also report a player with Roblox's own tools. These reports go to Roblox
 
 ## Found a bug?
 
-Report it on the [official community Discord](https://discord.com/invite/ASRasdGjzA) instead of using it. Reporting a **major bug** gives the **Hero** [title](../badges/titles.md#feats), while using a bug to get infinite coins or reputation is a ban and a data wipe ([c3](rules.md#c3){ .mp-rule }).
+Report it on the [official community Discord](https://discord.com/invite/ASRasdGjzA) instead of using it. Reporting a **major bug** gives the **Hero** [title](../badges/titles.md#achievements), while using a bug to get infinite coins or reputation is a ban and a data wipe ([c3](rules.md#c3){ .mp-rule }).
 
 ## Just want them gone?
 

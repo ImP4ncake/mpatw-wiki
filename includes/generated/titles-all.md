@@ -10,7 +10,7 @@
 <a class="mp-plate mp-plate--all" href="#vip-titles"><span class="mp-plate__name" style="--tc:#fde741">Princess</span><span class="mp-src mp-src--vip">VIP</span></a>
 <a class="mp-plate mp-plate--all" href="#title-lucky"><span class="mp-plate__name" style="--tc:#c7ffa9">Lucky</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-cat"><span class="mp-plate__name" style="--tc:#b3896d">Cat</span><span class="mp-src mp-src--badge">Badge</span></a>
-<a class="mp-plate mp-plate--all" href="#title-perfection"><span class="mp-plate__name" style="--tc:#a88ce4">Perfection</span><span class="mp-src mp-src--feats">Feat</span></a>
+<a class="mp-plate mp-plate--all" href="#title-perfection"><span class="mp-plate__name" style="--tc:#a88ce4">Perfection</span><span class="mp-src mp-src--feats">Achievement</span></a>
 <a class="mp-plate mp-plate--all" href="#title-gifter"><span class="mp-plate__name" style="--tc:#ff191d">Gifter</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-meow"><span class="mp-plate__name" style="--tc:#b3896d">Meow</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-7777"><span class="mp-plate__name" style="--tc:#82ff86">7777</span><span class="mp-src mp-src--badge">Badge</span></a>
@@ -36,9 +36,9 @@
 <a class="mp-plate mp-plate--all" href="#title-famous"><span class="mp-plate__name" style="--tc:#ffff7f">Famous</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-infamous"><span class="mp-plate__name" style="--tc:#fdfd7e">Infamous</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-grandmaster"><span class="mp-plate__name" style="--tc:#d9d9d9">Grandmaster</span><span class="mp-src mp-src--badge">Badge</span></a>
-<a class="mp-plate mp-plate--all" href="#title-evil"><span class="mp-plate__name" style="--tc:#9249ff">Evil</span><span class="mp-src mp-src--feats">Feat</span></a>
+<a class="mp-plate mp-plate--all" href="#title-evil"><span class="mp-plate__name" style="--tc:#9249ff">Evil</span><span class="mp-src mp-src--feats">Achievement</span></a>
 <a class="mp-plate mp-plate--all" href="#title-eternal"><span class="mp-plate__name is-edge" style="--tc:#1b1b3a;--tg:#c8c4ff">Eternal</span><span class="mp-src mp-src--time">Time</span></a>
-<a class="mp-plate mp-plate--all" href="#title-transcendent"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#f7f08c">Transcendent</span><span class="mp-src mp-src--feats">Feat</span></a>
+<a class="mp-plate mp-plate--all" href="#title-transcendent"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#f7f08c">Transcendent</span><span class="mp-src mp-src--feats">Achievement</span></a>
 <a class="mp-plate mp-plate--all" href="#title-angel"><span class="mp-plate__name" style="--tc:#f2f0d2">Angel</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-winner"><span class="mp-plate__name" style="--tc:#ffa200">Winner</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-fallen-angel"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#d6cf73">Fallen Angel</span><span class="mp-src mp-src--badge">Badge</span></a>
@@ -62,7 +62,7 @@
 <a class="mp-plate mp-plate--all" href="#title-explorer"><span class="mp-plate__name" style="--tc:#5cff9a">Explorer</span><span class="mp-src mp-src--badge">Badge</span></a>
 <a class="mp-plate mp-plate--all" href="#title-owner"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#ffffff">Owner</span><span class="mp-src mp-src--team">Team</span></a>
 <a class="mp-plate mp-plate--all" href="#title-admin"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#cfcfcf">Admin</span><span class="mp-src mp-src--team">Team</span></a>
-<a class="mp-plate mp-plate--all" href="#title-hero"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#5dff5d">Hero</span><span class="mp-src mp-src--feats">Feat</span></a>
+<a class="mp-plate mp-plate--all" href="#title-hero"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#5dff5d">Hero</span><span class="mp-src mp-src--feats">Achievement</span></a>
 <a class="mp-plate mp-plate--all" href="#title-content-creator"><span class="mp-plate__name" style="--tc:#ff2a5c">Content Creator</span><span class="mp-src mp-src--team">Team</span></a>
 <a class="mp-plate mp-plate--all" href="#title-vocalist"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#8c8c8c">Vocalist</span><span class="mp-src mp-src--team">Team</span></a>
 <a class="mp-plate mp-plate--all" href="#title-contributor"><span class="mp-plate__name is-edge" style="--tc:#111111;--tg:#f0f0f0">Contributor</span><span class="mp-src mp-src--team">Team</span></a>

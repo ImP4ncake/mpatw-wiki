@@ -31,7 +31,7 @@
 <div class="mp-plate" id="title-spooky"><span class="mp-plate__name" style="--tc:#ff7a2a">Spooky</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">92 exist</span></span><span class="mp-plate__how">Take part in the <a href="../events/halloween/">Halloween</a> event <b>2 years in a row</b>.</span></div>
 </div>
 
-### Feats
+### Achievements
 
 <div class="mp-plates mp-plates--how">
 <div class="mp-plate" id="title-perfection"><span class="mp-plate__name" style="--tc:#a88ce4">Perfection</span><span class="mp-plate__side"><span class="mp-plate__exist" title="The game&#x27;s title list on 13 Oct 2026">26 exist</span></span><span class="mp-plate__how">Get the <a href="https://deepwoken.fandom.com/wiki/Quests" target="_blank" rel="noopener">Chain of Perfection</a> in <b>Deepwoken</b>, another Roblox game: it&#x27;s the reward for defeating any boss there without taking any damage.</span></div>

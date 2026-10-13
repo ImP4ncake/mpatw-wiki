@@ -38,7 +38,7 @@ Earning 1,000 coins in the AFK World gives the **AFK** badge:
 
 !!! warning "In the rules"
 
-    Using a bug to get infinite coins gets you banned **and data wiped** ([c3](../community/rules.md#c3){ .mp-rule }). Report the bug instead and you get a reward: reporting a **major bug** on the official Discord gives the **Hero** [title](../badges/titles.md#feats).
+    Using a bug to get infinite coins gets you banned **and data wiped** ([c3](../community/rules.md#c3){ .mp-rule }). Report the bug instead and you get a reward: reporting a **major bug** on the official Discord gives the **Hero** [title](../badges/titles.md#achievements).
 
 !!! question "Needs info"
 
