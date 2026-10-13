@@ -429,23 +429,28 @@
  "groups": [
   {
    "key": "time",
-   "name": "Time played and daily streaks"
+   "name": "Time played and daily streaks",
+   "short": "Time"
   },
   {
    "key": "money",
-   "name": "Coins and Robux"
+   "name": "Coins and Robux",
+   "short": "Coins & Robux"
   },
   {
    "key": "events",
-   "name": "Events"
+   "name": "Events",
+   "short": "Event"
   },
   {
    "key": "feats",
-   "name": "Feats"
+   "name": "Feats",
+   "short": "Feat"
   },
   {
    "key": "team",
-   "name": "Team and special titles"
+   "name": "Team and special titles",
+   "short": "Team"
   }
  ]
 }

@@ -15,6 +15,10 @@ description: "Every title in the game, in its in-game color, and how to get it."
 <div class="mp-fact mp-tone--blue" markdown="span"><span class="mp-fact__icon">:lucide-users:</span><span class="mp-fact__text"><b>How many exist</b>The game shows how many of each title exist: the fewer, the rarer.</span></div>
 </div>
 
+## All titles
+
+--8<-- "generated/titles-all.md"
+
 ## VIP titles
 
 All the yellow titles come with the **VIP subscription**, paid every month.
