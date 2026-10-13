@@ -15,4 +15,4 @@ At the **Drink Area** players make and serve drinks. The **Drink Maker** [gamepa
 
 !!! question "Needs info"
 
-    Which drinks can you make, and what do they do? [Help complete this page](../wiki/contribute.md).
+    Which drinks can you make, and what do they do? If you know, [tell me on Discord](../wiki/suggest.md).

@@ -11,4 +11,4 @@ You can play **chess** against other players. Winning **25 games** gives the **G
 
 !!! question "Needs info"
 
-    Where are the chess tables? Is there a ranking? [Help complete this page](../wiki/contribute.md).
+    Where are the chess tables? Is there a ranking? If you know, [tell me on Discord](../wiki/suggest.md).

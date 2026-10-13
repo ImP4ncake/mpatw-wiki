@@ -31,7 +31,7 @@ Halloween is the game's October event. While it runs, the game's name gets a ðŸŽ
 
 !!! question "Needs info"
 
-    What else is new in Halloween 2026: decorations, map changes, other items or activities? [Help complete this page](../wiki/contribute.md).
+    What else is new in Halloween 2026: decorations, map changes, other items or activities? If you know, [tell me on Discord](../wiki/suggest.md).
 
 ## History
 

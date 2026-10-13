@@ -5,7 +5,7 @@
    from the official Roblox web APIs (no login needed).
 2. Regenerates the snippets that the wiki pages include, in includes/generated/:
    stats, badges, titles, tag effects, gamepasses, limited rewards, update
-   history, category cards, missing pages and recent changes.
+   history, category cards and recent changes.
 
     data/game.json             latest snapshot of everything fetched from Roblox
     data/history.json          one data point per day (stats chart, update history)
@@ -28,7 +28,7 @@ last saved snapshot and regenerates the pages from that.
 
 To change how a badge or gamepass is described, edit BADGE_INFO or PASS_INFO
 below. New badges and gamepasses appear on the wiki automatically. Category
-cards, "Missing Pages" and the home page menu are built from the nav in
+cards and the home page menu are built from the nav in
 zensical.toml and from each page's front matter (icon and description).
 """
 
@@ -2133,7 +2133,7 @@ def gen_rules() -> None:
 
 
 # --------------------------------------------------------------------------
-# Wiki pages: categories, home menu, missing pages, recent changes
+# Wiki pages: categories, home menu, recent changes
 # --------------------------------------------------------------------------
 
 
@@ -2231,22 +2231,6 @@ def gen_categories(cats: list[dict]) -> None:
         f'<div class="mp-bigprogress"><span class="mp-bigprogress__label"><b>{ready}</b> of <b>{total}</b> pages ready</span>'
         f'<span class="mp-progress mp-progress--big" aria-label="{pct}% ready"><span style="width:{pct}%"></span></span></div>',
     )
-
-    # Missing pages
-    here = "wiki/missing-pages.md"
-    missing = [(c, p) for c in cats for p in c["pages"] if p["status"] == "soon"]
-    out = [f'<p class="mp-lead"><b>{len(missing)}</b> pages are still waiting to be written. Pick one and help!</p>', ""]
-    for cat in cats:
-        items = [p for c, p in missing if c is cat]
-        if not items:
-            continue
-        out.append(f'<div class="mp-missing mp-cat--{esc(cat.get("category", "blue"))}">')
-        out.append(f'<span class="mp-missing__cat">{esc(cat["title"])}</span>')
-        out.append(
-            "".join(f'<a class="mp-missing__page" href="{rel(here, p["path"])}">{esc(p["title"])}</a>' for p in items)
-        )
-        out.append("</div>")
-    write("missing-pages.md", "\n".join(out))
 
 
 def git_changes(limit: int) -> list[tuple[str, str, str]]:

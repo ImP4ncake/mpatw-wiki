@@ -20,7 +20,7 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 
 ## Who can change the site
 
-Only people with write access to this repository can change what is published. Anyone else can only *suggest* a change with a pull request, and nothing goes live until it is merged into `main`. The publishing workflow never runs for pull requests.
+Only people with write access to this repository can change what is published, and the publishing workflow never runs for pull requests. The wiki doesn't take outside pull requests: readers send suggestions to ImP4ncake on Discord (`imp4ncake`), as the Suggest a Change page (`docs/wiki/suggest.md`) explains, and every "Needs info" box links there.
 
 ## Changing the look
 
@@ -39,7 +39,7 @@ Then open http://localhost:8000 in your browser. The preview reloads automatical
 
 ## Live game data
 
-Every hour GitHub Actions runs `scripts/update_data.py`, which reads the official Roblox APIs for the 18+ version (no login needed) and regenerates stats, badges, titles, tag effects, gamepasses and the update history, then republishes the site. It also builds the category cards, the home page menu, Missing Pages and Recent Changes from the nav in `zensical.toml`. Once a day it also saves a data point in `data/history.json`, which feeds the "Visits per day" chart.
+Every hour GitHub Actions runs `scripts/update_data.py`, which reads the official Roblox APIs for the 18+ version (no login needed) and regenerates stats, badges, titles, tag effects, gamepasses and the update history, then republishes the site. It also builds the category cards, the home page menu and Recent Changes from the nav in `zensical.toml`. Once a day it also saves a data point in `data/history.json`, which feeds the "Visits per day" chart.
 
 ### Official updates from Discord
 

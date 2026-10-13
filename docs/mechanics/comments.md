@@ -17,4 +17,4 @@ You can leave **comments** on the profiles of the players you interact with, and
 
 !!! question "Needs info"
 
-    Can you delete comments on your own profile? Is there a length limit or a cooldown? [Help complete this page](../wiki/contribute.md).
+    Can you delete comments on your own profile? Is there a length limit or a cooldown? If you know, [tell me on Discord](../wiki/suggest.md).

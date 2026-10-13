@@ -38,6 +38,6 @@ Earning 1,000 coins in the AFK World gives the **AFK** badge:
 
 !!! question "Needs info"
 
-    What else can you buy with coins, and how much do things cost? [Help complete this page](../wiki/contribute.md).
+    What else can you buy with coins, and how much do things cost? If you know, [tell me on Discord](../wiki/suggest.md).
 
 See also: [How to Farm Coins](../guides/earn-coins.md).

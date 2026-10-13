@@ -26,7 +26,7 @@ The main information. Short paragraphs and lists are easier to read than long bl
     List here anything that is still unknown, so other players can help fill it in.
 
 <!--
-Checklist before opening a pull request:
+Checklist before publishing:
 - Everything on this page was checked in the 18+ version of the game
 - Things that change (codes, prices) have a date
 - No personal information about other players

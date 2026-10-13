@@ -989,7 +989,7 @@ body {
   content: "]";
 }
 
-/* contribute */
+/* home page call to action (suggest a change) */
 .mp-cta {
   margin: 2rem 0 1rem;
   padding: 1.3rem 1.4rem 1.1rem;
@@ -4370,4 +4370,27 @@ body {
 .md-typeset a.mp-discord__btn:active {
   transform: translateY(2px);
   box-shadow: 0 0 0 2px var(--mp-ink), 0 2px 0 var(--mp-ink);
+}
+
+/* ==========================================================================
+   ImP4ncake, the wiki's creator: profile picture and Discord username
+   ========================================================================== */
+
+:root {
+  --mp-owner-pfp: url("https://avatars.githubusercontent.com/u/113541361?v=4");
+}
+
+.md-typeset .mp-creator__avatar--owner,
+.md-typeset .mp-face--owner {
+  background: var(--mp-owner-pfp) center / cover no-repeat, var(--mp-face-bg);
+}
+
+.md-typeset .mp-creator--owner .mp-creator__chip {
+  background: rgba(255, 214, 72, 0.2);
+  color: var(--mp-gold-2);
+}
+
+.md-typeset .mp-owner__discord {
+  max-width: 19rem;
+  margin: 0.8rem 0 0.2rem;
 }

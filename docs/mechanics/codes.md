@@ -43,4 +43,4 @@ New codes are usually shared in the game's official **community server**. Redeem
 
 !!! question "Found a new code?"
 
-    If you find a new code, or one of these stops working, [update this page](../wiki/contribute.md).
+    If you find a new code, or one of these stops working, [tell me on Discord](../wiki/suggest.md).

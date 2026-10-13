@@ -25,4 +25,4 @@ See also the regular [Lottery](../activities/lottery.md).
 
 !!! question "Needs info"
 
-    Did the event come back in 2026? What changed? [Help complete this page](../wiki/contribute.md).
+    Did the event come back in 2026? What changed? If you know, [tell me on Discord](../wiki/suggest.md).

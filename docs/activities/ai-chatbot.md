@@ -11,4 +11,4 @@ The game has an **AI Chatbot** you can talk to. Talking to it **50 times** gives
 
 !!! question "Needs info"
 
-    Where is the chatbot and what can it do? [Help complete this page](../wiki/contribute.md).
+    Where is the chatbot and what can it do? If you know, [tell me on Discord](../wiki/suggest.md).
