@@ -13,7 +13,7 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 | `docs/assets/images/` | Screenshots and images |
 | `docs/assets/rules/` | Example pictures for the Rules page |
 | `zensical.toml` | Site settings and the navigation menu |
-| `overrides/partials/copyright.html` | The footer of every page: the wiki's name, the disclaimer and the Discord contact |
+| `overrides/partials/copyright.html` | The footer of every page: the wiki's name and the disclaimer |
 | `templates/` | Starting points for new pages (page, badge, item, event) |
 | `requirements.txt` | The pinned Zensical version |
 | `.github/workflows/docs.yml` | Builds and publishes the site on every push to `main` and every hour |
