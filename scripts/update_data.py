@@ -63,6 +63,7 @@ SNAPSHOT = DATA_DIR / "game.json"
 HISTORY = DATA_DIR / "history.json"
 DISCORD_ARCHIVE = DATA_DIR / "discord-updates.json"
 EVENTS_FILE = DATA_DIR / "events.json"
+TITLES_FILE = DATA_DIR / "titles.json"
 GALLERY_ROOT = DOCS / "assets" / "events"
 IMAGE_FILES = (".png", ".jpg", ".jpeg", ".webp", ".gif")
 UPDATE_ASSETS = DOCS / "assets" / "updates"
@@ -523,7 +524,7 @@ def icon_img(url: str | None, alt: str, cls: str = "mp-thumb") -> str:
 # --------------------------------------------------------------------------
 
 
-def badge_reward(description: str) -> dict:
+def badge_reward(description: str, in_game: dict | None = None) -> dict:
     """Reads 'Grants access to the "X" Title + "🍀" Tag effect' style text."""
     reward = {"titles": [], "tag": None, "coins": None}
     for line in description.splitlines():
@@ -540,6 +541,7 @@ def badge_reward(description: str) -> dict:
         coins = re.search(r"(\d[\d,]*)\s*Coins", line, re.I)
         if coins:
             reward["coins"] = coins.group(1)
+    reward["titles"] = [(in_game or {}).get(t, t) for t in reward["titles"]]
     return reward
 
 
@@ -562,8 +564,17 @@ def rarity_chip(b: dict) -> str:
     return f'<span class="mp-rarity mp-rarity--{css}" title="Owned by {pct} of players who joined">{label}</span>'
 
 
+def load_titles() -> dict:
+    """The game's title list (colors, how many exist, VIP titles), from data/titles.json."""
+    if not TITLES_FILE.exists():
+        return {"titles": [], "vip": None}
+    return json.loads(TITLES_FILE.read_text("utf-8"))
+
+
 def prepare_badges(snap: dict) -> list[dict]:
     badges = snap.get("badges", [])
+    # a badge description can name a title differently from the game ("Fool" is "The Fool")
+    in_game = {t["badge_title"]: t["name"] for t in load_titles()["titles"] if t.get("badge_title")}
     base = next((b.get("awarded") for b in badges if b["name"].startswith("Welcome")), None)
     if not isinstance(base, int):
         base = max((b.get("awarded") or 0 for b in badges), default=0)
@@ -582,7 +593,7 @@ def prepare_badges(snap: dict) -> list[dict]:
                 "page": f"badges/{page}.md",
                 "heading": heading,
                 "how": how or first_line(b["description"]) or "?",
-                "reward": badge_reward(b["description"]),
+                "reward": badge_reward(b["description"], in_game),
                 "rarity": rarity_of(b.get("awarded"), base),
                 "anchor": "badge-" + slug(b["name"]),
                 "short": re.sub(r"^\[LIMITED\]\s*", "", b["name"]),
@@ -661,8 +672,35 @@ def gen_badges(snap: dict, badges: list[dict]) -> None:
     write("badges-summary.md", "\n".join(out))
 
 
+def title_name(name: str, info: dict | None, cls: str = "mp-title-card__title") -> str:
+    """A title in its color from the game (the rarity color when the game's isn't known)."""
+    style, extra = "", ""
+    if info and info.get("color"):
+        style = f"--tc:{info['color']}"
+        if info.get("edge"):
+            style += f";--tg:{info['edge']}"
+            cls += " is-edge"
+        if info.get("gradient"):
+            style += f";--tgrad:linear-gradient(90deg,{','.join(info['gradient'])})"
+            cls += " is-gradient"
+            extra = f' data-text="{esc(name)}"'
+        style = f' style="{esc(style)}"'
+    return f'<span class="{cls}"{style}{extra}>{esc(name)}</span>'
+
+
+def title_exist(info: dict | None, checked: str, cls: str = "mp-title-card__exist") -> str:
+    if not info or not isinstance(info.get("exist"), int):
+        return ""
+    when = nice_date(checked + "T00:00:00Z") if checked else ""
+    tip = f"The game's title list on {when}" if when else "The game's title list"
+    return f'<span class="{cls}" title="{esc(tip)}">{full(info["exist"])} exist</span>'
+
+
 def gen_titles(badges: list[dict]) -> None:
     here = "badges/titles.md"
+    data = load_titles()
+    checked = data.get("checked", "")
+    info = {t["name"]: t for t in data["titles"]}
     rows = []
     for b in badges:
         for t in b["reward"]["titles"]:
@@ -673,12 +711,83 @@ def gen_titles(badges: list[dict]) -> None:
         css = b["rarity"][1] or "common"
         out.append(
             f'<a class="mp-title-card mp-title-card--{css}" href="{rel(here, b["page"], b["anchor"])}">'
-            f'<span class="mp-title-card__title">{esc(t)}</span>'
+            f'{title_name(t, info.get(t))}'
             f'<span class="mp-title-card__tag">{esc(b["reward"]["tag"] or "")}</span>'
-            f'<span class="mp-title-card__from">{esc(b["short"])}</span>{rarity_chip(b)}</a>'
+            f'<span class="mp-title-card__from">{esc(b["short"])}</span>{title_exist(info.get(t), checked)}{rarity_chip(b)}</a>'
         )
     out.append("</div>")
     write("titles.md", "\n".join(out))
+
+    # VIP titles
+    vip = data.get("vip") or {}
+    vip_titles = vip.get("titles", [])
+    out = []
+    if vip_titles:
+        price = full(vip.get("price")) if vip.get("price") else "?"
+        plates = "".join(
+            f'<span class="mp-plate">{title_name(t, {"color": vip.get("color")}, "mp-plate__name")}</span>' for t in vip_titles
+        )
+        out = [
+            '<div class="mp-vip">',
+            '<div class="mp-vip__head">',
+            f'<span class="mp-vip__crown" aria-hidden="true">{lucide("crown")}</span>',
+            '<div class="mp-vip__about"><b class="mp-vip__name">VIP subscription</b>'
+            f'<span class="mp-vip__price"><span class="mp-price"><span class="mp-robux" aria-hidden="true"></span>{price}</span>'
+            f' every {esc(vip.get("every", "month"))}</span></div>',
+            f'<span class="mp-vip__count"><b>{len(vip_titles)}</b> titles</span>',
+            "</div>",
+            f'<div class="mp-plates">{plates}</div>',
+            "</div>",
+        ]
+    write("titles-vip.md", "\n".join(out))
+
+    # Titles the game lists that no badge gives and VIP doesn't either
+    known = {t for t, _ in rows} | set(vip_titles)
+    others = [t for t in data["titles"] if t["name"] not in known]
+    out = []
+    if others:
+        out += [
+            "## Other titles",
+            "",
+            f'<p>The game also has <b>{len(others)}</b> title{"s" if len(others) != 1 else ""} that no badge gives and that '
+            "don't come with VIP. How to get them isn't known yet.</p>",
+            "",
+            '<div class="mp-plates mp-plates--list">',
+        ]
+        for t in others:
+            out.append(
+                f'<span class="mp-plate">{title_name(t["name"], t, "mp-plate__name")}'
+                f'{title_exist(t, checked, "mp-plate__exist")}</span>'
+            )
+        if len(others) <= 4:
+            names = [f"**{t['name']}**" for t in others]
+            ask = "do you get " + (names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1])
+        else:
+            ask = "do you get these titles"
+        out += [
+            "</div>",
+            "",
+            '!!! question "Needs info"',
+            "",
+            f"    How {ask}? If you know, "
+            "[:fontawesome-brands-discord: Tell me on Discord](../wiki/suggest.md){ .mp-suggest }",
+        ]
+    write("titles-other.md", "\n".join(out))
+
+    # Count for the top of the page
+    stats = [
+        ("award", "gold", len(rows), "badge titles"),
+        ("crown", "orange", len(vip_titles), "VIP titles"),
+        ("circle-help", "violet", len(others), "other titles"),
+    ]
+    out = ['<div class="mp-stats mp-stats--grid mp-stats--three">']
+    for icon, color, value, label in stats:
+        out.append(
+            f'<div class="mp-stat mp-stat--{color}"><span class="mp-stat__icon" aria-hidden="true">{lucide(icon)}</span>'
+            f'<span class="mp-stat__value" data-count="{value}">{value}</span><span class="mp-stat__label">{label}</span></div>'
+        )
+    out.append("</div>")
+    write("titles-summary.md", "\n".join(out))
 
     here = "badges/tag-effects.md"
     tagged = [b for b in badges if b["reward"]["tag"]]

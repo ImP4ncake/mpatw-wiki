@@ -1,0 +1,377 @@
+{
+ "_about": "Titles in the order of the game's title list (CUSTOMIZE menu). 'color' is the title's color in the game; 'edge' is the colored outline of a dark title; 'gradient' is for a title in more than one color. 'exist' is the 'Nx Exist' number next to it on the day in 'checked' (null when the game shows none). 'badge_title' is the name a badge's description uses when it differs from the game's. Titles that no badge gives and that aren't VIP are listed on the Titles page as 'Other titles'.",
+ "checked": "2026-10-13",
+ "vip": {
+  "price": 2000,
+  "every": "month",
+  "color": "#fde741",
+  "titles": [
+   "Crowned",
+   "VIP",
+   "Royal",
+   "King",
+   "Queen",
+   "Prince",
+   "Princess"
+  ]
+ },
+ "titles": [
+  {
+   "name": "Lucky",
+   "color": "#c7ffa9",
+   "exist": 6243
+  },
+  {
+   "name": "Cat",
+   "color": "#b3896d",
+   "exist": 6018
+  },
+  {
+   "name": "Perfection",
+   "color": "#a88ce4",
+   "exist": 26
+  },
+  {
+   "name": "Gifter",
+   "color": "#ff191d",
+   "exist": 1397
+  },
+  {
+   "name": "Meow",
+   "color": "#b3896d",
+   "exist": 4825
+  },
+  {
+   "name": "7777",
+   "color": "#82ff86",
+   "exist": 1929
+  },
+  {
+   "name": "The Fool",
+   "color": "#a7b33f",
+   "exist": 958,
+   "badge_title": "Fool"
+  },
+  {
+   "name": "Wayfarer",
+   "color": "#4fb281",
+   "exist": 154
+  },
+  {
+   "name": "Bunny",
+   "color": "#deade1",
+   "exist": 1635
+  },
+  {
+   "name": "Friendly",
+   "color": "#f0e54b",
+   "exist": 2252
+  },
+  {
+   "name": "Fabled",
+   "color": "#111111",
+   "exist": 609,
+   "edge": "#ff6b6b"
+  },
+  {
+   "name": "Coder",
+   "color": "#72b36d",
+   "exist": 684
+  },
+  {
+   "name": "Loved",
+   "color": "#ff6969",
+   "exist": 148
+  },
+  {
+   "name": "Drink Master",
+   "color": "#e6c240",
+   "exist": 761
+  },
+  {
+   "name": "Troller",
+   "color": "#8c6ffe",
+   "exist": 512
+  },
+  {
+   "name": "Swordmaster",
+   "color": "#aaaaaa",
+   "exist": 1188
+  },
+  {
+   "name": "Gunsmith",
+   "color": "#aaaaaa",
+   "exist": 403
+  },
+  {
+   "name": "Boxer",
+   "color": "#dc0000",
+   "exist": 448
+  },
+  {
+   "name": "i only exist online",
+   "color": "#17bcdd",
+   "exist": 253
+  },
+  {
+   "name": "Robot",
+   "color": "#9ecade",
+   "exist": 391
+  },
+  {
+   "name": "VR",
+   "color": "#00ddca",
+   "exist": 382
+  },
+  {
+   "name": "Artist",
+   "color": "#b4924e",
+   "exist": 5348
+  },
+  {
+   "name": "Pianist",
+   "color": "#ffffff",
+   "exist": 5893
+  },
+  {
+   "name": "Woof",
+   "color": "#b3896d",
+   "exist": 1840
+  },
+  {
+   "name": "Dog",
+   "color": "#b3896d",
+   "exist": 2131
+  },
+  {
+   "name": "Famous",
+   "color": "#ffff7f",
+   "exist": 1183
+  },
+  {
+   "name": "Infamous",
+   "color": "#fdfd7e",
+   "exist": 132
+  },
+  {
+   "name": "Grandmaster",
+   "color": "#d9d9d9",
+   "exist": 63
+  },
+  {
+   "name": "Evil",
+   "color": "#9249ff",
+   "exist": 52
+  },
+  {
+   "name": "Eternal",
+   "color": "#1b1b3a",
+   "exist": 109,
+   "edge": "#c8c4ff"
+  },
+  {
+   "name": "Transcendent",
+   "color": "#111111",
+   "exist": 17,
+   "edge": "#f7f08c"
+  },
+  {
+   "name": "Angel",
+   "color": "#f2f0d2",
+   "exist": 48
+  },
+  {
+   "name": "Winner",
+   "color": "#ffa200",
+   "exist": 7
+  },
+  {
+   "name": "Fallen Angel",
+   "color": "#111111",
+   "exist": 30,
+   "edge": "#d6cf73"
+  },
+  {
+   "name": "Sniper",
+   "color": "#b4b4b4",
+   "exist": 429
+  },
+  {
+   "name": "Arsonist",
+   "color": "#ff4d0d",
+   "exist": 148
+  },
+  {
+   "name": "Honored",
+   "color": "#4f5bff",
+   "exist": 18
+  },
+  {
+   "name": "Warrior",
+   "color": "#b4b4b4",
+   "exist": 447
+  },
+  {
+   "name": "Blessed",
+   "color": "#8cff8c",
+   "exist": 1929
+  },
+  {
+   "name": "777",
+   "color": "#b6ff9c",
+   "exist": 6243
+  },
+  {
+   "name": "Golden",
+   "color": "#ffd700",
+   "exist": 24
+  },
+  {
+   "name": "Rabbit",
+   "color": "#e3b2eb",
+   "exist": 92
+  },
+  {
+   "name": "Builder",
+   "color": "#7a4519",
+   "exist": 1402,
+   "edge": "#f3dcb8"
+  },
+  {
+   "name": "Sovereign",
+   "color": "#ff9f7a",
+   "exist": 4,
+   "gradient": [
+    "#ff7a3c",
+    "#ff9fb0",
+    "#ffe36a"
+   ]
+  },
+  {
+   "name": "World Champion",
+   "color": "#78bf86",
+   "exist": 314
+  },
+  {
+   "name": "WC2026",
+   "color": "#d9d9d9",
+   "exist": 1012
+  },
+  {
+   "name": "AFK",
+   "color": "#7fcfff",
+   "exist": 274
+  },
+  {
+   "name": "First Millionaire",
+   "color": "#7cff7c",
+   "exist": null
+  },
+  {
+   "name": "Loyal",
+   "color": "#fffaa8",
+   "exist": 3
+  },
+  {
+   "name": "Rainmaker",
+   "color": "#6c6cff",
+   "exist": 26
+  },
+  {
+   "name": "Jolly",
+   "color": "#ff7b8c",
+   "exist": 897
+  },
+  {
+   "name": "Explorer",
+   "color": "#5cff9a",
+   "exist": 8
+  },
+  {
+   "name": "Owner",
+   "color": "#111111",
+   "exist": null,
+   "edge": "#ffffff"
+  },
+  {
+   "name": "Admin",
+   "color": "#111111",
+   "exist": null,
+   "edge": "#cfcfcf"
+  },
+  {
+   "name": "Hero",
+   "color": "#111111",
+   "exist": 14,
+   "edge": "#5dff5d"
+  },
+  {
+   "name": "Content Creator",
+   "color": "#ff2a5c",
+   "exist": null
+  },
+  {
+   "name": "Vocalist",
+   "color": "#111111",
+   "exist": 21,
+   "edge": "#8c8c8c"
+  },
+  {
+   "name": "Contributor",
+   "color": "#111111",
+   "exist": 2,
+   "edge": "#f0f0f0"
+  },
+  {
+   "name": "Trick or Treat?",
+   "color": "#ff7a1f",
+   "exist": 1527
+  },
+  {
+   "name": "Founder",
+   "color": "#111111",
+   "exist": 2,
+   "edge": "#6b6b6b"
+  },
+  {
+   "name": "Spooky",
+   "color": "#ff7a2a",
+   "exist": 92
+  },
+  {
+   "name": "Beggar",
+   "color": "#4c9a4c",
+   "exist": 1149
+  },
+  {
+   "name": "Donator",
+   "color": "#146614",
+   "exist": 2730
+  },
+  {
+   "name": "Prosperous",
+   "color": "#178f17",
+   "exist": 2380
+  },
+  {
+   "name": "Patron",
+   "color": "#22a822",
+   "exist": 1690
+  },
+  {
+   "name": "Rich",
+   "color": "#2ec72e",
+   "exist": 455
+  },
+  {
+   "name": "Wealthy",
+   "color": "#3aeb3a",
+   "exist": 91
+  },
+  {
+   "name": "Millionaire",
+   "color": "#4dff2e",
+   "exist": 3
+  }
+ ]
+}

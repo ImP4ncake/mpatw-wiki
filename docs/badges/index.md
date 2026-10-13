@@ -6,7 +6,7 @@ category: gold
 
 # Badges & Titles
 
-A complete encyclopedia of achievements, unlockable titles and tag effects. Almost every badge unlocks a **title** and a **tag effect** (an emoji) that you can show off. Everything here **updates automatically** from the official Roblox data.
+A complete encyclopedia of achievements, unlockable titles and tag effects. Almost every badge unlocks a **title** and a **tag effect** (an emoji) that you can show off, and the **VIP subscription** gives [its own titles](titles.md#vip-titles). Everything here **updates automatically** from the official Roblox data.
 
 --8<-- "generated/badges-summary.md"
 
