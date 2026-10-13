@@ -83,12 +83,9 @@ nav = [
   { "Community & Moderation" = [
     "community/index.md",
     { "Rules" = "community/rules.md" },
-    { "Staff Roles" = "community/staff-roles.md" },
-    { "Moderation" = "community/moderation.md" },
-    { "Reporting Players" = "community/reporting.md" },
+    { "Report a Player" = "community/reporting.md" },
     { "Ban Appeals" = "community/ban-appeals.md" },
     { "Community Links" = "community/links.md" },
-    { "Moderation FAQ" = "community/faq.md" },
   ] },
   { "Guides & Tutorials" = [
     "guides/index.md",
