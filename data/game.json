@@ -1,18 +1,18 @@
 {
  "universe_id": 6690355795,
- "fetched_at": "2026-10-12T15:28:42Z",
+ "fetched_at": "2026-10-13T03:34:48Z",
  "game": {
   "name": "[🎃] 18+ Meet People Across The World 🔊",
-  "playing": 1232,
-  "visits": 33074127,
-  "favorites": 420932,
+  "playing": 1073,
+  "visits": 33120801,
+  "favorites": 421222,
   "max_players": 65,
   "created": "2024-10-18T19:07:58.277Z",
   "updated": "2026-10-11T04:19:59.674Z",
   "creator": "Nogo"
  },
  "votes": {
-  "up": 70401,
+  "up": 70442,
   "down": 2083
  },
  "badges": [
@@ -22,8 +22,8 @@
    "description": "Hello!\nHola!\nBonjour!\nHallo!\n你好!\nनमस्ते!\n!مرحبا\nЗдравствуйте!\nこんにちは!\nOlá!\nCiao / Salve!\n안녕하세요!",
    "enabled": true,
    "created": "2025-02-01T07:02:19.989+00:00",
-   "awarded": 4613891,
-   "awarded_day": 7055,
+   "awarded": 4617164,
+   "awarded_day": 6254,
    "icon": "https://tr.rbxcdn.com/180DAY-e6785a19a8d35ad48f975e91f3db4816/150/150/Image/Png/noFilter"
   },
   {
@@ -32,8 +32,8 @@
    "description": "Grants access to the \"Friendly\" Title + \"🤗\" Tag effect + 100 Coins!",
    "enabled": true,
    "created": "2025-04-23T21:14:49.921+00:00",
-   "awarded": 45267,
-   "awarded_day": 137,
+   "awarded": 45333,
+   "awarded_day": 121,
    "icon": "https://tr.rbxcdn.com/180DAY-d2c4ae76fdf28a745fd331f72b50c392/150/150/Image/Png/noFilter"
   },
   {
@@ -42,8 +42,8 @@
    "description": "Reach 10000 Reputation! Grants access to the \"Famous\" Title + \"🤩\" Tag effect.",
    "enabled": true,
    "created": "2025-11-22T22:22:31.843+00:00",
-   "awarded": 2518,
-   "awarded_day": 13,
+   "awarded": 2527,
+   "awarded_day": 14,
    "icon": "https://tr.rbxcdn.com/180DAY-84cd85383252341f567782b0ca831ec6/150/150/Image/Png/noFilter"
   },
   {
@@ -52,8 +52,8 @@
    "description": "Reach -10000 Reputation! Grants access to the \"Infamous\" Title + \"🤐\" Tag effect.",
    "enabled": true,
    "created": "2025-11-22T22:24:24.794+00:00",
-   "awarded": 219,
-   "awarded_day": 1,
+   "awarded": 220,
+   "awarded_day": 2,
    "icon": "https://tr.rbxcdn.com/180DAY-eb9db11875639783840e890d9cd10dcf/150/150/Image/Png/noFilter"
   },
   {
@@ -72,8 +72,8 @@
    "description": "Gift anyone to receive this gift!\nGrants access to the \"Gifter\" Title + \"🎁\" Tag effect.",
    "enabled": true,
    "created": "2025-02-03T08:05:43.962+00:00",
-   "awarded": 7662,
-   "awarded_day": 23,
+   "awarded": 7669,
+   "awarded_day": 17,
    "icon": "https://tr.rbxcdn.com/180DAY-d8829d2547dbe0727ef31d36582cbbfe/150/150/Image/Png/noFilter"
   },
   {
@@ -82,8 +82,8 @@
    "description": "Meow!\nGrants access to the \"Cat\"  + \"Meow\" Title + \"🐾\" Tag effect.",
    "enabled": true,
    "created": "2025-03-07T05:41:32.285+00:00",
-   "awarded": 33939,
-   "awarded_day": 47,
+   "awarded": 33960,
+   "awarded_day": 42,
    "icon": "https://tr.rbxcdn.com/180DAY-c4cb05c0f51cd17d560baaaf653c660e/150/150/Image/Png/noFilter"
   },
   {
@@ -92,8 +92,8 @@
    "description": "Woof!\r\nGrants access to the \"Dog\"  + \"Woof\" Title + \"🦴\" Tag effect.",
    "enabled": true,
    "created": "2025-09-11T03:41:16.834+00:00",
-   "awarded": 12037,
-   "awarded_day": 22,
+   "awarded": 12048,
+   "awarded_day": 18,
    "icon": "https://tr.rbxcdn.com/180DAY-49521694eb054a22a75fe58610b0fabc/150/150/Image/Png/noFilter"
   },
   {
@@ -102,8 +102,8 @@
    "description": "Roll 777 on the Lottery to win!\nGrants access to the \"Lucky\" + \"777\" Titles + \"🍀\" Tag Effect.",
    "enabled": true,
    "created": "2024-11-01T20:23:04.177+00:00",
-   "awarded": 24580,
-   "awarded_day": 124,
+   "awarded": 24648,
+   "awarded_day": 128,
    "icon": "https://tr.rbxcdn.com/180DAY-1ee682dcb36c15e23762bfb105c2567b/150/150/Image/Png/noFilter"
   },
   {
@@ -112,7 +112,7 @@
    "description": "Redeem a Code found in the Community Server!\nGrants access to the \"Coder\" Title + \"👾\" Tag effect!",
    "enabled": true,
    "created": "2025-06-10T03:27:44.136+00:00",
-   "awarded": 2637,
+   "awarded": 2639,
    "awarded_day": 4,
    "icon": "https://tr.rbxcdn.com/180DAY-2c467503bef211aefa6b1ff5af587ec3/150/150/Image/Png/noFilter"
   },
@@ -122,8 +122,8 @@
    "description": "You unlocked a Cosmetic with Fabled Rarity!\nGrants access to the \"Fabled\" Title + \"☄️\" Tag effect.",
    "enabled": true,
    "created": "2025-04-24T16:22:26.386+00:00",
-   "awarded": 1884,
-   "awarded_day": 1,
+   "awarded": 1885,
+   "awarded_day": 2,
    "icon": "https://tr.rbxcdn.com/180DAY-30d53cfaa934f89966bde6afc7af18a9/150/150/Image/Png/noFilter"
   },
   {
@@ -132,7 +132,7 @@
    "description": "Serve 50 Drinks at the Drink Area!\nGrants access to the \"Drink Master\" Title + \"☕\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:09:01.029+00:00",
-   "awarded": 3272,
+   "awarded": 3283,
    "awarded_day": 22,
    "icon": "https://tr.rbxcdn.com/180DAY-a4695c83671927ce2f38ce2a48c978b3/150/150/Image/Png/noFilter"
   },
@@ -142,8 +142,8 @@
    "description": "Troll other Players 50 times!\r\nGrants access to the \"Troller\" Title + \"😈\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:10:45.487+00:00",
-   "awarded": 2319,
-   "awarded_day": 6,
+   "awarded": 2326,
+   "awarded_day": 8,
    "icon": "https://tr.rbxcdn.com/180DAY-938ad30ed029e7450f46c2b1c7495d6d/150/150/Image/Png/noFilter"
   },
   {
@@ -152,8 +152,8 @@
    "description": "Kill 50 Players in the Sword Arena!\nGrants access to the \"Swordmaster\" Title + \"🔪\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:11:12.105+00:00",
-   "awarded": 12393,
-   "awarded_day": 13,
+   "awarded": 12400,
+   "awarded_day": 11,
    "icon": "https://tr.rbxcdn.com/180DAY-374ade0d3af9d68cae80e98bb410b844/150/150/Image/Png/noFilter"
   },
   {
@@ -162,8 +162,8 @@
    "description": "Kill 50 Players in the Gun Arena!\r\nGrants access to the \"Gunsmith\" Title + \"🔫\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:12:26.599+00:00",
-   "awarded": 4147,
-   "awarded_day": 5,
+   "awarded": 4151,
+   "awarded_day": 7,
    "icon": "https://tr.rbxcdn.com/180DAY-910195155066ae9493784e697d13b833/150/150/Image/Png/noFilter"
   },
   {
@@ -172,8 +172,8 @@
    "description": "Kill 50 Players in the Boxing Arena!\r\nGrants access to the \"Boxer\" Title + \"🥊\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:15:19.611+00:00",
-   "awarded": 2728,
-   "awarded_day": 4,
+   "awarded": 2730,
+   "awarded_day": 3,
    "icon": "https://tr.rbxcdn.com/180DAY-b8b86364b77c17e45923d4c18c888901/150/150/Image/Png/noFilter"
   },
   {
@@ -182,8 +182,8 @@
    "description": "Kill 50 Players in the Sniper Arena!\r\nGrants access to the \"Sniper\" Title + \"🎯\" Tag effect!",
    "enabled": true,
    "created": "2026-03-05T07:42:37.03+00:00",
-   "awarded": 2888,
-   "awarded_day": 16,
+   "awarded": 2899,
+   "awarded_day": 19,
    "icon": "https://tr.rbxcdn.com/180DAY-773bd7da95d04f26337558158648d2b3/150/150/Image/Png/noFilter"
   },
   {
@@ -192,8 +192,8 @@
    "description": "Kill 50 Players in the Bomb Arena!\r\nGrants access to the \"Arsonist\" Title + \"💥\" Tag effect!",
    "enabled": true,
    "created": "2026-03-05T07:42:29.467+00:00",
-   "awarded": 564,
-   "awarded_day": 6,
+   "awarded": 565,
+   "awarded_day": 2,
    "icon": "https://tr.rbxcdn.com/180DAY-e64a568b92af74ee30f88e469ee183ad/150/150/Image/Png/noFilter"
   },
   {
@@ -202,8 +202,8 @@
    "description": "Kill 50 Players in the Greatsword Arena!\r\nGrants access to the \"Warrior\" Title + \"⚔️\" Tag effect!",
    "enabled": true,
    "created": "2026-03-22T00:47:38.839+00:00",
-   "awarded": 2541,
-   "awarded_day": 22,
+   "awarded": 2548,
+   "awarded_day": 15,
    "icon": "https://tr.rbxcdn.com/180DAY-25ea2f5accb14c8d52ad7fc372836bd3/150/150/Image/Png/noFilter"
   },
   {
@@ -212,7 +212,7 @@
    "description": "Talk to the AI Chatbot 50 Times!\r\nGrants access to the \"Robot\" Title + \"🤖\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:15:52.24+00:00",
-   "awarded": 1976,
+   "awarded": 1977,
    "awarded_day": 1,
    "icon": "https://tr.rbxcdn.com/180DAY-79f7bae507aa5055349e174920c5dc7f/150/150/Image/Png/noFilter"
   },
@@ -222,8 +222,8 @@
    "description": "Join the game while on VR!\nGrants access to the \"VR\" Title + \"🤓\" Tag effect!",
    "enabled": true,
    "created": "2025-08-04T21:16:24.545+00:00",
-   "awarded": 18092,
-   "awarded_day": 57,
+   "awarded": 18127,
+   "awarded_day": 62,
    "icon": "https://tr.rbxcdn.com/180DAY-f00291b6442b6aeb548c377bf5ad7039/150/150/Image/Png/noFilter"
   },
   {
@@ -232,8 +232,8 @@
    "description": "Play the Piano!\r\nGrants access to the \"Pianist\" Title + \"🎹\" Tag effect!",
    "enabled": true,
    "created": "2025-10-09T08:12:35.467+00:00",
-   "awarded": 533182,
-   "awarded_day": 1224,
+   "awarded": 533723,
+   "awarded_day": 1072,
    "icon": "https://tr.rbxcdn.com/180DAY-9d3246c6a2d8c77a44209627c22639c9/150/150/Image/Png/noFilter"
   },
   {
@@ -242,8 +242,8 @@
    "description": "Draw 1000 Times in the Draw Area!\nGrants access to the \"Artist\" Title + \"🎨\" Tag effect!",
    "enabled": true,
    "created": "2025-10-09T08:23:28.098+00:00",
-   "awarded": 150885,
-   "awarded_day": 546,
+   "awarded": 151171,
+   "awarded_day": 539,
    "icon": "https://tr.rbxcdn.com/180DAY-bf4edce0ed9075630ca0938690c57119/150/150/Image/Png/noFilter"
   },
   {
@@ -272,8 +272,8 @@
    "description": "Build 10 Blocks using the Hammer!\r\nGrants access to the \"Builder\" Title + \"🔨\" Tag effect!",
    "enabled": true,
    "created": "2026-05-04T15:00:28.845+00:00",
-   "awarded": 11206,
-   "awarded_day": 46,
+   "awarded": 11247,
+   "awarded_day": 54,
    "icon": "https://tr.rbxcdn.com/180DAY-dc20f7f201472b0f132d8462aa0f6ce7/150/150/Image/Png/noFilter"
   },
   {
@@ -312,8 +312,8 @@
    "description": "Earn 1000 Coins while in the AFK World!\r\nGrants access to the \"AFK\" Title + \"💤\" Tag effect!",
    "enabled": true,
    "created": "2026-09-02T19:10:47.731+00:00",
-   "awarded": 894,
-   "awarded_day": 23,
+   "awarded": 907,
+   "awarded_day": 28,
    "icon": "https://tr.rbxcdn.com/180DAY-bfc8762fa8a731fc648922c5218332c3/150/150/Image/Png/noFilter"
   },
   {
@@ -342,8 +342,8 @@
    "description": "Make it Rain any Currency!\r\nGrants access to the \"Rainmaker\" Title + \"🌧️\" Tag effect!",
    "enabled": true,
    "created": "2026-10-05T17:05:35.934+00:00",
-   "awarded": 72,
-   "awarded_day": 6,
+   "awarded": 75,
+   "awarded_day": 3,
    "icon": "https://tr.rbxcdn.com/180DAY-827a95830c09f22239bc32a347ca088e/150/150/Image/Png/noFilter"
   },
   {
@@ -392,8 +392,8 @@
    "description": "Win a Special Treat at the Spooky Shed!\r\nGrants access to the \"Trick or Treat?\" Title + \"🎃\" Tag effect.",
    "enabled": true,
    "created": "2025-09-30T19:40:44.105+00:00",
-   "awarded": 20851,
-   "awarded_day": 919,
+   "awarded": 21313,
+   "awarded_day": 883,
    "icon": "https://tr.rbxcdn.com/180DAY-3eaccf4511031feb03d8a63b84f46905/150/150/Image/Png/noFilter"
   },
   {
@@ -402,8 +402,8 @@
    "description": "Give a gift during the Christmas event!\nGrants access to the \"Jolly\" Title + \"🎄\" Tag effect.",
    "enabled": true,
    "created": "2025-02-05T02:09:52.402+00:00",
-   "awarded": 30233,
-   "awarded_day": 0,
+   "awarded": 30234,
+   "awarded_day": 1,
    "icon": "https://tr.rbxcdn.com/180DAY-e3d602df4a3f5b1ce0be5872084db8fb/150/150/Image/Png/noFilter"
   },
   {
@@ -585,6 +585,173 @@
    "price": null,
    "for_sale": false,
    "icon": "https://tr.rbxcdn.com/180DAY-a01b8e94ca99ca3101b8fe7a9ef22d87/150/150/Image/Png/noFilter"
+  }
+ ],
+ "creator_games": [
+  {
+   "id": 2662581777,
+   "name": "Nogo's Gunfare",
+   "created": "2021-06-14T01:44:55.903Z",
+   "visits": 625,
+   "place_id": 6951405337,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-851b77fc5f9e1997696d834102653b53/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 6087995935,
+   "name": "Pizza Parry",
+   "created": "2024-06-08T01:35:14.25Z",
+   "visits": 24549,
+   "place_id": 17772581709,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-7c565fee44c94606019f48ccb11e46d6/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 6240259428,
+   "name": "Yell To Race 🔊",
+   "created": "2024-07-09T12:58:23.317Z",
+   "visits": 1538,
+   "place_id": 18408914315,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-25e0691e78d7a36f49386d1df2960f3f/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 6421927341,
+   "name": "Yell Together 🔊 [2 Player Obby]",
+   "created": "2024-08-15T17:48:45.767Z",
+   "visits": 181734,
+   "place_id": 18961160327,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-d4ae40941c0919cc08c206dcf2b2e46f/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 6500938341,
+   "name": "[🎃] Meet People Across The World 🔊",
+   "created": "2024-09-01T21:23:04.317Z",
+   "visits": 76578986,
+   "place_id": 78699621133325,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-0fda81664dead490ccfe2594c265ac47/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 6690355795,
+   "name": "[🎃] 18+ Meet People Across The World 🔊",
+   "created": "2024-10-18T19:07:58.367Z",
+   "visits": 33120801,
+   "place_id": 110570058234582,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-baf868267509a1607504e9175ee04971/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 7505830981,
+   "name": "Murder Spelling",
+   "created": "2025-04-07T23:59:56.703Z",
+   "visits": 12397,
+   "place_id": 109411422448763,
+   "owner": "Fabled Spellings group",
+   "owner_kind": "group",
+   "owner_id": 35843120,
+   "icon": "https://tr.rbxcdn.com/180DAY-e715ebd7581962855c8fdf4547bd7bf0/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 7586032592,
+   "name": "[😈🔨💥] Troll Items Tower",
+   "created": "2025-04-23T06:11:57.5Z",
+   "visits": 3704499,
+   "place_id": 92748372900357,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-bdb2db49c0232cc894c6e33e26dbc41b/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 7829027380,
+   "name": "Journey to Paradise",
+   "created": "2025-06-02T20:23:05.31Z",
+   "visits": 105,
+   "place_id": 136706620775983,
+   "owner": "Aquaphobia group",
+   "owner_kind": "group",
+   "owner_id": 34901517,
+   "icon": "https://tr.rbxcdn.com/180DAY-9aa8fa78c17f45e30959945b15dd8f5a/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 8340785777,
+   "name": "Cook A RetroSlop",
+   "created": "2025-08-03T22:14:52.743Z",
+   "visits": 43,
+   "place_id": 122837320813876,
+   "owner": "Cook a RetroSlop group",
+   "owner_kind": "group",
+   "owner_id": 316492597,
+   "icon": "https://tr.rbxcdn.com/180DAY-1a1dd7eaa3cf3673654dd2121358a2a5/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 8762047366,
+   "name": "Photo To Avatar",
+   "created": "2025-09-20T18:55:02.643Z",
+   "visits": 18962,
+   "place_id": 101278694012336,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-6da3c5b06bd808d697b4e364eb2d586b/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 9097667514,
+   "name": "Voice Race 🔊",
+   "created": "2025-11-03T23:37:03.63Z",
+   "visits": 12209,
+   "place_id": 123620581280851,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-39dd20bdb5abb679948490958057d59f/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 9116769994,
+   "name": "No Voice Chat",
+   "created": "2025-11-07T03:00:43.39Z",
+   "visits": 5867,
+   "place_id": 70760067227412,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-54c21559a95485b1bb457859552d5372/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 9873252885,
+   "name": "Nogo's Model Showcases",
+   "created": "2026-03-13T00:58:10.007Z",
+   "visits": 1414,
+   "place_id": 93832713186221,
+   "owner": "Nogo's account",
+   "owner_kind": "user",
+   "owner_id": 149639411,
+   "icon": "https://tr.rbxcdn.com/180DAY-ccf14a225da23d6264e7900fff5d6ed5/150/150/Image/Png/noFilter"
+  },
+  {
+   "id": 10401234581,
+   "name": "Animation Bundle Catalog Viewer",
+   "created": "2026-06-27T03:10:00.03Z",
+   "visits": 135028,
+   "place_id": 91274340953809,
+   "owner": "Nogo group",
+   "owner_kind": "group",
+   "owner_id": 3394697,
+   "icon": "https://tr.rbxcdn.com/180DAY-7d25afb46ad4c36e809a26df55032e02/150/150/Image/Png/noFilter"
   }
  ]
 }
