@@ -90,13 +90,9 @@ nav = [
   { "Guides & Tutorials" = [
     "guides/index.md",
     { "Beginner's Guide" = "guides/beginners.md" },
-    { "How to Earn Coins" = "guides/earn-coins.md" },
-    { "Reputation Guide" = "guides/reputation.md" },
+    { "How to Farm Coins" = "guides/earn-coins.md" },
     { "Badge Hunting Guide" = "guides/badge-hunting.md" },
-    { "Country Collection Guide" = "guides/country-collection.md" },
-    { "How to Unlock Titles" = "guides/titles.md" },
-    { "Customization Guide" = "guides/customization.md" },
-    { "Event Guides" = "guides/events.md" },
+    { "Leaderboard Guide" = "guides/leaderboards.md" },
   ] },
   { "Wiki Resources" = [
     "wiki/index.md",
@@ -112,7 +108,7 @@ nav = [
 
 # Change ?v= whenever you edit game.css or game.js, so browsers load the new
 # version right away instead of a copy saved up to 10 minutes earlier.
-extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-3", "assets/stylesheets/rulebook.css?v=20261013-9"]
+extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-4", "assets/stylesheets/rulebook.css?v=20261013-9"]
 extra_javascript = ["assets/javascripts/game.js?v=20261013-2", "assets/javascripts/rulebook.js?v=20261013-5"]
 
 [project.theme]

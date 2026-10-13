@@ -23,7 +23,7 @@ The rules that keep the wiki accurate and pleasant to read.
 The wiki keeps facts and advice apart:
 
 - **Encyclopedia pages** (for example [Reputation](../mechanics/reputation.md)) explain objectively what something is and how it works.
-- **Guides** (for example [Reputation Guide](../guides/reputation.md)) give practical tips and strategies.
+- **Guides** (for example [Badge Hunting Guide](../guides/badge-hunting.md)) give practical tips and strategies.
 
 Both link to each other, but each keeps its own purpose.
 

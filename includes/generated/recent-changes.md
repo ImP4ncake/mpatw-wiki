@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/4dae0e6" target="_blank" rel="noopener">Community &amp; Moderation: only Rules, Report a Player, Ban Appeals and Community Links</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/0bacd3f" target="_blank" rel="noopener">Rules: links everywhere, and the up-to-date notice with the Discord</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/e7c02d0" target="_blank" rel="noopener">Rules: the last 18 rules in detail, all in the a4 style</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b219804" target="_blank" rel="noopener">Rules: balanced layout and chat bubbles for every rule</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/21395d2" target="_blank" rel="noopener">Cut the repetitions in Game Information</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/6ec9e7d" target="_blank" rel="noopener">Turn Game Information into the story of the game</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/6308ba5" target="_blank" rel="noopener">Add a back-to-top button and match the Start here button&#x27;s border</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/2c3162a" target="_blank" rel="noopener">Codes work in both the 18+ and the standard version</a></span></div>
 </div>
