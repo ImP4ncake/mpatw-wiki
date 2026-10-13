@@ -5,7 +5,7 @@ description: "How trolls work."
 
 # Trolls
 
-**Trolls** are actions you can use on other players, from the **TROLL** button in the menu. Trolling other players **50 times** gives the **Troller** badge.
+**Trolls** are actions you can use on other players, from the **TROLL** button in the menu. Trolling other players **50 times** gives the **Troller** badge, and **1,000 times** gives the **Evil** [title](../badges/titles.md#feats).
 
 --8<-- "generated/badge/troller.md"
 
