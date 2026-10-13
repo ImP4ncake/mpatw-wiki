@@ -2119,3 +2119,21 @@ details[open] > summary .rb-rule__close {
     transition: none !important;
   }
 }
+
+/* ================================================================ back button inside the book */
+
+.md-typeset .rb .rb-back {
+  margin: 0 0 0.9rem;
+  animation: rb-pop 0.35s ease both;
+}
+
+.md-typeset .rb .rb-back[hidden] {
+  display: none !important;
+}
+
+.md-typeset .rb .rb-back span {
+  max-width: 16rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

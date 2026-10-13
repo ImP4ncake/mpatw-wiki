@@ -28,6 +28,7 @@
     var current = null;
     var lastChapter = chapters[0];
     var turning = null;
+    var trail = []; // the pages you came from, for the Back buttons
 
     function header() {
       var h = document.querySelector(".md-header");
@@ -107,6 +108,11 @@
       finishTurn();
       var from = current;
       var fromHeight = from ? from.offsetHeight : 0;
+      if (opts.push && from && from !== results) {
+        trail.push({ id: from.id, y: window.scrollY });
+        if (trail.length > 40) trail.shift();
+      }
+      if (opts.fromHistory && trail.length && trail[trail.length - 1].id === target.id) trail.pop();
       var all = chapters.concat([results]);
       var forward = !from || all.indexOf(target) >= all.indexOf(from);
       current = target;
@@ -163,7 +169,81 @@
         }
       }
       if (opts.scroll) bookTopIfNeeded(true);
+      updateBack();
     }
+
+    // ---------------------------------------------------------------- back buttons
+    var ARROW = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7M19 12H5"/></svg>';
+
+    chapters.concat([results]).forEach(function (c) {
+      var b = document.createElement("a");
+      b.className = "mp-btn mp-btn--back rb-back";
+      b.href = "#" + chapters[0].id;
+      b.hidden = true;
+      b.innerHTML = ARROW + "<span></span>";
+      c.insertBefore(b, c.firstChild);
+      c._back = b;
+    });
+
+    function titleOf(id) {
+      if (id === "rb-results") return "Search results";
+      var c = document.getElementById(id);
+      return c ? c.getAttribute("data-title") : "";
+    }
+
+    // Where the Back button leads from the page that is open now
+    function backTarget() {
+      if (current === results) return { id: lastChapter.id, label: lastChapter.getAttribute("data-title"), search: true };
+      var top = trail[trail.length - 1];
+      if (top) return { id: top.id, label: titleOf(top.id) };
+      if (current && current !== chapters[0]) return { id: chapters[0].id, label: titleOf(chapters[0].id) };
+      return null;
+    }
+
+    function updateBack() {
+      if (!current || !current._back) return;
+      var t = backTarget();
+      var b = current._back;
+      b.hidden = !t;
+      if (!t) return;
+      b.href = "#" + t.id;
+      b.setAttribute("aria-label", "Back to " + t.label);
+      b.querySelector("span").textContent = t.label;
+    }
+
+    function goBack() {
+      var t = backTarget();
+      if (!t) return;
+      if (t.search) {
+        searchInput.value = "";
+        runSearch();
+        return;
+      }
+      var entry = trail.length && trail[trail.length - 1].id === t.id ? trail.pop() : null;
+      if (entry && entry.q !== undefined) {
+        searchInput.value = entry.q;
+        runSearch();
+        scrollToY(entry.y, false);
+        return;
+      }
+      var target = document.getElementById(t.id);
+      show(target, { hash: true });
+      if (entry) {
+        setTimeout(function () { scrollToY(entry.y, true); }, reduceMotion ? 0 : 60);
+      } else {
+        bookTopIfNeeded(true);
+      }
+      updateBack();
+    }
+
+    rb.addEventListener("click", function (event) {
+      var b = event.target.closest(".rb-back");
+      if (!b || !rb.contains(b)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      goBack();
+    }, true);
 
     function chapterOf(el) {
       return el && el.closest(".rb-ch:not(.rb-ch--results)");
@@ -416,6 +496,7 @@
         event.preventDefault();
         event.stopPropagation();
         var entry = entries[+a.getAttribute("data-i")];
+        trail.push({ id: "rb-results", q: searchInput.value, y: window.scrollY });
         searchInput.value = "";
         rb.classList.remove("is-searching");
         openRule(entry.el, { push: true, hash: !!entry.el.id });
@@ -523,7 +604,7 @@
       var el = id && document.getElementById(id);
       if (el && rb.contains(el) && el !== results) {
         if (el.classList.contains("rb-ch")) {
-          show(el, { animate: !!current, hash: false, scroll: !!current });
+          show(el, { animate: !!current, hash: false, scroll: !!current, fromHistory: true });
         } else {
           openRule(el, { animate: !!current, hash: false, push: push });
         }
