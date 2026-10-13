@@ -5,7 +5,7 @@ description: "Item rarity classifications."
 
 # Cosmetic Rarities
 
-Cosmetics come in different rarities. **Fabled** is one of them: unlocking a Fabled cosmetic gives the **Fabled** badge, and unlocking **10** of them gives the **Transcendent** [title](../badges/titles.md#feats).
+Cosmetics come in different rarities. **Fabled** is one of them: unlocking a Fabled cosmetic gives the **Fabled** badge, and unlocking **10** of them gives the **Transcendent** [title](../badges/titles.md#achievements).
 
 !!! question "Needs info"
 
