@@ -9,7 +9,7 @@ You can leave **comments** on the profiles of the players you interact with, and
 
 !!! warning "Be respectful"
 
-    Comments are public. Don't post personal information about anyone (including yourself), and don't use comments to harass people. Report abuse with Roblox's built-in tools: see [Reporting Players](../community/reporting.md).
+    Comments are public. Don't post personal information about anyone (including yourself), and don't use comments to harass people. Report abuse with Roblox's built-in tools: see [Report a Player](../community/reporting.md).
 
 !!! info "In the rules"
 

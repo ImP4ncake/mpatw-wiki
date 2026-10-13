@@ -3,7 +3,7 @@ icon: lucide/flag
 description: "How to report a player."
 ---
 
-# Reporting Players
+# Report a Player
 
 If someone breaks the rules or makes you uncomfortable, you can report them with Roblox's built-in tools.
 

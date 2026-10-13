@@ -89,4 +89,4 @@ The menu on the right side of the screen has these buttons. The highlighted ones
 
 !!! warning "Stay safe"
 
-    Never share personal information such as your address, phone number or passwords. Use Roblox's block and report tools if someone makes you uncomfortable: see [Reporting Players](../community/reporting.md).
+    Never share personal information such as your address, phone number or passwords. Use Roblox's block and report tools if someone makes you uncomfortable: see [Report a Player](../community/reporting.md).

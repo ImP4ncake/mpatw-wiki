@@ -1678,7 +1678,6 @@ RULE_LINKS = [
     (r"\bcoins\b", "mechanics/coins.md", ""),
     (r"\bvoice chat\b", "servers/voice-chat.md", ""),
     (r"\bplayer reports\b", "community/reporting.md", ""),
-    (r"\bStaff\b", "community/staff-roles.md", ""),
     (r"\bbio\b", "mechanics/profiles.md", ""),
     (r"(?:(?<=\ba )|(?<=\bthe ))Country\b(?! [XY])", "mechanics/countries.md", ""),
     (r"\b(?:official|community) Discord\b", None, RULES_DISCORD),
