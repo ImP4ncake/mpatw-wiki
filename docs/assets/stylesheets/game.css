@@ -1422,7 +1422,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 8rem), 1fr));
 }
 
-.md-typeset a.mp-title-card,
+.md-typeset .mp-title-card,
 .md-typeset a.mp-tag-card {
   position: relative;
   display: flex;
@@ -1453,8 +1453,199 @@ body {
   font-style: italic;
   font-size: 1.15rem;
   line-height: 1.15;
-  color: var(--r);
+  color: var(--tc, var(--r));
   text-shadow: var(--mp-outline);
+}
+
+/* a dark title with a colored edge, like Fabled */
+.mp-title-card__title.is-edge,
+.mp-plate__name.is-edge {
+  text-shadow: -2px -2px 0 var(--tg), 2px -2px 0 var(--tg), -2px 2px 0 var(--tg), 2px 2px 0 var(--tg),
+    0 0 8px var(--tg);
+}
+
+.mp-plate__name.is-edge {
+  text-shadow: -1px -1px 0 var(--tg), 1px -1px 0 var(--tg), -1px 1px 0 var(--tg), 1px 1px 0 var(--tg),
+    0 0 6px var(--tg);
+}
+
+/* a title in more than one color, like Sovereign: the colors are laid over the outlined text */
+.mp-title-card__title.is-gradient,
+.mp-plate__name.is-gradient {
+  position: relative;
+}
+
+.mp-title-card__title.is-gradient::after,
+.mp-plate__name.is-gradient::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: var(--tgrad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  pointer-events: none;
+}
+
+.mp-title-card__exist {
+  order: 3;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.mp-stats--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* VIP subscription panel */
+.md-typeset .mp-vip {
+  margin: 1rem 0 1.6rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(255, 214, 72, 0.22), transparent 55%),
+    var(--mp-tile);
+  box-shadow: var(--mp-tile-edge), 0 0 0 3px #0b0b0e, 0 0 0 5px var(--mp-gold-2), 0 8px 0 #0b0b0e;
+  color: #fff;
+}
+
+.mp-vip__head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.mp-vip__crown {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--mp-gold-1), var(--mp-gold-2) 55%, var(--mp-gold-3));
+  box-shadow: 0 0 0 3px #0b0b0e, 0 4px 0 #0b0b0e;
+  color: #3a2a00;
+}
+
+.mp-vip__crown svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mp-vip__about {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.md-typeset .mp-vip__name {
+  font-family: var(--mp-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--mp-gold-2);
+  text-shadow: var(--mp-outline-thin);
+}
+
+.mp-vip__price {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-vip__price .mp-price {
+  margin-right: 0.15rem;
+}
+
+.mp-vip__count {
+  flex: none;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--mp-on-dark-2);
+}
+
+.mp-vip__count b {
+  color: #fff;
+}
+
+/* titles shown like the rows of the game's title list */
+.md-typeset .mp-plates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.5rem), 1fr));
+  gap: 0.6rem;
+}
+
+.md-typeset .mp-plates--list {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+  margin: 1rem 0 1.4rem;
+}
+
+.mp-plate {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.45rem 0.7rem 0.4rem 0.8rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #5a5c63, #4a4c53);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 0 2px #0b0b0e, 0 4px 0 #0b0b0e;
+}
+
+.mp-plate__name {
+  min-width: 0;
+  font-family: var(--mp-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--tc, #fff);
+  text-shadow: var(--mp-outline-thin);
+  overflow-wrap: anywhere;
+}
+
+.mp-plate__exist {
+  flex: none;
+  padding-bottom: 0.05rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 0 #000;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 30em) {
+  .md-typeset .mp-vip__name {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  /* the summary above already counts them */
+  .mp-vip__count {
+    display: none;
+  }
+
+  /* two stats per row on phones: the third one takes the whole row */
+  .mp-stats--three .mp-stat:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .mp-vip .mp-plates {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .mp-title-card__tag {

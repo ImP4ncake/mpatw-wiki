@@ -8,7 +8,7 @@ The wiki is built with [Zensical](https://zensical.org) and hosted for free on G
 | `docs/assets/stylesheets/game.css` | The game-style look (colors, fonts, buttons, menu tiles) |
 | `docs/assets/javascripts/game.js` | Animated counters and countdowns |
 | `scripts/update_data.py` | Downloads live stats, badges and gamepasses from the Roblox APIs |
-| `data/` | Saved game data and the daily history used for the stats chart |
+| `data/` | Saved game data, the daily history used for the stats chart, the rules, the titles and the game updates |
 | `includes/` | Snippets included in pages (`includes/generated/` is written by the script) |
 | `docs/assets/images/` | Screenshots and images |
 | `docs/assets/rules/` | Example pictures for the Rules page |
@@ -58,6 +58,12 @@ Without them the page simply keeps what is already saved.
 Until the bot is set up, updates can be added by hand: put a new entry at the top of `data/discord-updates.json` (the title on the first line as `## October 11 (57.12)`, then one `- ` line per change). The three newest also appear in **Latest Updates** on the home page, with their first change.
 
 To run it yourself: `python scripts/update_data.py` (or `--offline` to only regenerate the pages from the saved data).
+
+## The Titles page
+
+Badge titles come from the badges' descriptions automatically. What the game's title list (in the **CUSTOMIZE** menu) shows is saved by hand in `data/titles.json`: each title's color, the "Nx Exist" number and the day it was checked (`checked`). A dark title with a colored outline has an `edge` color, and a title in more than one color has a `gradient`. The VIP titles and their price are under `vip`. A title that no badge gives and that isn't VIP shows up under **Other titles**, with a Needs info box asking how to get it.
+
+To update the numbers, change `exist` (and `checked`) and push.
 
 ## The Rules page
 
