@@ -20,7 +20,7 @@ The map is a big open area where players hang out, with lots of activities aroun
 | [AI Chatbot](ai-chatbot.md) | Talk to an AI |
 | Piano | Play the piano (**Pianist** badge) |
 | The cat and the dog | Pet them for the **Pet The Cat** and **Pet The Dog** badges |
-| AFK World | A separate world where you earn coins while away (from the main screen) |
+| [AFK World](../servers/afk-farming.md) | A separate server where you earn coins while away (from the main screen) |
 
 !!! question "Needs info"
 

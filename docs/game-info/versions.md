@@ -39,6 +39,6 @@ The 18+ version also has a **Gamepass Info** pass (buying it does nothing) whose
 
 | Place | What it is |
 |---|---|
-| **18+ Meet People Across The World** | The main game, with [voice chat servers](../servers/voice-chat.md) |
-| **NO-VOICECHAT 18+** | [Servers without voice chat](../servers/no-voice.md) |
-| **[CUSTOM] 18+** | [Custom servers](../servers/custom-servers.md) created by players |
+| **18+ Meet People Across The World** | The main game, with the [public voice chat servers](../servers/public.md#voice-chat-servers) |
+| **NO-VOICECHAT 18+** | [Public servers without voice chat](../servers/public.md#no-voice-servers) |
+| **[CUSTOM] 18+** | [Private servers](../servers/private.md) created by players |

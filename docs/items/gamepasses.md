@@ -17,7 +17,7 @@ Some gamepasses also give you an item in the **ITEMS** menu, like Fly, Invisibil
 
 !!! tip "Good to know"
 
-    The owner of a [custom server](../servers/custom-servers.md) can make all trolls and items free for everyone in that server.
+    The owner of a [private server](../servers/private.md) can make all trolls and items free for everyone in that server.
 
 !!! info "Titles for spending Robux"
 

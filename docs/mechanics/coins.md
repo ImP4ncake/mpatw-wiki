@@ -16,7 +16,7 @@ description: "In-game currency, earning methods and uses."
 | Method | How it works |
 |---|---|
 | **Playing** | You receive coins regularly while you are in the game |
-| **AFK World** | Earn coins while you are away (button on the main screen) |
+| **[AFK World](../servers/afk-farming.md)** | Earn coins while you are away (button on the main screen) |
 | **[Codes](codes.md)** | Some codes give coins |
 | **Invite a Friend!** | The badge gives **100 coins** |
 | **Triple Coins** gamepass | Triples the coins you earn from most sources |
