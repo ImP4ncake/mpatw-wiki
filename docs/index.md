@@ -51,7 +51,7 @@ hide:
 ## Latest Game Updates
 
 <div class="mp-chat">
-<div class="mp-chat__tabs"><span class="mp-chat__tab is-active">From the official Discord</span></div>
+<div class="mp-chat__tabs"><span class="mp-chat__tab is-active">From the official community channel</span></div>
 <ul class="mp-news">
 --8<-- "generated/home-discord.md"
 </ul>
