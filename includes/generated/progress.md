@@ -1,1 +1,1 @@
-<div class="mp-bigprogress"><span class="mp-bigprogress__label"><b>59</b> of <b>59</b> pages ready</span><span class="mp-progress mp-progress--big" aria-label="100% ready"><span style="width:100%"></span></span></div>
+<div class="mp-bigprogress"><span class="mp-bigprogress__label"><b>57</b> of <b>57</b> pages ready</span><span class="mp-progress mp-progress--big" aria-label="100% ready"><span style="width:100%"></span></span></div>

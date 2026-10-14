@@ -2055,6 +2055,17 @@ body {
 .mp-mainmenu__btn--slate { background: linear-gradient(180deg, #6b6e79, #3e4049); }
 .mp-mainmenu__btn--blue { background: linear-gradient(180deg, #9ccfff, #4a9df5); }
 
+/* a main screen button that has its own page */
+.md-typeset a.mp-mainmenu__btn {
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.md-typeset a.mp-mainmenu__btn:hover {
+  transform: translateY(-3px);
+}
+
 .mp-gamemenu {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.2rem), 1fr));

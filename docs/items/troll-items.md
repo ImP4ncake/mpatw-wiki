@@ -77,9 +77,9 @@ The game says Troll Sniper and Troll AK47 become **permanent with the Weapons Pa
 | <span class="mp-iconname"><span class="mp-icon">:lucide-notebook-pen:</span>**Death Note**</span> | Trolls players with the troll effect you chose, after the time you set | <span class="mp-rarity mp-rarity--common" title="Not shown in the menu">?</span> |
 | <span class="mp-iconname"><span class="mp-icon">:lucide-lock:</span>**Handcuffs**</span> | Sends a player to jail for **20 minutes** | <span class="mp-rarity mp-rarity--legendary" title="Troll Tokens per use">15 tokens</span> |
 
-!!! tip "Free in custom servers"
+!!! tip "Free in private servers"
 
-    The owner of a [custom server](../servers/custom-servers.md) can make all trolls and items free for everyone in that server.
+    The owner of a [private server](../servers/private.md) can make all trolls and items free for everyone in that server.
 
 !!! question "Needs info"
 

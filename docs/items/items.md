@@ -16,7 +16,7 @@ The ITEMS menu has four sections:
 | **[Normal items](#normal-items)** | Still to be written |
 | **[Free community items](#free-community-items)** | Still to be written |
 
-In [custom servers](../servers/custom-servers.md), the owner can make all items free for everyone.
+In [private servers](../servers/private.md), the owner can make all items free for everyone.
 
 ## Troll items
 

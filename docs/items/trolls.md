@@ -9,7 +9,7 @@ description: "How trolls work."
 
 --8<-- "generated/badge/troller.md"
 
-In [custom servers](../servers/custom-servers.md), the owner can make all trolls free for everyone.
+In [private servers](../servers/private.md), the owner can make all trolls free for everyone.
 
 !!! question "Needs info"
 

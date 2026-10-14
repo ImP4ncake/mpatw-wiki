@@ -9,7 +9,7 @@ New to the 18+ version? Here is everything you need for your first hour.
 
 ## 1. Join a server
 
-Press **Play** on the main screen. Under the buttons you can see the server's **primary language** and the countries its players come from: look for a server in a language you speak. Prefer text chat? Use the [No-Voice Servers](../servers/no-voice.md).
+Press **Play** on the main screen. Under the buttons you can see the server's **primary language** and the countries its players come from: look for a server in a language you speak. Prefer text chat? Use the [no-voice servers](../servers/public.md#no-voice-servers).
 
 ## 2. Look around
 
@@ -30,7 +30,7 @@ Each one unlocks a [title and a tag effect](../badges/titles.md). More titles co
 
 ## 4. Earn coins
 
-Coins arrive regularly while you play. Redeem [codes](../mechanics/codes.md) and visit the **AFK World** when you step away. More in [How to Farm Coins](earn-coins.md).
+Coins arrive regularly while you play. Redeem [codes](../mechanics/codes.md) and visit the [AFK World](../servers/afk-farming.md) when you step away. More in [How to Farm Coins](earn-coins.md).
 
 ## 5. Explore the activities
 
@@ -42,7 +42,7 @@ Draw, play chess, try the lottery or fight in the arenas: see [Activities & Loca
 - Customize your profile, gain reputation and leave comments: [Player Profiles](../mechanics/profiles.md), [Reputation](../mechanics/reputation.md), [Comments](../mechanics/comments.md)
 - Earn coins and collect badges, titles and tag effects: [Coins](../mechanics/coins.md), [Badges & Titles](../badges/index.md)
 - Play the piano, draw, play chess, try the lottery or fight in six arenas: [Activities & Locations](../activities/index.md)
-- Create your own server with an admin panel: [Custom Servers](../servers/custom-servers.md)
+- Create your own server with an admin panel: [Private Server](../servers/private.md)
 
 ## The main screen
 
@@ -51,12 +51,12 @@ When you join, the game shows three big buttons:
 <div class="mp-mainmenu" markdown>
 <span class="mp-mainmenu__btn mp-mainmenu__btn--green">Play</span>
 <span class="mp-mainmenu__btn mp-mainmenu__btn--slate">Servers</span>
-<span class="mp-mainmenu__btn mp-mainmenu__btn--blue">AFK World</span>
+[AFK World](../servers/afk-farming.md){ .mp-mainmenu__btn .mp-mainmenu__btn--blue }
 </div>
 
 - **Play** takes you into the game.
-- **Servers** opens the server list (see [Servers & Features](../servers/index.md)).
-- **AFK World** takes you to a separate world where you earn [coins](../mechanics/coins.md) while you are away.
+- **Servers** opens the server list (see [Public Server 18+](../servers/public.md)).
+- **AFK World** takes you to a separate server where you earn [coins](../mechanics/coins.md) while you are away: see [AFK Farming Server](../servers/afk-farming.md).
 
 Under the buttons, the game shows the **current server**: its number, how many players are in it (up to 65), its **primary language** and the countries most of its players come from.
 

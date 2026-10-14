@@ -59,11 +59,9 @@ nav = [
   ] },
   { "Servers & Features" = [
     "servers/index.md",
-    { "Voice Chat Servers" = "servers/voice-chat.md" },
-    { "No-Voice Servers" = "servers/no-voice.md" },
-    { "18+ Version" = "servers/18-plus.md" },
-    { "Custom Servers" = "servers/custom-servers.md" },
-    { "Admin Panel" = "servers/admin-panel.md" },
+    { "Public Server 18+" = "servers/public.md" },
+    { "AFK Farming Server" = "servers/afk-farming.md" },
+    { "Private Server" = "servers/private.md" },
   ] },
   { "Events & Updates" = [
     "events/index.md",
@@ -101,7 +99,7 @@ nav = [
 
 # Change ?v= whenever you edit game.css or game.js, so browsers load the new
 # version right away instead of a copy saved up to 10 minutes earlier.
-extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261014-1", "assets/stylesheets/rulebook.css?v=20261013-9"]
+extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261014-2", "assets/stylesheets/rulebook.css?v=20261013-9"]
 extra_javascript = ["assets/javascripts/game.js?v=20261013-3", "assets/javascripts/rulebook.js?v=20261013-5"]
 
 [project.theme]

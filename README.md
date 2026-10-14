@@ -79,7 +79,7 @@ where you meet people from all over the world, with live numbers straight from R
 </tr>
 <tr>
 <td>🛍️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/items/"><b>Items &amp; Customization</b></a><br><sub>Items, trolls, cosmetics and gamepasses</sub></td>
-<td>🖥️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/servers/"><b>Servers &amp; Features</b></a><br><sub>Server types, voice chat and custom servers</sub></td>
+<td>🖥️ &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/servers/"><b>Servers &amp; Features</b></a><br><sub>Public, AFK farming and private servers</sub></td>
 </tr>
 <tr>
 <td>📅 &nbsp;<a href="https://imp4ncake.github.io/mpatw-wiki/events/"><b>Events &amp; Updates</b></a><br><sub>Seasonal events, limited-time rewards and game updates</sub></td>
