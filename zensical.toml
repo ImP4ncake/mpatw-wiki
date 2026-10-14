@@ -101,7 +101,7 @@ nav = [
 
 # Change ?v= whenever you edit game.css or game.js, so browsers load the new
 # version right away instead of a copy saved up to 10 minutes earlier.
-extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261013-22", "assets/stylesheets/rulebook.css?v=20261013-9"]
+extra_css = ["assets/stylesheets/fonts.css", "assets/stylesheets/game.css?v=20261014-1", "assets/stylesheets/rulebook.css?v=20261013-9"]
 extra_javascript = ["assets/javascripts/game.js?v=20261013-3", "assets/javascripts/rulebook.js?v=20261013-5"]
 
 [project.theme]

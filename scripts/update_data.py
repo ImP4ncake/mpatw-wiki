@@ -1553,19 +1553,24 @@ def gen_discord(page: str = "events/update-history.md") -> None:
     lines = []
     for u in archive[:3]:
         d = parse_time(u.get("timestamp"))
-        label = f"Update · {d.day} {d.strftime('%b')}" if d else "Update"
-        # the first change of the update, so the home page says what's new
         _, body = split_title(u.get("content", ""))
-        first = next((re.sub(r"^[-*•] ", "", x.strip()) for x in body.splitlines() if x.strip()), "")
-        first = re.sub(r"<a?:\w+:\d+>|<@[!&]?\d+>|<#\d+>|[*_~|`#>]", "", first).strip()
-        # the bug report credit stays on the Update History page
-        first = re.sub(r"\s*\(Thanks [^)]*\)\s*$", "", first)
-        if len(first) > 90:
-            first = first[:90].rsplit(" ", 1)[0].rstrip(",;:") + "…"
-        more = f' <span class="mp-news__more">{esc(first)}</span>' if first else ""
+        changes = []
+        for x in body.splitlines():
+            x = re.sub(r"^[-*•]\s+", "", x.strip())
+            x = re.sub(r"<a?:\w+:\d+>|<@[!&]?\d+>|<#\d+>|[*_~|`#>]", "", x).strip()
+            # the bug report credit stays on the Update History page
+            x = re.sub(r"\s*\(Thanks [^)]*\)\s*$", "", x)
+            if x:
+                changes.append(x)
+        link = rel("index.md", page, "update-" + u["id"])
+        shown = "".join(f"<li>{esc(c)}</li>" for c in changes[:4])
+        if len(changes) > 4:
+            shown += f'<li class="mp-news__all"><a href="{link}">+{len(changes) - 4} more</a></li>'
+        date = f'<span class="mp-news__date">{d.day} {d.strftime("%b")}</span>' if d else ""
         lines.append(
-            f'<li><span class="mp-news__date">{esc(label)}</span>'
-            f'<a href="{rel("index.md", page, "update-" + u["id"])}">{esc(plain_title(u))}</a>{more}</li>'
+            f'<li class="mp-news__update">{date}<a class="mp-news__title" href="{link}">{esc(plain_title(u))}</a>'
+            + (f'<ul class="mp-news__changes">{shown}</ul>' if shown else "")
+            + "</li>"
         )
     write("home-discord.md", "\n".join(lines))
 
@@ -1636,7 +1641,7 @@ def gen_events() -> None:
     out_status = GEN_DIR / "event-status"
     out_status.mkdir(parents=True, exist_ok=True)
 
-    # Home page strip and news line
+    # Home page strip
     if st["active"]:
         e, cur = st["event"], st["current"]
         note = f' <small>({esc(cur["ends_note"])})</small>' if cur.get("ends_note") else ""
@@ -1648,10 +1653,6 @@ def gen_events() -> None:
             f'Ends in <span class="mp-countdown" data-countdown="{esc(cur["ends"])}">{esc(nice_date(cur["ends"]))}</span>{note}</span>'
             f'<span class="mp-event__go">See the event</span></a>'
         )
-        news = (
-            f'<li data-hide-after="{esc(cur["ends"])}"><span class="mp-news__date">Event</span>{esc(e["emoji"])} '
-            f'<a href="{event_link("index.md", e)}">{esc(cur.get("edition") or e["name"])}</a> is live: {cur.get("highlight", "")}</li>'
-        )
     elif st["upcoming"]:
         e = st["upcoming"][0]
         d = next_holiday(e, today)
@@ -1662,11 +1663,9 @@ def gen_events() -> None:
             f'<span><b>{esc(e["name"])}</b> usually arrives in {esc(e["season"])} (around {d.day} {d.strftime("%B")}).</span>'
             f'<span class="mp-event__go">See past editions</span></a>'
         )
-        news = ""
     else:
-        strip, news = "", ""
+        strip = ""
     write("home-event.md", strip)
-    write("home-event-news.md", news)
 
     # Event calendar for the Events & Updates page
     here = "events/index.md"
@@ -2423,20 +2422,6 @@ def gen_changes() -> None:
     write("latest-changes.md", latest)
 
 
-def gen_home_news(snap: dict, badges: list[dict]) -> None:
-    game = snap.get("game", {})
-    newest = max((b for b in badges if parse_time(b.get("created"))), key=lambda b: parse_time(b["created"]), default=None)
-    items = [
-        f'<li><span class="mp-news__date">Game</span>Last updated {time_tag(game.get("updated"))}</li>',
-    ]
-    if newest:
-        items.append(
-            f'<li><span class="mp-news__date">New badge</span><a href="{rel("index.md", newest["page"], newest["anchor"])}">'
-            f'{esc(newest["short"])}</a>, added {esc(nice_date(newest["created"]))}</li>'
-        )
-    write("home-news.md", "\n".join(items))
-
-
 def main() -> int:
     offline = "--offline" in sys.argv
     DATA_DIR.mkdir(exist_ok=True)
@@ -2461,7 +2446,6 @@ def main() -> int:
     gen_events()
     gen_galleries()
     gen_rules()
-    gen_home_news(snap, badges)
     gen_categories(read_structure())
     gen_changes()
 

@@ -55,7 +55,7 @@ It needs two repository secrets (Settings → Secrets and variables → Actions)
 
 Without them the page simply keeps what is already saved.
 
-Until the bot is set up, updates can be added by hand: put a new entry at the top of `data/discord-updates.json` (the title on the first line as `## October 11 (57.12)`, then one `- ` line per change). The three newest also appear in **Latest Updates** on the home page, with their first change.
+Until the bot is set up, updates can be added by hand: put a new entry at the top of `data/discord-updates.json` (the title on the first line as `## October 11 (57.12)`, then one `- ` line per change). The three newest are the only ones in **Latest Game Updates** on the home page, each with what changed (up to 4 lines).
 
 To run it yourself: `python scripts/update_data.py` (or `--offline` to only regenerate the pages from the saved data).
 

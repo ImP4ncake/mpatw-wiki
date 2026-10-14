@@ -1001,13 +1001,57 @@ body {
   content: "]";
 }
 
-/* what changed in a game update, after its title */
-.mp-news__more {
-  color: var(--mp-on-dark-2);
+/* a game update: its date and title, then what changed */
+.md-typeset ul.mp-news li.mp-news__update {
+  padding: 0.55rem 0;
 }
 
-.mp-news__more::before {
-  content: "— ";
+.md-typeset ul.mp-news li.mp-news__update + li.mp-news__update {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-typeset ul.mp-news a.mp-news__title {
+  font-weight: 800;
+}
+
+.md-typeset ul.mp-news ul.mp-news__changes {
+  margin: 0.25rem 0 0 1.1rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.md-typeset ul.mp-news ul.mp-news__changes li {
+  padding: 0.08rem 0;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #e4e7ee;
+}
+
+.md-typeset ul.mp-news ul.mp-news__changes li::marker {
+  color: var(--mp-gold-2);
+}
+
+.md-typeset ul.mp-news ul.mp-news__changes li.mp-news__all {
+  list-style: none;
+}
+
+.md-typeset .mp-chat__more {
+  display: block;
+  padding: 0.5rem 1rem 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+  color: #8fd0ff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.md-typeset .mp-chat__more::after {
+  content: " →";
+}
+
+.md-typeset .mp-chat__more:hover {
+  color: #fff;
 }
 
 /* home page call to action (suggest a change) */
