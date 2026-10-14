@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/e72a2c1" target="_blank" rel="noopener">Titles page: every title once, all in the same style</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/44c104f" target="_blank" rel="noopener">Titles: call the Feats group Achievements</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/baecc33" target="_blank" rel="noopener">Titles: one list of all 75 titles, and every count includes them all</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/401d27e" target="_blank" rel="noopener">Titles: Evil comes from trolling 1,000 times</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/5f471ee" target="_blank" rel="noopener">Rules: the official rulebook as a book with chapters, opening rules, search and animations</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/53c2e05" target="_blank" rel="noopener">Events: Halloween 2026 as the current event, the others as a yearly rotation</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/bb13563" target="_blank" rel="noopener">Reputation: a nicer, more visual page</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">12 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/b391d10" target="_blank" rel="noopener">Reputation: show it on a real profile card, and tidy the page</a></span></div>
 </div>
