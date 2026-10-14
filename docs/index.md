@@ -48,15 +48,14 @@ hide:
 [<span class="mp-feature__icon">:lucide-trophy:</span><span class="mp-feature__text"><b>Leaderboard Guide</b><small>Reach #1 and get the Angel badge</small></span>](guides/leaderboards.md){ .mp-feature .mp-cat--violet }
 </div>
 
-## Latest Updates
+## Latest Game Updates
 
 <div class="mp-chat">
-<div class="mp-chat__tabs"><span class="mp-chat__tab is-active">Game</span><span class="mp-chat__tab">Updates</span></div>
+<div class="mp-chat__tabs"><span class="mp-chat__tab is-active">From the official Discord</span></div>
 <ul class="mp-news">
 --8<-- "generated/home-discord.md"
---8<-- "generated/home-event-news.md"
---8<-- "generated/home-news.md"
 </ul>
+<a class="mp-chat__more" href="events/update-history/">All game updates</a>
 </div>
 
 <div class="mp-cta mp-cta--suggest" markdown>
