@@ -1,4 +1,5 @@
 <div class="mp-timeline">
+<div class="mp-timeline__item"><span class="mp-timeline__date">14 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/6b8dbc4" target="_blank" rel="noopener">Servers &amp; Features: Public Server 18+, AFK Farming Server, Private Server</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">14 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/9718f80" target="_blank" rel="noopener">Home: capitalize &quot;Community Channel&quot; in the updates box</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">14 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/dd763f5" target="_blank" rel="noopener">Home: the updates box says &quot;From the official community channel&quot;</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">14 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/f028150" target="_blank" rel="noopener">Home: Latest Game Updates shows only the three Discord updates</a></span></div>
@@ -23,5 +24,4 @@
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/edcc920" target="_blank" rel="noopener">Rules: a5, a6, a7, a9, b3, c5, c6, c8, c9, d3, e4 and e5 in detail</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/d152055" target="_blank" rel="noopener">Rules: b6 Discrimination in detail</a></span></div>
 <div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/cbdbd1b" target="_blank" rel="noopener">Rules: a Back button on every page of the book</a></span></div>
-<div class="mp-timeline__item"><span class="mp-timeline__date">13 Oct 2026</span><span class="mp-timeline__text"><a href="https://github.com/ImP4ncake/mpatw-wiki/commit/790e072" target="_blank" rel="noopener">Rules: redesign as an open book with example pictures</a></span></div>
 </div>
