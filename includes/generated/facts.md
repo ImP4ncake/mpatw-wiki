@@ -3,7 +3,7 @@
 | **Developer** | <a class="mp-who" href="https://www.roblox.com/users/149639411/profile" target="_blank" rel="noopener"><span class="mp-face mp-face--nogo" aria-hidden="true"></span>Nogo</a> |
 | **Published by** | <a class="mp-who" href="https://www.roblox.com/groups/3394697" target="_blank" rel="noopener"><span class="mp-face mp-face--group" aria-hidden="true"></span>Nogo group</a> |
 | **Released** | 18 Oct 2024 |
-| **Last game update** | <time datetime="2026-10-13T21:30:20.084Z" data-time="2026-10-13T21:30:20.084Z">13 Oct 2026, 21:30 UTC</time> |
+| **Last game update** | <time datetime="2026-10-15T21:14:32.007Z" data-time="2026-10-15T21:14:32.007Z">15 Oct 2026, 21:14 UTC</time> |
 | **Age requirement** | 18+ |
 | **Players per server** | 65 |
 | **Badges** | 40 |
