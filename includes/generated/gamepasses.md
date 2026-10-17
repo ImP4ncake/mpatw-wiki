@@ -1,4 +1,4 @@
-<p class="mp-lead"><b>11</b> gamepasses on sale and <b>10</b> off sale. Prices updated <time datetime="2026-10-16T01:21:11Z" data-time="2026-10-16T01:21:11Z">16 Oct 2026, 01:21 UTC</time>.</p>
+<p class="mp-lead"><b>11</b> gamepasses on sale and <b>10</b> off sale. Prices updated <time datetime="2026-10-17T04:26:37Z" data-time="2026-10-17T04:26:37Z">17 Oct 2026, 04:26 UTC</time>.</p>
 
 ## On sale
 
